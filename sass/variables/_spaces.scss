@@ -1,0 +1,35 @@
+$base                   : 16px;
+
+$xs                     : 0.25rem;
+$s                      : 0.5rem;
+$sm                     : 0.75rem;
+$m                      : 1rem;
+$ml                     : 1.5rem;
+$l                      : 2rem;
+$xl                     : 4rem;
+
+$space-inset-default    : $m $m $m $m;
+$space-inset-xxs        : $xs $xs $xs $xs ;
+$space-inset-s          : $s $s $s $s;
+$space-inset-sm         : $sm $sm $sm $sm;
+$space-inset-m          : $m $m $m $m;
+$space-inset-ml         : $ml $ml $ml $ml;
+$space-inset-l          : $l $l $l $l;
+$space-inset-xl         : $xl $xl $xl $xl;
+
+$space-stack-default    : 0 0 $m 0;
+$space-stack-xs         : 0 0 $xs 0;
+$space-stack-s          : 0 0 $s 0;
+$space-stack-m          : 0 0 $m 0;
+$space-stack-ml         : 0 0 $ml 0;
+$space-stack-l          : 0 0 $l 0;
+$space-stack-xl         : 0 0 $xl 0;
+
+$space-default          : $m;
+$space-xs               : $xs;
+$space-s                : $s;
+$space-sm               : $sm;
+$space-m                : $m;
+$space-ml               : $ml;
+$space-l                : $l;
+$space-xl               : $xl;
