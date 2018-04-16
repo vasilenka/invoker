@@ -1,2 +1,2 @@
 # Invoker
-### Craft your page, faster!
+Craft your page, faster!
