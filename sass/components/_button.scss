@@ -1,0 +1,25 @@
+.Button {
+    padding: $space-squish-default;
+    font-size: $m;
+    line-height: $m;
+}
+
+.Button--default {
+    @extend .Button;
+    border: 1px solid $dark-12;
+    color: $dark-80;
+}
+
+.Button--primary {
+    @extend .Button;
+    border: 1px solid $brand-primary;
+    color: $white-100;
+    background: $brand-primary;
+}
+
+.Button--secondary {
+    @extend .Button;
+    border: 1px solid $brand-secondary;
+    color: $white-100;
+    background: $brand-secondary;
+}

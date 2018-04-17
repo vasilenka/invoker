@@ -25,6 +25,22 @@ $space-stack-ml         : 0 0 $ml 0;
 $space-stack-l          : 0 0 $l 0;
 $space-stack-xl         : 0 0 $xl 0;
 
+$space-squish-default   : $sm $m $sm $m;
+$space-squish-s         : $xs $s $xs $s;
+$space-squish-sm        : $s $sm $s $sm;
+$space-squish-m         : $sm $m $sm $m;
+$space-squish-ml        : $m $ml $m $ml;
+$space-squish-l         : $ml $l $ml $l;
+$space-squish-xl        : $l $xl $l $xl;
+
+$space-stretch-default  : $m $sm $m $sm;
+$space-stretch-xs       : $s $xs $s $xs;
+$space-stretch-s        : $sm $s $sm $s;
+$space-stretch-sm       : $m $sm $m $sm;
+$space-stretch-m        : $ml $m $ml $m;
+$space-stretch-ml       : $l $ml $l $ml;
+$space-stretch-l        : $xl $l $xl $l;
+
 $space-default          : $m;
 $space-xs               : $xs;
 $space-s                : $s;
