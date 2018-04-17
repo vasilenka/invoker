@@ -45,6 +45,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.my-box {
+  padding: 10px; }
+  @media (min-width: 1200px) {
+    .my-box {
+      padding: 20px; } }
+
 html, body {
   font-size: 16px;
   max-width: 1080px;
