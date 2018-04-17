@@ -1,8 +1,9 @@
 @import "reset";
 @import "mixins";
 
-@import "variables/colors";
-@import "variables/spaces";
-@import "variables/typography";
+@import "tokens/colors";
+@import "tokens/spaces";
+@import "tokens/typography";
 
 @import "components/components";
+@import "utils/utils";
