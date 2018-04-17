@@ -46,14 +46,16 @@ table {
   border-spacing: 0; }
 
 html, body {
-  font-size: 16px; }
+  font-size: 16px;
+  max-width: 1080px;
+  margin: auto; }
 
 .Button, .Button--default, .Button--primary, .Button__Outline--primary, .Button--secondary, .Button__Outline--secondary {
   cursor: pointer;
   padding: 0.5rem 0.75rem 0.5rem 0.75rem;
   font-size: 1rem;
   line-height: 1rem;
-  border-radius: 0.1875rem; }
+  border-radius: 0.375rem 0 0 0.375rem; }
 
 .Button--default {
   border: 1px solid rgba(0, 0, 0, 0.12);
