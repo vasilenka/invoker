@@ -1,13 +1,13 @@
 // Tokens
 
 // Brand--Primary Colors
-$brand-primary              : rgba();
-$brand-primary-lighter      : rgba();
-$brand-primary-darker       : rgba();
+$brand-primary              : rgba(255,45,85,1);
+$brand-primary-lighter      : rgba(255,45,85,.8);
+$brand-primary-darker       : rgba(255,45,85,.4);
 // Brand--Secondary colors
-$brand-secondary            : rgba();
-$brand-secondary-lighter    : rgba();
-$brand-secondary-darker     : rgba();
+$brand-secondary            : rgba(0,144,255,1);
+// $brand-secondary-lighter    : rgba();
+// $brand-secondary-darker     : rgba();
 
 // Dark colors
 $dark-97                    : rgba(0,0,0,.97);
@@ -18,15 +18,17 @@ $dark-12                    : rgba(0,0,0,.12);
 $dark-08                    : rgba(0,0,0,.08);
 $dark-04                    : rgba(0,0,0,.04);
 
+$dark-primary               : #004466;
+
 // Light colors
 $white-100                  : rgba(255,255,255,1);
 $white-70                   : rgba(255,255,255,.70);
 $white-40                   : rgba(255,255,255,.40);
 
 // System colors
-$danger                     : rgba();
-$danger-lighter             : rgba();
-$alert                      : rgba();
-$alert-lighter              : rgba();
-$success                    : rgba();
-$success-lighter            : rgba();
+$danger                     : #ff5a5f;
+// $danger-lighter             : rgba();
+$alert                      : #fdaa00;
+// $alert-lighter              : rgba();
+$success                    : #00a699;
+$success-lighter            : #00ffa2;

@@ -5,10 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Invoker</title>
+    <style>
+        html, body {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+        }
+
+        * {
+            box-sizing: inherit;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #app {
+            color: #333;
+            font-family: "Circular Std";
+            background: #fff;
+        }
+
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 171, 0, 1);
+            font-weight: 700;
+            box-shadow: 0px 2px 8px rgba(0,0,0,.04);
+        }
+
+        .grid-12 {
+            display: grid;
+            max-width: 1080px;
+            height: 240px;
+            margin: 0 auto;
+            grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto ;
+            grid-column-gap: 24px;
+            padding: 0 24px;
+        }
+
+        .grid-8 {
+            display: grid;
+            max-width: 1080px;
+            height: 100vh;
+            margin: 0 auto;
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: auto auto;
+            grid-gap: 24px;
+            padding: 0 24px;
+        }
+
+        .cell-1 {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+    </style>
+    <link rel="stylesheet" href="./public/css/styles.css">
 </head>
 <body>
-    <div id="app">
-
+    <div id="app" class="grid-8">
+        <li class="cell cell-1">Comp</li>
+        <li class="cell cell-2">Comp</li>
+        <li class="cell cell-3">Comp</li>
+        <li class="cell cell-4">Comp</li>
+        <li class="cell cell-5">Comp</li>
+        <li class="cell cell-6">Comp</li>
+        <li class="cell cell-7">Comp</li>
+        <li class="cell cell-8">Comp</li>
+        <li class="cell cell-9">Comp</li>
+        <li class="cell cell-10">Comp</li>
+        <li class="cell cell-11">Comp</li>
+        <li class="cell cell-12">Comp</li>
     </div>
 </body>
 </html>

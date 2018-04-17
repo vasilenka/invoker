@@ -1,20 +1,41 @@
 .Button {
-    padding: $space-squish-default;
+    padding: $space-squish-sm;
     font-size: $m;
     line-height: $m;
+    cursor: pointer;
 }
 
 .Button--default {
     @extend .Button;
     border: 1px solid $dark-12;
     color: $dark-80;
+    outline: none;
 }
+
+.Button--default:hover {
+
+}
+
+.Button--default:focus,
+.Button--default:active {
+
+}
+
 
 .Button--primary {
     @extend .Button;
     border: 1px solid $brand-primary;
     color: $white-100;
     background: $brand-primary;
+}
+
+.Button--primary:hover {
+
+}
+
+.Button--primary:focus,
+.Button--primary:active {
+
 }
 
 .Button__Outline--primary {
@@ -24,6 +45,15 @@
     background: transparent;
 }
 
+.Button__Outline--primary:hover {
+
+}
+
+.Button__Outline--primary:focus,
+.Button__Outline--primary:active {
+
+}
+
 .Button--secondary {
     @extend .Button;
     border: 1px solid $brand-secondary;
@@ -31,9 +61,27 @@
     background: $brand-secondary;
 }
 
+.Button--secondary:hover {
+
+}
+
+.Button--secondary:focus,
+.Button--secondary:active {
+
+}
+
 .Button__Outline--secondary {
     @extend .Button;
     color: $brand-secondary;
     border: 1px solid $brand-secondary-lighter;
     background: transparent;
+}
+
+.Button__Outline--secondary:hover {
+
+}
+
+.Button__Outline--secondary:focus,
+.Button__Outline--secondary:active {
+
 }
