@@ -1,8 +1,9 @@
 .Button {
+    cursor: pointer;
     padding: $space-squish-sm;
     font-size: $m;
     line-height: $m;
-    cursor: pointer;
+    border-radius: $radius-xs;
 }
 
 .Button--default {

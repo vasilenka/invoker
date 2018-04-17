@@ -1,9 +1,16 @@
+
 @import "reset";
 @import "mixins";
 
+html, body {
+    font-size: 16px;
+}
+
+// Tokens
 @import "tokens/colors";
 @import "tokens/spaces";
 @import "tokens/typography";
+@import "tokens/radius";
 
 @import "components/components";
 @import "utils/utils";
