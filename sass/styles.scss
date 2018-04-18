@@ -9,10 +9,7 @@ html, body {
 }
 
 // Tokens
-@import "tokens/colors";
-@import "tokens/spaces";
-@import "tokens/typography";
-@import "tokens/radius";
+@import "./tokens";
 
 @import "components/components";
 @import "utils/utils";

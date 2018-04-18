@@ -1,5 +1,9 @@
-$border-1      : 1px solid;
-$border-2      : 2px solid;
-$border-3      : 3px solid;
+$border-1                   : 1px solid;
+$border-2                   : 2px solid;
+$border-3                   : 3px solid;
 
-$border-primary : $brand-primary;
+$border-color-primary       : $brand-primary;
+$border-color-secondary     : $brand-secondary;
+
+$border-primary-default     : $border-1 $border-primary;
+$border-secondary-default   : $border-1 $border-primary;
