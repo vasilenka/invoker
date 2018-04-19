@@ -2,8 +2,10 @@ $border-1                   : 1px solid;
 $border-2                   : 2px solid;
 $border-3                   : 3px solid;
 
+$border-color-default       : $dark-12;
 $border-color-primary       : $brand-primary;
 $border-color-secondary     : $brand-secondary;
 
-$border-primary-default     : $border-1 $border-primary;
-$border-secondary-default   : $border-1 $border-primary;
+$border-default             : $border-1 $border-color-default;
+$border-primary             : $border-1 $border-color-primary;
+$border-secondary           : $border-1 $border-color-secondary;
