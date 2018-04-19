@@ -1,9 +1,11 @@
+$font-stack : "Geomanist", "Circular Std", -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 
 @import "reset";
 @import "mixins";
 
 // Tokens
 @import "./tokens";
+
 
 * {
     box-sizing: inherit;
@@ -20,7 +22,10 @@ html, body {
 
 body {
     padding: $space-inset-l;
-    font-family: "Circular Std";
+    font-family: $font-stack;
+    line-height: 1.5;
+    max-width: 720px;
+    margin: auto;
 }
 
 @import "./components";

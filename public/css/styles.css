@@ -1,95 +1,197 @@
-/*
-Error: Undefined variable: "$border-primary".
-        on line 8 of sass/tokens/_border.scss
-        from line 7 of sass/_tokens.scss
-        from line 12 of sass/styles.scss
-
-3: @import "mixins";
-4: 
-5: html, body {
-6:     font-size: 16px;
-7:     max-width: 1080px;
-8:     margin: auto;
-9: }
-10: 
-11: // Tokens
-12: @import "./tokens";
-13: 
-
-Backtrace:
-sass/tokens/_border.scss:8
-sass/_tokens.scss:7
-sass/styles.scss:12
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `map'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `_perform'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:482:in `visit_variable'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:329:in `map'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:88:in `block in with_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:88:in `with_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:329:in `map'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:88:in `block in with_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:88:in `with_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:161:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/engine.rb:307:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:320:in `block in watch'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$border-primary\".\A         on line 8 of sass/tokens/_border.scss\A         from line 7 of sass/_tokens.scss\A         from line 12 of sass/styles.scss\A \A 3: @import \"mixins\";\A 4: \A 5: html, body {\A 6:     font-size: 16px;\A 7:     max-width: 1080px;\A 8:     margin: auto;\A 9: }\A 10: \A 11: // Tokens\A 12: @import \"./tokens\";\A 13: "; }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.my-box {
+  padding: 10px; }
+  @media (min-width: 1200px) {
+    .my-box {
+      padding: 20px; } }
+
+* {
+  box-sizing: inherit;
+  font-family: inherit; }
+
+html, body {
+  font-size: 16px;
+  width: 100%;
+  height: 100vh;
+  background: #f2f2f2;
+  box-sizing: border-box; }
+
+body {
+  padding: 2rem 2rem 2rem 2rem;
+  font-family: "Geomanist", "Circular Std", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  max-width: 720px;
+  margin: auto; }
+
+.Button, .Button--default, .Button--primary, .Button__Outline--primary, .Button--secondary, .Button__Outline--secondary {
+  cursor: pointer;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  border-radius: 0.1875rem;
+  font-family: "Hind Vadodara";
+  text-transform: uppercase;
+  letter-spacing: 0.624px; }
+
+.Button--default {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.8);
+  outline: none; }
+
+.Button--primary {
+  border: 1px solid #57D9A3;
+  color: white;
+  background: #57D9A3; }
+
+.Button__Outline--primary {
+  color: #57D9A3;
+  border: 1px solid #ABF5D1;
+  background: transparent; }
+
+.Button--secondary {
+  border: 1px solid #FF7452;
+  color: white;
+  background: #FF7452; }
+
+.Button__Outline--secondary {
+  color: #FF7452;
+  border: 1px solid #FFBDAD;
+  background: transparent; }
+
+.Form {
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  background: white;
+  width: 480px;
+  margin: auto;
+  box-shadow: 0px 32px 64px -32px rgba(0, 0, 0, 0.44);
+  border-radius: 0.375rem; }
+
+.Form__Header {
+  justify-content: space-between;
+  margin: 0 0 2rem 0; }
+
+.Header__Text {
+  word-wrap: break-word;
+  flex: 9999;
+  margin-right: 2rem; }
+
+.Form__Title {
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0; }
+
+.Form__Subtitle {
+  color: rgba(0, 0, 0, 0.6); }
+
+.Form__Footer {
+  justify-content: flex-end; }
+
+.Field {
+  margin: 0 0 1.5rem 0; }
+
+.Field__Label {
+  font-size: 15px;
+  line-height: 16px;
+  margin: 0 0 0.5rem 0; }
+
+.Field__Input {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.1875rem;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+  transition: all .4s;
+  font-size: 15px;
+  line-height: 16px;
+  margin: 0 0 0.5rem 0; }
+
+.Field__Input::placeholder {
+  font-size: 15px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.44); }
+
+.Field__Input:focus,
+.Field__Input:active {
+  outline: none;
+  border-color: #57D9A3;
+  transition: all .4s;
+  box-shadow: 0px 0px 0px 2px #ABF5D1; }
+
+.Field__Hint {
+  margin: 0 0 0.25rem 0;
+  font-size: 13px;
+  line-height: 13px;
+  color: rgba(0, 0, 0, 0.44); }
+
+.Field__Alert {
+  margin: 0 0 0.25rem 0;
+  font-size: 13px;
+  line-height: 13px;
+  color: #ff5a5f; }
+
+.Field__Requirement {
+  color: rgba(0, 0, 0, 0.44);
+  font-size: 14px;
+  line-height: 14px; }
+
+.Requirement__Item {
+  margin: 0 0 0.25rem 0; }
+
+.Requirement__Item--passed {
+  color: #57D9A3; }
+
+.U--inline, .Form__Header {
+  display: flex;
+  flex-direction: row; }
+
+.U--stack, .Form {
+  display: flex;
+  flex-direction: column; }
+
+.Hide {
+  display: none; }
+
+/*# sourceMappingURL=styles.css.map */
