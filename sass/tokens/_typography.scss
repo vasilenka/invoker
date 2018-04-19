@@ -1,6 +1,10 @@
-$fontsize-xs            : 12px;
-$fontsize-s             : 14px;
-$fontsize-m             : 16px;
-$fontsize-ml            : 24px;
-$fontsize-l             : 32px;
+// Base == 16px;
+// Ratio == 1.618
+
+$fontsize-xs            : 0.6875rem;
+$fontsize-s             : 0.75rem;
+$fontsize-sm            : 0.9375rem;
+$fontsize-m             : 1.0625rem;
+$fontsize-ml            : 1.5rem;
+$fontsize-l             : 2rem;
 $fontsize-xl            : 48px;

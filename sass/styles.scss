@@ -1,6 +1,7 @@
-$font-stack : "Geomanist", "Circular Std", -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+$fontstack-sans : "Soleil", "Circular Std", "SF Pro Display", -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 
-$font-stack-body : "Hind Vadodara", sans-serif;
+$fontstack-serif : "Sentinel", sans-serif;
+$fontstack-sans-secondary : "Hind Vadodara", sans-serif;
 
 @import "reset";
 @import "mixins";
@@ -12,6 +13,7 @@ $font-stack-body : "Hind Vadodara", sans-serif;
 * {
     box-sizing: inherit;
     font-family: inherit;
+    font-variant-numeric: proportional-nums;
 }
 
 html, body {
@@ -24,10 +26,14 @@ html, body {
 
 body {
     padding: $space-inset-l;
-    font-family: $font-stack;
+    font-family: $fontstack-sans;
     line-height: 1.5;
     max-width: 720px;
     margin: auto;
+}
+
+p {
+    font-family: $fontstack-sans;
 }
 
 @import "./components";

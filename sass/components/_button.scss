@@ -1,12 +1,13 @@
 .Button {
     cursor: pointer;
-    padding: $space-squish-sm;
+    padding: $space-squish-m;
     font-size: $m;
     line-height: $m;
     border-radius: $radius-xs;
-    font-family: $font-stack-body;
+    font-family: $fontstack-sans;
     text-transform: uppercase;
     letter-spacing: 0.624px;
+    @include text-crop;
 }
 
 .Button--default {

@@ -45,15 +45,42 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.my-box {
-  padding: 10px; }
-  @media (min-width: 1200px) {
-    .my-box {
-      padding: 20px; } }
+/* Usage Examples
+    .my-level-1-heading-class {
+        @include text-crop; // Will use default line height of 1.3
+        font-size: 48px;
+        margin: 0 0 0 16px;
+    }
 
+    .my-level-2-heading-class {
+        @include text-crop; // Will use default line height of 1.3
+        font-size: 32px; // Don't need to change any settings, will work with any font size automatically
+        margin: 0 0 0 16px;
+    }
+
+    .my-body-copy-class {
+        @include text-crop($line-height: 2); // Larger line height desired, set the line height via the mixin
+        font-size: 16px;
+    }
+
+    // Sometimes depending on the font-size, the rendering, the browser, etc. you may need to tweak the output.
+    // You can adjust the top and bottom cropping when invoking the component using the $top-adjustment and $bottom-adjustment settings
+
+    .slight-adjustment-needed {
+        @include text-crop($top-adjustment: -0.5px, $bottom-adjustment: 2px);
+        font-size: 17px;
+    }
+
+    .dont-do-this {
+        @include text-crop;
+        font-size: 16px;
+        line-height: 3; // DO NOT set line height outside of the mixin, the mixin needs the line height value to calculate the crop correctly
+    }
+*/
 * {
   box-sizing: inherit;
-  font-family: inherit; }
+  font-family: inherit;
+  font-variant-numeric: proportional-nums; }
 
 html, body {
   font-size: 16px;
@@ -64,20 +91,33 @@ html, body {
 
 body {
   padding: 2rem 2rem 2rem 2rem;
-  font-family: "Geomanist", "Circular Std", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.5;
   max-width: 720px;
   margin: auto; }
 
+p {
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+
 .Button, .Button--default, .Button--primary, .Button__Outline--primary, .Button--secondary, .Button__Outline--secondary {
   cursor: pointer;
-  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  padding: 0.75rem 1rem 0.75rem 1rem;
   font-size: 1rem;
   line-height: 1rem;
   border-radius: 0.1875rem;
-  font-family: "Hind Vadodara", sans-serif;
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.624px; }
+  letter-spacing: 0.624px;
+  line-height: 1; }
+  .Button::before, .Button--default::before, .Button--primary::before, .Button__Outline--primary::before, .Button--secondary::before, .Button__Outline--secondary::before, .Button::after, .Button--default::after, .Button--primary::after, .Button__Outline--primary::after, .Button--secondary::after, .Button__Outline--secondary::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0; }
+  .Button::before, .Button--default::before, .Button--primary::before, .Button__Outline--primary::before, .Button--secondary::before, .Button__Outline--secondary::before {
+    margin-bottom: calc(-0.0111111111em + 0px); }
+  .Button::after, .Button--default::after, .Button--primary::after, .Button__Outline--primary::after, .Button--secondary::after, .Button__Outline--secondary::after {
+    margin-top: calc(-0.1777777778em + 0px); }
 
 .Button--default {
   border: 1px solid rgba(0, 0, 0, 0.12);
