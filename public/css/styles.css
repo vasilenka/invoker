@@ -86,7 +86,7 @@ html, body {
   font-size: 16px;
   width: 100%;
   height: 100vh;
-  background: #f2f2f2;
+  background: #fbfbfb;
   box-sizing: border-box; }
 
 body {
@@ -98,6 +98,59 @@ body {
 
 p {
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+
+.Display--large {
+  font-size: 2.625rem;
+  font-weight: 900;
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.125;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0 0 1rem 0; }
+
+.Display--normal {
+  font-size: 2.125rem;
+  font-weight: 700;
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.125;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0 0 1rem 0; }
+
+.Body--large {
+  font-family: "Bitstream Charter", "Sentinel", sans-serif;
+  font-size: 1.3125rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0 0 2rem 0; }
+
+.Body--normal {
+  font-family: "Bitstream Charter", "Sentinel", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0 0 2rem 0; }
+
+.Body--small {
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0 0 2rem 0; }
+
+.Caption--normal {
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.44);
+  margin: 0 0 2rem 0;
+  display: block; }
+
+.Caption--small {
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.44);
+  margin: 0 0 2rem 0;
+  display: block; }
 
 .Button, .Button--default, .Button--primary, .Button__Outline--primary, .Button--secondary, .Button__Outline--secondary {
   cursor: pointer;

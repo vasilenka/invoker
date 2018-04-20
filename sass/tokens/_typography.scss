@@ -1,11 +1,16 @@
 // Base == 16px;
 // Ratio == 1.618
-$base                   : rem(16px);
 
-$fontsize-xs            : 0.6875rem;
-$fontsize-sm            : 0.9375rem;
-$fontsize-s             : lowerSize($base);
-$fontsize-m             : rem($base);
-$fontsize-ml            : 1.5rem;
-$fontsize-l             : upperSize($base);
-$fontsize-xl            : upperSize($fontsize-l);
+$caption-s              : rem(13px);
+$caption-m              : rem(14px);
+
+$body-s                 : rem(15px);
+$body-m                 : rem(17px);
+$body-l                 : rem(21px);
+
+$display-xs             : rem(16px);
+$display-s              : rem(18px);
+$display-sm             : rem(24px);
+$display-m              : rem(34px);
+$display-l              : rem(42px);
+$display-xl             : rem(96px);
