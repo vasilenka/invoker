@@ -82,6 +82,9 @@ table {
   font-family: inherit;
   font-variant-numeric: proportional-nums; }
 
+html {
+  padding: 4rem 4rem 4rem 4rem; }
+
 html, body {
   font-size: 16px;
   width: 100%;
@@ -90,7 +93,6 @@ html, body {
   box-sizing: border-box; }
 
 body {
-  padding: 2rem 2rem 2rem 2rem;
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.5;
   max-width: 720px;
@@ -110,6 +112,15 @@ p {
 .Display--normal {
   font-size: 2.125rem;
   font-weight: 700;
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.125;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0 0 1rem 0; }
+
+.Display--small {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.224px;
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.125;
   color: rgba(0, 0, 0, 0.8);

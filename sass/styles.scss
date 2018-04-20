@@ -16,6 +16,10 @@ $fontstack-sans-secondary : "Hind Vadodara", sans-serif;
     font-variant-numeric: proportional-nums;
 }
 
+html {
+    padding: $space-inset-xl;
+}
+
 html, body {
     font-size: 16px;
     width: 100%;
@@ -25,78 +29,13 @@ html, body {
 }
 
 body {
-    padding: $space-inset-l;
     font-family: $fontstack-sans;
     line-height: 1.5;
     max-width: 720px;
     margin: auto;
 }
 
-p {
-    font-family: $fontstack-sans;
-}
-
-.Display--large {
-    font-size: $display-l;
-    font-weight: 900;
-    font-family: $fontstack-sans;
-    line-height: $lineheight-heading;
-    color: $dark-80;
-    margin: $space-stack-m;
-}
-
-.Display--normal {
-    font-size: $display-m;
-    font-weight: 700;
-    font-family: $fontstack-sans;
-    line-height: $lineheight-heading;
-    color: $dark-80;
-    margin: $space-stack-m;
-}
-
-.Body--large {
-    font-family: $fontstack-serif;
-    font-size: $body-l;
-    line-height: $lineheight-body-default;
-    color: $dark-80;
-    margin: $space-stack-l;
-}
-
-.Body--normal {
-    font-family: $fontstack-serif;
-    font-size: $body-m;
-    line-height: $lineheight-body-default;
-    color: $dark-80;
-    margin: $space-stack-l;
-}
-
-.Body--small {
-    font-family: $fontstack-sans;
-    font-size: $body-s;
-    line-height: $lineheight-body-default;
-    color: $dark-80;
-    margin: $space-stack-l;
-}
-
-.Caption--normal {
-    font-family: $fontstack-sans;
-    font-size: $caption-m;
-    line-height: $lineheight-reset;
-    color: $dark-44;
-    margin: $space-stack-l;
-    // @include text-crop;
-    display: block;
-}
-
-.Caption--small {
-    font-family: $fontstack-sans;
-    font-size: $caption-s;
-    line-height: $lineheight-reset;
-    color: $dark-44;
-    margin: $space-stack-l;
-    // @include text-crop;
-    display: block;
-}
+@import "./sandbox";
 
 @import "./components";
 @import "./utils";
