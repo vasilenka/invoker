@@ -61,7 +61,7 @@ p {
     line-height: $lineheight-reset;
     color: $dark-44;
     margin: $space-stack-l;
-    // @include text-crop;
+    @include text-crop;
     display: block;
 }
 
@@ -71,6 +71,6 @@ p {
     line-height: $lineheight-reset;
     color: $dark-44;
     margin: $space-stack-l;
-    // @include text-crop;
+    @include text-crop;
     display: block;
 }

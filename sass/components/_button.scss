@@ -1,24 +1,25 @@
 .Button {
     cursor: pointer;
-    padding: $space-squish-m;
+    padding: $space-inset-sm;
+    font-weight: 300;
     font-size: $m;
     line-height: $m;
     border-radius: $radius-xs;
     font-family: $fontstack-sans;
-    // text-transform: uppercase;
-    letter-spacing: 0.624px;
     margin: $space-stack-l;
+    letter-spacing: 0.624px;
+    // text-transform: uppercase;
     @include text-crop;
 }
 
 .Button--small {
     @extend .Button;
-    padding: $space-squish-sm;
+    padding: $space-inset-s;
 }
 
 .Button--large {
     @extend .Button;
-    padding: $space-squish-ml;
+    padding: $space-squish-l;
 }
 
 .Button--default {
@@ -36,13 +37,14 @@
 
 .Button--default:focus,
 .Button--default:active {
-
+    outline: none;
 }
 
 .Button--primary {
     border: 1px solid $brand-primary;
     color: $white-100;
     background: $brand-primary;
+    transition: all .4s;
 }
 
 .Button--primary:hover {
@@ -51,7 +53,9 @@
 
 .Button--primary:focus,
 .Button--primary:active {
-
+    outline: none;
+    box-shadow: 0px 0px 0px 2px $brand-primary-lighter;
+    transition: all .4s;
 }
 
 .Button__Outline--primary {
@@ -84,7 +88,9 @@
 
 .Button--secondary:focus,
 .Button--secondary:active {
-
+    outline: none;
+    box-shadow: 0px 0px 0px 2px $brand-secondary-lighter;
+    transition: all .4s;
 }
 
 .Button__Outline--secondary {
