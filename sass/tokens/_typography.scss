@@ -1,10 +1,11 @@
 // Base == 16px;
 // Ratio == 1.618
+$base                   : rem(16px);
 
 $fontsize-xs            : 0.6875rem;
-$fontsize-s             : 0.75rem;
 $fontsize-sm            : 0.9375rem;
-$fontsize-m             : 1.0625rem;
+$fontsize-s             : lowerSize($base);
+$fontsize-m             : rem($base);
 $fontsize-ml            : 1.5rem;
-$fontsize-l             : 2rem;
-$fontsize-xl            : 48px;
+$fontsize-l             : upperSize($base);
+$fontsize-xl            : upperSize($fontsize-l);

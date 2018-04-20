@@ -36,12 +36,16 @@
 // }
 
 @function upperSize($number){
-    @return $some-number * 1.618
+    @return $number * 1.618
 };
 
 @function lowerSize($number) {
-    @return $some-number / 1.618
+    @return $number / 1.618
 };
+
+@function rem($number) {
+    @return ($number/16px) * 1rem;
+}
 
 
 @mixin text-crop($line-height: 1, $top-adjustment: 0px, $bottom-adjustment: 0px) {

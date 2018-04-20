@@ -22,8 +22,9 @@ https://www.w3.org/TR/WCAG20/#larger-scaledef
 
 ## Tokens
 ### Spaces
-Mids menggunakan basis 16px untuk spacing. Basis 16px membuat layout memiliki flexibilitas yang tinggi serta hirarki yang proposional sehingga layout menjadi lebih proporsional.
+Spacing tokens are used for padding, margins, and position coordinates. Mids menggunakan basis 16px untuk spacing. Basis 16px membuat layout memiliki flexibilitas yang tinggi serta hirarki yang proposional sehingga layout menjadi lebih proporsional.
 
+```
 Base 16px
 $xs     : 0.25rem;
 $s      : 0.5rem;
@@ -32,3 +33,4 @@ $m      : 1rem;
 $ml     : 1.5rem;
 $l      : 2rem;
 $xl     : 4rem;
+```
