@@ -5,20 +5,33 @@
     line-height: $m;
     border-radius: $radius-xs;
     font-family: $fontstack-sans;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     letter-spacing: 0.624px;
+    margin: $space-stack-l;
     @include text-crop;
 }
 
-.Button--default {
+.Button--small {
     @extend .Button;
+    padding: $space-squish-sm;
+}
+
+.Button--large {
+    @extend .Button;
+    padding: $space-squish-ml;
+}
+
+.Button--default {
     border: 1px solid $dark-12;
-    color: $dark-80;
+    color: $dark-60;
     outline: none;
+    transition: all .4s;
 }
 
 .Button--default:hover {
-
+    color: $dark-80;
+    border-color: $dark-44;
+    transition: all .4s;
 }
 
 .Button--default:focus,
@@ -26,16 +39,14 @@
 
 }
 
-
 .Button--primary {
-    @extend .Button;
     border: 1px solid $brand-primary;
     color: $white-100;
     background: $brand-primary;
 }
 
 .Button--primary:hover {
-
+    opacity: .4;
 }
 
 .Button--primary:focus,
@@ -44,7 +55,6 @@
 }
 
 .Button__Outline--primary {
-    @extend .Button;
     color: $brand-primary;
     border: 1px solid $brand-primary-lighter;
     background: transparent;
@@ -60,14 +70,16 @@
 }
 
 .Button--secondary {
-    @extend .Button;
     border: 1px solid $brand-secondary;
     color: $white-100;
     background: $brand-secondary;
+    opacity: .8;
+    transition: all .4s;
 }
 
 .Button--secondary:hover {
-
+    opacity: 1;
+    transition: all .4s;
 }
 
 .Button--secondary:focus,
@@ -76,7 +88,6 @@
 }
 
 .Button__Outline--secondary {
-    @extend .Button;
     color: $brand-secondary;
     border: 1px solid $brand-secondary-lighter;
     background: transparent;

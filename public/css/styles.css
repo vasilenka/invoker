@@ -98,100 +98,50 @@ body {
   max-width: 720px;
   margin: auto; }
 
-p {
-  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
-
-.Display--large {
-  font-size: 2.625rem;
-  font-weight: 900;
-  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  line-height: 1.125;
-  color: rgba(0, 0, 0, 0.8);
-  margin: 0 0 1rem 0; }
-
-.Display--normal {
-  font-size: 2.125rem;
-  font-weight: 700;
-  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  line-height: 1.125;
-  color: rgba(0, 0, 0, 0.8);
-  margin: 0 0 1rem 0; }
-
-.Display--small {
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.224px;
-  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  line-height: 1.125;
-  color: rgba(0, 0, 0, 0.8);
-  margin: 0 0 1rem 0; }
-
-.Body--large {
-  font-family: "Bitstream Charter", "Sentinel", sans-serif;
-  font-size: 1.3125rem;
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.8);
-  margin: 0 0 2rem 0; }
-
-.Body--normal {
-  font-family: "Bitstream Charter", "Sentinel", sans-serif;
-  font-size: 1.0625rem;
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.8);
-  margin: 0 0 2rem 0; }
-
-.Body--small {
-  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 0.9375rem;
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.8);
-  margin: 0 0 2rem 0; }
-
-.Caption--normal {
-  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 0.875rem;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.44);
-  margin: 0 0 2rem 0;
-  display: block; }
-
-.Caption--small {
-  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.44);
-  margin: 0 0 2rem 0;
-  display: block; }
-
-.Button, .Button--default, .Button--primary, .Button__Outline--primary, .Button--secondary, .Button__Outline--secondary {
+.Button, .Button--small, .Button--large {
   cursor: pointer;
   padding: 0.75rem 1rem 0.75rem 1rem;
   font-size: 1rem;
   line-height: 1rem;
   border-radius: 0.1875rem;
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  text-transform: uppercase;
   letter-spacing: 0.624px;
+  margin: 0 0 2rem 0;
   line-height: 1; }
-  .Button::before, .Button--default::before, .Button--primary::before, .Button__Outline--primary::before, .Button--secondary::before, .Button__Outline--secondary::before, .Button::after, .Button--default::after, .Button--primary::after, .Button__Outline--primary::after, .Button--secondary::after, .Button__Outline--secondary::after {
+  .Button::before, .Button--small::before, .Button--large::before, .Button::after, .Button--small::after, .Button--large::after {
     content: '';
     display: block;
     height: 0;
     width: 0; }
-  .Button::before, .Button--default::before, .Button--primary::before, .Button__Outline--primary::before, .Button--secondary::before, .Button__Outline--secondary::before {
+  .Button::before, .Button--small::before, .Button--large::before {
     margin-bottom: calc(-0.0111111111em + 0px); }
-  .Button::after, .Button--default::after, .Button--primary::after, .Button__Outline--primary::after, .Button--secondary::after, .Button__Outline--secondary::after {
+  .Button::after, .Button--small::after, .Button--large::after {
     margin-top: calc(-0.1777777778em + 0px); }
+
+.Button--small {
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem; }
+
+.Button--large {
+  padding: 1rem 1.5rem 1rem 1.5rem; }
 
 .Button--default {
   border: 1px solid rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.6);
+  outline: none;
+  transition: all .4s; }
+
+.Button--default:hover {
   color: rgba(0, 0, 0, 0.8);
-  outline: none; }
+  border-color: rgba(0, 0, 0, 0.44);
+  transition: all .4s; }
 
 .Button--primary {
   border: 1px solid #57D9A3;
   color: white;
   background: #57D9A3; }
+
+.Button--primary:hover {
+  opacity: .4; }
 
 .Button__Outline--primary {
   color: #57D9A3;
@@ -199,12 +149,18 @@ p {
   background: transparent; }
 
 .Button--secondary {
-  border: 1px solid #FF7452;
+  border: 1px solid #ff5a5f;
   color: white;
-  background: #FF7452; }
+  background: #ff5a5f;
+  opacity: .8;
+  transition: all .4s; }
+
+.Button--secondary:hover {
+  opacity: 1;
+  transition: all .4s; }
 
 .Button__Outline--secondary {
-  color: #FF7452;
+  color: #ff5a5f;
   border: 1px solid #FFBDAD;
   background: transparent; }
 
@@ -297,5 +253,70 @@ p {
 
 .Hide {
   display: none; }
+
+p {
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+
+.Display--large {
+  font-size: 2.625rem;
+  font-weight: 900;
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.125;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0 0 1rem 0; }
+
+.Display--normal {
+  font-size: 2.125rem;
+  font-weight: 700;
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.125;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0 0 1rem 0; }
+
+.Display--small {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.224px;
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.125;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0 0 1rem 0; }
+
+.Body--large {
+  font-family: "Bitstream Charter", "Sentinel", sans-serif;
+  font-size: 1.3125rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0 0 2rem 0; }
+
+.Body--normal {
+  font-family: "Bitstream Charter", "Sentinel", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0 0 2rem 0; }
+
+.Body--small {
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0 0 2rem 0; }
+
+.Caption--normal {
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.44);
+  margin: 0 0 2rem 0;
+  display: block; }
+
+.Caption--small {
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.44);
+  margin: 0 0 2rem 0;
+  display: block; }
 
 /*# sourceMappingURL=styles.css.map */
