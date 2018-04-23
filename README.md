@@ -1,25 +1,24 @@
 # Invoker
-> Craft you page, faster!
+> Craft you page, faster!  
 
 # Primitives
 ## Colors
 Semua produk yang kita ciptakan harus memenuhi paling tidak level standar contrast WCAG AA. Kontras yang rendah akan menyulitkan orang yang memiliki daya penglihatan yang rendah, buta warna, atau hanya sekedar dalam situasi yang tidak optimal ketika menggunakan produk (e.g. outdoor ketika matahari sangat cerah).
 
 Pengujian kontras warna melalui web dapat dilakukan dengan menggunakan :
-https://colorable.jxnblk.com
-https://contrastchecker.com
-
+1. https://colorable.jxnblk.com
+2. https://contrastchecker.com
 atau jika kamu lebih menyukai native app di macOS, maka dapat menggunakan:
-https://usecontrast.com
+* https://usecontrast.com
 
 Notes: **”AA Large”** — Legible untuk font dengan size >= 18pt untuk font regular dan 14pt untuk style bold. — https://www.w3.org/TR/WCAG20/#larger-scaledef
 
 #### Primary Colors
-``` scss
+```scss
 // Brand—Primary colors
-$brand-primary            	    : #3F46AD;
-$brand-primary-lighter    	    : #5B77C4;
-$brand-primary-darker     	    : #182385;
+$brand-primary				: #3F46AD;
+$brand-primary-lighter		: #5B77C4;
+$brand-primary-darker			: #182385;
 // Brand--Secondary Colors
 $brand-secondary                : #ED0001;
 $brand-secondary-lighter        : #FD5C63;
