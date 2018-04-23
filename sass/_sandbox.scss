@@ -8,7 +8,7 @@ p {
     font-weight: 900;
     font-family: $fontstack-sans;
     line-height: $lineheight-heading;
-    color: $dark-80;
+    color: $dark-alpha-60;
     margin: $space-stack-m;
 }
 
@@ -17,7 +17,7 @@ p {
     font-weight: 700;
     font-family: $fontstack-sans;
     line-height: $lineheight-heading;
-    color: $dark-80;
+    color: $dark-alpha-60;
     margin: $space-stack-m;
 }
 
@@ -27,7 +27,7 @@ p {
     letter-spacing: 0.224px;
     font-family: $fontstack-sans;
     line-height: $lineheight-heading;
-    color: $dark-80;
+    color: $dark-alpha-60;
     margin: $space-stack-m;
 }
 
@@ -35,7 +35,7 @@ p {
     font-family: $fontstack-serif;
     font-size: $body-l;
     line-height: $lineheight-body-default;
-    color: $dark-80;
+    color: $dark-alpha-60;
     margin: $space-stack-l;
 }
 
@@ -43,7 +43,7 @@ p {
     font-family: $fontstack-serif;
     font-size: $body-m;
     line-height: $lineheight-body-default;
-    color: $dark-80;
+    color: $dark-alpha-60;
     margin: $space-stack-l;
 }
 
@@ -51,7 +51,7 @@ p {
     font-family: $fontstack-sans;
     font-size: $body-s;
     line-height: $lineheight-body-default;
-    color: $dark-80;
+    color: $dark-alpha-60;
     margin: $space-stack-l;
 }
 
@@ -59,7 +59,7 @@ p {
     font-family: $fontstack-sans;
     font-size: $caption-m;
     line-height: $lineheight-reset;
-    color: $dark-44;
+    color: $dark-alpha-40;
     margin: $space-stack-l;
     @include text-crop;
     display: block;
@@ -69,7 +69,7 @@ p {
     font-family: $fontstack-sans;
     font-size: $caption-s;
     line-height: $lineheight-reset;
-    color: $dark-44;
+    color: $dark-alpha-40;
     margin: $space-stack-l;
     @include text-crop;
     display: block;

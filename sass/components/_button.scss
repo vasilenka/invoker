@@ -3,8 +3,8 @@
     cursor: pointer;
     padding: $space-inset-sm;
     font-weight: 300;
-    font-size: $m;
-    line-height: $m;
+    font-size: $body-s;
+    line-height: $lineheight-reset;
     border-radius: $radius-xs;
     font-family: $fontstack-sans;
     margin: $space-stack-l;
@@ -20,19 +20,20 @@
 
 .Button--large {
     @extend .Button;
+    border-radius: $radius-xs;
     padding: $space-squish-l;
 }
 
 .Button--default {
-    border: 1px solid $dark-12;
-    color: $dark-60;
+    border: 1px solid $dark-alpha-20;
+    color: $dark-alpha-50;
     outline: none;
     transition: all .4s;
 }
 
 .Button--default:hover {
-    color: $dark-80;
-    border-color: $dark-44;
+    color: $dark-alpha-60;
+    border-color: $dark-alpha-40;
     transition: all .4s;
 }
 
@@ -43,13 +44,14 @@
 
 .Button--primary {
     border: 1px solid $brand-primary;
-    color: $white-100;
+    color: $light-alpha-70;
     background: $brand-primary;
     transition: all .4s;
 }
 
 .Button--primary:hover {
-    opacity: .4;
+    background: $brand-primary-darker;
+    transition: all .4s;
 }
 
 .Button--primary:focus,
@@ -76,14 +78,13 @@
 
 .Button--secondary {
     border: 1px solid $brand-secondary;
-    color: $white-100;
+    color: $light-alpha-70;
     background: $brand-secondary;
-    opacity: .8;
     transition: all .4s;
 }
 
 .Button--secondary:hover {
-    opacity: 1;
+    background: $brand-secondary-darker;
     transition: all .4s;
 }
 

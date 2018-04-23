@@ -89,7 +89,7 @@ html, body {
   font-size: 16px;
   width: 100%;
   height: 100vh;
-  background: #fbfbfb;
+  background: #F0F0EE;
   box-sizing: border-box; }
 
 body {
@@ -98,13 +98,24 @@ body {
   max-width: 700px;
   margin: auto; }
 
+.U--inline, .Form__Header {
+  display: flex;
+  flex-direction: row; }
+
+.U--stack, .Form {
+  display: flex;
+  flex-direction: column; }
+
+.Hide {
+  display: none; }
+
 .Button, .Button--small, .Button--large {
   min-width: 4rem;
   cursor: pointer;
   padding: 0.75rem 0.75rem 0.75rem 0.75rem;
   font-weight: 300;
-  font-size: 1rem;
-  line-height: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1;
   border-radius: 0.1875rem;
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0 0 2rem 0;
@@ -124,17 +135,18 @@ body {
   padding: 0.5rem 0.5rem 0.5rem 0.5rem; }
 
 .Button--large {
+  border-radius: 0.1875rem;
   padding: 1.5rem 2rem 1.5rem 2rem; }
 
 .Button--default {
   border: 1px solid rgba(0, 0, 0, 0.12);
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.71);
   outline: none;
   transition: all .4s; }
 
 .Button--default:hover {
-  color: rgba(0, 0, 0, 0.8);
-  border-color: rgba(0, 0, 0, 0.44);
+  color: rgba(0, 0, 0, 0.84);
+  border-color: rgba(0, 0, 0, 0.54);
   transition: all .4s; }
 
 .Button--default:focus,
@@ -142,53 +154,53 @@ body {
   outline: none; }
 
 .Button--primary {
-  border: 1px solid #57D9A3;
+  border: 1px solid #ED0001;
   color: white;
-  background: #57D9A3;
+  background: #ED0001;
   transition: all .4s; }
 
 .Button--primary:hover {
-  opacity: .4; }
+  background: #B50008;
+  transition: all .4s; }
 
 .Button--primary:focus,
 .Button--primary:active {
   outline: none;
-  box-shadow: 0px 0px 0px 2px #ABF5D1;
+  box-shadow: 0px 0px 0px 2px #FD5C63;
   transition: all .4s; }
 
 .Button__Outline--primary {
-  color: #57D9A3;
-  border: 1px solid #ABF5D1;
+  color: #ED0001;
+  border: 1px solid #FD5C63;
   background: transparent; }
 
 .Button--secondary {
-  border: 1px solid #ff5a5f;
+  border: 1px solid #3F46AD;
   color: white;
-  background: #ff5a5f;
-  opacity: .8;
+  background: #3F46AD;
   transition: all .4s; }
 
 .Button--secondary:hover {
-  opacity: 1;
+  background: #182385;
   transition: all .4s; }
 
 .Button--secondary:focus,
 .Button--secondary:active {
   outline: none;
-  box-shadow: 0px 0px 0px 2px #FFBDAD;
+  box-shadow: 0px 0px 0px 2px #5B77C4;
   transition: all .4s; }
 
 .Button__Outline--secondary {
-  color: #ff5a5f;
-  border: 1px solid #FFBDAD;
+  color: #3F46AD;
+  border: 1px solid #5B77C4;
   background: transparent; }
 
 .Form {
   padding: 1.5rem 1.5rem 1.5rem 1.5rem;
-  background: white;
+  background: rgba(255, 255, 255, 0.84);
   width: 480px;
   margin: auto;
-  box-shadow: 0px 32px 64px -32px rgba(0, 0, 0, 0.44);
+  box-shadow: 0px 32px 64px -32px rgba(0, 0, 0, 0.54);
   border-radius: 0.375rem; }
 
 .Form__Header {
@@ -205,7 +217,7 @@ body {
   margin: 0 0 0.5rem 0; }
 
 .Form__Subtitle {
-  color: rgba(0, 0, 0, 0.6); }
+  color: rgba(0, 0, 0, 0.71); }
 
 .Form__Footer {
   justify-content: flex-end; }
@@ -230,29 +242,29 @@ body {
 .Field__Input::placeholder {
   font-size: 15px;
   line-height: 16px;
-  color: rgba(0, 0, 0, 0.44); }
+  color: rgba(0, 0, 0, 0.54); }
 
 .Field__Input:focus,
 .Field__Input:active {
   outline: none;
-  border-color: #57D9A3;
+  border-color: #ED0001;
   transition: all .4s;
-  box-shadow: 0px 0px 0px 2px #ABF5D1; }
+  box-shadow: 0px 0px 0px 2px #FD5C63; }
 
 .Field__Hint {
   margin: 0 0 0.25rem 0;
   font-size: 13px;
   line-height: 13px;
-  color: rgba(0, 0, 0, 0.44); }
+  color: rgba(0, 0, 0, 0.54); }
 
 .Field__Alert {
   margin: 0 0 0.25rem 0;
   font-size: 13px;
   line-height: 13px;
-  color: #ff5a5f; }
+  color: #E42700; }
 
 .Field__Requirement {
-  color: rgba(0, 0, 0, 0.44);
+  color: rgba(0, 0, 0, 0.54);
   font-size: 14px;
   line-height: 14px; }
 
@@ -260,18 +272,7 @@ body {
   margin: 0 0 0.25rem 0; }
 
 .Requirement__Item--passed {
-  color: #57D9A3; }
-
-.U--inline, .Form__Header {
-  display: flex;
-  flex-direction: row; }
-
-.U--stack, .Form {
-  display: flex;
-  flex-direction: column; }
-
-.Hide {
-  display: none; }
+  color: #ED0001; }
 
 p {
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
@@ -281,7 +282,7 @@ p {
   font-weight: 900;
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.125;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.84);
   margin: 0 0 1rem 0; }
 
 .Display--normal {
@@ -289,7 +290,7 @@ p {
   font-weight: 700;
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.125;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.84);
   margin: 0 0 1rem 0; }
 
 .Display--small {
@@ -298,35 +299,35 @@ p {
   letter-spacing: 0.224px;
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.125;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.84);
   margin: 0 0 1rem 0; }
 
 .Body--large {
-  font-family: "Bitstream Charter", "Sentinel", sans-serif;
+  font-family: "Sentinel", sans-serif;
   font-size: 1.3125rem;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.84);
   margin: 0 0 2rem 0; }
 
 .Body--normal {
-  font-family: "Bitstream Charter", "Sentinel", sans-serif;
+  font-family: "Sentinel", sans-serif;
   font-size: 1.0625rem;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.84);
   margin: 0 0 2rem 0; }
 
 .Body--small {
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 0.9375rem;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.84);
   margin: 0 0 2rem 0; }
 
 .Caption--normal {
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 0.875rem;
   line-height: 1;
-  color: rgba(0, 0, 0, 0.44);
+  color: rgba(0, 0, 0, 0.54);
   margin: 0 0 2rem 0;
   line-height: 1;
   display: block; }
@@ -344,7 +345,7 @@ p {
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 0.8125rem;
   line-height: 1;
-  color: rgba(0, 0, 0, 0.44);
+  color: rgba(0, 0, 0, 0.54);
   margin: 0 0 2rem 0;
   line-height: 1;
   display: block; }

@@ -21,7 +21,7 @@
 .Field__Input::placeholder {
     font-size: 15px;
     line-height: 16px;
-    color: $dark-44;
+    color: $dark-alpha-40;
 }
 
 .Field__Input:focus,
@@ -36,18 +36,18 @@
     margin: $space-stack-xs;
     font-size: 13px;
     line-height: 13px;
-    color: $dark-44;
+    color: $dark-alpha-40;
 }
 
 .Field__Alert {
     margin: $space-stack-xs;
     font-size: 13px;
     line-height: 13px;
-    color: $danger;
+    color: $sys-danger;
 }
 
 .Field__Requirement {
-    color: $dark-44;
+    color: $dark-alpha-40;
     font-size: 14px;
     line-height: 14px;
 }
