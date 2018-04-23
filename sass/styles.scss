@@ -14,21 +14,24 @@ $fontstack-serif : "Sentinel", sans-serif;
 }
 
 html {
-    padding: $space-inset-xl;
+    // padding: $space-inset-xl;
 }
 
 html, body {
     font-size: 16px;
     width: 100%;
     height: 100vh;
-    background: $bg-dust;
+    background: $bg-dust-lighter;
     box-sizing: border-box;
 }
 
 body {
     font-family: $fontstack-sans;
-    line-height: 1.5;
+}
+
+#app {
     max-width: 700px;
+    line-height: 1.5;
     margin: auto;
 }
 

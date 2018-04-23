@@ -82,20 +82,19 @@ table {
   font-family: inherit;
   font-variant-numeric: proportional-nums; }
 
-html {
-  padding: 4rem 4rem 4rem 4rem; }
-
 html, body {
   font-size: 16px;
   width: 100%;
   height: 100vh;
-  background: #F0F0EE;
+  background: #F8F7F5;
   box-sizing: border-box; }
 
 body {
-  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  line-height: 1.5;
+  font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+
+#app {
   max-width: 700px;
+  line-height: 1.5;
   margin: auto; }
 
 .U--inline, .Form__Header {
@@ -282,7 +281,7 @@ p {
   font-weight: 900;
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.125;
-  color: rgba(0, 0, 0, 0.84);
+  color: rgba(0, 0, 0, 0.94);
   margin: 0 0 1rem 0; }
 
 .Display--normal {
@@ -290,7 +289,7 @@ p {
   font-weight: 700;
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.125;
-  color: rgba(0, 0, 0, 0.84);
+  color: rgba(0, 0, 0, 0.94);
   margin: 0 0 1rem 0; }
 
 .Display--small {
@@ -329,8 +328,8 @@ p {
   line-height: 1;
   color: rgba(0, 0, 0, 0.54);
   margin: 0 0 2rem 0;
-  line-height: 1;
-  display: block; }
+  display: block;
+  line-height: 1; }
   .Caption--normal::before, .Caption--normal::after {
     content: '';
     display: block;
@@ -357,6 +356,29 @@ p {
   .Caption--small::before {
     margin-bottom: calc(-0.0111111111em + 0px); }
   .Caption--small::after {
+    margin-top: calc(-0.1777777778em + 0px); }
+
+.Alert {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  line-height: 1;
+  width: 100%;
+  text-align: center;
+  color: #292929;
+  background: #FF603F;
+  font-weight: 600;
+  padding: 16px;
+  font-size: 15px;
+  line-height: 16px; }
+  .Alert::before, .Alert::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0; }
+  .Alert::before {
+    margin-bottom: calc(-0.0111111111em + 0px); }
+  .Alert::after {
     margin-top: calc(-0.1777777778em + 0px); }
 
 /*# sourceMappingURL=styles.css.map */

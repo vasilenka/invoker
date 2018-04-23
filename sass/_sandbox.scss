@@ -8,7 +8,7 @@ p {
     font-weight: 900;
     font-family: $fontstack-sans;
     line-height: $lineheight-heading;
-    color: $dark-alpha-60;
+    color: $dark-alpha-70;
     margin: $space-stack-m;
 }
 
@@ -17,7 +17,7 @@ p {
     font-weight: 700;
     font-family: $fontstack-sans;
     line-height: $lineheight-heading;
-    color: $dark-alpha-60;
+    color: $dark-alpha-70;
     margin: $space-stack-m;
 }
 
@@ -61,8 +61,8 @@ p {
     line-height: $lineheight-reset;
     color: $dark-alpha-40;
     margin: $space-stack-l;
-    @include text-crop;
     display: block;
+    @include text-crop;
 }
 
 .Caption--small {
@@ -73,4 +73,19 @@ p {
     margin: $space-stack-l;
     @include text-crop;
     display: block;
+}
+
+.Alert {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    @include text-crop;
+    width: 100%;
+    text-align: center;
+    color: $dark-hex-60;
+    background: $sys-danger-lighter;
+    font-weight: 600;
+    padding: 16px;
+    font-size: 15px;
+    line-height: 16px;
 }
