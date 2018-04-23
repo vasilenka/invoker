@@ -46,8 +46,6 @@ $bg-rose            	    : #FCE7DD;
 ```
 ![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose.png "Rose PNG #FCE7DD")
 
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-100.svg "Hello from svg")
-
 ```scss
 $bg-scarlet                 : #FFEAEE;
 $bg-sage            	    : #E8F3EC;
