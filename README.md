@@ -1,5 +1,5 @@
 # Invoker
-> Craft you page, faster!  
+> Craft you page, faster!
 
 # Primitives
 ## Colors
