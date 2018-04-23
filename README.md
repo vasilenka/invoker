@@ -40,7 +40,7 @@ $sys-success-darker         : #008D5E;
 ```
 
 #### Background
-Use these colours for background only. All background colors have been tested for `$dark-50` text and passed WCAG AA standard.
+Use these colours for background only. All background colors have been tested using `$dark-50` text and passed WCAG AA standard.
 ```scss
 $bg-rose            	    : #FCE7DD;
 $bg-scarlet               : #FFEAEE;
