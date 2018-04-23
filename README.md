@@ -45,7 +45,10 @@ Use these colors for background only. All background colors have been tested usi
 $bg-rose            	    : #FCE7DD;
 ```
 ![alt text][rose]
-[rose]: ./src/colors/rose-100.svg "Rose 200 #FCE7DD"
+[rose]: https://drive.google.com/file/d/1Np8P82YA1dtCW8HoQuMXDjT1_ZKHmDjm/view?usp=sharing "Rose PNG #FCE7DD"
+
+![alt text][rose2]
+[rose2]: https://drive.google.com/file/d/19qxPR-DLFDYcaKjs1lLP1Ho4iEMrzueN/view?usp=sharing "Rose SVG #FCE7DD"
 ```scss
 $bg-scarlet                 : #FFEAEE;
 $bg-sage            	    : #E8F3EC;
