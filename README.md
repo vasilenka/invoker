@@ -16,9 +16,9 @@ Notes: **”AA Large”** — Legible untuk font dengan size >= 18pt untuk font 
 #### Primary Colors
 ```scss
 // Brand—Primary colors
-$brand-primary				    : #3F46AD;
-$brand-primary-lighter		: #5B77C4;
-$brand-primary-darker			: #182385;
+$brand-primary            : #3F46AD;
+$brand-primary-lighter    : #5B77C4;
+$brand-primary-darker     : #182385;
 // Brand--Secondary Colors
 $brand-secondary          : #ED0001;
 $brand-secondary-lighter  : #FD5C63;
