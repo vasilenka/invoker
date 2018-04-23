@@ -43,6 +43,10 @@ $sys-success-darker         : #008D5E;
 Use these colors for background only. All background colors have been tested using `$dark-40` as body text and passed **WCAG AA Large** standard.
 ```scss
 $bg-rose            	    : #FCE7DD;
+Inline-style:
+![alt text][rose]
+[rose]: ./src/colors/rose-100.svg "Logo Title Text 2"
+
 $bg-scarlet                 : #FFEAEE;
 $bg-sage            	    : #E8F3EC;
 $bg-sea             	    : #D7EFEE;
