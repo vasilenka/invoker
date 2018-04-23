@@ -45,7 +45,7 @@ Use these colors for background only. All background colors have been tested usi
 $bg-rose            	    : #FCE7DD;
 Inline-style:
 ![alt text][rose]
-[rose]: ./src/colors/rose-100.svg "Logo Title Text 2"
+[rose]: https://github.com/vasilenka/invoker/blob/master/src/colors/rose-100.svg "Logo Title Text 2"
 
 $bg-scarlet                 : #FFEAEE;
 $bg-sage            	    : #E8F3EC;
