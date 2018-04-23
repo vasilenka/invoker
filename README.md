@@ -1,5 +1,5 @@
 # Invoker
-> Craft you page, faster!  
+> Craft you page, faster!
 
 # Primitives
 ## Colors
@@ -17,13 +17,13 @@ Notes: **”AA Large”** — Legible untuk font dengan size >= 18pt untuk font 
 #### Primary Colors
 ``` scss
 // Brand—Primary colors
-$brand-primary            	: #3F46AD;
-$brand-primary-lighter    	: #5B77C4;
-$brand-primary-darker     	: #182385; 
+$brand-primary            	    : #3F46AD;
+$brand-primary-lighter    	    : #5B77C4;
+$brand-primary-darker     	    : #182385;
 // Brand--Secondary Colors
-$brand-secondary              : #ED0001;
-$brand-secondary-lighter      : #FD5C63;
-$brand-secondary-darker       : #B50008;
+$brand-secondary                : #ED0001;
+$brand-secondary-lighter        : #FD5C63;
+$brand-secondary-darker         : #B50008;
 ```
 
 #### System Colors
@@ -41,7 +41,7 @@ $sys-success-darker         	: #008D5E;
 ```
 
 #### Background
-Use these colours for background onyl. All background colors have been tested for $dark-40 text and passed AA Large standard.
+Use these colours for background only. All background colors have been tested for `$dark-50` text and passed WCAG AA standard.
 ```scss
 // ROSE
 $bg-rose                    	: #E3CDD1;
