@@ -44,8 +44,7 @@ Use these colors for background only. All background colors have been tested usi
 ```scss
 $bg-rose            	    : #FCE7DD;
 ```
-![alt text][rose]
-[rose]: invoker/src/colors/rose.png "Rose PNG #FCE7DD"
+![alt text](invoker/src/colors/rose.png "Rose PNG #FCE7DD")
 
 ```scss
 $bg-scarlet                 : #FFEAEE;
