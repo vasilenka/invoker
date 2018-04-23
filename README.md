@@ -16,27 +16,27 @@ Notes: **”AA Large”** — Legible untuk font dengan size >= 18pt untuk font 
 #### Primary Colors
 ```scss
 // Brand—Primary colors
-$brand-primary            : #3F46AD;
-$brand-primary-lighter    : #5B77C4;
-$brand-primary-darker     : #182385;
+$brand-primary              : #3F46AD;
+$brand-primary-lighter      : #5B77C4;
+$brand-primary-darker       : #182385;
 // Brand--Secondary Colors
-$brand-secondary          : #ED0001;
-$brand-secondary-lighter  : #FD5C63;
-$brand-secondary-darker   : #B50008;
+$brand-secondary            : #ED0001;
+$brand-secondary-lighter    : #FD5C63;
+$brand-secondary-darker     : #B50008;
 ```
 
 #### System Colors
 ```scss
 // System colors
-$sys-danger               : #E42700;
-$sys-danger-lighter       : #FF603F;
-$sys-danger-darker        : #940D00;
-$sys-alert                : #FFAB00;
-$sys-alert-lighter        : #FFE380;
-$sys-alert-darker         : #FF8B00;
-$sys-success              : #00A971;
-$sys-success-lighter      : #79F2C0;
-$sys-success-darker       : #008D5E;
+$sys-danger                 : #E42700;
+$sys-danger-lighter         : #FF603F;
+$sys-danger-darker          : #940D00;
+$sys-alert                  : #FFAB00;
+$sys-alert-lighter          : #FFE380;
+$sys-alert-darker           : #FF8B00;
+$sys-success                : #00A971;
+$sys-success-lighter        : #79F2C0;
+$sys-success-darker         : #008D5E;
 ```
 
 #### Background
