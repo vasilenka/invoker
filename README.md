@@ -44,11 +44,8 @@ Use these colors for background only. All background colors have been tested usi
 ```scss
 $bg-rose            	    : #FCE7DD;
 ```
-![alt text][rose]
-[rose]: https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-100.svg "Rose PNG #FCE7DD"
+![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose.png "Rose PNG #FCE7DD")
 
-![alt text][rose2]
-[rose2]: https://drive.google.com/file/d/19qxPR-DLFDYcaKjs1lLP1Ho4iEMrzueN/view?usp=sharing "Rose SVG #FCE7DD"
 ```scss
 $bg-scarlet                 : #FFEAEE;
 $bg-sage            	    : #E8F3EC;
