@@ -44,11 +44,11 @@ Use these colors for background only. All background colors have been tested usi
 ```scss
 $bg-rose            	    : #FCE7DD;
 ```
-![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sage-100.png "Sage 100 - ")
+![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sea-100.png "Sea 100 - ")
 
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sage-200.png "Sage 200 - ")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sea-200.png "Sea 200 - ")
 
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sage-300.png "Sage 300 - ")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sea-300.png "Sea 300 - ")
 
 ```scss
 $bg-scarlet                 : #FFEAEE;
