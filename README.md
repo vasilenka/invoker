@@ -74,7 +74,7 @@ $sys-success-darker         : #008D5E;
 ---
 
 ### Background
-Use these colors for background only. All background colors have been tested using `$dark-40` as body text and passed **WCAG AA Large** standard.
+Use these colors for background only. Semua background color sudah memenuhi standar contrast WCAG AA untuk text dengan warna `$dark-50`, `$dark-60`, dan `$dark-70`. Untuk penggunaan dengan teks berwarna `$dark-40`, dapat mengacu pada contrast ratio pada gambar di bawah ini.
 
 #### Dust
 ```scss
