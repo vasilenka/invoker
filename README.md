@@ -40,17 +40,38 @@ $brand-secondary-300    : #B50008;
 ---
 
 ### System Colors
+---
+#### Danger - Rose
 ```scss
 $sys-danger                 : #E42700;
 $sys-danger-lighter         : #FF603F;
 $sys-danger-darker          : #940D00;
-$sys-alert                  : #FFAB00;
-$sys-alert-lighter          : #FFE380;
-$sys-alert-darker           : #FF8B00;
+```
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-100.png "Rose 100 - #FD5C63")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-200.png "Rose 200 - #ED0001")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-300.png "Rose 300 - #B50008")
+
+#### Warning - Amber
+```scss
+$sys-warning                  : #FFAB00;
+$sys-warning-lighter          : #FFE380;
+$sys-warning-darker           : #FF8B00;
+```
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-100.png "Amber 100 - #FD5C63")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-200.png "Amber 200 - #ED0001")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-300.png "Amber 300 - #B50008")
+
+#### Success - Verdant
+```scss
 $sys-success                : #00A971;
 $sys-success-lighter        : #79F2C0;
 $sys-success-darker         : #008D5E;
 ```
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-100.png "Verdant 100 - #FD5C63")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-200.png "Verdant 200 - #ED0001")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-300.png "Verdant 300 - #B50008")
+
+---
 
 ### Background
 Use these colors for background only. All background colors have been tested using `$dark-40` as body text and passed **WCAG AA Large** standard.
