@@ -16,21 +16,31 @@ atau jika kamu lebih menyukai native app di macOS, maka dapat menggunakan:
 
 Notes: **”AA Large”** — Legible untuk font dengan size >= 18pt untuk font regular dan 14pt untuk style bold. — https://www.w3.org/TR/WCAG20/#larger-scaledef
 
-### Primary Colors
+### Brand Colors
+#### Primary Colors - Jeans
 ```scss
-// Brand—Primary colors
-$brand-primary              : #3F46AD;
-$brand-primary-lighter      : #5B77C4;
-$brand-primary-darker       : #182385;
-// Brand--Secondary Colors
-$brand-secondary            : #ED0001;
-$brand-secondary-lighter    : #FD5C63;
-$brand-secondary-darker     : #B50008;
+$brand-primary-100      : #5773C2;
+$brand-primary-200      : #3F46AD;
+$brand-primary-300      : #182385;
 ```
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-100.png "Jeans 100 - #5773C2")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-200.png "Jeans 200 - #3F46AD")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-300.png "Jeans 300 - #182385")
+
+#### Secondary Colors - Scarlet
+```scss
+$brand-secondary-100    : #FD5C63;
+$brand-secondary-200    : #ED0001;
+$brand-secondary-300    : #B50008;
+```
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-100.png "Scarlet 100 - #FD5C63")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-200.png "Scarlet 200 - #ED0001")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-300.png "Scarlet 300 - #B50008")
+
+---
 
 ### System Colors
 ```scss
-// System colors
 $sys-danger                 : #E42700;
 $sys-danger-lighter         : #FF603F;
 $sys-danger-darker          : #940D00;
