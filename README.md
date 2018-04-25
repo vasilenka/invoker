@@ -1,7 +1,8 @@
-![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/brand/cover.png "Meridian.id Design System")
 
 # Invoker
 > Craft you page, faster!
+
+![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/brand/cover.png "Meridian.id Design System")
 
 # Primitives
 ## Colors
