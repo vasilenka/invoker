@@ -42,21 +42,41 @@ $sys-success-darker         : #008D5E;
 #### Background
 Use these colors for background only. All background colors have been tested using `$dark-40` as body text and passed **WCAG AA Large** standard.
 
+![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-dust-100.png "Dust 100 - #FCE7DD")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-dust-200.png "Dust 200 - #E3CDD1")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-dust-300.png "Dust 300 - #D8BAC0")
+
 ![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-100.png "Rose 100 - #FCE7DD")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-200.png "Rose 200 - #E3CDD1")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-300.png "Rose 300 - #D8BAC0")
+
+![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-dust-100.png "Dust 100 - #FCE7DD")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-dust-200.png "Dust 200 - #E3CDD1")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-dust-300.png "Dust 300 - #D8BAC0")
 
 ![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sea-100.png "Sea 100 - #FCE7DD")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sea-200.png "Sea 200 - #E3CDD1")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sea-300.png "Sea 300 - #D8BAC0")
 
-![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plum-100.png "Plum 100 - #FCE7DD")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plum-200.png "Plum 200 - #E3CDD1")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plum-300.png "Plum 300 - #D8BAC0")
+![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plump-100.png "Plump 100 - #FCE7DD")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plump-200.png "Plump 200 - #E3CDD1")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plump-300.png "Plum 300 - #D8BAC0")
 
 ![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sage-100.png "Sage 100 - #FCE7DD")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sage-200.png "Sage 200 - #E3CDD1")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sage-300.png "Sage 300 - #D8BAC0")
+
+![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sky-100.png "Sky 100 - #FCE7DD")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sky-200.png "Sky 200 - #E3CDD1")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sky-300.png "Sky 300 - #D8BAC0")
+
+![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-verdant-100.png "Verdant 100 - #FCE7DD")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-verdant-200.png "Verdant 200 - #E3CDD1")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-verdant-300.png "Verdant 300 - #D8BAC0")
+
+![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-100.png "Banana 100 - #FCE7DD")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-200.png "Banana 200 - #E3CDD1")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-300.png "Banana 300 - #D8BAC0")
 
 ```scss
 $bg-scarlet                 : #FFEAEE;
