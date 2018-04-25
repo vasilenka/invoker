@@ -43,10 +43,10 @@ $sys-success-darker         : #008D5E;
 Use these colors for background only. All background colors have been tested using `$dark-40` as body text and passed **WCAG AA Large** standard.
 
 ` $bg-rose-100 : #FCE7DD; `
-![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-100.png "Rose 100 - #FCE7DD")
+![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-100.png "Rose 100 - #FCE7DD")
 ` $bg-rose-200 : #FCE7DD; `
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-200.png "Rose 200 - #FCE7DD")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-300.png "Rose 200 - #")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-200.png "Rose 200 - #FCE7DD")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-300.png "Rose 200 - #")
 
 ```scss
 $bg-scarlet                 : #FFEAEE;
