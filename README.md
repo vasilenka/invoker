@@ -48,6 +48,12 @@ Use these colors for background only. All background colors have been tested usi
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-200.png "Rose 200 - #FCE7DD")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-300.png "Rose 200 - #")
 
+**Scarlet** | HEX       | Image |
+---         | ---       | ---   |
+Rose-100    | #FCE7DD   | ![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-100.png "Rose 100 - #FCE7DD") |
+Rose-200    | #FCE7DD   | ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-200.png "Rose 200 - #FCE7DD") |
+Rose-300    | #FCE7DD   | ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-300.png "Rose 300 - #FCE7DD") |
+
 ```scss
 $bg-scarlet                 : #FFEAEE;
 $bg-sage            	    : #E8F3EC;
