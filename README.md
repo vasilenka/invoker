@@ -13,7 +13,7 @@ atau jika kamu lebih menyukai native app di macOS, maka dapat menggunakan:
 
 Notes: **”AA Large”** — Legible untuk font dengan size >= 18pt untuk font regular dan 14pt untuk style bold. — https://www.w3.org/TR/WCAG20/#larger-scaledef
 
-#### Primary Colors
+### Primary Colors
 ```scss
 // Brand—Primary colors
 $brand-primary              : #3F46AD;
@@ -25,7 +25,7 @@ $brand-secondary-lighter    : #FD5C63;
 $brand-secondary-darker     : #B50008;
 ```
 
-#### System Colors
+### System Colors
 ```scss
 // System colors
 $sys-danger                 : #E42700;
@@ -39,9 +39,10 @@ $sys-success-lighter        : #79F2C0;
 $sys-success-darker         : #008D5E;
 ```
 
-#### Background
+### Background
 Use these colors for background only. All background colors have been tested using `$dark-40` as body text and passed **WCAG AA Large** standard.
 
+##### Dust
 ```scss
 $bg-dust-100    : #F7F7F5;
 $bg-dust-200    : #F0F0EE;
@@ -51,6 +52,7 @@ $bg-dust-300    : #B7B7AD;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-dust-200.png "Dust 200 - #F0F0EE")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-dust-300.png "Dust 300 - #B7B7AD")
 
+##### Rose
 ```scss
 $bg-rose-100    : #FCE7DD;
 $bg-rose-200    : #E3CDD1;
@@ -60,6 +62,7 @@ $bg-rose-300    : #D8BAC0;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-200.png "Rose 200 - #E3CDD1")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-300.png "Rose 300 - #D8BAC0")
 
+##### Scarlet
 ```scss
 $bg-scarlet-100    : #FFEAEE;
 $bg-scarlet-200    : #FFC4CF;
@@ -69,6 +72,7 @@ $bg-scarlet-300    : #FFA2B3;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-scarlet-200.png "Scarlet 200 - #FFC4CF")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-scarlet-300.png "Scarlet 300 - #FFA2B3")
 
+##### Sea
 ```scss
 $bg-sea-100    : #D7EFEE;
 $bg-sea-200    : #A9DCD7;
@@ -78,6 +82,7 @@ $bg-sea-300    : #92D3CC;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sea-200.png "Sea 200 - #A9DCD7")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sea-300.png "Sea 300 - #92D3CC")
 
+##### Plump
 ```scss
 $bg-plump-100    : #DFD8E3;
 $bg-plump-200    : #D4D0E3;
@@ -87,6 +92,7 @@ $bg-plump-300    : #BEB8D5;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plump-200.png "Plump 200 - #D4D0E3")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plump-300.png "Plump 300 - #BEB8D5")
 
+##### Sage
 ```scss
 $bg-sage-100    : #E8F3EC;
 $bg-sage-200    : #CAD8B4;
@@ -96,6 +102,7 @@ $bg-sage-300    : #B7CA9A;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sage-200.png "Sage 200 - #CAD8B4")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sage-300.png "Sage 300 - #B7CA9A")
 
+##### Sky
 ```scss
 $bg-sky-100    : #E2EFF9;
 $bg-sky-200    : #B7D7F0;
@@ -105,6 +112,7 @@ $bg-sky-300    : #91C2E8;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sky-200.png "Sky 200 - #B7D7F0")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sky-300.png "Sky 300 - #91C2E8")
 
+##### Verdant
 ```scss
 $bg-verdant-100    : #E4FDEB;
 $bg-verdant-200    : #D9FCE3;
@@ -114,6 +122,7 @@ $bg-verdant-300    : #A9EEBC;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-verdant-200.png "Verdant 200 - #D9FCE3")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-verdant-300.png "Verdant 300 - #A9EEBC")
 
+##### Banana
 ```scss
 $bg-banana-100    : #FFFDDD;
 $bg-banana-200    : #FFFBBB;
@@ -122,17 +131,6 @@ $bg-banana-300    : #FFFE95;
 ![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-100.png "Banana 100 - #FFFDDD")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-200.png "Banana 200 - #FFFBBB")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-300.png "Banana 300 - #FFFE95")
-
-```scss
-$bg-scarlet                 : #FFEAEE;
-$bg-sage            	    : #E8F3EC;
-$bg-sea             	    : #D7EFEE;
-$bg-plum            	    : #DFD8E3;
-$bg-sky             	    : #E2EFF9;
-$bg-sand            	    : #F6F1E4;
-$bg-verdant         	    : #E4FDEB;
-$bg-banana          	    : #FFFDDD;
-```
 
 ## Spaces
 Spacing tokens are used for padding, margins, and position coordinates. Mids menggunakan basis 16px untuk spacing. Basis 16px membuat layout memiliki flexibilitas yang tinggi serta hirarki yang lebih jelas sehingga layout menjadi lebih proporsional.
