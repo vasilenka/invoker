@@ -18,6 +18,7 @@ Notes: **”AA Large”** — Legible untuk font dengan size >= 18pt untuk font 
 
 ### Brand Colors
 #### Primary Colors - Jeans
+> Digunakan untuk primary link dan action.
 ```scss
 $brand-primary-100      : #5773C2;
 $brand-primary-200      : #3F46AD;
@@ -36,6 +37,28 @@ $brand-secondary-300    : #B50008;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-100.png "Scarlet 100 - #FD5C63")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-200.png "Scarlet 200 - #ED0001")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-300.png "Scarlet 300 - #B50008")
+
+---
+
+### Dark Colors
+> Digunakan untuk warna text.
+Semua dark colors sudah diuji dengan background putih `#FFFFFF` serta dan memenuhi standar contrast ratio WCAG AA. Untuk penggunaan dengan background selain warna putih silahkan lakukan pengujian lagi.
+
+```SCSS
+$dark-hex-70        : #0F0F0F;
+$dark-hex-60        : #292929;
+$dark-hex-50        : #484848;
+$dark-hex-40        : #767676;
+---
+$dark-alpha-70      : rgba(0,0,0,,94);
+$dark-alpha-60      : rgba(0,0,0,,84);
+$dark-alpha-50      : rgba(0,0,0,,71);
+$dark-alpha-40      : rgba(0,0,0,,54);
+```
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-70.png "Dark 70 - #0F0F0F")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-60.png "Dark 60 - #292929")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-50.png "Dark 50 - #484848")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-40.png "Dark 40 - #767676")
 
 ---
 
