@@ -44,9 +44,11 @@ Use these colors for background only. All background colors have been tested usi
 ```scss
 $bg-rose            	    : #FCE7DD;
 ```
-![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose.png "Rose PNG #FCE7DD")
+![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/plump-100.png "Plump 100 - ")
 
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-300.png "another rose")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/plump-200.png "Plump 200 - ")
+
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/plump-300.png "Plump 300 - ")
 
 ```scss
 $bg-scarlet                 : #FFEAEE;
