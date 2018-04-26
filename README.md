@@ -18,38 +18,39 @@ Notes: **”AA Large”** — Legible untuk font dengan size >= 18pt untuk font 
 
 ### Brand Colors
 #### Primary Colors - Jeans
-> Digunakan untuk primary link dan action.
+> Primary link and actions
 ```scss
 $brand-primary-100      : #5773C2;
-$brand-primary-200      : #3F46AD;
-$brand-primary-300      : #182385;
+$brand-primary-200      : #3F46AD; // Default
+$brand-primary-300      : #182385; // Hover and tap
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-100.png "Jeans 100 - #5773C2")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-200.png "Jeans 200 - #3F46AD")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-300.png "Jeans 300 - #182385")
 
 #### Secondary Colors - Scarlet
+> Primary actions
 ```scss
 $brand-secondary-100    : #FD5C63;
-$brand-secondary-200    : #ED0001;
-$brand-secondary-300    : #B50008;
+$brand-secondary-200    : #ED0001; // Default
+$brand-secondary-300    : #B50008; // Hover and tap
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-100.png "Scarlet 100 - #FD5C63")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-200.png "Scarlet 200 - #ED0001")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-300.png "Scarlet 300 - #B50008")
 
----
 
 ### Dark Colors
-> Digunakan untuk warna text.
+> Text colors
+
 Semua dark colors sudah diuji dengan background putih `#FFFFFF` serta dan memenuhi standar contrast ratio WCAG AA. Untuk penggunaan dengan background selain warna putih silahkan lakukan pengujian lagi.
 
 ```SCSS
-$dark-hex-70        : #0F0F0F;
-$dark-hex-60        : #292929;
-$dark-hex-50        : #484848;
-$dark-hex-40        : #767676;
----
+$dark-hex-70        : #0F0F0F; // Heading
+$dark-hex-60        : #292929; // Heading and Body text in text-heavy page such as blog post
+$dark-hex-50        : #484848; // Body text
+$dark-hex-40        : #767676; // Caption and subtitle
+
 $dark-alpha-70      : rgba(0,0,0,,94);
 $dark-alpha-60      : rgba(0,0,0,,84);
 $dark-alpha-50      : rgba(0,0,0,,71);
@@ -66,9 +67,9 @@ $dark-alpha-40      : rgba(0,0,0,,54);
 ---
 #### Danger - Rose
 ```scss
-$sys-danger                 : #E42700;
-$sys-danger-lighter         : #FF603F;
-$sys-danger-darker          : #940D00;
+$sys-danger-100     : #E42700;
+$sys-danger-200     : #FF603F;
+$sys-danger-300     : #940D00;
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-100.png "Rose 100 - #FD5C63")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-200.png "Rose 200 - #ED0001")
@@ -76,9 +77,9 @@ $sys-danger-darker          : #940D00;
 
 #### Warning - Amber
 ```scss
-$sys-warning                  : #FFAB00;
-$sys-warning-lighter          : #FFE380;
-$sys-warning-darker           : #FF8B00;
+$sys-warning-100    : #FFAB00;
+$sys-warning-200    : #FFE380;
+$sys-warning-300    : #FF8B00;
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-100.png "Amber 100 - #FD5C63")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-200.png "Amber 200 - #ED0001")
@@ -86,18 +87,18 @@ $sys-warning-darker           : #FF8B00;
 
 #### Success - Verdant
 ```scss
-$sys-success                : #00A971;
-$sys-success-lighter        : #79F2C0;
-$sys-success-darker         : #008D5E;
+$sys-success-100    : #00A971;
+$sys-success-200    : #79F2C0;
+$sys-success-300    : #008D5E;
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-100.png "Verdant 100 - #FD5C63")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-200.png "Verdant 200 - #ED0001")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-300.png "Verdant 300 - #B50008")
 
----
-
 ### Background
-Use these colors for background only. Semua background color sudah memenuhi standar contrast WCAG AA untuk text dengan warna `$dark-50`, `$dark-60`, dan `$dark-70`. Untuk penggunaan dengan teks berwarna `$dark-40`, dapat mengacu pada contrast ratio pada gambar di bawah ini.
+> Use these colors for background only.
+
+Semua background color sudah diuji dan memenuhi standar contrast WCAG AA untuk penggunaan pada warna teks `$dark-50`, `$dark-60`, dan `$dark-70`. Untuk penggunaan dengan teks `$dark-40`, dapat mengacu pada contrast ratio pada gambar masing-masing warna.
 
 #### Dust
 ```scss
@@ -188,6 +189,7 @@ $bg-banana-300    : #FFFE95;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-100.png "Banana 100 - #FFFDDD")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-200.png "Banana 200 - #FFFBBB")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-300.png "Banana 300 - #FFFE95")
-___
+
+
 ## Spaces
 Spacing tokens are used for padding, margins, and position coordinates. Mids menggunakan basis 16px untuk spacing. Basis 16px membuat layout memiliki flexibilitas yang tinggi serta hirarki yang lebih jelas sehingga layout menjadi lebih proporsional.
