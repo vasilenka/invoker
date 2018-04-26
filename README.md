@@ -24,6 +24,10 @@ Untuk memastikan produk yang kita buat memenuhi a11y, gunakan rasio kontras WCAG
 > **AA Large** — Legible untuk text size >= 18pt untuk font regular atau text size >= 14pt untuk style bold.
 > Based on WCAG 2.0: https://www.w3.org/TR/WCAG20/#larger-scaledef
 
+### How to read
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/color.png "Indicator for foreground colors")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/bg.png "Indicator for Background colors")
+
 ## Brand Colors
 
 #### Primary Colors - Jeans
@@ -94,7 +98,7 @@ $sys-warning-300    : #FF8B00;
 
 ### Success - Verdant
 ```scss
-$sys-success-100    : #79F2C0; // Use for Success Background or Large text
+$sys-success-100    : #79F2C0; // Use for success background
 $sys-success-200    : #00875A; // Default for small text
 $sys-success-300    : #006644; // Hover, active, focus and tap
 ```
