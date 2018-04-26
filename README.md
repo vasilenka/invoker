@@ -230,8 +230,8 @@ $bg-sand-300    : #D8C4A5;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sand-300.png "Sand 300 - #D8C4A5")
 
 
-# Spaces
-Spacing tokens are used for padding, margins, and position coordinates. Mids menggunakan basis 16px untuk spacing. Basis 16px membuat layout memiliki flexibilitas yang tinggi serta hirarki yang lebih jelas sehingga layout menjadi lebih proporsional.
+# Space
+Spacing tokens are used for padding, margins, and position coordinates. Semua nilai spacing dihitung berdasarkan 16px sebagai basis.
 
 ## Space Step
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/step.png "Space Steps")
@@ -250,3 +250,7 @@ Spacing tokens are used for padding, margins, and position coordinates. Mids men
 
 ## Space Stretch
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/stretch.png "Space Stretch")
+
+# Typography
+## Space Stretch
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/typography/type.png "Typography")
