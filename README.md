@@ -14,7 +14,7 @@
     * [Brand Colors](https://github.com/vasilenka/invoker#brand-colors)
     * [Dark Colors](https://github.com/vasilenka/invoker#dark-colors)
     * [System Colors](https://github.com/vasilenka/invoker#system-colors)
-    * [Background Colors](https://github.com/vasilenka/invoker#background) 
+    * [Background Colors](https://github.com/vasilenka/invoker#background)
 2. [Typography](https://github.com/vasilenka/invoker#typography)
 3. [Space](https://github.com/vasilenka/invoker#space)
 
@@ -126,7 +126,8 @@ $sys-success-300    : #006644; // Hover, active, focus and tap
 ## Background
 > Use these colors for background only.
 
-Semua background color sudah diuji dan memenuhi standar contrast WCAG AA untuk penggunaan pada warna teks `$dark-50`, `$dark-60`, dan `$dark-70`. Untuk penggunaan dengan teks `$dark-40`, dapat mengacu pada contrast ratio pada gambar masing-masing warna.
+Semua background color sudah diuji dan memenuhi standar contrast **WCAG AA** untuk penggunaan pada warna teks `$dark-50`, `$dark-60`, dan `$dark-70`.
+Untuk penggunaan dengan teks `$dark-40`, dapat mengacu pada contrast ratio pada gambar masing-masing warna.
 
 ### Dust
 ```scss
