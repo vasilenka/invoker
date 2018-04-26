@@ -4,19 +4,27 @@
 
 ![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/brand/cover.png "Meridian.id Design System")
 
-# Primitives
-## Colors
-Semua produk yang kita ciptakan harus memenuhi paling tidak level standar contrast WCAG AA. Kontras yang rendah akan menyulitkan orang yang memiliki daya penglihatan yang rendah, buta warna, atau hanya sekedar dalam situasi yang tidak optimal ketika menggunakan produk (e.g. outdoor ketika matahari sangat cerah).
+### Primitives
+**Colors**, **Typography** and **Spacing**. The basic building blocks for every components and pages we created.
 
-Pengujian kontras warna melalui web dapat dilakukan dengan menggunakan :
+# Colors
+### A11y first
+Semua produk yang kita buat harus memenuhi tingkat kontras **WCAG AA**. Kontras yang rendah akan menyulitkan orang yang memiliki daya penglihatan yang rendah, buta warna, atau ketika penggunaan dalam situasi yang tidak optimal (e.g. outdoor ketika matahari sangat cerah).
+
+Semua palet warna di bawah ini memiliki label rasio kontras warna yang sudah diuji dengan warna putih. Untuk penggunaan pada warna selain putih, kamu dapat melakukan pengujian sendiri dengan menggunakan tools berikut:
+
 1. https://colorable.jxnblk.com
 2. https://contrastchecker.com
-atau jika kamu lebih menyukai native app di macOS, maka dapat menggunakan:
-* https://usecontrast.com
+3. https://usecontrast.com - *macOS desktop app*
 
-Notes: **”AA Large”** — Legible untuk font dengan size >= 18pt untuk font regular dan 14pt untuk style bold. — https://www.w3.org/TR/WCAG20/#larger-scaledef
+Tingkat kontras minimum yang dibutuhkan bergantung pada **text-size** dan **text-weight**. Text yang berukuran besar (*large scale text*) dan bold akan lebih mudah untuk dibaca, sedangkan text yang berukuran kecil dan regular membutuhkan level kontras yang lebih tinggi untuk lebih mudah dibaca.
+Untuk memastikan produk yang kita buat memenuhi a11y, gunakan rasio kontras WCAG AA (>= 4.5) untuk text berukuran kecil dan WCAG AA Large untuk text berukuran besar.
 
-### Brand Colors
+> Important: **”AA Large”** — Legible untuk text size >= 18pt untuk font regular atau text size >= 14pt untuk style bold.
+> Based on WCAG 2.0: https://www.w3.org/TR/WCAG20/#larger-scaledef
+
+## Brand Colors
+
 #### Primary Colors - Jeans
 > Primary link and actions
 ```scss
