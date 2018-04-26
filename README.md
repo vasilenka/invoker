@@ -64,11 +64,11 @@ $dark-hex-70        : #0F0F0F; // Heading
 $dark-hex-60        : #292929; // Heading and Body text in text-heavy page such as blog post
 $dark-hex-50        : #484848; // Body text
 $dark-hex-40        : #767676; // Caption and subtitle
-
-$dark-alpha-70      : rgba(0,0,0,,94);
-$dark-alpha-60      : rgba(0,0,0,,84);
-$dark-alpha-50      : rgba(0,0,0,,71);
-$dark-alpha-40      : rgba(0,0,0,,54);
+// Alternaive colors using alpha value.
+$dark-alpha-70      : rgba(0,0,0,0.94);
+$dark-alpha-60      : rgba(0,0,0,0.84);
+$dark-alpha-50      : rgba(0,0,0,0.71);
+$dark-alpha-40      : rgba(0,0,0,0.54);
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-70.png "Dark 70 - #0F0F0F")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-60.png "Dark 60 - #292929")
