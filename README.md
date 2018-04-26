@@ -17,16 +17,16 @@ Semua palet warna di bawah ini memiliki label rasio kontras warna yang sudah diu
 2. https://contrastchecker.com
 3. https://usecontrast.com - *macOS desktop app*
 
-### How to read color palette ?
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/color.png "Indicator for foreground colors")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/bg.png "Indicator for Background colors")
-
 Tingkat kontras minimum yang dibutuhkan bergantung pada **text-size** dan **text-weight**. Text yang berukuran besar (*large scale text*) dan bold akan lebih mudah untuk dibaca, sedangkan text yang berukuran kecil dan regular membutuhkan level kontras yang lebih tinggi untuk lebih mudah dibaca.
 
 Untuk memastikan produk yang kita buat memenuhi a11y, gunakan rasio kontras WCAG AA (>= 4.5) untuk text berukuran kecil dan WCAG AA Large (>=3.00) untuk text berukuran besar.
 
 > **AA Large** — Legible untuk text size >= 18pt untuk font regular atau text size >= 14pt untuk style bold.
 > Based on WCAG 2.0: https://www.w3.org/TR/WCAG20/#larger-scaledef
+
+### How to read color palette ?
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/color.png "Indicator for foreground colors")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/bg.png "Indicator for Background colors")
 
 
 ## Brand Colors
