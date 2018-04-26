@@ -18,9 +18,10 @@ Semua palet warna di bawah ini memiliki label rasio kontras warna yang sudah diu
 3. https://usecontrast.com - *macOS desktop app*
 
 Tingkat kontras minimum yang dibutuhkan bergantung pada **text-size** dan **text-weight**. Text yang berukuran besar (*large scale text*) dan bold akan lebih mudah untuk dibaca, sedangkan text yang berukuran kecil dan regular membutuhkan level kontras yang lebih tinggi untuk lebih mudah dibaca.
-Untuk memastikan produk yang kita buat memenuhi a11y, gunakan rasio kontras WCAG AA (>= 4.5) untuk text berukuran kecil dan WCAG AA Large untuk text berukuran besar.
 
-> Important: **”AA Large”** — Legible untuk text size >= 18pt untuk font regular atau text size >= 14pt untuk style bold.
+Untuk memastikan produk yang kita buat memenuhi a11y, gunakan rasio kontras WCAG AA (>= 4.5) untuk text berukuran kecil dan WCAG AA Large (>=3.00) untuk text berukuran besar.
+
+> **AA Large** — Legible untuk text size >= 18pt untuk font regular atau text size >= 14pt untuk style bold.
 > Based on WCAG 2.0: https://www.w3.org/TR/WCAG20/#larger-scaledef
 
 ## Brand Colors
@@ -48,7 +49,7 @@ $brand-secondary-300    : #9A202C; // Hover and tap
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-300.png "Scarlet 300 - #9A202C")
 
 
-### Dark Colors
+## Dark Colors
 > Text colors
 
 Semua dark colors sudah diuji dengan background putih `#FFFFFF` serta dan memenuhi standar contrast ratio WCAG AA. Untuk penggunaan dengan background selain warna putih silahkan lakukan pengujian lagi.
@@ -69,11 +70,8 @@ $dark-alpha-40      : rgba(0,0,0,,54);
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-50.png "Dark 50 - #484848")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-40.png "Dark 40 - #767676")
 
----
-
-### System Colors
----
-#### Danger - Rose
+## System Colors
+### Danger - Rose
 ```scss
 $sys-danger-100     : #E42700;
 $sys-danger-200     : #FF603F;
@@ -83,7 +81,7 @@ $sys-danger-300     : #940D00;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-200.png "Rose 200 - #ED0001")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-300.png "Rose 300 - #B50008")
 
-#### Warning - Amber
+### Warning - Amber
 ```scss
 $sys-warning-100    : #FFAB00;
 $sys-warning-200    : #FFE380;
@@ -93,7 +91,7 @@ $sys-warning-300    : #FF8B00;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-200.png "Amber 200 - #ED0001")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-300.png "Amber 300 - #B50008")
 
-#### Success - Verdant
+### Success - Verdant
 ```scss
 $sys-success-100    : #00A971;
 $sys-success-200    : #79F2C0;
@@ -103,12 +101,12 @@ $sys-success-300    : #008D5E;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-200.png "Verdant 200 - #ED0001")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-300.png "Verdant 300 - #B50008")
 
-### Background
+## Background
 > Use these colors for background only.
 
 Semua background color sudah diuji dan memenuhi standar contrast WCAG AA untuk penggunaan pada warna teks `$dark-50`, `$dark-60`, dan `$dark-70`. Untuk penggunaan dengan teks `$dark-40`, dapat mengacu pada contrast ratio pada gambar masing-masing warna.
 
-#### Dust
+### Dust
 ```scss
 $bg-dust-100    : #F7F7F5;
 $bg-dust-200    : #F0F0EE;
@@ -118,7 +116,7 @@ $bg-dust-300    : #B7B7AD;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-dust-200.png "Dust 200 - #F0F0EE")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-dust-300.png "Dust 300 - #B7B7AD")
 
-#### Rose
+### Rose
 ```scss
 $bg-rose-100    : #FCE7DD;
 $bg-rose-200    : #E3CDD1;
@@ -128,7 +126,7 @@ $bg-rose-300    : #D8BAC0;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-200.png "Rose 200 - #E3CDD1")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-300.png "Rose 300 - #D8BAC0")
 
-#### Scarlet
+### Scarlet
 ```scss
 $bg-scarlet-100    : #FFEAEE;
 $bg-scarlet-200    : #FFC4CF;
@@ -138,7 +136,7 @@ $bg-scarlet-300    : #FFA2B3;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-scarlet-200.png "Scarlet 200 - #FFC4CF")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-scarlet-300.png "Scarlet 300 - #FFA2B3")
 
-#### Sea
+### Sea
 ```scss
 $bg-sea-100    : #D7EFEE;
 $bg-sea-200    : #A9DCD7;
@@ -148,7 +146,7 @@ $bg-sea-300    : #92D3CC;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sea-200.png "Sea 200 - #A9DCD7")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sea-300.png "Sea 300 - #92D3CC")
 
-#### Plump
+### Plump
 ```scss
 $bg-plump-100    : #DFD8E3;
 $bg-plump-200    : #D4D0E3;
@@ -158,7 +156,7 @@ $bg-plump-300    : #BEB8D5;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plump-200.png "Plump 200 - #D4D0E3")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plump-300.png "Plump 300 - #BEB8D5")
 
-#### Sage
+### Sage
 ```scss
 $bg-sage-100    : #E8F3EC;
 $bg-sage-200    : #CAD8B4;
@@ -168,7 +166,7 @@ $bg-sage-300    : #B7CA9A;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sage-200.png "Sage 200 - #CAD8B4")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sage-300.png "Sage 300 - #B7CA9A")
 
-#### Sky
+### Sky
 ```scss
 $bg-sky-100    : #E2EFF9;
 $bg-sky-200    : #B7D7F0;
@@ -178,7 +176,7 @@ $bg-sky-300    : #91C2E8;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sky-200.png "Sky 200 - #B7D7F0")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sky-300.png "Sky 300 - #91C2E8")
 
-#### Verdant
+### Verdant
 ```scss
 $bg-verdant-100    : #E4FDEB;
 $bg-verdant-200    : #D9FCE3;
@@ -188,7 +186,7 @@ $bg-verdant-300    : #A9EEBC;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-verdant-200.png "Verdant 200 - #D9FCE3")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-verdant-300.png "Verdant 300 - #A9EEBC")
 
-#### Banana
+### Banana
 ```scss
 $bg-banana-100    : #FFFDDD;
 $bg-banana-200    : #FFFBBB;
