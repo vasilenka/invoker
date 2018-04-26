@@ -115,11 +115,11 @@ $sys-warning-300    : #FF8B00;
 
 ### Success - Verdant
 ```scss
-$sys-success-100    : #79F2C0; // Use for success background
+$sys-success-100    : #57D9A3; // Use for success background
 $sys-success-200    : #00875A; // Default for small text
 $sys-success-300    : #006644; // Hover, active, focus and tap
 ```
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-100.png "Verdant 100 - #79F2C0")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-100.png "Verdant 100 - #57D9A3")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-200.png "Verdant 200 - #00875A")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-300.png "Verdant 300 - #006644")
 
@@ -230,5 +230,23 @@ $bg-sand-300    : #D8C4A5;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sand-300.png "Sand 300 - #D8C4A5")
 
 
-## Spaces
+# Spaces
 Spacing tokens are used for padding, margins, and position coordinates. Mids menggunakan basis 16px untuk spacing. Basis 16px membuat layout memiliki flexibilitas yang tinggi serta hirarki yang lebih jelas sehingga layout menjadi lebih proporsional.
+
+## Space Step
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/step.png "Space Steps")
+
+## Space Inset
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/inset.png "Space Inset")
+
+## Space Inline
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/inline.png "Space Inline")
+
+## Space Stack
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/stack.png "Space Stack")
+
+## Space Squish
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/squish.png "Space Squish")
+
+## Space Stretch
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/stretch.png "Space Stretch")

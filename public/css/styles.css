@@ -86,7 +86,7 @@ html, body {
   font-size: 16px;
   width: 100%;
   height: 100vh;
-  background: #F8F7F5;
+  background: #F7F7F5;
   box-sizing: border-box; }
 
 body {
@@ -153,45 +153,45 @@ body {
   outline: none; }
 
 .Button--primary {
-  border: 1px solid #ED0001;
-  color: white;
-  background: #ED0001;
-  transition: all .4s; }
-
-.Button--primary:hover {
-  background: #B50008;
-  transition: all .4s; }
-
-.Button--primary:focus,
-.Button--primary:active {
-  outline: none;
-  box-shadow: 0px 0px 0px 2px #FD5C63;
-  transition: all .4s; }
-
-.Button__Outline--primary {
-  color: #ED0001;
-  border: 1px solid #FD5C63;
-  background: transparent; }
-
-.Button--secondary {
   border: 1px solid #3F46AD;
   color: white;
   background: #3F46AD;
   transition: all .4s; }
 
-.Button--secondary:hover {
+.Button--primary:hover {
   background: #182385;
+  transition: all .4s; }
+
+.Button--primary:focus,
+.Button--primary:active {
+  outline: none;
+  box-shadow: 0px 0px 0px 2px #5773C2;
+  transition: all .4s; }
+
+.Button__Outline--primary {
+  color: #3F46AD;
+  border: 1px solid #5773C2;
+  background: transparent; }
+
+.Button--secondary {
+  border: 1px solid #D43242;
+  color: white;
+  background: #D43242;
+  transition: all .4s; }
+
+.Button--secondary:hover {
+  background: #9A202C;
   transition: all .4s; }
 
 .Button--secondary:focus,
 .Button--secondary:active {
   outline: none;
-  box-shadow: 0px 0px 0px 2px #5B77C4;
+  box-shadow: 0px 0px 0px 2px #FD5C63;
   transition: all .4s; }
 
 .Button__Outline--secondary {
-  color: #3F46AD;
-  border: 1px solid #5B77C4;
+  color: #D43242;
+  border: 1px solid #FD5C63;
   background: transparent; }
 
 .Form {
@@ -246,9 +246,9 @@ body {
 .Field__Input:focus,
 .Field__Input:active {
   outline: none;
-  border-color: #ED0001;
+  border-color: #3F46AD;
   transition: all .4s;
-  box-shadow: 0px 0px 0px 2px #FD5C63; }
+  box-shadow: 0px 0px 0px 2px #5773C2; }
 
 .Field__Hint {
   margin: 0 0 0.25rem 0;
@@ -271,7 +271,7 @@ body {
   margin: 0 0 0.25rem 0; }
 
 .Requirement__Item--passed {
-  color: #ED0001; }
+  color: #3F46AD; }
 
 p {
   font-family: "Soleil", "Circular Std", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
@@ -346,8 +346,8 @@ p {
   line-height: 1;
   color: rgba(0, 0, 0, 0.54);
   margin: 0 0 2rem 0;
-  line-height: 1;
-  display: block; }
+  display: block;
+  line-height: 1; }
   .Caption--small::before, .Caption--small::after {
     content: '';
     display: block;
@@ -366,7 +366,7 @@ p {
   width: 100%;
   text-align: center;
   color: #292929;
-  background: #FF603F;
+  background: #57D9A3;
   font-weight: 600;
   padding: 16px;
   font-size: 15px;

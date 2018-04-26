@@ -71,8 +71,8 @@ p {
     line-height: $lineheight-reset;
     color: $dark-alpha-40;
     margin: $space-stack-l;
-    @include text-crop;
     display: block;
+    @include text-crop;
 }
 
 .Alert {
@@ -83,7 +83,7 @@ p {
     width: 100%;
     text-align: center;
     color: $dark-hex-60;
-    background: $sys-danger-lighter;
+    background: $sys-success-100;
     font-weight: 600;
     padding: 16px;
     font-size: 15px;
