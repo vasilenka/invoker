@@ -1,24 +1,24 @@
 // TODO: Dokumentasi penggunaan warna pada README.MD
 
 // Brand--Primary Colors
-$brand-primary              : #ED0001;
-$brand-primary-lighter      : #FD5C63;
-$brand-primary-darker       : #B50008;
+$brand-primary-100          : #5773C2; // Default for large text
+$brand-primary-200          : #3F46AD; // Default for small text
+$brand-primary-300          : #182385; // Hover and tap
 // Brand--Secondary colors
-$brand-secondary            : #3F46AD;
-$brand-secondary-lighter    : #5B77C4;
-$brand-secondary-darker     : #182385;
+$brand-secondary-100        : #FD5C63; // Default for large text
+$brand-secondary-200        : #D43242; // Default for small text
+$brand-secondary-300        : #9A202C; // Hover and tap
 
 // Dark
 // HEX
-$dark-hex-70                : #0f0f0f;
-$dark-hex-60                : #292929;
-$dark-hex-50                : #484848;
-$dark-hex-40                : #767676;
+$dark-hex-70                : #0F0F0F; // Heading
+$dark-hex-60                : #292929; // Heading and Body text in text-heavy page such as blog post
+$dark-hex-50                : #484848; // Body text
+$dark-hex-40                : #767676; // Caption and subtitle
 // End-point for text colors
-$dark-hex-30                : #cccccc;
-$dark-hex-20                : #e0e0e0;
-$dark-hex-10                : #f5f5f5;
+$dark-hex-30                : #CCCCCC;
+$dark-hex-20                : #E0E0E0;
+$dark-hex-10                : #F5F5F5;
 // ALPHA
 $dark-alpha-70              : rgba(0,0,0,.94);
 $dark-alpha-60              : rgba(0,0,0,.84);
@@ -42,58 +42,58 @@ $light-hex-50               : #c0c0c0;
 $light-hex-40               : #9c9c9c;
 
 // System colors
-$sys-danger                 : #E42700;
-$sys-danger-lighter         : #FF603F;
-$sys-danger-darker          : #940D00;
-$sys-alert                  : #FFAB00;
-$sys-alert-lighter          : #FFE380;
-$sys-alert-darker           : #FF8B00;
-$sys-success                : #00A971;
-$sys-success-lighter        : #79F2C0;
-$sys-success-darker         : #008D5E;
+$sys-danger-100             : #FF603F; // Use for Danger Background or Large text
+$sys-danger-200             : #E42700; // Default for small text
+$sys-danger-300             : #940D00; // Hover, active, focus and tap
+$sys-warning-100            : #FFE380;
+$sys-warning-200            : #FFAB00;
+$sys-warning-300            : #FF8B00;
+$sys-success-100            : #79F2C0; // Use for success background
+$sys-success-200            : #00875A; // Default for small text
+$sys-success-300            : #006644; // Hover, active, focus and tap
 
 // Background Colors
 // Only use this colors for background
 // ROSE
-$bg-rose                    : #E3CDD1;
-$bg-rose-lighter            : #FCE7DD;
-$bg-rose-darker             : #D8BAC0;
+$bg-rose-100                : #FCE7DD;
+$bg-rose-200                : #E3CDD1;
+$bg-rose-300                : #D8BAC0;
 // SCARLET
-$bg-scarlet                 : #FFC4CF;
-$bg-scarlet-lighter         : #FFEAEE;
-$bg-scarlet-darker          : #FFA2B3;
+$bg-scarlet-100             : #FFEAEE;
+$bg-scarlet-200             : #FFC4CF;
+$bg-scarlet-300             : #FFA2B3;
 // SAGE
-$bg-sage                    : #CAD8B4;
-$bg-sage-lighter            : #E8F3EC;
-$bg-sage-darker             : #B7CA9A;
+$bg-sage-100                : #E8F3EC;
+$bg-sage-200                : #CAD8B4;
+$bg-sage-300                : #B7CA9A;
 // SEA
-$bg-sea                     : #A9DCD7;
-$bg-sea-lighter             : #D7EFEE;
-$bg-sea-darker              : #92D3CC;
-// SAGE
-$bg-plum                    : #D4D0E3;
-$bg-plum-lighter            : #DFD8E3;
-$bg-plum-darker             : #BEB8D5;
+$bg-sea-100                 : #D7EFEE;
+$bg-sea-200                 : #A9DCD7;
+$bg-sea-300                 : #92D3CC;
+// PLUMP
+$bg-plump-100               : #DFD8E3;
+$bg-plump-200               : #D4D0E3;
+$bg-plump-300               : #BEB8D5;
 // SKY
-$bg-sky                     : #B7D7F0;
-$bg-sky-lighter             : #E2EFF9;
-$bg-sky-darker              : #91C2E8;
+$bg-sky-100                 : #E2EFF9;
+$bg-sky-200                 : #B7D7F0;
+$bg-sky-300                 : #91C2E8;
 // SAND
 $bg-sand                    : #E0D0B7;
 $bg-sand-lighter            : #F6F1E4;
 $bg-sand-darker             : #D8C4A5;
 // DUST
-$bg-dust                    : #F0F0EE;
-$bg-dust-lighter            : #F8F7F5;
-$bg-dust-darker             : #B7B7AD;
+$bg-dust-100                : #F7F7F5;
+$bg-dust-200                : #F0F0EE;
+$bg-dust-300                : #B7B7AD;
 // VERDANT
-$bg-verdant                 : #D9FCE3;
-$bg-verdant-lighter         : #E4FDEB;
-$bg-verdant-darker          : #A9EEBC;
+$bg-verdant-100             : #E4FDEB;
+$bg-verdant-200             : #D9FCE3;
+$bg-verdant-300             : #A9EEBC;
 // BANANA
-$bg-banana                  : #FFFBBB;
-$bg-banana-lighter          : #FFFDDD;
-$bg-banana-darker           : #FFFE95;
+$bg-banana-100              : #FFFDDD;
+$bg-banana-200              : #FFFBBB;
+$bg-banana-300              : #FFFE95;
 
 // Additional Brand Colors
 // SAGE

@@ -219,6 +219,16 @@ $bg-banana-300    : #FFFE95;
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-200.png "Banana 200 - #FFFBBB")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-300.png "Banana 300 - #FFFE95")
 
+### Sand
+```scss
+$bg-sand-100    : #F6F1E4;
+$bg-sand-200    : #E0D0B7;
+$bg-sand-300    : #D8C4A5;
+```
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sand-100.png "Sand 100 - #F6F1E4")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sand-200.png "Sand 200 - #E0D0B7")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sand-300.png "Sand 300 - #D8C4A5")
+
 
 ## Spaces
 Spacing tokens are used for padding, margins, and position coordinates. Mids menggunakan basis 16px untuk spacing. Basis 16px membuat layout memiliki flexibilitas yang tinggi serta hirarki yang lebih jelas sehingga layout menjadi lebih proporsional.
