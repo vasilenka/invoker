@@ -29,8 +29,8 @@ Untuk memastikan produk yang kita buat memenuhi a11y, gunakan rasio kontras WCAG
 #### Primary Colors - Jeans
 > Primary link and actions
 ```scss
-$brand-primary-100      : #5773C2;
-$brand-primary-200      : #3F46AD; // Default
+$brand-primary-100      : #5773C2; // Default for large text
+$brand-primary-200      : #3F46AD; // Default for small text
 $brand-primary-300      : #182385; // Hover and tap
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-100.png "Jeans 100 - #5773C2")
@@ -40,8 +40,8 @@ $brand-primary-300      : #182385; // Hover and tap
 #### Secondary Colors - Scarlet
 > Primary actions
 ```scss
-$brand-secondary-100    : #FD5C63;
-$brand-secondary-200    : #D43242; // Default
+$brand-secondary-100    : #FD5C63; // Default for large text
+$brand-secondary-200    : #D43242; // Default for small text
 $brand-secondary-300    : #9A202C; // Hover and tap
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-100.png "Scarlet 100 - #FD5C63")
@@ -73,33 +73,34 @@ $dark-alpha-40      : rgba(0,0,0,,54);
 ## System Colors
 ### Danger - Rose
 ```scss
-$sys-danger-100     : #E42700;
-$sys-danger-200     : #FF603F;
-$sys-danger-300     : #940D00;
+$sys-danger-100     : #FF603F; // Use for Danger Background or Large text
+$sys-danger-200     : #E42700; // Default for small text
+$sys-danger-300     : #940D00; // Hover, active, focus and tap
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-100.png "Rose 100 - #FD5C63")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-200.png "Rose 200 - #ED0001")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-300.png "Rose 300 - #B50008")
 
 ### Warning - Amber
+> Only use these palettes as background color and use at least `$dark-60` as text for the warning.
 ```scss
-$sys-warning-100    : #FFAB00;
-$sys-warning-200    : #FFE380;
+$sys-warning-100    : #FFE380;
+$sys-warning-200    : #FFAB00;
 $sys-warning-300    : #FF8B00;
 ```
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-100.png "Amber 100 - #FD5C63")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-200.png "Amber 200 - #ED0001")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-300.png "Amber 300 - #B50008")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-100.png "Amber 100 - #FFE380")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-200.png "Amber 200 - #FFAB00")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-300.png "Amber 300 - #FF8B00")
 
 ### Success - Verdant
 ```scss
-$sys-success-100    : #00A971;
-$sys-success-200    : #79F2C0;
-$sys-success-300    : #008D5E;
+$sys-success-100    : #79F2C0; // Use for Success Background or Large text
+$sys-success-200    : #00875A; // Default for small text
+$sys-success-300    : #006644; // Hover, active, focus and tap
 ```
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-100.png "Verdant 100 - #FD5C63")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-200.png "Verdant 200 - #ED0001")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-300.png "Verdant 300 - #B50008")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-100.png "Verdant 100 - #79F2C0")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-200.png "Verdant 200 - #00875A")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-300.png "Verdant 300 - #006644")
 
 ## Background
 > Use these colors for background only.
