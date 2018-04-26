@@ -4,6 +4,18 @@
 
 ![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/brand/cover.png "Meridian.id Design System")
 
+**Table of Contents**
+[Primitives](https://github.com/vasilenka/invoker#primitives)
+[1. Colors](https://github.com/vasilenka/invoker#colors)
+    [Accessibility First (A11y)](https://github.com/vasilenka/invoker#a11y-first)
+    [How to read color palette ?](https://github.com/vasilenka/invoker#how-to-read-color-palette-)
+    [a. Brand Colors](https://github.com/vasilenka/invoker#brand-colors)
+    [b. Dark Colors](https://github.com/vasilenka/invoker#dark-colors)
+    [c. System Colors](https://github.com/vasilenka/invoker#system-colors)
+    [d. Background Colors](https://github.com/vasilenka/invoker#background)
+[2. Typography](https://github.com/vasilenka/invoker#typography)
+[3. Space](https://github.com/vasilenka/invoker#space)
+
 ### Primitives
 The basic building blocks for every components and pages we created.
 
