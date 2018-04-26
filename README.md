@@ -252,5 +252,5 @@ Spacing tokens are used for padding, margins, and position coordinates. Semua ni
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/stretch.png "Space Stretch")
 
 # Typography
-## Space Stretch
+
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/typography/type.png "Typography")
