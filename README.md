@@ -40,12 +40,12 @@ $brand-primary-300      : #182385; // Hover and tap
 > Primary actions
 ```scss
 $brand-secondary-100    : #FD5C63;
-$brand-secondary-200    : #ED0001; // Default
-$brand-secondary-300    : #B50008; // Hover and tap
+$brand-secondary-200    : #D43242; // Default
+$brand-secondary-300    : #9A202C; // Hover and tap
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-100.png "Scarlet 100 - #FD5C63")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-200.png "Scarlet 200 - #ED0001")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-300.png "Scarlet 300 - #B50008")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-200.png "Scarlet 200 - #D43242")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-300.png "Scarlet 300 - #9A202C")
 
 
 ### Dark Colors
