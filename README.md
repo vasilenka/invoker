@@ -25,11 +25,12 @@ The basic building blocks for every components and pages we created.
 ### A11y first
 Semua produk yang kita buat harus memenuhi tingkat kontras **WCAG AA**. Kontras yang rendah akan menyulitkan orang yang memiliki daya penglihatan yang rendah, buta warna, atau ketika penggunaan dalam situasi yang tidak optimal (e.g. outdoor ketika matahari sangat cerah).
 
-Semua palet warna di bawah ini memiliki label rasio kontras warna yang sudah diuji dengan warna putih. Untuk penggunaan pada warna selain putih, kamu dapat melakukan pengujian sendiri dengan menggunakan tools berikut:
+Semua palet warna di bawah ini memiliki label rasio kontras warna yang sudah diuji dengan warna putih. Untuk penggunaan pada warna selain putih, kamu dapat melakukan validasi sendiri dengan menggunakan tools berikut:
 
 1. https://colorable.jxnblk.com
 2. https://contrastchecker.com
-3. https://usecontrast.com - *macOS desktop app*
+3. http://accessible-colors.com
+4. https://usecontrast.com - *macOS desktop app*
 
 Tingkat kontras minimum yang dibutuhkan bergantung pada **text-size** dan **text-weight**. Text yang berukuran besar (*large scale text*) dan bold akan lebih mudah untuk dibaca, sedangkan text yang berukuran kecil dan regular membutuhkan level kontras yang lebih tinggi untuk lebih mudah dibaca.
 
