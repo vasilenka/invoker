@@ -3,9 +3,9 @@ $fontstack-sans : "Soleil", "Circular Std", "SF Pro Display", -apple-system,Blin
 $fontstack-serif : "Sentinel", sans-serif;
 // $fontstack-sans-secondary : "Hind Vadodara", sans-serif;
 
-@import "reset";
-@import "mixins";
-@import "./tokens";
+@import "sass/_reset.scss";
+@import "sass/_mixins.scss";
+@import "sass/_tokens.scss";
 
 * {
     box-sizing: inherit;
@@ -35,8 +35,8 @@ body {
     margin: auto;
 }
 
-@import "./utils";
-@import "./components";
+@import "sass/_utils.scss";
+@import "sass/_components.scss";
 
 // Let's get excited!
-@import "./sandbox";
+@import "sass/_sandbox.scss";
