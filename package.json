@@ -1,5 +1,5 @@
 {
-  "name": "invoker",
+  "name": "vasilenka-invoker",
   "version": "1.0.0",
   "description": "Meridian.id official styleguide",
   "main": "index.js",
@@ -15,7 +15,7 @@
     "styleguide",
     "meridian.id"
   ],
-  "author": "Vasilenka",
+  "author": "vasilenka",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vasilenka/invoker/issues"

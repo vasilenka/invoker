@@ -11,6 +11,7 @@ $fontstack-serif : "Sentinel", sans-serif;
     box-sizing: inherit;
     font-family: inherit;
     font-variant-numeric: proportional-nums;
+    text-decoration: none;
 }
 
 html {
@@ -30,9 +31,13 @@ body {
 }
 
 #app {
-    max-width: 700px;
+    width: 100vw;
     line-height: 1.5;
-    margin: auto;
+    margin: 0 auto;
+}
+
+a:visited {
+    color: unset;
 }
 
 @import "sass/_utils.scss";
