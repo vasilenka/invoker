@@ -4,12 +4,10 @@
 
 ![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/brand/cover.png "Meridian.id Design System")
 
-[![npm][npm-image]][npm-url] [![license][license-image]][license-url]
+[![license][license-image]][license-url]
 
 [license-image]: https://img.shields.io/npm/l/normalize.css.svg?style=flat-square
 [license-url]: LICENSE.md
-[npm-image]: https://img.shields.io/npm/v/npm.svg
-[npm-url]: https://www.npmjs.com/package/vasilenka-invoker
 
 **Table of Contents**
 
