@@ -3,6 +3,8 @@ $fontstack-sans : "Soleil", "Circular Std", "SF Pro Display", -apple-system,Blin
 $fontstack-serif : "Sentinel", sans-serif;
 // $fontstack-sans-secondary : "Hind Vadodara", sans-serif;
 
+@import "~normalize.css/normalize.css";
+
 @import "sass/_reset.scss";
 @import "sass/_mixins.scss";
 @import "sass/_tokens.scss";
@@ -11,11 +13,12 @@ $fontstack-serif : "Sentinel", sans-serif;
     box-sizing: inherit;
     font-family: inherit;
     font-variant-numeric: proportional-nums;
-    text-decoration: none;
 }
 
-html {
-    // padding: $space-inset-xl;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html, body {

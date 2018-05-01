@@ -1,6 +1,8 @@
 # Sass Cache
 .sass-cache
 .sass-cache/*
+compiled
+compiled/*
 
 # General
 .DS_Store
