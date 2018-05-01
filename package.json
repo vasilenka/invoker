@@ -16,7 +16,7 @@
     "meridian.id"
   ],
   "author": "vasilenka",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/vasilenka/invoker/issues"
   },
