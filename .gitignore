@@ -4,6 +4,9 @@
 compiled
 compiled/*
 
+node_modules
+node_modules/*
+
 # General
 .DS_Store
 .AppleDouble
