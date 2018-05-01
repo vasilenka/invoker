@@ -15,12 +15,6 @@ $fontstack-serif : "Sentinel", sans-serif;
     font-variant-numeric: proportional-nums;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 html, body {
     font-size: 16px;
     width: 100%;

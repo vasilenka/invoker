@@ -4,6 +4,9 @@
 
 ![alt text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/brand/cover.png "Meridian.id Design System")
 
+[![npm][npm-image]][npm-url] [![license][license-image]][license-url]
+[![changelog][changelog-image]][changelog-url]
+[![gitter][gitter-image]][gitter-url]
 
 **Table of Contents**
 
@@ -17,6 +20,13 @@
     * [Background Colors](https://github.com/vasilenka/invoker#background)
 2. [Typography](https://github.com/vasilenka/invoker#typography)
 3. [Space](https://github.com/vasilenka/invoker#space)
+
+# Install
+**NPM**
+
+```sh
+npm install --save vasilenka-invoker
+```
 
 ### Primitives
 The basic building blocks for every components and pages we created.
