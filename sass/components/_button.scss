@@ -1,69 +1,69 @@
 .Button {
-    min-width: 4rem;
-    cursor: pointer;
-    padding: $space-inset-sm;
-    font-weight: 300;
-    font-size: $body-s;
-    line-height: $lineheight-reset;
-    border-radius: $radius-xs;
-    font-family: $fontstack-sans;
-    letter-spacing: 0.624px;
-    // text-transform: uppercase;
-    @include text-crop;
+  cursor: pointer;
+  min-width: 4rem;
+  padding: $space-inset-sm;
+  font-weight: 300;
+  font-size: $body-s;
+  line-height: $lineheight-reset;
+  border-radius: $radius-xs;
+  font-family: $fontstack-sans;
+  letter-spacing: 0.624px;
+  outline: none;
+  transition: all .4s;
+  @include text-crop;
 }
 
 .Button--small {
-    @extend .Button;
-    padding: $space-inset-s;
+  @extend .Button;
+  padding: $space-inset-s;
 }
 
 .Button--large {
-    @extend .Button;
-    border-radius: $radius-xs;
-    padding: $space-squish-l;
+  @extend .Button;
+  border-radius: $radius-xs;
+  padding: $space-squish-l;
 }
 
 .Button--default {
-    border: 1px solid $dark-alpha-20;
-    color: $dark-alpha-50;
-    outline: none;
-    transition: all .4s;
+  @extend .Button;
+  border: $border-1 $dark-alpha-20;
+  color: $dark-alpha-50;
 }
 
 .Button--default:hover {
-    color: $dark-alpha-60;
-    border-color: $dark-alpha-40;
-    transition: all .4s;
+  color: $dark-alpha-60;
+  border-color: $dark-alpha-40;
+  transition: all .4s;
 }
 
 .Button--default:focus,
 .Button--default:active {
-    outline: none;
+  outline: none;
 }
 
 .Button--primary {
-    border: 1px solid $brand-primary-200;
-    color: $light-alpha-70;
-    background: $brand-primary-200;
-    transition: all .4s;
+  border: $border-1 $brand-primary-200;
+  color: $light-alpha-70;
+  background: $brand-primary-200;
+  transition: all .4s;
 }
 
 .Button--primary:hover {
-    background: $brand-primary-300;
-    transition: all .4s;
+  background: $brand-primary-300;
+  transition: all .4s;
 }
 
 .Button--primary:focus,
 .Button--primary:active {
-    outline: none;
-    box-shadow: 0px 0px 0px 2px $brand-primary-100;
-    transition: all .4s;
+  outline: none;
+  box-shadow: 0px 0px 0px 2px $brand-primary-100;
+  transition: all .4s;
 }
 
 .Button__Outline--primary {
-    color: $brand-primary-200;
-    border: 1px solid $brand-primary-100;
-    background: transparent;
+  color: $brand-primary-200;
+  border: $border-1 $brand-primary-100;
+  background: transparent;
 }
 
 .Button__Outline--primary:hover {
@@ -76,28 +76,28 @@
 }
 
 .Button--secondary {
-    border: 1px solid $brand-secondary-200;
-    color: $light-alpha-70;
-    background: $brand-secondary-200;
-    transition: all .4s;
+  border: 1px solid $brand-secondary-200;
+  color: $light-alpha-70;
+  background: $brand-secondary-200;
+  transition: all .4s;
 }
 
 .Button--secondary:hover {
-    background: $brand-secondary-300;
-    transition: all .4s;
+  background: $brand-secondary-300;
+  transition: all .4s;
 }
 
 .Button--secondary:focus,
 .Button--secondary:active {
-    outline: none;
-    box-shadow: 0px 0px 0px 2px $brand-secondary-100;
-    transition: all .4s;
+  outline: none;
+  box-shadow: 0px 0px 0px 2px $brand-secondary-100;
+  transition: all .4s;
 }
 
 .Button__Outline--secondary {
-    color: $brand-secondary-200;
-    border: 1px solid $brand-secondary-100;
-    background: transparent;
+  color: $brand-secondary-200;
+  border: 1px solid $brand-secondary-100;
+  background: transparent;
 }
 
 .Button__Outline--secondary:hover {
