@@ -10,7 +10,7 @@
 // For oversized screen titles like Hero component.
 // Use in moderation.
 .H900 {
-  font-size: $display-xl;
+  font-size: $display-900;
   line-height: rem(76px);
   font-family: $fontstack-serif;
   font-weight: 500;
@@ -18,42 +18,56 @@
 
 // Main title. Use only once per page.
 .H800 {
-  font-size: $display-l;
+  font-size: $display-800;
   line-height: rem(56px);
   font-family: $fontstack-sans;
   font-weight: 700;
 }
 
 .H700 {
-  font-size: $display-ml;
+  font-size: $display-700;
   line-height: rem(44px);
   font-weight: 700;
   font-family: $fontstack-sans;
 }
 
 .H600 {
-  font-size: $display-m;
+  font-size: $display-600;
   line-height: rem(32px);
   font-weight: 600;
   font-family: $fontstack-sans;
 }
 
 .H500 {
-  font-size: $display-sm;
+  font-size: $display-500;
   line-height: rem(24px);
   font-weight: 600;
   font-family: $fontstack-sans;
 }
 
 .H400 {
-  font-size: $display-s;
+  font-size: $display-400;
   line-height: rem(22px);
   font-weight: 600;
   font-family: $fontstack-sans;
 }
 
 .H300 {
-  font-size: $display-xs;
+  font-size: $display-300;
+  line-height: rem(20px);
+  font-weight: 600;
+  font-family: $fontstack-sans;
+}
+
+.H200 {
+  font-size: $display-200;
+  line-height: rem(20px);
+  font-weight: 600;
+  font-family: $fontstack-sans;
+}
+
+.H100 {
+  font-size: $display-100;
   line-height: rem(20px);
   font-weight: 600;
   font-family: $fontstack-sans;
