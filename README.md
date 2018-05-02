@@ -267,4 +267,8 @@ Spacing tokens are used for padding, margins, and position coordinates. Semua ni
 
 # Typography
 
+> Text is one of the main way we can deliver the information to the user. Keeping consist and sticking to logical hierarchies ensures that elements in the UI are clear and easily recognizable when scanning the page. Text sizes, styles, and layouts were selected to balance content and UI and to foster familiarity.
+
+##
+
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/typography/type.png "Typography")

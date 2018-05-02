@@ -1,8 +1,8 @@
 # Sass Cache
 .sass-cache
 .sass-cache/*
-compiled
-compiled/*
+css
+css/*
 
 node_modules
 node_modules/*

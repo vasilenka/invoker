@@ -3,17 +3,58 @@
 
 // https://type-scale.com
 // http://www.modularscale.com
-// http://alistapart.com/article/more-meaningful-typography
 
-$caption-m              : rem(12px);
-$caption-l              : rem(14px);
+@import 'line-height';
+@import 'text-size';
 
-$body-s                 : rem(15px);
-$body-m                 : rem(17px);
-$body-l                 : rem(21px);
+// For oversized screen titles like Hero component.
+// Use in moderation.
+.H900 {
+  font-size: $display-xl;
+  line-height: rem(76px);
+  font-family: $fontstack-serif;
+  font-weight: 500;
+}
 
-$display-s              : rem(18px);
-$display-sm             : rem(24px);
-$display-m              : rem(34px);
-$display-l              : rem(44px);
-$display-xl             : rem(64px);
+// Main title. Use only once per page.
+.H800 {
+  font-size: $display-l;
+  line-height: rem(56px);
+  font-family: $fontstack-sans;
+  font-weight: 700;
+}
+
+.H700 {
+  font-size: $display-ml;
+  line-height: rem(44px);
+  font-weight: 700;
+  font-family: $fontstack-sans;
+}
+
+.H600 {
+  font-size: $display-m;
+  line-height: rem(32px);
+  font-weight: 600;
+  font-family: $fontstack-sans;
+}
+
+.H500 {
+  font-size: $display-sm;
+  line-height: rem(24px);
+  font-weight: 600;
+  font-family: $fontstack-sans;
+}
+
+.H400 {
+  font-size: $display-s;
+  line-height: rem(22px);
+  font-weight: 600;
+  font-family: $fontstack-sans;
+}
+
+.H300 {
+  font-size: $display-xs;
+  line-height: rem(20px);
+  font-weight: 600;
+  font-family: $fontstack-sans;
+}

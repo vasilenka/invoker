@@ -1,4 +1,10 @@
-$lineheight-heading             : 1.125;
-$lineheight-body-compact        : 1.125;
-$lineheight-body-default        : 1.5;
-$lineheight-reset               : 1;
+// Lineheight tokens
+
+// Use for heading text and UI text
+$lineheight-compact   : 1.125;
+
+// Use for long-form text
+$lineheight-default   : 1.5;
+
+// Use for oversized heading text
+$lineheight-reset     : 1;
