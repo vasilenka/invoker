@@ -1,0 +1,64 @@
+.Link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Link--primary,
+.Link--primary:visited {
+  @extend .Link;
+  color: $brand-primary-200;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(180deg,transparent 94%, $brand-primary-200 0);
+  background-size: 0% 100%;
+  animation: hoverout .4s forwards;
+}
+
+.Link--primary:hover {
+  animation: hoverin .2s forwards;
+}
+
+.Link--secondary,
+.Link--secondary:visited {
+  @extend .Link;
+  color: $brand-secondary-200;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(180deg,transparent 94%, $brand-secondary-200 0);
+  background-size: 0% 100%;
+  animation: hoverout .4s forwards;
+}
+
+.Link--secondary:hover {
+  animation: hoverin .2s forwards;
+}
+
+@keyframes hoverin {
+  0% {
+    background-position: left center;
+    background-size: 0% 100%;
+    text-shadow: textshadow($bg-dust-100);
+  }
+  99% {
+    background-size: 99% 100%;
+    text-shadow: textshadow($bg-dust-100);
+  }
+  100% {
+    background-size: 100% 100%;
+    text-shadow: textshadow($bg-dust-100);
+  }
+}
+
+@keyframes hoverout {
+  0% {
+    background-position: right center;
+    background-size: 100% 100%;
+    text-shadow: textshadow($bg-dust-100);
+  }
+  99%{
+    text-shadow: textshadow($bg-dust-100);
+  }
+  100% {
+  background-position: right center;
+    background-size: 0% 100%;
+    text-shadow: none;
+  }
+}
