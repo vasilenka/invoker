@@ -10,65 +10,92 @@
 // For oversized screen titles like Hero component.
 // Use in moderation.
 .H900 {
-  font-size: $display-900;
-  line-height: rem(76px);
+  font-size: $header-900;
+  line-height: rem(72px);
   font-family: $fontstack-serif;
   font-weight: 500;
+  color: $dark-alpha-70;
 }
 
 // Main title. Use only once per page.
 .H800 {
-  font-size: $display-800;
+  font-size: $header-800;
   line-height: rem(56px);
   font-family: $fontstack-sans;
   font-weight: 700;
+  color: $dark-alpha-70;
 }
 
+//
 .H700 {
-  font-size: $display-700;
+  font-size: $header-700;
   line-height: rem(44px);
   font-weight: 700;
   font-family: $fontstack-sans;
+  color: $dark-alpha-60;
 }
 
 .H600 {
-  font-size: $display-600;
+  font-size: $header-600;
   line-height: rem(32px);
   font-weight: 600;
   font-family: $fontstack-sans;
 }
 
 .H500 {
-  font-size: $display-500;
+  font-size: $header-500;
   line-height: rem(24px);
   font-weight: 600;
   font-family: $fontstack-sans;
 }
 
 .H400 {
-  font-size: $display-400;
+  font-size: $header-400;
   line-height: rem(22px);
   font-weight: 600;
   font-family: $fontstack-sans;
 }
 
 .H300 {
-  font-size: $display-300;
+  font-size: $header-300;
   line-height: rem(20px);
   font-weight: 600;
   font-family: $fontstack-sans;
 }
 
+// Form label
 .H200 {
-  font-size: $display-200;
-  line-height: rem(20px);
+  font-size: $header-200;
+  line-height: rem(16px);
   font-weight: 600;
   font-family: $fontstack-sans;
 }
 
 .H100 {
-  font-size: $display-100;
-  line-height: rem(20px);
+  font-size: $header-100;
+  line-height: rem(16px);
   font-weight: 600;
+  font-family: $fontstack-sans;
+}
+
+.P100 {
+  font-size: $body-100;
+  line-height: rem(20px);
+  font-weight: 400;
+  font-family: $fontstack-sans;
+}
+
+.P200 {
+  font-size: $body-200;
+  line-height: rem(20px);
+  font-weight: 400;
+  font-family: $fontstack-sans;
+}
+
+// Use for text-heavy page like a blog post body
+.P300 {
+  font-size: $body-300;
+  line-height: rem(24px);
+  font-weight: 400;
   font-family: $fontstack-sans;
 }

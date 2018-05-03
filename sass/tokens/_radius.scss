@@ -1,12 +1,12 @@
 // Border radius
 // Base: 1rem == 16px
 
-$radius-xxs         : 0.125rem;
-$radius-xs          : 0.1875rem;
-$radius-s           : 0.375rem;
-$radius-m           : 0.5rem;
-$radius-l           : 0.75rem;
-$radius-xxl         : 100rem;
+$radius-xxs         : rem(2px);
+$radius-xs          : rem(3px);
+$radius-s           : rem(6px);
+$radius-m           : rem(8px);
+$radius-l           : rem(12px);
+$radius-xxl         : rem(9999px);
 
 $radius-bottom-xxs  : 0 0 $radius-xxs $radius-xxs;
 $radius-bottom-xs   : 0 0 $radius-xs $radius-xs;
