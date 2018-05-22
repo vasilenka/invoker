@@ -31,5 +31,15 @@
   animation: hoverInDust100 .2s forwards;
 }
 
+.Link--light {
+  color: $light-alpha-60;
+  transition: all .2s;
+}
+
+.Link--light:hover {
+  color: $light-alpha-70;
+  transition: all .2s;
+}
+
 @include hoverIn($bg-dust-100, hoverInDust100);
 @include hoverOut($bg-dust-100, hoverOutDust100);
