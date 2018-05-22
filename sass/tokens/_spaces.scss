@@ -1,3 +1,5 @@
+// Space tokens
+
 $base                   : 16px;
 
 $space-default          : 1rem;
@@ -37,6 +39,14 @@ $space-inline-m          : 0 $space-m 0 0;
 $space-inline-ml         : 0 $space-ml 0 0;
 $space-inline-l          : 0 $space-l 0 0;
 $space-inline-xl         : 0 $space-xl 0 0;
+
+$space-vertical-default  : $space-sm 0 $space-sm 0;
+$space-vertical-s        : $space-xs 0 $space-xs 0;
+$space-vertical-sm       : $space-s 0 $space-s 0;
+$space-vertical-m        : $space-sm 0 $space-sm 0;
+$space-vertical-ml       : $space-m 0 $space-m 0;
+$space-vertical-l        : $space-ml 0 $space-ml 0;
+$space-vertical-xl       : $space-l 0 $space-l 0;
 
 $space-squish-default   : $space-sm $space-m $space-sm $space-m;
 $space-squish-s         : $space-xs $space-s $space-xs $space-s;

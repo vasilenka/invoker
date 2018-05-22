@@ -14,18 +14,48 @@
 }
 
 .Button--small {
-  @extend .Button;
+  cursor: pointer;
+  min-width: 4rem;
+  font-weight: 300;
+  font-size: $body-100;
+  line-height: $lineheight-reset;
+  border-radius: $radius-xs;
+  font-family: $fontstack-sans;
+  letter-spacing: 0.624px;
+  outline: none;
+  transition: all .4s;
+  @include text-crop;
   padding: $space-inset-s;
 }
 
 .Button--large {
-  @extend .Button;
+  cursor: pointer;
+  min-width: 4rem;
+  font-weight: 300;
+  font-size: $body-100;
+  line-height: $lineheight-reset;
+  font-family: $fontstack-sans;
+  letter-spacing: 0.624px;
+  outline: none;
+  transition: all .4s;
+  @include text-crop;
   border-radius: $radius-xs;
   padding: $space-squish-l;
 }
 
 .Button--default {
-  @extend .Button;
+  cursor: pointer;
+  min-width: 4rem;
+  padding: $space-inset-sm;
+  font-weight: 300;
+  font-size: $body-100;
+  line-height: $lineheight-reset;
+  border-radius: $radius-xs;
+  font-family: $fontstack-sans;
+  letter-spacing: 0.624px;
+  outline: none;
+  transition: all .4s;
+  @include text-crop;
   border: $solid-default;
   color: $dark-alpha-50;
 }
