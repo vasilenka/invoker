@@ -16,9 +16,6 @@ html, body {
   height: 100vh;
   background: $bg-dust-100;
   box-sizing: border-box;
-}
-
-body {
   font-family: $fontstack-sans;
 }
 
@@ -27,10 +24,6 @@ body {
   line-height: 1.5;
   margin: 0 auto;
 }
-
-// a:visited {
-//   color: unset;
-// }
 
 @import "sass/_utils.scss";
 @import "sass/_components.scss";
