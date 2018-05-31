@@ -1,7 +1,6 @@
 // Invoker
 
 @import "~normalize.css/normalize.css";
-@import "sass/_mixins.scss";
 @import "sass/_tokens.scss";
 
 * {
@@ -24,9 +23,3 @@ html, body {
   line-height: 1.5;
   margin: 0 auto;
 }
-
-@import "sass/_utils.scss";
-@import "sass/_components.scss";
-
-// Let's get excited!
-@import "sass/_sandbox.scss";
