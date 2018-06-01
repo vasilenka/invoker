@@ -4,8 +4,8 @@
 // https://type-scale.com
 // http://www.modularscale.com
 
-@import 'line-height';
-@import 'text-size';
+@import '../tokens/line-height';
+@import '../tokens/text-size';
 
 // For oversized screen titles like Hero component.
 // Use in moderation.

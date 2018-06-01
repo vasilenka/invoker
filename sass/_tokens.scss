@@ -1,9 +1,10 @@
+@import '../mixins';
+
 // Fontstack
 @import "./tokens/font-stack";
 
 // Primitives
 @import "./tokens/colors";
-@import "./tokens/typography";
 @import "./tokens/spaces";
 
 // Tokens
