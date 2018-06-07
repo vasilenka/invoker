@@ -1,9 +1,15 @@
-// Invoker
+/*
+  INVOKER
+  Craft your pages faster 🚀
+  meepomodeon@gmail.com
+*/
 
 @import "~normalize.css/normalize.css";
 @import "sass/_tokens.scss";
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
   font-family: inherit;
   font-variant-numeric: proportional-nums;
@@ -20,6 +26,6 @@ html, body {
 
 #app {
   width: 100vw;
-  line-height: 1.5;
+  line-height: $lineheight-default;
   margin: 0 auto;
 }
