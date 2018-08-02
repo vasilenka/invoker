@@ -20,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/vasilenka/invoker/issues"
   },
-  "homepage": "https://github.com/vasilenka/invoker#readme",
-  "dependencies": {
-    "normalize.css": "^8.0.0"
-  }
+  "homepage": "https://github.com/vasilenka/invoker#readme"
 }

@@ -1,0 +1,31 @@
+.Alert__Container {
+  // position: absolute;
+  z-index: 9999;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: $space-inset-sm;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  box-sizing: border-box;
+  @include text-crop;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.Alert--warning {
+  background: $sys-warning-300;
+  color: $dark-alpha-60;
+}
+
+.Alert--success {
+  background: $sys-success-100;
+  color: $dark-alpha-60;
+}
+
+.Alert--danger {
+  background: $sys-danger-300;
+  color: $dark-alpha-60;
+}
