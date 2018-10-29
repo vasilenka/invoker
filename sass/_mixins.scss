@@ -4,6 +4,7 @@
 @import './mixins/link-animation';
 @import './mixins/responsive';
 @import './mixins/text-crop';
+@import './mixins/to-rem';
 
 @function upperSize($number){
     @return $number * 1.618
@@ -12,7 +13,3 @@
 @function lowerSize($number) {
     @return $number / 1.618
 };
-
-@function rem($number) {
-    @return ($number/16px) * 1rem;
-}

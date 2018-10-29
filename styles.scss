@@ -1,18 +1,18 @@
 /*
   INVOKER
   Craft your pages faster 🚀
-  meepomodeon@gmail.com
+  Ongki Herlambang -- meepomodeon@gmail.com
 */
 
-@import "sass/_tokens.scss";
-@import "./reset.css";
+@import "./tokens";
+@import "./sass/reset";
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
-  font-family: inherit;
-  font-variant-numeric: proportional-nums;
+  padding: 0;
+  margin: 0;
 }
 
 html, body {
@@ -21,11 +21,5 @@ html, body {
   height: 100vh;
   background: $bg-dust-100;
   box-sizing: border-box;
-  font-family: $fontstack-sans;
-}
-
-#app {
-  width: 100vw;
-  line-height: $lineheight-default;
-  margin: 0 auto;
+  font-family: $fontstack-primary;
 }

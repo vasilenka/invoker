@@ -12,6 +12,7 @@ $space-sm               : 0.75rem;
 $space-m                : 1rem;
 $space-ml               : 1.5rem;
 $space-l                : 2rem;
+$space-ll               : 3rem;
 $space-xl               : 4rem;
 
 $space-inset-default    : $space-m $space-m $space-m $space-m;
@@ -22,6 +23,7 @@ $space-inset-sm         : $space-sm $space-sm $space-sm $space-sm;
 $space-inset-m          : $space-m $space-m $space-m $space-m;
 $space-inset-ml         : $space-ml $space-ml $space-ml $space-ml;
 $space-inset-l          : $space-l $space-l $space-l $space-l;
+$space-inset-ll         : $space-ll $space-ll $space-ll $space-ll;
 $space-inset-xl         : $space-xl $space-xl $space-xl $space-xl;
 
 $space-stack-default    : 0 0 $space-m 0;
@@ -31,6 +33,7 @@ $space-stack-s          : 0 0 $space-s 0;
 $space-stack-m          : 0 0 $space-m 0;
 $space-stack-ml         : 0 0 $space-ml 0;
 $space-stack-l          : 0 0 $space-l 0;
+$space-stack-ll         : 0 0 $space-ll 0;
 $space-stack-xl         : 0 0 $space-xl 0;
 
 $space-inline-default    : 0 $space-m 0 0;
@@ -40,15 +43,18 @@ $space-inline-s          : 0 $space-s 0 0;
 $space-inline-m          : 0 $space-m 0 0;
 $space-inline-ml         : 0 $space-ml 0 0;
 $space-inline-l          : 0 $space-l 0 0;
+$space-inline-ll         : 0 $space-ll 0 0;
 $space-inline-xl         : 0 $space-xl 0 0;
 
 $space-vertical-default  : $space-sm 0 $space-sm 0;
-$space-vertical-s        : $space-xs 0 $space-xs 0;
-$space-vertical-sm       : $space-s 0 $space-s 0;
-$space-vertical-m        : $space-sm 0 $space-sm 0;
-$space-vertical-ml       : $space-m 0 $space-m 0;
-$space-vertical-l        : $space-ml 0 $space-ml 0;
-$space-vertical-xl       : $space-l 0 $space-l 0;
+$space-vertical-xs       : $space-xs 0 $space-xs 0;
+$space-vertical-s        : $space-s 0 $space-s 0;
+$space-vertical-sm       : $space-sm 0 $space-sm 0;
+$space-vertical-m        : $space-m 0 $space-m 0;
+$space-vertical-ml       : $space-ml 0 $space-ml 0;
+$space-vertical-l        : $space-l 0 $space-l 0;
+$space-vertical-ll       : $space-ll 0 $space-ll 0;
+$space-vertical-xl       : $space-xl 0 $space-xl 0;
 
 $space-squish-default   : $space-sm $space-m $space-sm $space-m;
 $space-squish-s         : $space-xs $space-s $space-xs $space-s;
