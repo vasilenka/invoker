@@ -265,8 +265,12 @@ Spacing tokens are used for padding, margins, and position coordinates. Semua ni
 ## Space Stretch
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/stretch.png "Space Stretch")
 
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/typography/type.png "Typography")
-
 # Typography
 
 Text is one of the main way we can deliver the information to the user. Keeping consist and sticking to logical hierarchies ensures that elements in the UI are clear and easily recognizable when scanning the page. Text sizes, styles, and layouts were selected to balance content and UI and to foster familiarity.
+
+Here's a list of type scale and it's property that we used across the brand.
+
+##
+
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/typography/type.png "Typography")
