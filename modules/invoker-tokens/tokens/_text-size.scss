@@ -2,20 +2,24 @@
   TextSize tokens
 */
 
-$caption-100    : rem(11px);
-$caption-200    : rem(12px);
-$caption-300    : rem(14px);
+/*
+  Font-size tokens
+*/
+// Use only for a component which really need to attract some attentions
+$display-1: 128px;
+$display-2: 96px;
+$display-3: 64px;
 
-$body-100       : rem(15px);
-$body-200       : rem(17px);
-$body-300       : rem(21px);
+$heading-1: 44px;
+$heading-2: 32px;
+$heading-3: 24px;
+$heading-4: 17px;
+$heading-5: 15px;
 
-$header-100     : rem(13px);
-$header-200     : rem(14px);
-$header-300     : rem(16px);
-$header-400     : rem(18px);
-$header-500     : rem(20px);
-$header-600     : rem(24px);
-$header-700     : rem(32px);
-$header-800     : rem(44px);
-$header-900     : rem(64px);
+$body-1: 15px;
+$body-2: 17px;
+$body-3: 21px;
+
+$caption-1: 13px;
+$caption-2: 12px;
+$caption-3: 11px;
