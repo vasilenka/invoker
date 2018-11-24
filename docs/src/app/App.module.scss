@@ -1,0 +1,17 @@
+@import 'invoker-tokens/index.scss';
+
+.root {
+  background: $light-alpha-100;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greet {
+  color: $brand-primary-200;
+}
+
+.testContainer {
+  background: $brand-secondary-100;
+}
