@@ -4,7 +4,7 @@
   "description": "Meridian.id official styleguide",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd docs && yarn start"
   },
   "repository": {
     "type": "git",

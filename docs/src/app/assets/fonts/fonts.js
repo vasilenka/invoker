@@ -3,4 +3,4 @@
 
 import './geomanist/stylesheet.css';
 import './sentinel/stylesheet.css';
-import './cereal/stylesheet.css';
+import './masbul/stylesheet.css';

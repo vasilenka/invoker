@@ -14,14 +14,12 @@
   font-size: $display-1;
   line-height: $line-reset;
   letter-spacing: -1.44px;
-  font-weight: 800;
 }
 .display2 {
   composes: display;
   font-size: $display-2;
   line-height: $line-reset;
   letter-spacing: -1.628px;
-  font-weight: 800;
 }
 .display3 {
   composes: display;
@@ -29,51 +27,38 @@
   line-height: $line-reset;
   font-weight: $bold;
   letter-spacing: -1.44px;
-  font-weight: 800;
 }
 
 // Heading Text
 .heading1 {
   font-size: $heading-1;
   font-family: $font-primary;
-  line-height: 52px;
+  line-height: 56px;
   letter-spacing: -1.44px;
-  font-weight: 800;
 }
 .heading2 {
   font-size: $heading-2;
   font-family: $font-primary;
-  line-height: 36px;
+  line-height: 40px;
   letter-spacing: -1.2px;
-  font-weight: 800;
 }
 .heading3 {
   font-size: $heading-3;
   font-family: $font-primary;
-  line-height: 30px;
+  line-height: 32px;
   letter-spacing: -0.8px;
-  font-weight: 700;
 }
 .heading4 {
   font-size: $heading-4;
   font-family: $font-primary;
-  line-height: 26px;
+  line-height: 24px;
   letter-spacing: -0.8px;
-  font-weight: 500;
 }
 .heading5 {
   font-size: $heading-5;
   font-family: $font-primary;
-  line-height: 22px;
+  line-height: 16px;
   letter-spacing: -0.24px;
-  font-weight: 500;
-}
-.heading6 {
-  font-size: $heading-6;
-  font-family: $font-primary;
-  line-height: 18px;
-  letter-spacing: -0.24px;
-  font-weight: 500;
 }
 
 // Body Text

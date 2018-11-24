@@ -1,0 +1,15 @@
+@import 'invoker-tokens/index.scss';
+
+.root {
+  background: $brand-primary-200;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: $space-vertical-sm;
+  composes: container-bleed from global;
+}
+
+.logo {
+  color: $light-alpha-100;
+}
