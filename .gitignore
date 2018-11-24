@@ -3,6 +3,10 @@
 .sass-cache/*
 css
 css/*
+sass/
+sass/*
+/sass/
+/sass/*
 
 .vscode
 
