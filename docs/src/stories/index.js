@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './../index.scss';
+
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
@@ -8,6 +10,7 @@ import { Welcome } from '@storybook/react/demo';
 
 import Text from '../app/components/Text/Text';
 import Button from '../app/components/Button/Button';
+import Textfield from '../app/components/Textfield/Textfield';
 
 storiesOf('Welcome', module).add('to Storybook', () => (
   <Welcome showApp={linkTo('Button')} />
@@ -16,52 +19,38 @@ storiesOf('Welcome', module).add('to Storybook', () => (
 storiesOf('Button', module)
   .add('Primary', () => (
     <Button primary onClick={action('clicked')}>
-      Primary Button
+      Button primary
     </Button>
   ))
   .add('Primary Small', () => (
     <Button primary small onClick={action('clicked')}>
-      Primary--small Button
-    </Button>
-  ))
-  .add('Primary Large', () => (
-    <Button primary large onClick={action('clicked')}>
-      Primary--large Button
+      Button primary small
     </Button>
   ))
 
   .add('Secondary', () => (
     <Button secondary onClick={action('clicked')}>
-      Secondary Button
+      Button secondary
     </Button>
   ))
   .add('Secondary Small', () => (
     <Button secondary small onClick={action('clicked')}>
-      Secondary--small Button
+      Button secondary small
     </Button>
   ))
-  .add('Secondary Large', () => (
-    <Button secondary large onClick={action('clicked')}>
-      Secondary--small Button
+
+  .add('Secondary-Alt', () => (
+    <Button secondaryAlt onClick={action('clicked')}>
+      Button default alt
+    </Button>
+  ))
+  .add('Secondary-Alt Small', () => (
+    <Button secondaryAlt small onClick={action('clicked')}>
+      Button default small
     </Button>
   ));
 
 storiesOf('Text', module)
-  .add('Display1', () => (
-    <Text display1 component="h1">
-      Display 1
-    </Text>
-  ))
-  .add('Display2', () => (
-    <Text display2 component="h1">
-      Display 2
-    </Text>
-  ))
-  .add('Display3', () => (
-    <Text display3 component="h1">
-      Display 3
-    </Text>
-  ))
   .add('Heading1', () => (
     <Text heading1 component="h1">
       Heading 1
@@ -77,30 +66,86 @@ storiesOf('Text', module)
       Heading 3
     </Text>
   ))
-  .add('Paragraph Large', () => <Text large>Paragraph Large</Text>)
-  .add('Paragraph Normal', () => <Text normal>Paragraph Normal</Text>)
-  .add('Paragraph Small', () => <Text small>Paragraph Small</Text>)
+  .add('Heading4', () => (
+    <Text heading4 component="h4">
+      Heading 4
+    </Text>
+  ))
+  .add('Heading5', () => (
+    <Text heading5 component="h5">
+      Heading 5
+    </Text>
+  ))
+  .add('Heading6', () => (
+    <Text heading6 component="h6">
+      Heading 6
+    </Text>
+  ))
+  .add('Paragraph Large', () => (
+    <Text component="p" large>
+      Paragraph Large
+    </Text>
+  ))
+  .add('Paragraph Medium', () => (
+    <Text component="p" medium>
+      Paragraph Medium
+    </Text>
+  ))
+  .add('Paragraph Small', () => (
+    <Text component="p" small>
+      Paragraph Small
+    </Text>
+  ))
 
   .add('Message', () => <Text message>Message</Text>)
-  .add('Label', () => <Text label>Label</Text>)
-  .add('Link', () => (
-    <Text large>
-      <Text link>Link</Text>
+  .add('Highlight', () => <Text highlight>Message</Text>)
+
+  .add('Link', () => <Text link>Link</Text>)
+
+  .add('Caption', () => (
+    <Text caption component="h6">
+      Caption
+    </Text>
+  ))
+  .add('Caption Bold', () => (
+    <Text captionBold component="h6">
+      Caption Bold
     </Text>
   ))
 
-  .add('Caption Large', () => (
-    <Text large>
-      <Text captionLarge>Caption Large</Text>
+  .add('Label', () => (
+    <Text labelMedium component="label">
+      Input label
     </Text>
   ))
-  .add('Caption Normal', () => (
-    <Text large>
-      <Text captionNormal>Caption Normal</Text>
+  .add('Label Small', () => (
+    <Text labelSmall component="label">
+      Input label small
     </Text>
+  ));
+
+storiesOf('Text Field', module)
+  .add('Textfield', () => (
+    <Textfield
+      id="new one"
+      label="Textfield label"
+      placeholder="Input your text here..."
+    />
   ))
-  .add('Caption Small', () => (
-    <Text large>
-      <Text captionSmall>Caption Small</Text>
-    </Text>
+
+  .add('Textfield Small', () => (
+    <Textfield
+      id="hello world"
+      small
+      label="Textfield label"
+      placeholder="Input your text here..."
+    />
+  ))
+
+  .add('Textfield Error', () => (
+    <Textfield
+      id="street"
+      errorMessage="Address field is required"
+      label="Street address"
+    />
   ));

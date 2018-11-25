@@ -1,6 +1,6 @@
 {
   "name": "invoker-tokens",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tokens variables, mixins, and functions for use in components development",
   "main": "index.js",
   "scripts": {
