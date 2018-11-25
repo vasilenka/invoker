@@ -22,25 +22,22 @@ class App extends Component {
             children under 2 years of age.
           </Text>
           <Textfield
-            small
             className={styles.field}
             label="First name"
             id="first_name"
           />
           <Textfield
-            small
             className={styles.field}
             label="Last name"
             id="last_name"
           />
           <Textfield
-            small
             className={styles.field}
             label="Street address"
             id="address"
             errorMessage="Address is required"
           />
-          <Textfield small className={styles.field} label="City" id="city" />
+          <Textfield className={styles.field} label="City" id="city" />
           <Button primary>Confirm & Pay</Button>
         </div>
       </div>

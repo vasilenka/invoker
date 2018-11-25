@@ -151,9 +151,13 @@
 .link {
   font-family: $font-primary;
   font-weight: inherit;
-  color: $brand-sea;
+  color: $brand-primary-200;
   text-decoration: none;
-  background-image: linear-gradient(180deg, $brand-sea 30%, $brand-sea 30%);
+  background-image: linear-gradient(
+    180deg,
+    $brand-primary-200 30%,
+    $brand-primary-200 30%
+  );
   background-size: 0% 1.5px;
   background-repeat: no-repeat;
   background-position: 0 100%;
@@ -163,6 +167,6 @@
   &:hover {
     background-size: 100% 1.5px;
     text-shadow: textshadow($light-alpha-100);
-    color: $brand-sea-darker;
+    color: $brand-primary-300;
   }
 }
