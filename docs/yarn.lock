@@ -5934,10 +5934,10 @@ invoker-layout@^1.0.0:
   resolved "https://registry.yarnpkg.com/invoker-layout/-/invoker-layout-1.0.1.tgz#a89a62a6d514904bf2b9ac9194fa15e5cbbc3518"
   integrity sha512-rxNyo/y82DpPM2+0RNVlFVQQ3MiJFg44o+Zyc+j5yLp+M0wd+u8xGIscv0+P6KLWzJwgn6fdwaiaLIZJ86J+Fw==
 
-invoker-tokens@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/invoker-tokens/-/invoker-tokens-1.0.6.tgz#23056887c95e88514e383856ec2262ed71503407"
-  integrity sha512-cD0KJJq78YIInKR4l5LIJnZ2lyIyaGlngjoaDk5xOk3ko4t5JEa2/ser2SPGLUpOab5/6RTr5SUTZZY8oyUOxA==
+invoker-tokens@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/invoker-tokens/-/invoker-tokens-1.0.7.tgz#5a34372fe702215d2e76b29446e0014244b9945a"
+  integrity sha512-Zl3dK9vrMggkFuQvNfIXwh6Zs1q7JneTzgyC/LFRcLLULojghSaBmT52ajeRXedcMZMSHOQ017HubQ4ZVlRgYQ==
 
 ip-regex@^2.1.0:
   version "2.1.0"

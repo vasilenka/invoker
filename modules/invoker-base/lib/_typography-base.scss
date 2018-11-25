@@ -11,12 +11,12 @@ h6 {
   margin-bottom: 0;
 }
 
-h1 { @include h1; }
-h2 { @include h2; }
-h3 { @include h3; }
-h4 { @include h4; }
-h5 { @include h5; }
-h6 { @include h6; }
+// h1 { @include h1; }
+// h2 { @include h2; }
+// h3 { @include h3; }
+// h4 { @include h4; }
+// h5 { @include h5; }
+// h6 { @include h6; }
 
 // Body text
 // --------------------------------------------------
@@ -63,18 +63,18 @@ dd {
 // Code
 // --------------------------------------------------
 
-tt,
-code {
-  font-family: $mono-font;
-  font-size: $font-size-small;
-}
+// tt,
+// code {
+//   font-family: $mono-font;
+//   font-size: $font-size-small;
+// }
 
-pre {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: $mono-font;
-  font-size: $font-size-small;
-}
+// pre {
+//   margin-top: 0;
+//   margin-bottom: 0;
+//   font-family: $mono-font;
+//   font-size: $font-size-small;
+// }
 
 // Octicons
 // --------------------------------------------------
