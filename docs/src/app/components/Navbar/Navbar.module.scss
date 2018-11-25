@@ -6,10 +6,28 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: $space-vertical-sm;
+  padding: $space-vertical-m;
   composes: container-bleed from global;
 }
 
+.container {
+  composes: container-narrow from global;
+  max-width: 560px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .logo {
+  height: 16px;
+  margin: $space-inline-m;
+}
+
+.name {
   color: $light-alpha-100;
+  font-weight: $bold;
+  margin: 0;
 }

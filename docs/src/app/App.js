@@ -14,12 +14,12 @@ class App extends Component {
         <Navbar />
         <div className={styles.container}>
           <Text className={styles.title} heading2 component="h1">
-            Review and Pay
+            Let's get started!
           </Text>
-          <Text component="p">
-            You can add more friends to this experience and confirm your
-            reservation.Guests ages 10 and up can attend. Parents may also bring
-            children under 2 years of age.
+          <Text className={styles.description} component="p">
+            Introducing invoker, a design system built to adapth with any kind
+            of project and empower designer and developer in solving the problem
+            instead of nitpicking every pixel on sketch.
           </Text>
           <Textfield
             className={styles.field}
