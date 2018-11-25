@@ -7,7 +7,7 @@ import Text from './../Text/Text';
 const Navbar = ({ className, ...restProps }) => {
   return (
     <div className={classnames(styles.root)}>
-      <Text className={styles.logo} normal component="h1">
+      <Text className={styles.logo} component="h1">
         invoker.
       </Text>
     </div>

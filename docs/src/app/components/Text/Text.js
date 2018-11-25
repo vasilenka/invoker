@@ -70,7 +70,7 @@ Text.displayName = 'Text';
 Text.defaultProps = {
   baseline: true,
   bullet: false,
-  size: 'regular'
+  size: 'medium'
 };
 
 export default withTextProps(Text);

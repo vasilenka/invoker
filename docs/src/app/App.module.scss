@@ -11,3 +11,21 @@
 .testContainer {
   background: $brand-sea;
 }
+
+.container {
+  composes: container-narrow from global;
+  padding: $space-vertical-l;
+  max-width: 560px;
+}
+
+.field {
+  width: 100%;
+
+  &:not(:last-child) {
+    margin: $space-stack-ml;
+  }
+}
+
+.title {
+  margin: $space-stack-m;
+}

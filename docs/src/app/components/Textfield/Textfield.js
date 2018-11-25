@@ -64,7 +64,13 @@ class Textfield extends Component {
     );
 
     return (
-      <div className={styles.root}>
+      <div
+        {...restProps}
+        className={classnames({
+          [styles.root]: true,
+          [className]: className
+        })}
+      >
         {TextfieldLabel}
         <FieldInput
           onClick={this.handleClick}
