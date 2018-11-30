@@ -6,6 +6,7 @@
   border-radius: 3px;
   outline: none;
   transition: all 0.3s;
+  box-sizing: border-box;
 
   &:focus,
   &:active {

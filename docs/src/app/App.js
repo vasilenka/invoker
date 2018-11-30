@@ -6,8 +6,29 @@ import Text from './components/Text/Text';
 import Navbar from './components/Navbar/Navbar';
 import Textfield from './components/Textfield/Textfield';
 import Button from './components/Button/Button';
+import Combobox from './components/Combobox/Combobox';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: []
+    };
+  }
+
+  componentDidMount = () => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(json =>
+        this.setState({
+          users: json
+        })
+      )
+      .then(() => {
+        console.log(this.state.users);
+      });
+  };
+
   render() {
     return (
       <div className={classnames(styles.root)}>
@@ -38,6 +59,12 @@ class App extends Component {
             errorMessage="Address is required"
           />
           <Textfield className={styles.field} label="City" id="city" />
+          <Combobox
+            limitedHeight
+            label="Any friend?"
+            className={styles.autocomplete}
+            options={this.state.users}
+          />
           <Button primary>Confirm & Pay</Button>
         </div>
       </div>

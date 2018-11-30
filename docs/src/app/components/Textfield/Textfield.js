@@ -12,7 +12,7 @@ class Textfield extends Component {
     this.state = {
       error: false
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.removeError = this.removeError.bind(this);
   }
 
   componentDidMount = () => {
@@ -22,7 +22,7 @@ class Textfield extends Component {
     });
   };
 
-  handleClick = e => {
+  removeError = e => {
     this.setState({
       ...this.state,
       error: false
@@ -73,7 +73,8 @@ class Textfield extends Component {
       >
         {TextfieldLabel}
         <FieldInput
-          onClick={this.handleClick}
+          onClick={this.removeError}
+          onFocus={this.removeError}
           placeholder={placeholder}
           small={small}
           error={this.state.error}
