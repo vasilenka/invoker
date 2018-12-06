@@ -1,0 +1,30 @@
+@import 'invoker-tokens/index.scss';
+
+// Checkbox
+.root {
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0;
+  padding: $space-vertical-s;
+  width: fit-content;
+}
+
+.root input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.label {
+  color: $dark-alpha-70;
+  margin-right: 16px;
+}
+
+.box {
+  display: block;
+  margin-right: 12px;
+  margin-top: 2px;
+}

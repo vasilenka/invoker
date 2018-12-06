@@ -7,12 +7,15 @@ import Navbar from './components/Navbar/Navbar';
 import Textfield from './components/Textfield/Textfield';
 import Button from './components/Button/Button';
 import Combobox from './components/Combobox/Combobox';
+import RadioList from './components/RadioList/RadioList';
+import Checkbox from './components/Checkbox/Checkbox';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: []
+      users: [],
+      options: ['Primary options', 'Secondary options']
     };
   }
 
@@ -23,10 +26,7 @@ class App extends Component {
         this.setState({
           users: json
         })
-      )
-      .then(() => {
-        console.log(this.state.users);
-      });
+      );
   };
 
   render() {
@@ -65,6 +65,21 @@ class App extends Component {
             className={styles.autocomplete}
             options={this.state.users}
           />
+          <RadioList
+            name="options"
+            options={this.state.options}
+            selected={this.state.options[1]}
+          />
+          <br />
+          <br />
+          <Checkbox>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa
+            inventore ratione voluptas accusamus laborum vitae quam ducimus ut,
+            molestiae soluta, harum aut ad veritatis itaque aliquid temporibus!
+            Est, rerum voluptatem!{' '}
+          </Checkbox>
+          <br />
+          <br />
           <Button primary>Confirm & Pay</Button>
         </div>
       </div>
