@@ -21,7 +21,7 @@
 2. [Typography](https://github.com/vasilenka/invoker#typography)
 3. [Space](https://github.com/vasilenka/invoker#space)
 
-# Install
+# Install Modules
 **NPM**
 
 ```sh
@@ -327,4 +327,4 @@ Here's a list of type scale and it's property that we used across the brand.
 
 ##
 
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/typography/type.png "Typography")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/typography/typography--product.png "Typography for Product Development")
