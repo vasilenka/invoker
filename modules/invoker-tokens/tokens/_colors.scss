@@ -126,33 +126,24 @@ $brand-secondary-90          : $brand-scarlet-90;
 
 // Dark
 // HEX
-$dark-hex-70                : #0F0F0F; // Heading
-$dark-hex-60                : #292929; // Heading and Body text in text-heavy page such as blog post
-$dark-hex-50                : #484848; // Body text
-$dark-hex-40                : #767676; // Caption and subtitle
-// End-point for text colors
-$dark-hex-30                : #CCCCCC;
-$dark-hex-20                : #E0E0E0;
-$dark-hex-10                : #F5F5F5;
-
-// Dark
-// HEX
 $dark-hex-90                : #0F0F0F; // Heading
 $dark-hex-80                : #292929; // Heading and Body text in text-heavy page such as blog post
 $dark-hex-70                : #484848; // Body text
 $dark-hex-60                : #767676; // Caption and subtitle
-// End-point for text colors
+$dark-hex-50                : #8F8F8F;
+
 $dark-hex-30                : #CCCCCC;
 $dark-hex-20                : #E0E0E0;
-$dark-hex-10                : #F5F5F5;
+$dark-hex-10                : #EBEBEB;
+$dark-hex-05                : #F5F5F5;
 
 // ALPHA
 $dark-alpha-90              : rgba(0,0,0,.94);
 $dark-alpha-80              : rgba(0,0,0,.84);
-$dark-alpha-70              : rgba(0,0,0,.71);
+$dark-alpha-70              : rgba(0,0,0,.72);
 $dark-alpha-60              : rgba(0,0,0,.54);
 $dark-alpha-50              : rgba(0,0,0,.44);
-// End-point for text colors
+
 $dark-alpha-30              : rgba(0,0,0,.20);
 $dark-alpha-20              : rgba(0,0,0,.12);
 $dark-alpha-10              : rgba(0,0,0,.08);

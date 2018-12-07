@@ -65,9 +65,10 @@ $brand-primary-100 // Default for large text
 $brand-primary-200 // Default for small text
 $brand-primary-300 // Hover and tap
 ```
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-100.png "Jeans 100 - #5773C2")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-200.png "Jeans 200 - #3F46AD")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-300.png "Jeans 300 - #182385")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/jeans.png "Jeans")
+<!-- ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-100.png "Jeans 100 - #5773C2") -->
+<!-- ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-200.png "Jeans 200 - #3F46AD") -->
+<!-- ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-300.png "Jeans 300 - #182385") -->
 
 #### Secondary Colors - Scarlet
 > Primary actions
