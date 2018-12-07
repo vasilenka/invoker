@@ -13,7 +13,7 @@ const Navbar = ({ className, ...restProps }) => {
         <div className={styles.brand}>
           <Logo className={styles.logo} />
           <Text className={styles.name} heading4 component="h1">
-            invoker.
+            Invoker
           </Text>
         </div>
       </div>
