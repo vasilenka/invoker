@@ -25,7 +25,17 @@
 **NPM**
 
 ```sh
-npm install --save vasilenka-invoker
+npm install --save invoker-tokens
+npm install --save invoker-base
+npm install --save invoker-layout
+```
+
+**Yarn**
+
+```sh
+yarn add invoker-tokens
+yarn add invoker-base
+yarn add invoker-layout
 ```
 
 ---
