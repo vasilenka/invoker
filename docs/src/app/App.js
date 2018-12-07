@@ -8,7 +8,7 @@ import Textfield from './components/Textfield/Textfield';
 import Button from './components/Button/Button';
 import Combobox from './components/Combobox/Combobox';
 import RadioList from './components/RadioList/RadioList';
-import Checkbox from './components/Checkbox/Checkbox';
+import CheckboxList from './components/CheckboxList/CheckboxList';
 
 class App extends Component {
   constructor(props) {
@@ -65,21 +65,17 @@ class App extends Component {
             className={styles.autocomplete}
             options={this.state.users}
           />
-          <RadioList
-            name="options"
-            options={this.state.options}
-            selected={this.state.options[1]}
-          />
-          <br />
-          <br />
-          <Checkbox>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa
-            inventore ratione voluptas accusamus laborum vitae quam ducimus ut,
-            molestiae soluta, harum aut ad veritatis itaque aliquid temporibus!
-            Est, rerum voluptatem!{' '}
-          </Checkbox>
-          <br />
-          <br />
+
+          <div className={styles.radioList}>
+            <RadioList
+              name="options"
+              options={this.state.options}
+              selected={this.state.options[1]}
+            />
+          </div>
+
+          <CheckboxList className={styles.checkboxList} />
+
           <Button primary>Confirm & Pay</Button>
         </div>
       </div>

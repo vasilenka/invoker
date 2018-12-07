@@ -2,13 +2,13 @@ import styles from './Checkbox.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import Text from './../Text/Text';
-import Checkmark from './../Checkmark/Checkmark';
-
 class Checkbox extends Component {
-  state = {
-    hover: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      hover: false
+    };
+  }
 
   onHover = e => {
     this.setState({
@@ -24,8 +24,28 @@ class Checkbox extends Component {
     });
   };
 
+  renderItems = () => {
+    let { hover } = this.state;
+    let { children } = this.props;
+
+    if (!children) {
+      return null;
+    }
+
+    return React.Children.map(children, (child, index) =>
+      React.isValidElement(child)
+        ? child.type.name === 'Checkmark'
+          ? React.cloneElement(child, {
+              onHover: hover
+            })
+          : React.cloneElement(child)
+        : null
+    );
+  };
+
   render() {
     let {
+      position,
       name,
       id,
       value,
@@ -34,21 +54,18 @@ class Checkbox extends Component {
       className,
       ...restProps
     } = this.props;
+
     return (
       <label
         {...restProps}
-        className={styles.root}
+        className={classnames({
+          [styles.root]: true,
+          [className]: className
+        })}
         onMouseEnter={this.onHover}
         onMouseLeave={this.onLeave}
       >
-        <Text className={styles.label} large>
-          {children}
-        </Text>
-        <Checkmark
-          component="div"
-          className={styles.box}
-          onHover={this.state.hover}
-        />
+        {this.renderItems()}
       </label>
     );
   }
