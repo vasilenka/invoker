@@ -327,4 +327,4 @@ Here's a list of type scale and it's property that we used across the brand.
 
 ##
 
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/typography/typography--product.svg "Typography for Product Development")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/typography/typography--product.png "Typography for Product Development")
