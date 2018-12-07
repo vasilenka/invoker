@@ -65,11 +65,9 @@ $brand-primary-100 // Default for large text
 $brand-primary-200 // Default for small text
 $brand-primary-300 // Hover and tap
 ```
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/jeans.png "Jeans")
-
-<!-- ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-100.png "Jeans 100 - #5773C2") -->
-<!-- ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-200.png "Jeans 200 - #3F46AD") -->
-<!-- ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-300.png "Jeans 300 - #182385") -->
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sea-100.png "Sea 100 - #37A4A0")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sea-200.png "Sea 200 - #008380")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sea-300.png "Sea 300 - #00514F")
 
 #### Secondary Colors - Scarlet
 > Primary actions
@@ -78,10 +76,50 @@ $brand-secondary-100  // Default for large text
 $brand-secondary-200  // Default for small text
 $brand-secondary-300  // Hover and tap
 ```
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/scarlet.png "Scarlet")
-<!-- ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-100.png "Scarlet 100 - #FD5C63")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-100.png "Scarlet 100 - #FD5C63")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-200.png "Scarlet 200 - #D43242")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-300.png "Scarlet 300 - #9A202C") -->
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-300.png "Scarlet 300 - #9A202C")
+
+#### Accents Colors
+> Jeans
+```scss
+$brand-jeans-100
+$brand-jeans-200
+$brand-jeans-300
+```
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-100.png "Jeans 100 - #5773C2")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-200.png "Jeans 200 - #3F46AD")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-300.png "Jeans 300 - #182385")
+
+> Plum
+```scss
+$brand-plum-100
+$brand-plum-200
+$brand-plum-300
+```
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/plum-100.png "Plum 100 - #A18DAD")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/plum-200.png "Plum 200 - #866D96")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/plum-300.png "Plum 300 - #51425B")
+
+> Sage
+```scss
+$brand-sage-100
+$brand-sage-200
+$brand-sage-300
+```
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sage-100.png "Sage 100 - #56A472")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sage-200.png "Sage 200 - #2C864C")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sage-300.png "Sage 300 - #1B512E")
+
+> Sky
+```scss
+$brand-sky-100
+$brand-sky-200
+$brand-sky-300
+```
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sky-100.png "Sky 100 - #4A9BDA")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sky-200.png "Sky 200 - #267ABC")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sky-300.png "Sky 300 - #184C75")
 
 
 ## Dark Colors
@@ -90,23 +128,26 @@ $brand-secondary-300  // Hover and tap
 Semua dark colors sudah diuji dengan background putih `#FFFFFF` serta dan memenuhi standar contrast ratio WCAG AA. Untuk penggunaan dengan background selain warna putih silahkan lakukan pengujian lagi.
 
 ```SCSS
-$dark-hex-70 // Heading
-$dark-hex-60 // Heading and Body text in text-heavy page such as blog post
-$dark-hex-50 // Body text
-$dark-hex-40 // Caption and subtitle
+$dark-hex-90 // Headings
+$dark-hex-80 // Headings and Body texts in text-heavy page such as blog post
+$dark-hex-70 // Body texts
+$dark-hex-60 // Captions and subtitles
+$dark-hex-50 // Icons
 
 // Alternaive colors using alpha value.
 // Preferable!
+$dark-alpha-90
+$dark-alpha-80
 $dark-alpha-70
 $dark-alpha-60
 $dark-alpha-50
-$dark-alpha-40
 
 ```
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-70.png "Dark 70 - #0F0F0F")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-60.png "Dark 60 - #292929")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-50.png "Dark 50 - #484848")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-40.png "Dark 40 - #767676")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-70.png "Dark 90 - #0F0F0F")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-60.png "Dark 80 - #292929")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-50.png "Dark 70 - #484848")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-40.png "Dark 60 - #767676")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-40.png "Dark 50 - #8F8F8F")
 
 ## System Colors
 ### Danger - Rose
