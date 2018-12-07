@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="577px" height="807px" viewBox="0 0 577 807" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>typography--product</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Tokens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Typography-Product" transform="translate(-137.000000, -230.000000)">
+            <g id="Type" transform="translate(134.000000, 93.000000)">
+                <rect id="Background-[0]" fill="#FFFFFF" x="0" y="0" width="583" height="948"></rect>
+                <g id="categories-[64v]" transform="translate(3.000000, 131.000000)">
+                    <g id="header">
+                        <text id="Header" font-family="Sentinel-Medium, Sentinel" font-size="24" font-weight="400" fill="#484848">
+                            <tspan x="0" y="38">Header</tspan>
+                        </text>
+                        <g id="content-[24v]" transform="translate(223.385147, 0.000000)" fill="#292929">
+                            <text id="heading-1-46/52" font-family="Masbul-ExtraBold, Masbul" font-size="46" font-weight="600" line-spacing="52">
+                                <tspan x="0" y="46">heading-1 46/52</tspan>
+                            </text>
+                            <text id="heading-2-32/36" font-family="Masbul-ExtraBold, Masbul" font-size="32" font-weight="600" line-spacing="36">
+                                <tspan x="0" y="108">heading-2 32/36</tspan>
+                            </text>
+                            <text id="heading-3-24/30" font-family="Masbul-Bold, Masbul" font-size="24" font-weight="bold" line-spacing="30">
+                                <tspan x="0" y="160">heading-3 24/30</tspan>
+                            </text>
+                            <text id="heading-4-18/26" font-family="Masbul-Medium, Masbul" font-size="18" font-weight="400" line-spacing="26">
+                                <tspan x="0" y="208">heading-4 18/26</tspan>
+                            </text>
+                            <text id="heading-5-16/22" font-family="Masbul-Medium, Masbul" font-size="16" font-weight="400" line-spacing="22">
+                                <tspan x="0" y="256">heading-5 16/22</tspan>
+                            </text>
+                            <text id="heading-6-14/18" font-family="Masbul-Medium, Masbul" font-size="14" font-weight="400" line-spacing="18">
+                                <tspan x="0" y="300">heading-6 14/18</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="body" transform="translate(0.000000, 368.000000)" fill="#484848">
+                        <text id="Body" font-family="Sentinel-Medium, Sentinel" font-size="24" font-weight="400">
+                            <tspan x="0" y="28">Body</tspan>
+                        </text>
+                        <g id="content-[48h]" transform="translate(223.385147, 0.000000)" font-family="Masbul-Book, Masbul" font-weight="300">
+                            <g id="normal-[24v]">
+                                <text id="Body-L-18/26" font-size="18" line-spacing="26">
+                                    <tspan x="0" y="18">Body L 18/26</tspan>
+                                </text>
+                                <text id="Body-M-16/22" font-size="16" line-spacing="22">
+                                    <tspan x="0" y="66">Body M 16/22</tspan>
+                                </text>
+                                <text id="Body-S-14/18" font-size="14" line-spacing="18">
+                                    <tspan x="0" y="110">Body S 14/18</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="caption" transform="translate(0.000000, 546.000000)">
+                        <text id="Caption" font-family="Sentinel-Medium, Sentinel" font-size="24" font-weight="400" fill="#484848">
+                            <tspan x="0" y="20">Caption</tspan>
+                        </text>
+                        <g id="content-[24v]" transform="translate(223.385147, 0.000000)" fill="#767676" font-size="12" line-spacing="16">
+                            <text id="Caption-S-12/16" font-family="Masbul-Book, Masbul" font-weight="300">
+                                <tspan x="0" y="12">Caption S 12/16</tspan>
+                            </text>
+                            <text id="Caption-M-12/16" font-family="Masbul-Medium, Masbul" font-weight="400">
+                                <tspan x="0" y="52">Caption M 12/16</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="label" transform="translate(0.000000, 666.000000)">
+                        <text id="Button-Label" font-family="Sentinel-Medium, Sentinel" font-size="24" font-weight="400" fill="#484848">
+                            <tspan x="0" y="25">Button Label</tspan>
+                        </text>
+                        <g id="content-[48h]" transform="translate(223.385147, 0.000000)">
+                            <g id="normal" transform="translate(0.000000, 5.000000)" fill="#484848">
+                                <text id="Label-M-16/24" font-family="Masbul-Medium, Masbul" font-size="16" font-weight="400" line-spacing="24">
+                                    <tspan x="0" y="16">Label M 16/24</tspan>
+                                </text>
+                                <text id="Label-S-14/22" font-family="Masbul-Medium, Masbul" font-size="14" font-weight="400" line-spacing="22">
+                                    <tspan x="0" y="56">Label S 14/22</tspan>
+                                </text>
+                                <text id="Label-M2-16/24" font-family="Masbul-Bold, Masbul" font-size="16" font-weight="bold" line-spacing="24">
+                                    <tspan x="0" y="98">Label M2 16/24</tspan>
+                                </text>
+                                <text id="Label-S2-14/22" font-family="Masbul-Bold, Masbul" font-size="14" font-weight="bold" line-spacing="22">
+                                    <tspan x="0" y="138">Label S2 14/22</tspan>
+                                </text>
+                            </g>
+                            <g id="alt" transform="translate(162.279793, 0.000000)">
+                                <rect id="Background-[12]" fill="#292929" x="0" y="0" width="153.264249" height="88"></rect>
+                                <text id="Label-alt-M-16/24" font-family="Masbul-Medium, Masbul" font-size="16" font-weight="400" line-spacing="24" fill="#FFFFFF">
+                                    <tspan x="12.0207254" y="28">Label-alt M 16/24</tspan>
+                                </text>
+                                <text id="Label-alt-S-14/22" font-family="Masbul-Medium, Masbul" font-size="14" font-weight="400" line-spacing="22" fill="#FFFFFF">
+                                    <tspan x="12.0207254" y="68">Label-alt S 14/22</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
