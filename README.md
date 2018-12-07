@@ -227,15 +227,15 @@ $bg-sea-300
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sea-200.png "Sea 200 - #A9DCD7")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sea-300.png "Sea 300 - #92D3CC")
 
-### Plump
+### Plum
 ```scss
-$bg-plump-100
-$bg-plump-200
-$bg-plump-300
+$bg-plum-100
+$bg-plum-200
+$bg-plum-300
 ```
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plump-100.png "Plump 100 - #DFD8E3")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plump-200.png "Plump 200 - #D4D0E3")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plump-300.png "Plump 300 - #BEB8D5")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plum-100.png "Plum 100 - #DFD8E3")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plum-200.png "Plum 200 - #D4D0E3")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plum-300.png "Plum 300 - #BEB8D5")
 
 ### Sage
 ```scss
