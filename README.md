@@ -66,6 +66,7 @@ $brand-primary-200 // Default for small text
 $brand-primary-300 // Hover and tap
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/jeans.png "Jeans")
+
 <!-- ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-100.png "Jeans 100 - #5773C2") -->
 <!-- ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-200.png "Jeans 200 - #3F46AD") -->
 <!-- ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-300.png "Jeans 300 - #182385") -->
@@ -77,9 +78,10 @@ $brand-secondary-100  // Default for large text
 $brand-secondary-200  // Default for small text
 $brand-secondary-300  // Hover and tap
 ```
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-100.png "Scarlet 100 - #FD5C63")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/scarlet.png "Scarlet")
+<!-- ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-100.png "Scarlet 100 - #FD5C63")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-200.png "Scarlet 200 - #D43242")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-300.png "Scarlet 300 - #9A202C")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-300.png "Scarlet 300 - #9A202C") -->
 
 
 ## Dark Colors
