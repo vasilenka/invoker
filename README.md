@@ -152,6 +152,11 @@ $dark-alpha-70
 $dark-alpha-60
 $dark-alpha-50
 
+// Lighter dark color -- For Borders and Shadow
+$dark-alpha-30
+$dark-alpha-20
+$dark-alpha-10
+$dark-alpha-05
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-90.png "Dark 90 - #0F0F0F")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-80.png "Dark 80 - #292929")
@@ -298,6 +303,7 @@ $bg-sand-300
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sand-300.png "Sand 300 - #D8C4A5")
 
 
+
 # Space
 Spacing tokens are used for padding, margins, and position coordinates. Semua nilai spacing dihitung berdasarkan 16px sebagai basis.
 
@@ -318,6 +324,8 @@ Spacing tokens are used for padding, margins, and position coordinates. Semua ni
 
 ## Space Stretch
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/stretch.png "Space Stretch")
+
+
 
 # Typography
 
