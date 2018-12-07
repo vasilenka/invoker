@@ -52,10 +52,8 @@ Untuk memastikan produk yang kita buat memenuhi a11y, gunakan rasio kontras WCAG
 > Based on WCAG 2.0: https://www.w3.org/TR/WCAG20/#larger-scaledef
 
 ### How to read color palette ?
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/color.png "Indicator for
-foreground colors")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/bg.png "Indicator for Background
-colors")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/color.png "Indicator for foreground colors")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/helper/bg.png "Indicator for Background colors")
 
 
 ## Brand Colors
@@ -68,11 +66,8 @@ $brand-primary-200 // Default for small text
 $brand-primary-300 // Hover and tap
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sea-100.png "Sea 100 - #37A4A0")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sea-200.png "Sea 200 - #008380")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sea-300.png "Sea 300 - #00514F")
-
 
 #### Secondary Colors - Scarlet
 > Primary actions
@@ -82,11 +77,8 @@ $brand-secondary-200  // Default for small text
 $brand-secondary-300  // Hover and tap
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-100.png "Scarlet 100 - #FD5C63")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-200.png "Scarlet 200 - #D43242")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/scarlet-300.png "Scarlet 300 - #9A202C")
-
 
 #### Accents Colors
 > Jeans
@@ -96,11 +88,8 @@ $brand-jeans-200
 $brand-jeans-300
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-100.png "Jeans 100 - #5773C2")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-200.png "Jeans 200 - #3F46AD")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/jeans-300.png "Jeans 300 - #182385")
-
 
 > Plum
 ```scss
@@ -109,11 +98,8 @@ $brand-plum-200
 $brand-plum-300
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/plum-100.png "Plum 100 - #A18DAD")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/plum-200.png "Plum 200 - #866D96")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/plum-300.png "Plum 300 - #51425B")
-
 
 > Sage
 ```scss
@@ -122,11 +108,8 @@ $brand-sage-200
 $brand-sage-300
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sage-100.png "Sage 100 - #56A472")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sage-200.png "Sage 200 - #2C864C")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sage-300.png "Sage 300 - #1B512E")
-
 
 > Sky
 ```scss
@@ -135,11 +118,8 @@ $brand-sky-200
 $brand-sky-300
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sky-100.png "Sky 100 - #4A9BDA")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sky-200.png "Sky 200 - #267ABC")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/sky-300.png "Sky 300 - #184C75")
-
 
 
 ## Dark Colors
@@ -163,16 +143,11 @@ $dark-alpha-60
 $dark-alpha-50
 
 ```
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-70.png "Dark 90 - #0F0F0F")
-
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-60.png "Dark 80 - #292929")
-
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-50.png "Dark 70 - #484848")
-
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-40.png "Dark 60 - #767676")
-
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-40.png "Dark 50 - #8F8F8F")
-
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-90.png "Dark 90 - #0F0F0F")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-80.png "Dark 80 - #292929")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-70.png "Dark 70 - #484848")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-60.png "Dark 60 - #767676")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-50.png "Dark 50 - #8F8F8F")
 
 ## System Colors
 ### Danger - Rose
@@ -182,11 +157,8 @@ $sys-danger-200 // Default for small text
 $sys-danger-300 // Hover, active, focus and tap
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-100.png "Rose 100 - #FD5C63")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-200.png "Rose 200 - #ED0001")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/rose-300.png "Rose 300 - #B50008")
-
 
 ### Warning - Amber
 > Only use these palettes as background color and use at least `$dark-60` as text for the warning.
@@ -196,11 +168,8 @@ $sys-warning-200
 $sys-warning-300
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-100.png "Amber 100 - #FFE380")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-200.png "Amber 200 - #FFAB00")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/amber-300.png "Amber 300 - #FF8B00")
-
 
 ### Success - Verdant
 ```scss
@@ -209,11 +178,8 @@ $sys-success-200 // Default for small text
 $sys-success-300 // Hover, active, focus and tap
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-100.png "Verdant 100 - #57D9A3")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-200.png "Verdant 200 - #00875A")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/verdant-300.png "Verdant 300 - #006644")
-
 
 ## Background
 > Use these colors for background only.
@@ -228,11 +194,8 @@ $bg-dust-200
 $bg-dust-300
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-dust-100.png "Dust 100 - #F7F7F5")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-dust-200.png "Dust 200 - #F0F0EE")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-dust-300.png "Dust 300 - #B7B7AD")
-
 
 ### Rose
 ```scss
@@ -241,11 +204,8 @@ $bg-rose-200
 $bg-rose-300
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-100.png "Rose 100 - #FCE7DD")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-200.png "Rose 200 - #E3CDD1")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-rose-300.png "Rose 300 - #D8BAC0")
-
 
 ### Scarlet
 ```scss
@@ -253,12 +213,9 @@ $bg-scarlet-100
 $bg-scarlet-200
 $bg-scarlet-300
 ```
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-scarlet-100.png "Scarlet 100 -
-#FFEAEE")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-scarlet-200.png "Scarlet 200 -
-#FFC4CF")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-scarlet-300.png "Scarlet 300 -
-#FFA2B3")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-scarlet-100.png "Scarlet 100 - #FFEAEE")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-scarlet-200.png "Scarlet 200 - #FFC4CF")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-scarlet-300.png "Scarlet 300 - #FFA2B3")
 
 ### Sea
 ```scss
@@ -267,11 +224,8 @@ $bg-sea-200
 $bg-sea-300
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sea-100.png "Sea 100 - #D7EFEE")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sea-200.png "Sea 200 - #A9DCD7")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sea-300.png "Sea 300 - #92D3CC")
-
 
 ### Plump
 ```scss
@@ -280,11 +234,8 @@ $bg-plump-200
 $bg-plump-300
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plump-100.png "Plump 100 - #DFD8E3")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plump-200.png "Plump 200 - #D4D0E3")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-plump-300.png "Plump 300 - #BEB8D5")
-
 
 ### Sage
 ```scss
@@ -293,11 +244,8 @@ $bg-sage-200
 $bg-sage-300
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sage-100.png "Sage 100 - #E8F3EC")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sage-200.png "Sage 200 - #CAD8B4")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sage-300.png "Sage 300 - #B7CA9A")
-
 
 ### Sky
 ```scss
@@ -306,11 +254,8 @@ $bg-sky-200
 $bg-sky-300
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sky-100.png "Sky 100 - #E2EFF9")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sky-200.png "Sky 200 - #B7D7F0")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sky-300.png "Sky 300 - #91C2E8")
-
 
 ### Verdant
 ```scss
@@ -318,12 +263,9 @@ $bg-verdant-100
 $bg-verdant-200
 $bg-verdant-300
 ```
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-verdant-100.png "Verdant 100 -
-#E4FDEB")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-verdant-200.png "Verdant 200 -
-#D9FCE3")
-![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-verdant-300.png "Verdant 300 -
-#A9EEBC")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-verdant-100.png "Verdant 100 - #E4FDEB")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-verdant-200.png "Verdant 200 - #D9FCE3")
+![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-verdant-300.png "Verdant 300 - #A9EEBC")
 
 ### Banana
 ```scss
@@ -332,11 +274,8 @@ $bg-banana-200
 $bg-banana-300
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-100.png "Banana 100 - #FFFDDD")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-200.png "Banana 200 - #FFFBBB")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-banana-300.png "Banana 300 - #FFFE95")
-
 
 ### Sand
 ```scss
@@ -345,11 +284,8 @@ $bg-sand-200
 $bg-sand-300
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sand-100.png "Sand 100 - #F6F1E4")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sand-200.png "Sand 200 - #E0D0B7")
-
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/bg-sand-300.png "Sand 300 - #D8C4A5")
-
 
 
 # Space
@@ -358,26 +294,20 @@ Spacing tokens are used for padding, margins, and position coordinates. Semua ni
 ## Space Step
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/step.png "Space Steps")
 
-
 ## Space Inset
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/inset.png "Space Inset")
-
 
 ## Space Inline
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/inline.png "Space Inline")
 
-
 ## Space Stack
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/stack.png "Space Stack")
-
 
 ## Space Squish
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/squish.png "Space Squish")
 
-
 ## Space Stretch
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/space/stretch.png "Space Stretch")
-
 
 # Typography
 
@@ -388,4 +318,3 @@ Here's a list of type scale and it's property that we used across the brand.
 ##
 
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/typography/type.png "Typography")
-
