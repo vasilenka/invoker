@@ -43,3 +43,10 @@
 .radioList {
   margin: $space-stack-ll;
 }
+
+.span {
+  display: flex;
+  input {
+    margin-right: 12px;
+  }
+}

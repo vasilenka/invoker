@@ -27,7 +27,7 @@ const Checkmark = ({
         name={name}
         id={id}
         value={value}
-        checked={isChecked}
+        defaultChecked={isChecked}
       />
       <div
         className={classnames({

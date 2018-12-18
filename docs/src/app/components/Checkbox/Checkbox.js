@@ -26,7 +26,7 @@ class Checkbox extends Component {
 
   renderItems = () => {
     let { hover } = this.state;
-    let { children } = this.props;
+    let { children, isChecked } = this.props;
 
     if (!children) {
       return null;
@@ -36,7 +36,8 @@ class Checkbox extends Component {
       React.isValidElement(child)
         ? child.type.name === 'Checkmark'
           ? React.cloneElement(child, {
-              onHover: hover
+              onHover: hover,
+              isChecked
             })
           : React.cloneElement(child)
         : null

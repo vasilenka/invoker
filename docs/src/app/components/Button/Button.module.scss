@@ -5,7 +5,7 @@
   border-radius: 3px;
   outline: none;
   border-style: solid;
-  letter-spacing: -0.128px;
+  letter-spacing: normal;
   font-family: $font-primary;
 }
 
@@ -45,6 +45,34 @@
   line-height: 24px;
 }
 
+.primary {
+  composes: root;
+  border-color: $brand-primary-200;
+  color: $light-alpha-100;
+  background-color: $brand-primary-200;
+  transition: all 0.4s ease;
+
+  &:hover {
+    border-color: $brand-primary-300;
+    transition: all 0.24s ease;
+    background-color: $brand-primary-300;
+  }
+}
+
+.primaryMedium {
+  composes: primary medium;
+}
+
+.primaryBold {
+  composes: primary bold;
+}
+
+.primary_full {
+  composes: primary;
+  width: 100%;
+  text-align: center;
+}
+
 .secondary {
   composes: root;
   font-weight: $medium;
@@ -75,34 +103,6 @@
     border-color: $dark-alpha-80;
     transition: all 0.24s ease;
   }
-}
-
-.primary {
-  composes: root;
-  border-color: $brand-primary-200;
-  color: $light-alpha-100;
-  background-color: $brand-primary-200;
-  transition: all 0.4s ease;
-
-  &:hover {
-    border-color: $brand-primary-300;
-    transition: all 0.24s ease;
-    background-color: $brand-primary-300;
-  }
-}
-
-.primaryMedium {
-  composes: primary medium;
-}
-
-.primaryBold {
-  composes: primary bold;
-}
-
-.primary_full {
-  composes: primary;
-  width: 100%;
-  text-align: center;
 }
 
 .outline {
