@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import styles from './App.module.scss';
 import classnames from 'classnames';
 
+import Container from './layouts/Container/Container';
+import LeftSection from './layouts/LeftSection/LeftSection';
+import RightSection from './layouts/RightSection/RightSection';
+import MainContent from './layouts/MainContent/MainContent';
+
 import Text from './components/Text/Text';
 import Navbar from './components/Navbar/Navbar';
-import Textfield from './components/Textfield/Textfield';
-import Button from './components/Button/Button';
-import Combobox from './components/Combobox/Combobox';
-import RadioList from './components/RadioList/RadioList';
-import CheckboxList from './components/CheckboxList/CheckboxList';
 
 // import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 
@@ -35,52 +35,41 @@ class App extends Component {
     return (
       <div className={classnames(styles.root)}>
         <Navbar />
-        <div className={styles.container}>
-          <Text className={styles.title} heading2 component="h1">
-            Let's get started!
-          </Text>
-          <Text className={styles.description} component="p">
-            Introducing invoker, a design system built to adapth with any kind
-            of project and empower designer and developer in solving the problem
-            instead of nitpicking every pixel on sketch.
-          </Text>
-          <Textfield
-            className={styles.field}
-            label="First name"
-            id="first_name"
-          />
-          <Textfield
-            className={styles.field}
-            label="Last name"
-            id="last_name"
-          />
-
-          <Textfield
-            className={styles.field}
-            label="Street address"
-            id="address"
-            errorMessage="Address is required"
-          />
-          <Textfield className={styles.field} label="City" id="city" />
-          <Combobox
-            limitedHeight
-            label="Any friend?"
-            className={styles.autocomplete}
-            options={this.state.users}
-          />
-
-          <div className={styles.radioList}>
-            <RadioList
-              name="options"
-              options={this.state.options}
-              selected={this.state.options[1]}
-            />
-          </div>
-
-          <CheckboxList className={styles.checkboxList} />
-
-          <Button primary>Confirm & Pay</Button>
-        </div>
+        <Container fixLeft fixRight>
+          <MainContent>
+            <Text display3 component="h1">
+              Easy to maintain open source documentation websites.
+            </Text>
+            <Text medium component="p">
+              Mari is such a wonderful host! She is so knowledgeable and
+              friendly. The tea ceremony was beautiful and she did an amazing
+              job communicating and answering questions. It was a really special
+              experience and I highly recommend it to anyone visiting Kyoto!
+            </Text>
+            <Text medium component="p">
+              Every day most digital designers look for inspiration on sources
+              like Dribbble or Behance for mobile and webdesign UI/UX works. In
+              a large stream of the works, it is very easy to miss some quality
+              shots with small number of likes and comments. We decided to
+              change that and showcase some of the recent cool shots from the
+              design community.
+            </Text>
+            <Text display3 component="h2">
+              Mari is such a wonderful host! She is so knowledgeable and
+              friendly. The tea ceremony was beautiful and she did an amazing
+              job communicating and answering questions. It was a really special
+              experience and I highly recommend it to anyone visiting Kyoto!
+            </Text>
+            <Text medium component="p">
+              Mari is such a wonderful host! She is so knowledgeable and
+              friendly. The tea ceremony was beautiful and she did an amazing
+              job communicating and answering questions. It was a really special
+              experience and I highly recommend it to anyone visiting Kyoto!
+            </Text>
+          </MainContent>
+        </Container>
+        <LeftSection fixed className={styles.leftSection} />
+        <RightSection fixed className={styles.rightSection} />
       </div>
     );
   }

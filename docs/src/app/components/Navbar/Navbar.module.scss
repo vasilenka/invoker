@@ -12,8 +12,7 @@
 }
 
 .container {
-  composes: container-narrow from global;
-  max-width: 560px;
+  composes: container from global;
 }
 
 .brand {

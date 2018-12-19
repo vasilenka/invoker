@@ -12,12 +12,6 @@
   background: $brand-primary-200;
 }
 
-.container {
-  composes: container-narrow from global;
-  padding: $space-vertical-l;
-  max-width: 560px;
-}
-
 .field {
   width: 100%;
 
@@ -34,19 +28,12 @@
   margin: $space-stack-l;
 }
 
-.autocomplete {
-  width: 100%;
-  margin: $space-stack-ll;
+.leftSection {
+  top: 58px;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.checkboxList,
-.radioList {
-  margin: $space-stack-ll;
-}
-
-.span {
-  display: flex;
-  input {
-    margin-right: 12px;
-  }
+.rightSection {
+  top: 58px;
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
 }
