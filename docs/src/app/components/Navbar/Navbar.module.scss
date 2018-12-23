@@ -21,12 +21,17 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  margin: $space-horizontal-m;
+  justify-content: flex-start;
+  margin: $space-horizontal-ml;
+}
+
+.logo {
+  max-height: 20px;
+  margin: $space-inline-sm;
 }
 
 .name {
   color: $light-alpha-100 !important;
-  margin: $space-horizontal-ml;
 }
 
 .github {
