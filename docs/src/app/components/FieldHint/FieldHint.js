@@ -10,7 +10,7 @@ class FieldHint extends Component {
 
     return (
       <Text
-        heading6
+        small
         {...restProps}
         className={classnames({
           [styles.root]: true,

@@ -16,12 +16,16 @@ import stylesLight from '../Light/Light.module.scss';
 import withTextProps from '../private/withTextProps';
 
 const Text = ({
+  left,
+  right,
+  center,
   component,
   bullet,
   children,
   className,
   size,
   raw,
+  link,
   positive,
   critical,
   secondary,
@@ -44,6 +48,10 @@ const Text = ({
         [styles.raw]: raw,
         [styles.bullet]: bullet,
         [styles.baseline]: baseline,
+        [styles.link]: link,
+        [styles.left]: left,
+        [styles.right]: right,
+        [styles.center]: center,
         [className]: className
       })}
     >

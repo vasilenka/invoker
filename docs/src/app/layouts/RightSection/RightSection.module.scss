@@ -1,9 +1,17 @@
 @import '~invoker-tokens/index.scss';
 
 .root {
-  width: 25vw;
   height: 100%;
   overflow-y: scroll;
+  @include screen(phone) {
+    width: 0;
+  }
+  @include screen(tabPortrait) {
+    width: 0;
+  }
+  @include screen(tabLandscape) {
+    width: 25vw;
+  }
 }
 
 .fixed {

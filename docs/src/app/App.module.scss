@@ -12,14 +12,6 @@
   background: $brand-primary-200;
 }
 
-.field {
-  width: 100%;
-
-  &:not(:last-child) {
-    margin: $space-stack-ml;
-  }
-}
-
 .title {
   margin: $space-stack-sm;
 }
@@ -29,11 +21,15 @@
 }
 
 .leftSection {
-  top: 58px;
-  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  top: 64px;
 }
 
 .rightSection {
   top: 58px;
   border-left: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.link {
+  display: block;
+  padding: $space-squish-sm;
 }
