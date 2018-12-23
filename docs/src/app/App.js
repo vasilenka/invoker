@@ -45,6 +45,9 @@ class App extends Component {
               </MainContent>
             </Container>
             <LeftSection fixed className={styles.leftSection}>
+              <Text className={styles.sidebarTitle} heading6 component="h3">
+                Components
+              </Text>
               <Link to="/text">
                 <Text className={styles.link}>Text</Text>
               </Link>

@@ -21,7 +21,8 @@
 }
 
 .leftSection {
-  top: 64px;
+  top: 65px;
+  padding: $space-ml;
 }
 
 .rightSection {
@@ -31,5 +32,11 @@
 
 .link {
   display: block;
-  padding: $space-squish-sm;
+  padding: $space-vertical-s;
+}
+
+.sidebarTitle {
+  color: $dark-alpha-70;
+  text-transform: uppercase;
+  margin: $space-sm 0 $space-ml;
 }

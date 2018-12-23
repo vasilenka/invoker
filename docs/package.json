@@ -58,5 +58,6 @@
     "@storybook/addons": "^4.0.4",
     "@storybook/react": "^4.0.4",
     "babel-loader": "^8.0.4"
-  }
+  },
+  "homepage": "http://vasilenka.github.io/invoker"
 }

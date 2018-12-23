@@ -13,22 +13,27 @@
 
 .container {
   composes: container-bleed from global;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
   margin: $space-horizontal-m;
-}
-
-.logo {
-  height: 16px;
-  margin: $space-inline-sm;
-  opacity: 0.44;
 }
 
 .name {
   color: $light-alpha-100 !important;
-  margin: 0;
+  margin: $space-horizontal-ml;
+}
+
+.github {
+  margin: $space-horizontal-ml;
+}
+
+.githubLink {
+  height: fit-content;
+  display: inherit;
 }
