@@ -9,44 +9,38 @@ import Header from './../../docs/Header/Header';
 import Subheader from './../../docs/Subheader/Subheader';
 import Preview from './../../docs/Preview/Preview';
 
-let headProps = ['', 'name', 'type', 'default'];
+let headProps = ['name', 'type', 'default'];
 
 let bodyProps = [
   {
-    required: true,
     name: 'children',
     type: 'React.Node',
     default: '-'
   },
   {
-    required: true,
     name: 'type',
     type:
       '"display1" | "display2" | "display3" | "heading1" | "heading2" | "heading3" | "heading4" | "heading5" | "heading6" | "small" | "medium" | "large"',
     help: 'Use the value directly as a props in Text component',
-    default: '-'
+    default: '"medium"'
   },
   {
-    required: false,
     name: 'className',
     type: 'string',
     default: '-'
   },
   {
-    required: false,
     name: 'component',
     type: 'string',
     default: '<span>'
   },
   {
-    required: false,
     name: 'link',
     type: 'boolean',
     help: 'Apply link styles to the text.',
     default: 'false'
   },
   {
-    required: false,
     name: 'align',
     type: '"left" | "center" | "right"',
     default: '"left"'

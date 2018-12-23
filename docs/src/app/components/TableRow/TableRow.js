@@ -15,15 +15,15 @@ const TableRow = ({ className, children, ...restProps }) => {
         [className]: className
       })}
     >
-      <td className={styles.tableCell}>
-        {children.required && (
+      {children.required && (
+        <td className={styles.tableCell}>
           <img
             className={classnames(styles.code, styles.required)}
             src={requiredIcon}
             alt="required"
           />
-        )}
-      </td>
+        </td>
+      )}
       <td className={classnames(styles.tableCell)}>
         <Text className={classnames(styles.primary, styles.code)} heading5>
           {children.name}
