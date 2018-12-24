@@ -36,6 +36,8 @@ const Text = ({
   light,
   dark,
   baseline,
+  truncate,
+  breakWord,
   ...restProps
 }) => {
   const Component = component || (bullet ? 'li' : 'span');
@@ -52,6 +54,8 @@ const Text = ({
         [styles.left]: left,
         [styles.right]: right,
         [styles.center]: center,
+        [styles.truncate]: truncate,
+        [styles.breakWord]: breakWord,
         [className]: className
       })}
     >

@@ -8,8 +8,10 @@ import Table from './../../components/Table/Table';
 import Header from './../../docs/Header/Header';
 import Subheader from './../../docs/Subheader/Subheader';
 import Preview from './../../docs/Preview/Preview';
+import Code from './../../docs/Code/Code';
+import Divider from './../../docs/Divider/Divider';
 
-let headProps = ['name', 'type', 'default'];
+let headProps = ['props', 'type', 'default'];
 
 let bodyProps = [
   {
@@ -44,6 +46,12 @@ let bodyProps = [
     name: 'align',
     type: '"left" | "center" | "right"',
     default: '"left"'
+  },
+  {
+    name: 'overflow',
+    type: '"truncate" | "breakWord"',
+    help: 'Use the value directly as a props in Text component',
+    default: '-'
   }
 ];
 
@@ -60,10 +68,10 @@ const TextPage = ({ className, ...restProps }) => {
         description="These all you need for a every text on your app"
       />
       <Preview>
-        <Text className={styles.textList} display1 component="h1">
+        <Text className={styles.textList} display1 component="h1" truncate>
           Display1
         </Text>
-        <Text className={styles.textList} display2 component="h1">
+        <Text className={styles.textList} display2 component="h1" breakWord>
           Display2
         </Text>
         <Text className={styles.textList} display3 component="h1">
@@ -105,6 +113,47 @@ const TextPage = ({ className, ...restProps }) => {
           Heading3 as link text
         </Text>
       </Preview>
+      <Divider large />
+      <Subheader
+        title="Overflow"
+        description="Invoker provides utility options to deal with text overflow."
+      />
+      <Text heading4 component="h3">
+        Truncate
+      </Text>
+      <Divider small transparent />
+      <Preview>
+        <Text large truncate>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores,
+          fuga quia accusamus esse voluptatum debitis sunt non alias
+          exercitationem recusandae pariatur vero minus quasi totam omnis rerum!
+          Necessitatibus aperiam ullam vero blanditiis. Nemo, consequatur magnam
+          eos magni consectetur cupiditate quisquam.
+        </Text>
+      </Preview>
+      <Code>
+        {`<Text large truncate>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla at eveniet itaque! Et aliquid temporibus ullam iste.
+</Text>`}
+      </Code>
+      <Text heading4 component="h3">
+        Break Word
+      </Text>
+      <Divider small transparent />
+      <Preview>
+        <Text large breakWord>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores,
+          fuga quia accusamus esse voluptatum debitis sunt non alias
+          exercitationem recusandae pariatur vero minus quasi totam omnis rerum!
+          Necessitatibus aperiam ullam vero blanditiis. Nemo, consequatur magnam
+          eos magni consectetur cupiditate quisquam.
+        </Text>
+      </Preview>
+      <Code>
+        {`<Text large breakWord>
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, fuga quia accusamus esse voluptatum debitis sunt non alias exercitationem recusandae pariatur vero minus quasi totam omnis rerum! Necessitatibus aperiam ullam vero blanditiis. Nemo, consequatur magnam eos magni consectetur cupiditate quisquam.
+</Text>`}
+      </Code>
     </React.Fragment>
   );
 };

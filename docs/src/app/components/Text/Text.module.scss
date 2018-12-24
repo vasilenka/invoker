@@ -183,3 +183,17 @@
 .right {
   text-align: right;
 }
+
+.breakWord {
+  hyphens: auto;
+  word-wrap: break-word;
+}
+
+.truncate {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: normal;
+}
