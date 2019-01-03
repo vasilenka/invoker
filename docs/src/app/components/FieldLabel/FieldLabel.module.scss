@@ -1,0 +1,22 @@
+@import '~invoker-tokens/index.scss';
+
+.root {
+  cursor: pointer;
+}
+
+.secondaryLabel {
+  margin-left: $space-xs;
+  font-weight: 400;
+}
+
+.tertiaryLabel {
+  float: right;
+}
+
+.stack {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}

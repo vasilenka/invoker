@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 
 import Text from './../Text/Text';
+import FieldLabel from './../FieldLabel/FieldLabel';
 import FieldInput from './../FieldInput/FieldInput';
 import FieldHint from './../FieldHint/FieldHint';
 
@@ -33,6 +34,8 @@ class Textfield extends Component {
     const {
       id,
       label,
+      secondaryLabel,
+      tertiaryLabel,
       className,
       placeholder,
       value,
@@ -43,25 +46,25 @@ class Textfield extends Component {
       ...restProps
     } = this.props;
 
-    const labelProps = {
-      labelMedium: !small,
-      labelSmall: small,
-      htmlFor: id
-    };
+    // const labelProps = {
+    //   labelMedium: !small,
+    //   labelSmall: small,
+    //   htmlFor: id
+    // };
 
-    const TextfieldLabel = (
-      <Text
-        className={classnames({
-          [styles.label]: true,
-          [styles.stack]: !inline,
-          [styles.inline]: inline
-        })}
-        {...labelProps}
-        component="label"
-      >
-        {label}
-      </Text>
-    );
+    // const TextfieldLabel = (
+    //   <Text
+    //     className={classnames({
+    //       [styles.label]: true,
+    //       [styles.stack]: !inline,
+    //       [styles.inline]: inline
+    //     })}
+    //     {...labelProps}
+    //     component="label"
+    //   >
+    //     {label}
+    //   </Text>
+    // );
 
     return (
       <div
@@ -71,7 +74,13 @@ class Textfield extends Component {
           [className]: className
         })}
       >
-        {TextfieldLabel}
+        <FieldLabel
+          label={label}
+          small={small}
+          inline={inline}
+          secondaryLabel={secondaryLabel}
+          tertiaryLabel={tertiaryLabel}
+        />
         <FieldInput
           onClick={this.removeError}
           onFocus={this.removeError}

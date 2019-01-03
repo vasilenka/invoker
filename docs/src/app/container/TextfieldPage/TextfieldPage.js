@@ -7,6 +7,7 @@ import Subheader from './../../docs/Subheader/Subheader';
 
 import Textfield from './../../components/Textfield/Textfield';
 import Table from './../../components/Table/Table';
+import Text from './../../components/Text/Text';
 
 let headProps = ['', 'name', 'type', 'default'];
 
@@ -63,10 +64,13 @@ class TextfieldPage extends Component {
         <Textfield
           className={styles.field}
           id="location"
-          small
+          medium
           placeholder="This is a good placeholder text"
           label="Enter your location name"
-          hint="This is the hint message that we have here"
+          secondaryLabel="(So keep your eyes on me now)"
+          tertiaryLabel={<Text link>help?</Text>}
+          errorMessage="They could try but they will never will bring us down"
+          // hint="This is the hint message that we have here"
         />
         <Textfield className={styles.field} label="Full name" id="name" />
       </React.Fragment>
