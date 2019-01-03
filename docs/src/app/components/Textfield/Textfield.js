@@ -41,30 +41,11 @@ class Textfield extends Component {
       value,
       hint,
       small,
+      type,
       inline,
       errorMessage,
       ...restProps
     } = this.props;
-
-    // const labelProps = {
-    //   labelMedium: !small,
-    //   labelSmall: small,
-    //   htmlFor: id
-    // };
-
-    // const TextfieldLabel = (
-    //   <Text
-    //     className={classnames({
-    //       [styles.label]: true,
-    //       [styles.stack]: !inline,
-    //       [styles.inline]: inline
-    //     })}
-    //     {...labelProps}
-    //     component="label"
-    //   >
-    //     {label}
-    //   </Text>
-    // );
 
     return (
       <div
@@ -75,6 +56,7 @@ class Textfield extends Component {
         })}
       >
         <FieldLabel
+          id={id}
           label={label}
           small={small}
           inline={inline}
@@ -85,6 +67,7 @@ class Textfield extends Component {
           onClick={this.removeError}
           onFocus={this.removeError}
           placeholder={placeholder}
+          type={type}
           small={small}
           error={this.state.error}
           id={id}

@@ -9,6 +9,7 @@ class FieldInput extends Component {
       id,
       onClick,
       small,
+      type,
       placeholder,
       value,
       error,
@@ -19,6 +20,7 @@ class FieldInput extends Component {
       <input
         {...restProps}
         onClick={onClick}
+        type={type || 'text'}
         id={id}
         className={classnames({
           [styles.root]: true,
@@ -29,7 +31,6 @@ class FieldInput extends Component {
           [styles.error]: error,
           [className]: className
         })}
-        type="text"
         placeholder={placeholder}
         value={value}
       />

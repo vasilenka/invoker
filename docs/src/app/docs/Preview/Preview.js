@@ -2,7 +2,7 @@ import styles from './Preview.module.scss';
 import React from 'react';
 import classnames from 'classnames';
 
-const Preview = ({ children, className, ...restProps }) => {
+const Preview = ({ clean, children, className, ...restProps }) => {
   return (
     <div
       {...restProps}
