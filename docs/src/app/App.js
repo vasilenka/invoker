@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 import Container from './layouts/Container/Container';
 import LeftSection from './layouts/LeftSection/LeftSection';
+import RightSection from './layouts/RightSection/RightSection';
 import MainContent from './layouts/MainContent/MainContent';
 
 import Navbar from './components/Navbar/Navbar';
@@ -12,6 +13,7 @@ import Text from './components/Text/Text';
 
 import TextfieldPage from './container/TextfieldPage/TextfieldPage';
 import TextPage from './container/TextPage/TextPage';
+import SandboxPage from './pages/Sandbox/Sandbox';
 
 class App extends Component {
   constructor(props) {
@@ -42,9 +44,24 @@ class App extends Component {
               <MainContent>
                 <Route exact path="/text" component={TextPage} />
                 <Route exact path="/textfield" component={TextfieldPage} />
+                <Route exact path="/sandbox" component={SandboxPage} />
               </MainContent>
             </Container>
             <LeftSection fixed className={styles.leftSection}>
+              <Text heading6 component="h3" className={styles.sidebarTitle}>
+                Components
+              </Text>
+              <Link to="/sandbox">
+                <Text className={styles.link}>Sandbox</Text>
+              </Link>
+              <Link to="/text">
+                <Text className={styles.link}>Text</Text>
+              </Link>
+              <Link to="/textfield">
+                <Text className={styles.link}>Textfield</Text>
+              </Link>
+            </LeftSection>
+            {/* <RightSection fixed className={styles.rightSection}>
               <Text heading6 component="h3" className={styles.sidebarTitle}>
                 Components
               </Text>
@@ -54,7 +71,7 @@ class App extends Component {
               <Link to="/textfield">
                 <Text className={styles.link}>Textfield</Text>
               </Link>
-            </LeftSection>
+            </RightSection> */}
           </React.Fragment>
         </Router>
       </div>
