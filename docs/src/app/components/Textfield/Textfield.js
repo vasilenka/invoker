@@ -10,9 +10,9 @@ class Textfield extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: false
+      error: false,
+      message: ''
     };
-    this.removeError = this.removeError.bind(this);
   }
 
   componentDidMount = () => {
@@ -22,10 +22,25 @@ class Textfield extends Component {
     });
   };
 
-  removeError = e => {
+  handleFocus = e => {
     this.setState({
       ...this.state,
       error: false
+    });
+  };
+
+  clearError = e => {
+    this.setState({
+      ...this.state,
+      error: false
+    });
+  };
+
+  setError = message => {
+    this.setState({
+      ...this.state,
+      error: true,
+      message
     });
   };
 
@@ -74,8 +89,9 @@ class Textfield extends Component {
           yupShape={yupShape}
           disabled={disabled}
           required={required}
-          onClick={this.removeError}
-          onFocus={this.removeError}
+          clearError={this.clearError}
+          setError={this.setError}
+          onFocus={this.handleFocus}
           placeholder={placeholder}
           type={type}
           small={small}
@@ -92,7 +108,7 @@ class Textfield extends Component {
         {hint && <FieldHint>{hint}</FieldHint>}
 
         {this.state.error && (
-          <FieldHint error={errorMessage}>{errorMessage}</FieldHint>
+          <FieldHint error={this.state.error}>{this.state.message}</FieldHint>
         )}
       </div>
     );

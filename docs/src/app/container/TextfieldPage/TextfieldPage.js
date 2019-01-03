@@ -126,16 +126,17 @@ class TextfieldPage extends Component {
         <Preview>
           <Textfield
             // yupShape={yupShape}
-            // type="number"
+            type="email"
             className={styles.field}
             id="location"
-            // required
+            required
             placeholder="This is a good placeholder text"
             label="Enter your location name"
             secondaryLabel="(So keep your eyes on me now)"
             tertiaryLabel={<Text link>help?</Text>}
-            value="This is the value"
-            hint="This is the hint message that we have here"
+            value="hello@gmail.com"
+            // hint="This is the hint message that we have here"
+            // errorMessage="This is the error message"
           />
         </Preview>
       </React.Fragment>
