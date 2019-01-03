@@ -2,7 +2,6 @@ import styles from './Textfield.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import Text from './../Text/Text';
 import FieldLabel from './../FieldLabel/FieldLabel';
 import FieldInput from './../FieldInput/FieldInput';
 import FieldHint from './../FieldHint/FieldHint';
@@ -39,11 +38,19 @@ class Textfield extends Component {
       className,
       placeholder,
       value,
+      defaultValue,
       hint,
       small,
       type,
       inline,
+      disabled,
+      required,
+      yupShape,
       errorMessage,
+      handleChange,
+      handleBlur,
+      handleFocus,
+      handleClick,
       ...restProps
     } = this.props;
 
@@ -64,6 +71,9 @@ class Textfield extends Component {
           tertiaryLabel={tertiaryLabel}
         />
         <FieldInput
+          yupShape={yupShape}
+          disabled={disabled}
+          required={required}
           onClick={this.removeError}
           onFocus={this.removeError}
           placeholder={placeholder}
@@ -72,6 +82,7 @@ class Textfield extends Component {
           error={this.state.error}
           id={id}
           name={id}
+          defaultValue={defaultValue}
           value={value}
           className={classnames({
             [styles.spaceBottom]: (hint || this.state.error) && !inline

@@ -41,3 +41,15 @@
   font-size: $heading-5;
   line-height: 24px;
 }
+
+.disabled {
+  user-select: none;
+  background: $dark-alpha-10;
+
+  &:focus,
+  &:active {
+    transition: all 0.3s;
+    border-color: $dark-alpha-20;
+    transition: all 0.28s;
+  }
+}

@@ -29,7 +29,16 @@ class FieldLabel extends Component {
   };
 
   render() {
-    let { id, label, inline, small, className, ...restProps } = this.props;
+    let {
+      id,
+      label,
+      inline,
+      small,
+      secondaryLabel,
+      tertiaryLabel,
+      className,
+      ...restProps
+    } = this.props;
 
     const labelProps = {
       labelMedium: !small,
