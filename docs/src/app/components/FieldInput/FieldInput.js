@@ -24,9 +24,11 @@ class FieldInput extends Component {
           defaultShape(this.props.type, this.props.required, this.props.id)
       );
 
-    this.setState({
-      value: this.props.value
-    });
+    if (this.props.value) {
+      this.setState({
+        value: this.props.value
+      });
+    }
 
     let { clearMessage, setMessage, setTone, clearTone, value } = this.props;
 

@@ -141,6 +141,7 @@ class TextfieldPage extends Component {
             className={styles.field}
             id="password"
             type="password"
+            // value=""
             required
             placeholder="This is a good placeholder text"
             label="Password"
