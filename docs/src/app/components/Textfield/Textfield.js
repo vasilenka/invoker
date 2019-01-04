@@ -12,6 +12,7 @@ class Textfield extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      value: '',
       hint: '',
       tone: '',
       message: ''
@@ -24,6 +25,13 @@ class Textfield extends Component {
       hint,
       tone,
       message
+    });
+  };
+
+  handleChange = value => {
+    this.props.handleChange(value, this.props.type);
+    this.setState({
+      value
     });
   };
 
@@ -108,6 +116,7 @@ class Textfield extends Component {
           yupShape={yupShape}
           disabled={disabled}
           required={required}
+          handleChange={this.handleChange}
           clearMessage={this.clearMessage}
           setMessage={this.setMessage}
           setTone={this.setTone}

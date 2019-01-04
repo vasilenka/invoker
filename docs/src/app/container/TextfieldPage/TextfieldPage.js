@@ -107,6 +107,20 @@ let bodyProps = [
 // };
 
 class TextfieldPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: 'hello@gmail.com',
+      password: ''
+    };
+  }
+
+  handleChange = (value, type) => {
+    this.setState({
+      [type]: value
+    });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -126,23 +140,25 @@ class TextfieldPage extends Component {
         <Preview>
           <Textfield
             className={styles.field}
-            id="location"
+            id="email"
             type="email"
             required
             placeholder="This is a good placeholder text"
             value="hello@gmail.com"
+            handleChange={this.handleChange}
             label="Email"
             secondaryLabel="(Please jangan alay)"
             tertiaryLabel={<Text link>why we need this?</Text>}
-            message="There's some error here"
-            tone="critical"
+            // message="There's some error here"
+            // tone="critical"
           />
           <Textfield
             className={styles.field}
             id="password"
             type="password"
-            // value=""
+            value={this.state.password}
             required
+            handleChange={this.handleChange}
             placeholder="This is a good placeholder text"
             label="Password"
             secondaryLabel=""

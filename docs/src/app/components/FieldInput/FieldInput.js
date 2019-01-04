@@ -57,7 +57,10 @@ class FieldInput extends Component {
   };
 
   handleChange = e => {
-    this.setState({ value: e.target.value });
+    this.setState({
+      value: e.target.value
+    });
+    this.props.handleChange(e.target.value);
   };
 
   handleBlur = e => {
@@ -83,6 +86,7 @@ class FieldInput extends Component {
     const {
       className,
       required,
+      handleChange,
       id,
       yupShape,
       onFocus,
