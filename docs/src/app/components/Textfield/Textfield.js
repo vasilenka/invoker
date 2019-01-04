@@ -2,6 +2,8 @@ import styles from './Textfield.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
+import { setFieldTone } from './helper/fieldHelper';
+
 import FieldLabel from './../FieldLabel/FieldLabel';
 import FieldInput from './../FieldInput/FieldInput';
 import FieldHint from './../FieldHint/FieldHint';
@@ -10,37 +12,53 @@ class Textfield extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: false,
+      hint: '',
+      tone: '',
       message: ''
     };
   }
 
   componentDidMount = () => {
+    let { tone, message, hint } = this.props;
     this.setState({
-      ...this.state,
-      error: this.props.errorMessage
+      hint,
+      tone,
+      message
     });
   };
 
   handleFocus = e => {
     this.setState({
       ...this.state,
-      error: false
+      tone: ''
     });
   };
 
-  clearError = e => {
+  setMessage = message => {
     this.setState({
       ...this.state,
-      error: false
-    });
-  };
-
-  setError = message => {
-    this.setState({
-      ...this.state,
-      error: true,
       message
+    });
+  };
+
+  clearMessage = e => {
+    this.setState({
+      ...this.state,
+      message: ''
+    });
+  };
+
+  setTone = tone => {
+    this.setState({
+      ...this.state,
+      tone: setFieldTone(tone)
+    });
+  };
+
+  clearTone = e => {
+    this.setState({
+      ...this.state,
+      tone: ''
     });
   };
 
@@ -61,7 +79,8 @@ class Textfield extends Component {
       disabled,
       required,
       yupShape,
-      errorMessage,
+      message,
+      tone,
       handleChange,
       handleBlur,
       handleFocus,
@@ -89,26 +108,26 @@ class Textfield extends Component {
           yupShape={yupShape}
           disabled={disabled}
           required={required}
-          clearError={this.clearError}
-          setError={this.setError}
+          clearMessage={this.clearMessage}
+          setMessage={this.setMessage}
+          setTone={this.setTone}
+          clearTone={this.clearTone}
           onFocus={this.handleFocus}
           placeholder={placeholder}
           type={type}
           small={small}
-          error={this.state.error}
+          tone={this.state.tone}
           id={id}
           name={id}
           defaultValue={defaultValue}
-          value={value}
+          value={this.props.value}
           className={classnames({
             [styles.spaceBottom]: (hint || this.state.error) && !inline
           })}
         />
 
-        {hint && <FieldHint>{hint}</FieldHint>}
-
-        {this.state.error && (
-          <FieldHint error={this.state.error}>{this.state.message}</FieldHint>
+        {this.state.tone && this.state.message && (
+          <FieldHint tone={this.state.tone}>{this.state.message}</FieldHint>
         )}
       </div>
     );

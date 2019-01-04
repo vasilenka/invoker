@@ -1,9 +1,17 @@
 @import 'invoker-tokens/index.scss';
 
 .root {
-  // font-size: $heading-6;
+  font-weight: 500;
 }
 
-.error {
-  color: $brand-secondary-200;
+.neutral {
+  color: $dark-alpha-60;
+}
+
+.critical {
+  color: $sys-danger-100;
+}
+
+.positive {
+  color: $brand-primary-200;
 }

@@ -5,7 +5,7 @@ import classnames from 'classnames';
 
 import Container from './layouts/Container/Container';
 import LeftSection from './layouts/LeftSection/LeftSection';
-import RightSection from './layouts/RightSection/RightSection';
+// import RightSection from './layouts/RightSection/RightSection';
 import MainContent from './layouts/MainContent/MainContent';
 
 import Navbar from './components/Navbar/Navbar';

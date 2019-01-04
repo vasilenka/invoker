@@ -23,9 +23,14 @@
   display: inline;
 }
 
-.error {
+.critical {
   border-color: $brand-secondary-200;
   background: $brand-secondary-10;
+}
+
+.positive {
+  border-color: $brand-primary-200;
+  background: $brand-primary-10;
 }
 
 .small {

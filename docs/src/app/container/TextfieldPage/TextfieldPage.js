@@ -10,7 +10,7 @@ import Textfield from './../../components/Textfield/Textfield';
 import Table from './../../components/Table/Table';
 import Text from './../../components/Text/Text';
 
-import * as yup from 'yup';
+// import * as yup from 'yup';
 
 let headProps = ['', 'name', 'type', 'default'];
 
@@ -94,17 +94,17 @@ let bodyProps = [
     required: false,
     name: 'yupShape',
     type: 'Yup shape object',
-    help: `This is for field validation purpose. Go to yup to see more details.`,
+    help: `This is for field validation purpose. You can provide your own validation schema to this props if you want to override the default validation schema. Go to yup to see more details.`,
     default: '-'
   }
 ];
 
-const yupShape = {
-  email: yup
-    .string()
-    .email('Email is not valid')
-    .required('Email is required')
-};
+// const yupShape = {
+//   email: yup
+//     .string()
+//     .email('Email is not valid')
+//     .required('Email is required')
+// };
 
 class TextfieldPage extends Component {
   render() {
@@ -125,18 +125,29 @@ class TextfieldPage extends Component {
         />
         <Preview>
           <Textfield
-            // yupShape={yupShape}
-            type="email"
             className={styles.field}
             id="location"
+            type="email"
             required
             placeholder="This is a good placeholder text"
-            label="Enter your location name"
-            secondaryLabel="(So keep your eyes on me now)"
-            tertiaryLabel={<Text link>help?</Text>}
             value="hello@gmail.com"
-            // hint="This is the hint message that we have here"
-            // errorMessage="This is the error message"
+            label="Email"
+            secondaryLabel="(Please jangan alay)"
+            tertiaryLabel={<Text link>why we need this?</Text>}
+            message="There's some error here"
+            tone="critical"
+          />
+          <Textfield
+            className={styles.field}
+            id="password"
+            type="password"
+            required
+            placeholder="This is a good placeholder text"
+            label="Password"
+            secondaryLabel=""
+            // tertiaryLabel={<Text link>why we need this?</Text>}
+            // message="There's some error here"
+            // tone="critical"
           />
         </Preview>
       </React.Fragment>
