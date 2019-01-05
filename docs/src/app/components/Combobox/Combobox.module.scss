@@ -22,6 +22,7 @@
 
 .item {
   cursor: pointer;
+  list-style: none;
   color: $dark-alpha-70;
   padding: $space-sm $space-ml;
   transition: all 0.36s ease;

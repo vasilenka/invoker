@@ -12,6 +12,7 @@ class FieldInput extends Component {
     this.state = {
       value: '',
       tone: this.props.tone,
+      defaultValue: this.props.defaultValue,
       schema: this.props.schema || this.defaultSchema
     };
   }
@@ -30,22 +31,20 @@ class FieldInput extends Component {
       });
     }
 
-    let { clearMessage, setMessage, setTone, clearTone, value } = this.props;
-
-    if (value) {
+    if (this.props.value) {
       this.validationSchema
         .validate({
-          [this.props.type || 'text']: value
+          [this.props.type || 'text']: this.props.value
         })
         .then(valid => {
           if (valid) {
-            clearTone();
-            clearMessage();
+            this.props.clearTone();
+            this.props.clearMessage();
           }
         })
         .catch(err => {
-          setTone('critical');
-          setMessage(err.errors[0]);
+          this.props.setTone('critical');
+          this.props.setMessage(err.errors[0]);
         });
     }
   };
@@ -60,33 +59,36 @@ class FieldInput extends Component {
     this.setState({
       value: e.target.value
     });
-    this.props.handleChange(e.target.value);
+    if (this.props.onChange) {
+      this.props.onChange(e.target.value);
+    }
   };
 
   handleBlur = e => {
     let { clearMessage, setMessage, setTone, clearTone } = this.props;
-
-    this.validationSchema
-      .validate({
-        [this.props.type || 'text']: this.state.value
-      })
-      .then(valid => {
-        if (valid) {
-          clearTone();
-          clearMessage();
-        }
-      })
-      .catch(err => {
-        setTone('critical');
-        setMessage(err.errors[0]);
-      });
+    if (clearMessage && setMessage && setTone && clearTone) {
+      this.validationSchema
+        .validate({
+          [this.props.type || 'text']: this.state.value
+        })
+        .then(valid => {
+          if (valid) {
+            clearTone();
+            clearMessage();
+          }
+        })
+        .catch(err => {
+          setTone('critical');
+          setMessage(err.errors[0]);
+        });
+    }
   };
 
   render() {
     const {
       className,
       required,
-      handleChange,
+      onChange,
       id,
       yupShape,
       onFocus,

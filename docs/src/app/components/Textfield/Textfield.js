@@ -12,24 +12,15 @@ class Textfield extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
+      value: this.props.value,
       hint: '',
-      tone: '',
-      message: ''
+      tone: this.props.tone,
+      message: this.props.message
     };
   }
 
-  componentDidMount = () => {
-    let { tone, message, hint } = this.props;
-    this.setState({
-      hint,
-      tone,
-      message
-    });
-  };
-
   handleChange = value => {
-    this.props.handleChange(value, this.props.type);
+    this.props.onChange(value, this.props.type);
     this.setState({
       value
     });
@@ -116,11 +107,11 @@ class Textfield extends Component {
           yupShape={yupShape}
           disabled={disabled}
           required={required}
-          handleChange={this.handleChange}
           clearMessage={this.clearMessage}
           setMessage={this.setMessage}
           setTone={this.setTone}
           clearTone={this.clearTone}
+          onChange={this.handleChange}
           onFocus={this.handleFocus}
           placeholder={placeholder}
           type={type}

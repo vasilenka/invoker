@@ -8,14 +8,6 @@ import FieldLabel from './../FieldLabel/FieldLabel';
 import FieldInput from './../FieldInput/FieldInput';
 import Text from './../Text/Text';
 
-const items = [
-  { value: 'Apple' },
-  { value: 'Pear' },
-  { value: 'Orange' },
-  { value: 'Grape' },
-  { value: 'Banana' }
-];
-
 class Combobox extends Component {
   constructor(props) {
     super(props);
@@ -25,12 +17,33 @@ class Combobox extends Component {
   }
 
   render() {
-    let { limitedHeight } = this.props;
+    let {
+      className,
+      placeholder,
+      small,
+      limitedHeight,
+      id,
+      label,
+      secondaryLabel,
+      tertiaryLabel,
+      defaultValue,
+      hint,
+      inline,
+      options,
+      ...restProps
+    } = this.props;
+
+    const labelProps = {
+      labelMedium: !small,
+      labelSmall: small,
+      htmlFor: id
+    };
 
     return (
       <Downshift
-        // onChange={selection => alert(`You selected ${selection.value}`)}
-        itemToString={item => (item ? item.value : '')}
+        {...restProps}
+        // onChange={selection => alert(`You selected ${selection.name}`)}
+        itemToString={item => (item ? item.name : '')}
       >
         {({
           getInputProps,
@@ -42,24 +55,47 @@ class Combobox extends Component {
           highlightedIndex,
           selectedItem
         }) => (
-          <div>
-            <label {...getLabelProps()}>Enter a fruit</label>
-            <input {...getInputProps()} />
+          <div
+            className={classnames({
+              [styles.root]: true,
+              [className]: className
+            })}
+          >
+            <FieldLabel
+              {...getLabelProps()}
+              id={id}
+              label={label}
+              small={small}
+              inline={inline}
+              secondaryLabel={secondaryLabel}
+              tertiaryLabel={tertiaryLabel}
+            />
+            <FieldInput
+              {...getInputProps()}
+              placeholder={placeholder}
+              small={small}
+              id={id}
+              name={id}
+              defaultValue={defaultValue}
+              className={classnames({
+                [styles.field]: true
+              })}
+            />
             <Autocomplete
               {...getMenuProps()}
               isOpen
               limitedHeight={limitedHeight}
             >
               {isOpen
-                ? items
+                ? options
                     .filter(
-                      item => !inputValue || item.value.includes(inputValue)
+                      item => !inputValue || item.name.includes(inputValue)
                     )
                     .map((item, index) => (
-                      <li
+                      <div
                         className={styles.item}
                         {...getItemProps({
-                          key: item.value,
+                          key: item.id,
                           index,
                           item,
                           style: {
@@ -72,8 +108,11 @@ class Combobox extends Component {
                           }
                         })}
                       >
-                        {item.value}
-                      </li>
+                        <Text heading5 component="h4">
+                          {item.name}
+                        </Text>
+                        <Text small>{item.email}</Text>
+                      </div>
                     ))
                 : null}
             </Autocomplete>

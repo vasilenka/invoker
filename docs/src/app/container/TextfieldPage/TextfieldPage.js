@@ -111,7 +111,7 @@ class TextfieldPage extends Component {
     super(props);
     this.state = {
       email: 'hello@gmail.com',
-      password: ''
+      password: 'sdhshds'
     };
   }
 
@@ -144,8 +144,8 @@ class TextfieldPage extends Component {
             type="email"
             required
             placeholder="This is a good placeholder text"
-            value="hello@gmail.com"
-            handleChange={this.handleChange}
+            value={this.state.email}
+            onChange={this.handleChange}
             label="Email"
             secondaryLabel="(Please jangan alay)"
             tertiaryLabel={<Text link>why we need this?</Text>}
@@ -158,7 +158,7 @@ class TextfieldPage extends Component {
             type="password"
             value={this.state.password}
             required
-            handleChange={this.handleChange}
+            onChange={this.handleChange}
             placeholder="This is a good placeholder text"
             label="Password"
             secondaryLabel=""
