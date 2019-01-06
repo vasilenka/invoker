@@ -1,0 +1,26 @@
+@import '~invoker-tokens/index.scss';
+
+.root {
+}
+
+.maskedImage {
+  width: 96px;
+  height: 96px;
+  background: $sys-warning-200;
+}
+
+.washedImage {
+  width: 192px;
+  height: 192px;
+  // background: $sys-warning-100;
+}
+
+.previewMasked {
+  display: inline-flex;
+}
+
+.headingText {
+  padding: $space-vertical-sm;
+  background: $light-alpha-100;
+  margin: $space-stack-sm;
+}

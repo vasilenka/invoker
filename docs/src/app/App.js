@@ -14,6 +14,7 @@ import Text from './components/Text/Text';
 import TextfieldPage from './container/TextfieldPage/TextfieldPage';
 import TextPage from './container/TextPage/TextPage';
 import SandboxPage from './pages/Sandbox/Sandbox';
+import MaskPage from './pages/MaskPage/MaskPage';
 
 class App extends Component {
   constructor(props) {
@@ -45,6 +46,7 @@ class App extends Component {
                 <Route exact path="/text" component={TextPage} />
                 <Route exact path="/textfield" component={TextfieldPage} />
                 <Route exact path="/sandbox" component={SandboxPage} />
+                <Route exact path="/mask" component={MaskPage} />
               </MainContent>
             </Container>
             <LeftSection fixed className={styles.leftSection}>
@@ -53,6 +55,9 @@ class App extends Component {
               </Text>
               <Link to="/sandbox">
                 <Text className={styles.link}>Sandbox</Text>
+              </Link>
+              <Link to="/mask">
+                <Text className={styles.link}>Mask</Text>
               </Link>
               <Link to="/text">
                 <Text className={styles.link}>Text</Text>
