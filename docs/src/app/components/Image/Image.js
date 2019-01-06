@@ -69,7 +69,6 @@ class Image extends Component {
       <div
         style={style}
         className={classnames({
-          [styles.root]: true,
           [styles.container]: true,
           [styles[fit]]: fit,
           [className]: className
