@@ -1,76 +1,80 @@
 import styles from './Luna.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
-const handleFile = file => {
-  let reader = new FileReader();
-  let image = { src: '', value: '', file };
-  reader.onload = r => (image.src = r.target.result);
-  reader.readAsDataURL(file);
-  image.value = reader;
-  return image;
-};
-
-class ImageUploader extends Component {
+class Luna extends Component {
   constructor(props) {
     super(props);
-    this.input = React.createRef();
-    this.reader = new FileReader();
+    this.fileInput = React.createRef();
     this.state = {
-      loaded: false,
-      url: 'http://google.com',
-      onLoad: this.onLoad,
-      input: this.input,
-      files: []
+      files: [],
+      onClick: this.handleClick,
+      input: this.input
     };
   }
 
-  // onLoad = () => {
-  //   this.setState(({on}) => ({ on: !on }))
-  // }
-
-  onChange = e => {
-    let files = e.target.files;
-    let storedFiles = [];
-
-    for (let i = 0; i < files.length; i++) {
-      let image = handleFile(files[i]);
-      storedFiles.push(image);
-    }
-
-    this.setState({
-      files: storedFiles
-    });
+  handleClick = () => {
+    this.fileInput.current.click();
   };
 
-  onLoad = (e, reader) => {
+  inputFileChanged = e => {
     let files = e.target.files;
-    console.log('Files: ', files);
-    console.log('Reader: ', reader);
+
+    if (!window.FileReader) {
+      throw new Error("Sorry, your browser does'nt support for preview");
+    }
+
+    for (let i = 0; i < files.length; i++) {
+      let reader = new FileReader();
+      reader.onload = r => {
+        const prevfiles = this.state.files;
+        this.setState({
+          files: prevfiles.concat({
+            url: r.target.result,
+            value: r,
+            file: files[i]
+          })
+        });
+      };
+      reader.readAsDataURL(files[i]);
+    }
   };
 
   render() {
-    let { children, className, ...restProps } = this.props;
+    const { className, accept, capture, multiple, children } = this.props;
+
     return (
       <div
         className={classnames({
           [styles.root]: true,
           [className]: className
         })}
-        {...restProps}
       >
-        {children(this.state)}
         <input
-          ref={this.input}
-          onChange={this.onChange}
-          className="Hide"
-          capture={true}
-          multiple
           type="file"
+          ref={this.fileInput}
+          accept={Array.isArray(accept) ? accept.join(',') : accept}
+          multiple={multiple}
+          capture={capture}
+          style={{ display: 'none' }}
+          onChange={this.inputFileChanged}
         />
+        {children(this.state)}
       </div>
     );
   }
 }
 
-export default ImageUploader;
+Luna.defaultProps = {
+  accept: 'image/*',
+  capture: true,
+  multiple: true
+};
+Luna.propTypes = {
+  accept: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  capture: PropTypes.bool,
+  multiple: PropTypes.bool
+};
+
+export default Luna;
