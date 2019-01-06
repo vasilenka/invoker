@@ -1,7 +1,6 @@
 import styles from './Image.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import PropTypes from 'prop-types';
 
 const shouldScaleImage = fit => fit === 'cover' || fit === 'contain';
 

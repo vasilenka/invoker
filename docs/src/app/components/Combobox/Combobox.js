@@ -1,12 +1,12 @@
 import styles from './Combobox.module.scss';
 import React, { Component } from 'react';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 import Downshift from 'downshift';
 
 import Autocomplete from './../Autocomplete/Autocomplete';
-import FieldLabel from './../FieldLabel/FieldLabel';
-import FieldInput from './../FieldInput/FieldInput';
-import Text from './../Text/Text';
+// import FieldLabel from './../FieldLabel/FieldLabel';
+// import FieldInput from './../FieldInput/FieldInput';
+// import Text from './../Text/Text';
 
 const items = [
   { value: 'Apple' },

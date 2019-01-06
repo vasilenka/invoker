@@ -1,6 +1,6 @@
 import styles from './MaskPage.module.scss';
 import React from 'react';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 
 import Text from './../../components/Text/Text';
 import Table from './../../components/Table/Table';
@@ -15,9 +15,6 @@ import Divider from './../../docs/Divider/Divider';
 
 import blue from './img/blue.jpg';
 import carbon from './img/carbon.jpg';
-import girl from './img/girl.jpg';
-import pattern from './img/pattern.jpg';
-import pattern2 from './img/pattern2.jpg';
 
 let headProps = ['props', 'type', 'default'];
 

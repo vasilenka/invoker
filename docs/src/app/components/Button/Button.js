@@ -5,6 +5,7 @@ import classnames from 'classnames';
 const Button = ({
   children,
   primary,
+  onClick,
   secondary,
   secondaryAlt,
   primaryBold,
@@ -16,6 +17,7 @@ const Button = ({
   return (
     <button
       type="button"
+      onClick={onClick}
       className={classnames({
         [styles.secondary]: secondary,
         [styles.secondaryAlt]: secondaryAlt,
