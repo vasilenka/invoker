@@ -8,17 +8,25 @@ class Luna extends Component {
     super(props);
     this.fileInput = React.createRef();
     this.state = {
-      files: [],
+      input: this.fileInput,
       onClick: this.handleClick,
-      input: this.input
+      onError: this.handleError,
+      deleteImage: this.deleteImage,
+      files: []
     };
   }
+
+  deleteImage = index => {
+    const files = [...this.state.files];
+    files.splice(index, 1);
+    this.setState({ files });
+  };
 
   handleClick = () => {
     this.fileInput.current.click();
   };
 
-  inputFileChanged = e => {
+  onChange = e => {
     let files = e.target.files;
 
     if (!window.FileReader) {
@@ -27,6 +35,9 @@ class Luna extends Component {
 
     for (let i = 0; i < files.length; i++) {
       let reader = new FileReader();
+      reader.onerror = r => {
+        throw new Error(r);
+      };
       reader.onload = r => {
         const prevfiles = this.state.files;
         this.setState({
@@ -39,6 +50,10 @@ class Luna extends Component {
       };
       reader.readAsDataURL(files[i]);
     }
+  };
+
+  onError = err => {
+    throw new Error(err);
   };
 
   render() {
@@ -58,7 +73,8 @@ class Luna extends Component {
           multiple={multiple}
           capture={capture}
           style={{ display: 'none' }}
-          onChange={this.inputFileChanged}
+          onChange={this.onChange}
+          onError={this.onError}
         />
         {children(this.state)}
       </div>
@@ -69,8 +85,9 @@ class Luna extends Component {
 Luna.defaultProps = {
   accept: 'image/*',
   capture: true,
-  multiple: true
+  multiple: false
 };
+
 Luna.propTypes = {
   accept: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   capture: PropTypes.bool,
