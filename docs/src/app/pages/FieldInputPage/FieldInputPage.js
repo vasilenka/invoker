@@ -171,7 +171,6 @@ const FieldInputPage = props => {
       <Code className={styles.code}>
         {`
 <FieldInput
-  className={styles.inputField}
   id="email"
   type="email"
   placeholder="Enter your email address"
@@ -232,7 +231,6 @@ const yupShape = {
 
 return (
   <FieldInput
-    className={styles.inputField}
     id="text"
     type="text"
     placeholder="Write your story"
