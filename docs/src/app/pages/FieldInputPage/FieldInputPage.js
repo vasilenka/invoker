@@ -11,6 +11,7 @@ import Divider from './../../docs/Divider/Divider';
 import Table from './../../components/Table/Table';
 import Text from './../../components/Text/Text';
 import FieldInput from './../../components/FieldInput/FieldInput';
+import FieldLabel from './../../components/FieldLabel/FieldLabel';
 
 let headProps = ['', 'name', 'type', 'default'];
 
@@ -83,14 +84,16 @@ let bodyProps = [
     required: false,
     name: 'setTone',
     type: 'fn() => tone',
-    help: 'get the tone from validation result. Executed on onBlur event.',
+    help:
+      'get the tone from FieldInput validation result. Executed on onBlur event.',
     default: '-'
   },
   {
     required: false,
     name: 'setMessage',
     type: 'fn() => message',
-    help: 'get the message from validation result. Executed on onBlur event.',
+    help:
+      'get the message from FieldInput validation result. Executed on onBlur event.',
     default: '-'
   },
   {
@@ -103,17 +106,9 @@ let bodyProps = [
 ];
 
 const FieldInputPage = props => {
-  const [tone, setTone] = useState('');
-  const [message, setMessage] = useState('');
-  const [value, setValue] = useState('');
-
-  // const setTone = tone => {
-  //   setToneHook(tone)
-  // }
-
-  // const setMessage = message => {
-  //   setmessageHook(message)
-  // }
+  const [tone, setTone] = useState();
+  const [message, setMessage] = useState();
+  const [value, setValue] = useState();
 
   return (
     <div className={styles.root}>
@@ -127,9 +122,12 @@ const FieldInputPage = props => {
         description="A TextField will expand to fill the width of their parent container."
       />
       <Preview>
-        <Text style={{ marginBottom: '12px' }} heading4 component="h3">
-          Email field <Text large>(with built-in validation)</Text>{' '}
-        </Text>
+        <FieldLabel
+          id="email"
+          label="Email field"
+          secondaryLabel="(with built-in validation)"
+        />
+
         <FieldInput
           id="email"
           type="email"
@@ -139,7 +137,6 @@ const FieldInputPage = props => {
           setMessage={message => setMessage(message)}
           setValue={value => setValue(value)}
         />
-
         <Text
           heading5
           component="h5"
@@ -161,14 +158,19 @@ const FieldInputPage = props => {
         </Text>
       </Preview>
       <Code>
-        {`<FieldInput
+        {`const [tone, setTone] = useState()
+const [message, setMessage] = useState()
+const [value, setValue] = useState()
+
+<FieldInput
   id="email"
   type="email"
   placeholder="Enter your email address"
   required
   setTone={tone => setTone(tone)}
   setMessage={message => setMessage(message)}
-  />`}
+  setValue={value => setValue(value)}
+/>`}
       </Code>
       <Divider large />
     </div>

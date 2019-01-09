@@ -54,10 +54,16 @@ class FieldInput extends Component {
   };
 
   onChange = e => {
-    const { onChange } = this.props;
-    this.setState({
-      value: e.target.value
-    });
+    const { onChange, setValue } = this.props;
+    let value = e.target.value;
+    this.setState(
+      () => ({ value }),
+      () => {
+        if (setValue) {
+          setValue(this.state.value);
+        }
+      }
+    );
     if (onChange) {
       onChange(e.target.value);
     }
@@ -143,15 +149,12 @@ class FieldInput extends Component {
     }
   };
 
-  onKeyUp = e => {
-    const { onKeyUp, setValue } = this.props;
-    if (setValue) {
-      setValue(this.state.value);
-    }
-    if (onKeyUp) {
-      onKeyUp(e);
-    }
-  };
+  // onKeyUp = e => {
+  //   const { onKeyUp } = this.props
+  //   if (onKeyUp) {
+  //     onKeyUp(e)
+  //   }
+  // };
 
   onKeyPress = e => {
     const { onKeyPress } = this.props;
@@ -176,8 +179,6 @@ class FieldInput extends Component {
       setMessage,
       tone,
       setTone,
-      onChange,
-      onFocus,
       ...restProps
     } = this.props;
 

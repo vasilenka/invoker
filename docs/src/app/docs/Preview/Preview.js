@@ -8,7 +8,8 @@ const Preview = ({ clean, children, className, ...restProps }) => {
       {...restProps}
       className={classnames({
         [styles.root]: true,
-        [className]: className
+        [className]: className,
+        [styles.clean]: clean
       })}
     >
       {children}
