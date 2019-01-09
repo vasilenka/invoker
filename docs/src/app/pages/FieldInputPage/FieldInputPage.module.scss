@@ -16,3 +16,16 @@
   composes: tone;
   color: $brand-primary-200;
 }
+
+.inputField {
+  margin: $space-stack-s;
+}
+
+.result {
+  position: absolute;
+  left: 110%;
+  width: 25vw;
+  word-break: break-all;
+  top: 0;
+  padding-right: 24px;
+}

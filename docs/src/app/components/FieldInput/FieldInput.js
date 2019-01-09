@@ -149,12 +149,12 @@ class FieldInput extends Component {
     }
   };
 
-  // onKeyUp = e => {
-  //   const { onKeyUp } = this.props
-  //   if (onKeyUp) {
-  //     onKeyUp(e)
-  //   }
-  // };
+  onKeyUp = e => {
+    const { onKeyUp } = this.props;
+    if (onKeyUp) {
+      onKeyUp(e);
+    }
+  };
 
   onKeyPress = e => {
     const { onKeyPress } = this.props;

@@ -22,7 +22,7 @@
 
 .leftSection {
   top: 65px;
-  padding: $space-ml;
+  padding: $space-l $space-ml;
 }
 
 .rightSection {
@@ -39,4 +39,8 @@
   color: $dark-alpha-60;
   text-transform: uppercase;
   margin: $space-sm 0 $space-ml;
+}
+
+.mainContainer {
+  padding-top: $space-l;
 }

@@ -1,6 +1,7 @@
 import styles from './FieldInputPage.module.scss';
 import React, { useState } from 'react';
 import cx from 'classnames';
+import * as yup from 'yup';
 
 import Header from './../../docs/Header/Header';
 import Subheader from './../../docs/Subheader/Subheader';
@@ -71,7 +72,7 @@ let bodyProps = [
     required: false,
     name: 'setValue',
     type: 'fn() => value',
-    help: 'get the value of the FieldInput. Executed on onKeyUp event.',
+    help: 'return the value of the FieldInput. Executed on onChange event.',
     default: '-'
   },
   {
@@ -85,7 +86,7 @@ let bodyProps = [
     name: 'setTone',
     type: 'fn() => tone',
     help:
-      'get the tone from FieldInput validation result. Executed on onBlur event.',
+      'return the tone from FieldInput validation result. Executed on onBlur event.',
     default: '-'
   },
   {
@@ -93,7 +94,7 @@ let bodyProps = [
     name: 'setMessage',
     type: 'fn() => message',
     help:
-      'get the message from FieldInput validation result. Executed on onBlur event.',
+      'return the message from FieldInput validation result. Executed on onBlur event.',
     default: '-'
   },
   {
@@ -110,6 +111,13 @@ const FieldInputPage = props => {
   const [message, setMessage] = useState();
   const [value, setValue] = useState();
 
+  const yupShape = {
+    text: yup
+      .string()
+      .required('Story is required')
+      .min(20, 'Your story must be at least 20 character')
+  };
+
   return (
     <div className={styles.root}>
       <Header
@@ -118,8 +126,8 @@ const FieldInputPage = props => {
       />
       <Table className={styles.tableProps} head={headProps} body={bodyProps} />
       <Subheader
-        title="Example"
-        description="A TextField will expand to fill the width of their parent container."
+        title="Basic"
+        description="A simple FieldInput component with type of email and validated using built-in validation schema."
       />
       <Preview>
         <FieldLabel
@@ -129,6 +137,7 @@ const FieldInputPage = props => {
         />
 
         <FieldInput
+          className={styles.inputField}
           id="email"
           type="email"
           placeholder="Enter your email address"
@@ -157,12 +166,8 @@ const FieldInputPage = props => {
           value: {value}
         </Text>
       </Preview>
-      <Code>
-        {`const [tone, setTone] = useState()
-const [message, setMessage] = useState()
-const [value, setValue] = useState()
-
-<FieldInput
+      <Code className={styles.code}>
+        {`<FieldInput
   id="email"
   type="email"
   placeholder="Enter your email address"
@@ -171,6 +176,68 @@ const [value, setValue] = useState()
   setMessage={message => setMessage(message)}
   setValue={value => setValue(value)}
 />`}
+      </Code>
+      <Divider large />
+      <Subheader
+        title="Custom validation schema"
+        description="A simple FieldInput component with type of email validated using built-in validation schema. Note that we're using useState hook in this example."
+      />
+      <Preview>
+        <FieldLabel id="text" label="Story" />
+
+        <FieldInput
+          className={styles.inputField}
+          id="text"
+          type="text"
+          placeholder="Write your story"
+          setTone={tone => setTone(tone)}
+          setMessage={message => setMessage(message)}
+          setValue={value => setValue(value)}
+          yupShape={yupShape}
+        />
+        <Text
+          heading5
+          component="h5"
+          style={{ paddingTop: '12px' }}
+          className={cx({ [styles[tone]]: tone })}
+        >
+          tone: {tone}
+        </Text>
+        <Text
+          heading5
+          component="h5"
+          style={{ paddingTop: '12px' }}
+          className={cx({ [styles[tone]]: tone })}
+        >
+          message: {message}
+        </Text>
+        <Text heading5 component="h5" style={{ paddingTop: '12px' }}>
+          value: {value}
+        </Text>
+      </Preview>
+      <Code className={styles.code}>
+        {`import * as yup from 'yup';
+
+const yupShape = {
+  text: yup
+    .string()
+    .required('Story is required')
+    .min(20, 'Your story must be at least 20 character')
+};
+
+return (
+
+  <FieldInput
+    id="text"
+    type="text"
+    placeholder="Write your story"
+    setTone={tone => setTone(tone)}
+    setMessage={message => setMessage(message)}
+    setValue={value => setValue(value)}
+    yupShape={yupShape}
+  />
+
+)`}
       </Code>
       <Divider large />
     </div>

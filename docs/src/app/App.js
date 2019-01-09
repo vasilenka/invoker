@@ -42,7 +42,7 @@ class App extends Component {
         <Navbar />
         <Router>
           <React.Fragment>
-            <Container fixLeft fixRight>
+            <Container fixLeft fixRight className={styles.mainContainer}>
               <MainContent>
                 <Route exact path="/text" component={TextPage} />
                 <Route exact path="/textfield" component={TextfieldPage} />
