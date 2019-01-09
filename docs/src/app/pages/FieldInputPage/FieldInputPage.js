@@ -65,7 +65,7 @@ let bodyProps = [
   {
     required: false,
     name: 'value',
-    type: '"neutral" | "critical" | "positive"',
+    type: 'string',
     default: '-'
   },
   {
@@ -78,7 +78,7 @@ let bodyProps = [
   {
     required: false,
     name: 'tone',
-    type: 'string',
+    type: '"neutral" | "critical" | "positive"',
     default: '-'
   },
   {
@@ -204,7 +204,7 @@ const FieldInputPage = props => {
       <Divider large />
       <Subheader
         title="Custom validation schema"
-        description="A simple FieldInput component with type of email validated using built-in validation schema. Note that we're using useState hook in this example."
+        description="You can validate the field using a custom validation schema by providing a Yup shape."
       />
       <Preview>
         <FieldLabel id="text" label="Story" />

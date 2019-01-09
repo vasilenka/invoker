@@ -34,7 +34,7 @@ css.global(
 .gatsby-highlight > pre.prism-code`,
   {
     height: 'auto !important',
-    fontSize: 15,
+    fontSize: 14,
     lineHeight: '22px',
     whiteSpace: 'pre-wrap',
     wordBreak: 'break-word'
