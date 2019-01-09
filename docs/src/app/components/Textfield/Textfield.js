@@ -22,6 +22,7 @@ class Textfield extends Component {
   handleChange = value => {
     this.props.onChange(value, this.props.type);
     this.setState({
+      ...this.state,
       value
     });
   };
@@ -40,13 +41,6 @@ class Textfield extends Component {
     });
   };
 
-  clearMessage = e => {
-    this.setState({
-      ...this.state,
-      message: ''
-    });
-  };
-
   setTone = tone => {
     this.setState({
       ...this.state,
@@ -54,11 +48,8 @@ class Textfield extends Component {
     });
   };
 
-  clearTone = e => {
-    this.setState({
-      ...this.state,
-      tone: ''
-    });
+  onBlur = () => {
+    console.log('also called!');
   };
 
   render() {
@@ -107,10 +98,9 @@ class Textfield extends Component {
           yupShape={yupShape}
           disabled={disabled}
           required={required}
-          clearMessage={this.clearMessage}
           setMessage={this.setMessage}
           setTone={this.setTone}
-          clearTone={this.clearTone}
+          onBlur={this.onBlur}
           onChange={this.handleChange}
           onFocus={this.handleFocus}
           placeholder={placeholder}

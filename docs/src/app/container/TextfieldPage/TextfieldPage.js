@@ -110,8 +110,8 @@ class TextfieldPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'hello@gmail.com',
-      password: 'sdhshds'
+      email: 'herlamb@ng',
+      password: ''
     };
   }
 

@@ -24,6 +24,10 @@ class Combobox extends Component {
     };
   }
 
+  handleInput = () => {
+    console.log('Combine!');
+  };
+
   render() {
     let { limitedHeight } = this.props;
 
@@ -44,7 +48,7 @@ class Combobox extends Component {
         }) => (
           <div>
             <label {...getLabelProps()}>Enter a fruit</label>
-            <input {...getInputProps()} />
+            <input {...getInputProps({ onClick: this.handleInput })} />
             <Autocomplete
               {...getMenuProps()}
               isOpen
@@ -59,6 +63,7 @@ class Combobox extends Component {
                       <li
                         className={styles.item}
                         {...getItemProps({
+                          onClick: this.handleInput,
                           key: item.value,
                           index,
                           item,

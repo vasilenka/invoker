@@ -2,85 +2,112 @@ import styles from './FieldInput.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
+import * as yup from 'yup';
 import { defaultShape } from './helper/fieldInputHelper';
 
-import * as yup from 'yup';
+const callAll = (...fns) => (...args) => fns.forEach(fn => fn && fn(...args));
 
 class FieldInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
+      value: this.props.value || '',
       tone: this.props.tone,
-      defaultValue: this.props.defaultValue,
       schema: this.props.schema || this.defaultSchema
     };
   }
 
   componentDidMount = () => {
+    const {
+      yupShape,
+      value,
+      type,
+      required,
+      id,
+      setTone,
+      setMessage
+    } = this.props;
     this.validationSchema = yup
       .object()
-      .shape(
-        this.props.yupShape ||
-          defaultShape(this.props.type, this.props.required, this.props.id)
-      );
+      .shape(yupShape || defaultShape(type, required, id));
 
-    if (this.props.value) {
-      this.setState({
-        value: this.props.value
-      });
-    }
-
-    if (this.props.value) {
+    if (value) {
       this.validationSchema
         .validate({
-          [this.props.type || 'text']: this.props.value
+          [type || 'text']: value
         })
         .then(valid => {
           if (valid) {
-            this.props.clearTone();
-            this.props.clearMessage();
-          }
-        })
-        .catch(err => {
-          this.props.setTone('critical');
-          this.props.setMessage(err.errors[0]);
-        });
-    }
-  };
-
-  handleFocus = e => {
-    this.setState({
-      error: false
-    });
-  };
-
-  handleChange = e => {
-    this.setState({
-      value: e.target.value
-    });
-    if (this.props.onChange) {
-      this.props.onChange(e.target.value);
-    }
-  };
-
-  handleBlur = e => {
-    let { clearMessage, setMessage, setTone, clearTone } = this.props;
-    if (clearMessage && setMessage && setTone && clearTone) {
-      this.validationSchema
-        .validate({
-          [this.props.type || 'text']: this.state.value
-        })
-        .then(valid => {
-          if (valid) {
-            clearTone();
-            clearMessage();
+            setTone('none');
+            setMessage();
           }
         })
         .catch(err => {
           setTone('critical');
           setMessage(err.errors[0]);
         });
+    }
+  };
+
+  onChange = e => {
+    const { onChange } = this.props;
+    this.setState({
+      value: e.target.value
+    });
+    if (onChange) {
+      onChange(e.target.value);
+    }
+  };
+
+  onBlur = () => {
+    let { setMessage, setTone, type, onBlur } = this.props;
+    if (setMessage && setTone) {
+      this.validationSchema
+        .validate({
+          [type || 'text']: this.state.value
+        })
+        .then(valid => {
+          if (!valid) {
+            return Promise.reject();
+          }
+          setTone();
+          setMessage();
+        })
+        .catch(err => {
+          setTone('critical');
+          setMessage(err.errors[0]);
+        });
+    }
+    if (onBlur) {
+      onBlur();
+    }
+  };
+
+  onFocus = () => {
+    const { onFocus } = this.props;
+    if (onFocus) {
+      onFocus();
+    }
+  };
+
+  onClick = () => {
+    const { onClick } = this.props;
+    if (onClick) {
+      onClick();
+    }
+  };
+
+  onKeyDown = () => {
+    const { onKeyDown } = this.props;
+    if (onKeyDown) {
+      onKeyDown();
+    }
+  };
+
+  onKeyUp = () => {
+    const { onKeyUp } = this.props;
+    if (onKeyUp) {
+      onKeyUp();
     }
   };
 
@@ -94,15 +121,12 @@ class FieldInput extends Component {
       onFocus,
       small,
       setMessage,
-      clearMessage,
       setTone,
-      clearTone,
       toggleHint,
       disabled,
       type,
       placeholder,
       value,
-      defaultValue,
       tone,
       inline,
       ...restProps
@@ -113,9 +137,12 @@ class FieldInput extends Component {
         {...restProps}
         disabled={disabled}
         required={required}
-        onChange={this.handleChange}
-        onBlur={this.handleBlur}
-        onFocus={onFocus}
+        onClick={this.onClick}
+        onChange={this.onChange}
+        onBlur={this.onBlur}
+        onFocus={this.onFocus}
+        onKeyDown={this.onKeyDown}
+        onKeyUp={this.onKeyUp}
         type={type || 'text'}
         id={id}
         className={classnames({
@@ -130,7 +157,6 @@ class FieldInput extends Component {
         })}
         placeholder={placeholder}
         value={this.state.value}
-        defaultValue={this.state.defaultValue}
       />
     );
   }
