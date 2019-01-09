@@ -107,15 +107,37 @@ let bodyProps = [
 ];
 
 const FieldInputPage = props => {
-  const [tone, setTone] = useState();
-  const [message, setMessage] = useState();
-  const [value, setValue] = useState();
+  const [toneBasic, setToneHookBasic] = useState();
+  const [messageBasic, setMessageHookBasic] = useState();
+  const [valueBasic, setValueHookBasic] = useState();
+  const [toneCustom, setToneHookCustom] = useState();
+  const [messageCustom, setMessageHookCustom] = useState();
+  const [valueCustom, setValueHookCustom] = useState();
 
   const yupShape = {
     text: yup
       .string()
       .required('Story is required')
       .min(20, 'Your story must be at least 20 character')
+  };
+
+  const setToneBasic = tone => {
+    setToneHookBasic(tone);
+  };
+  const setMessageBasic = message => {
+    setMessageHookBasic(message);
+  };
+  const setValueBasic = value => {
+    setValueHookBasic(value);
+  };
+  const setToneCustom = tone => {
+    setToneHookCustom(tone);
+  };
+  const setMessageCustom = message => {
+    setMessageHookCustom(message);
+  };
+  const setValueCustom = value => {
+    setValueHookCustom(value);
   };
 
   return (
@@ -135,47 +157,49 @@ const FieldInputPage = props => {
           label="Email field"
           secondaryLabel="(with built-in validation)"
         />
-
         <FieldInput
           className={styles.inputField}
           id="email"
           type="email"
           placeholder="Enter your email address"
           required
-          setTone={tone => setTone(tone)}
-          setMessage={message => setMessage(message)}
-          setValue={value => setValue(value)}
+          setTone={setToneBasic}
+          setMessage={setMessageBasic}
+          setValue={setValueBasic}
         />
         <Text
           heading5
           component="h5"
           style={{ paddingTop: '12px' }}
-          className={cx({ [styles[tone]]: tone })}
+          className={cx({ [styles[toneBasic]]: toneBasic })}
         >
-          tone: {tone}
+          tone: {toneBasic}
         </Text>
         <Text
           heading5
           component="h5"
           style={{ paddingTop: '12px' }}
-          className={cx({ [styles[tone]]: tone })}
+          className={cx({ [styles[toneBasic]]: toneBasic })}
         >
-          message: {message}
+          message: {messageBasic}
         </Text>
         <Text heading5 component="h5" style={{ paddingTop: '12px' }}>
-          value: {value}
+          value: {valueBasic}
         </Text>
       </Preview>
       <Code className={styles.code}>
-        {`<FieldInput
+        {`
+<FieldInput
+  className={styles.inputField}
   id="email"
   type="email"
   placeholder="Enter your email address"
   required
-  setTone={tone => setTone(tone)}
-  setMessage={message => setMessage(message)}
-  setValue={value => setValue(value)}
-/>`}
+  setTone={setToneBasic}
+  setMessage={setMessageBasic}
+  setValue={setValueBasic}
+/>
+        `}
       </Code>
       <Divider large />
       <Subheader
@@ -184,39 +208,39 @@ const FieldInputPage = props => {
       />
       <Preview>
         <FieldLabel id="text" label="Story" />
-
         <FieldInput
           className={styles.inputField}
           id="text"
           type="text"
           placeholder="Write your story"
-          setTone={tone => setTone(tone)}
-          setMessage={message => setMessage(message)}
-          setValue={value => setValue(value)}
+          setTone={setToneCustom}
+          setMessage={setMessageCustom}
+          setValue={setValueCustom}
           yupShape={yupShape}
         />
         <Text
           heading5
           component="h5"
           style={{ paddingTop: '12px' }}
-          className={cx({ [styles[tone]]: tone })}
+          className={cx({ [styles[toneCustom]]: toneCustom })}
         >
-          tone: {tone}
+          tone: {toneCustom}
         </Text>
         <Text
           heading5
           component="h5"
           style={{ paddingTop: '12px' }}
-          className={cx({ [styles[tone]]: tone })}
+          className={cx({ [styles[toneCustom]]: toneCustom })}
         >
-          message: {message}
+          message: {messageCustom}
         </Text>
         <Text heading5 component="h5" style={{ paddingTop: '12px' }}>
-          value: {value}
+          value: {valueCustom}
         </Text>
       </Preview>
       <Code className={styles.code}>
-        {`import * as yup from 'yup';
+        {`
+import * as yup from 'yup';
 
 const yupShape = {
   text: yup
@@ -226,17 +250,16 @@ const yupShape = {
 };
 
 return (
-
   <FieldInput
+    className={styles.inputField}
     id="text"
     type="text"
     placeholder="Write your story"
-    setTone={tone => setTone(tone)}
-    setMessage={message => setMessage(message)}
-    setValue={value => setValue(value)}
+    setTone={setToneCustom}
+    setMessage={setMessageCustom}
+    setValue={setValueCustom}
     yupShape={yupShape}
   />
-
 )`}
       </Code>
       <Divider large />
