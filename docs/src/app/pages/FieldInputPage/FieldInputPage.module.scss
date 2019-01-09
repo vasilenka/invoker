@@ -1,0 +1,18 @@
+@import '~invoker-tokens/index.scss';
+
+.root {
+}
+
+.tone {
+  margin: $space-inline-sm;
+}
+
+.critical {
+  composes: tone;
+  color: $brand-secondary-100;
+}
+
+.positive {
+  composes: tone;
+  color: $brand-primary-200;
+}

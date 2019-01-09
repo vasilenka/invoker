@@ -1,6 +1,5 @@
 import styles from './TextfieldPage.module.scss';
 import React, { Component } from 'react';
-// import classnames from 'classnames';
 
 import Header from './../../docs/Header/Header';
 import Subheader from './../../docs/Subheader/Subheader';
@@ -9,8 +8,6 @@ import Preview from './../../docs/Preview/Preview';
 import Textfield from './../../components/Textfield/Textfield';
 import Table from './../../components/Table/Table';
 import Text from './../../components/Text/Text';
-
-// import * as yup from 'yup';
 
 let headProps = ['', 'name', 'type', 'default'];
 

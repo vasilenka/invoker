@@ -11,10 +11,11 @@ import MainContent from './layouts/MainContent/MainContent';
 import Navbar from './components/Navbar/Navbar';
 import Text from './components/Text/Text';
 
-import TextfieldPage from './container/TextfieldPage/TextfieldPage';
-import TextPage from './container/TextPage/TextPage';
+import TextfieldPage from './pages/TextfieldPage/TextfieldPage';
+import TextPage from './pages/TextPage/TextPage';
 import SandboxPage from './pages/Sandbox/Sandbox';
 import MaskPage from './pages/MaskPage/MaskPage';
+import FieldInputPage from './pages/FieldInputPage/FieldInputPage';
 
 class App extends Component {
   constructor(props) {
@@ -47,6 +48,7 @@ class App extends Component {
                 <Route exact path="/textfield" component={TextfieldPage} />
                 <Route exact path="/sandbox" component={SandboxPage} />
                 <Route exact path="/mask" component={MaskPage} />
+                <Route exact path="/fieldinput" component={FieldInputPage} />
               </MainContent>
             </Container>
             <LeftSection fixed className={styles.leftSection}>
@@ -64,6 +66,9 @@ class App extends Component {
               </Link>
               <Link to="/textfield">
                 <Text className={styles.link}>Textfield</Text>
+              </Link>
+              <Link to="/fieldinput">
+                <Text className={styles.link}>FieldInput</Text>
               </Link>
             </LeftSection>
             {/* <RightSection fixed className={styles.rightSection}>

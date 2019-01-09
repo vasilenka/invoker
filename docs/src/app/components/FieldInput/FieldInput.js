@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import * as yup from 'yup';
 import { defaultShape } from './helper/fieldInputHelper';
 
-const callAll = (...fns) => (...args) => fns.forEach(fn => fn && fn(...args));
+// const callAll = (...fns) => (...args) => fns.forEach(fn => fn && fn(...args));
 
 class FieldInput extends Component {
   constructor(props) {
@@ -13,13 +13,14 @@ class FieldInput extends Component {
     this.state = {
       value: this.props.value || '',
       tone: this.props.tone,
-      schema: this.props.schema || this.defaultSchema
+      message: this.props.message
     };
   }
 
   componentDidMount = () => {
     const {
       yupShape,
+      disabled,
       value,
       type,
       required,
@@ -27,24 +28,27 @@ class FieldInput extends Component {
       setTone,
       setMessage
     } = this.props;
+
     this.validationSchema = yup
       .object()
       .shape(yupShape || defaultShape(type, required, id));
 
-    if (value) {
+    if (value && !disabled) {
       this.validationSchema
         .validate({
           [type || 'text']: value
         })
         .then(valid => {
-          if (valid) {
-            setTone('none');
+          if (valid && setTone && setMessage) {
+            setTone();
             setMessage();
           }
         })
         .catch(err => {
-          setTone('critical');
-          setMessage(err.errors[0]);
+          if (setTone && setMessage) {
+            setTone('critical');
+            setMessage(err.errors[0]);
+          }
         });
     }
   };
@@ -61,74 +65,119 @@ class FieldInput extends Component {
 
   onBlur = () => {
     let { setMessage, setTone, type, onBlur } = this.props;
-    if (setMessage && setTone) {
-      this.validationSchema
-        .validate({
-          [type || 'text']: this.state.value
-        })
-        .then(valid => {
-          if (!valid) {
-            return Promise.reject();
+
+    this.validationSchema
+      .validate({
+        [type || 'text']: this.state.value
+      })
+      .then(valid => {
+        if (!valid) {
+          return Promise.reject();
+        }
+        this.setState(
+          () => ({
+            ...this.state,
+            tone: '',
+            message: ''
+          }),
+          () => {
+            if (setTone && setMessage) {
+              setTone(this.state.tone);
+              setMessage(this.state.message);
+            }
           }
-          setTone();
-          setMessage();
-        })
-        .catch(err => {
-          setTone('critical');
-          setMessage(err.errors[0]);
-        });
-    }
+        );
+      })
+      .catch(err => {
+        this.setState(
+          () => ({
+            ...this.state,
+            tone: 'critical',
+            message: err.errors[0]
+          }),
+          () => {
+            if (setTone && setMessage) {
+              setTone(this.state.tone);
+              setMessage(this.state.message);
+            }
+          }
+        );
+      });
+
     if (onBlur) {
       onBlur();
     }
   };
 
-  onFocus = () => {
-    const { onFocus } = this.props;
+  onFocus = e => {
+    const { onFocus, setTone, setMessage } = this.props;
+    this.setState(
+      () => ({
+        ...this.state,
+        tone: '',
+        message: ''
+      }),
+      () => {
+        if (setTone && setMessage) {
+          setTone(this.state.tone);
+          setMessage(this.state.message);
+        }
+      }
+    );
     if (onFocus) {
-      onFocus();
+      onFocus(e);
     }
   };
 
-  onClick = () => {
+  onClick = e => {
     const { onClick } = this.props;
     if (onClick) {
-      onClick();
+      onClick(e);
     }
   };
 
-  onKeyDown = () => {
+  onKeyDown = e => {
     const { onKeyDown } = this.props;
     if (onKeyDown) {
-      onKeyDown();
+      onKeyDown(e);
     }
   };
 
-  onKeyUp = () => {
-    const { onKeyUp } = this.props;
+  onKeyUp = e => {
+    const { onKeyUp, setValue } = this.props;
+    if (setValue) {
+      setValue(this.state.value);
+    }
     if (onKeyUp) {
-      onKeyUp();
+      onKeyUp(e);
+    }
+  };
+
+  onKeyPress = e => {
+    const { onKeyPress } = this.props;
+    if (onKeyPress) {
+      onKeyPress(e);
     }
   };
 
   render() {
     const {
-      className,
-      required,
-      onChange,
       id,
-      yupShape,
-      onFocus,
-      small,
-      setMessage,
-      setTone,
-      toggleHint,
-      disabled,
+      className,
       type,
+      yupShape,
+      required,
+      small,
+      disabled,
+      inline,
       placeholder,
       value,
+      setValue,
+      setMessage,
       tone,
-      inline,
+      setTone,
+      onChange,
+      onFocus,
       ...restProps
     } = this.props;
 
@@ -143,6 +192,7 @@ class FieldInput extends Component {
         onFocus={this.onFocus}
         onKeyDown={this.onKeyDown}
         onKeyUp={this.onKeyUp}
+        onKeyPress={this.onKeyPress}
         type={type || 'text'}
         id={id}
         className={classnames({
@@ -151,7 +201,7 @@ class FieldInput extends Component {
           [styles.small]: small,
           [styles.stack]: !inline,
           [styles.inline]: inline,
-          [styles[tone]]: tone,
+          [styles[this.state.tone]]: this.state.tone,
           [styles.disabled]: disabled,
           [className]: className
         })}
