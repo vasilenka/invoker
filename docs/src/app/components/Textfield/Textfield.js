@@ -48,10 +48,6 @@ class Textfield extends Component {
     });
   };
 
-  onBlur = () => {
-    console.log('also called!');
-  };
-
   render() {
     const {
       id,
