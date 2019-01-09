@@ -107,37 +107,18 @@ let bodyProps = [
 ];
 
 const FieldInputPage = props => {
-  const [toneBasic, setToneHookBasic] = useState();
-  const [messageBasic, setMessageHookBasic] = useState();
-  const [valueBasic, setValueHookBasic] = useState();
-  const [toneCustom, setToneHookCustom] = useState();
-  const [messageCustom, setMessageHookCustom] = useState();
-  const [valueCustom, setValueHookCustom] = useState();
+  const [toneBasic, setToneBasic] = useState();
+  const [messageBasic, setMessageBasic] = useState();
+  const [valueBasic, setValueBasic] = useState();
+  const [toneCustom, setToneCustom] = useState();
+  const [messageCustom, setMessageCustom] = useState();
+  const [valueCustom, setValueCustom] = useState();
 
   const yupShape = {
     text: yup
       .string()
       .required('Story is required')
       .min(20, 'Your story must be at least 20 character')
-  };
-
-  const setToneBasic = tone => {
-    setToneHookBasic(tone);
-  };
-  const setMessageBasic = message => {
-    setMessageHookBasic(message);
-  };
-  const setValueBasic = value => {
-    setValueHookBasic(value);
-  };
-  const setToneCustom = tone => {
-    setToneHookCustom(tone);
-  };
-  const setMessageCustom = message => {
-    setMessageHookCustom(message);
-  };
-  const setValueCustom = value => {
-    setValueHookCustom(value);
   };
 
   return (
@@ -163,9 +144,9 @@ const FieldInputPage = props => {
           type="email"
           placeholder="Enter your email address"
           required
-          setTone={setToneBasic}
-          setMessage={setMessageBasic}
-          setValue={setValueBasic}
+          setTone={tone => setToneBasic(tone)}
+          setMessage={message => setMessageBasic(message)}
+          setValue={value => setValueBasic(value)}
         />
         <Text
           heading5
@@ -213,9 +194,9 @@ const FieldInputPage = props => {
           id="text"
           type="text"
           placeholder="Write your story"
-          setTone={setToneCustom}
-          setMessage={setMessageCustom}
-          setValue={setValueCustom}
+          setTone={tone => setToneCustom(tone)}
+          setMessage={message => setMessageCustom(message)}
+          setValue={value => setValueCustom(value)}
           yupShape={yupShape}
         />
         <Text
@@ -234,7 +215,7 @@ const FieldInputPage = props => {
         >
           message: {messageCustom}
         </Text>
-        <Text heading5 component="h5" style={{ paddingTop: '12px' }}>
+        <Text heading5 component="h5" style={{ paddingTop: '12px' }} breakWord>
           value: {valueCustom}
         </Text>
       </Preview>
