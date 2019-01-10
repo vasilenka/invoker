@@ -8,7 +8,6 @@ import Code from './../../docs/Code/Code';
 import Divider from './../../docs/Divider/Divider';
 
 import Table from './../../components/Table/Table';
-import Text from './../../components/Text/Text';
 import FieldHint from './../../components/FieldHint/FieldHint';
 
 let headProps = ['', 'name', 'type', 'default'];

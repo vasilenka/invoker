@@ -1,6 +1,6 @@
 import styles from './Draft.module.scss';
 import React, { Component } from 'react';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 import { Editor, EditorState } from 'draft-js';
 
 class Draft extends Component {
@@ -17,7 +17,7 @@ class Draft extends Component {
 
   render() {
     return (
-      <div style={styles.root} onClick={this.focus}>
+      <div className={styles.root} onClick={this.focus}>
         <Editor
           editorState={this.state.editorState}
           onChange={this.onChange}

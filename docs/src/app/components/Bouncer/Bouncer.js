@@ -1,8 +1,8 @@
-import styles from './Spinner.module.scss';
+import styles from './Bouncer.module.scss';
 import React from 'react';
 import classnames from 'classnames';
 
-const Spinner2 = ({ className, ...restProps }) => {
+const Spinner = ({ className, ...restProps }) => {
   return (
     <div
       className={classnames({ [styles.root]: true, [className]: className })}
@@ -13,4 +13,4 @@ const Spinner2 = ({ className, ...restProps }) => {
   );
 };
 
-export default Spinner2;
+export default Spinner;
