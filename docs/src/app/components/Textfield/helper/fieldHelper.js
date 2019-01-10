@@ -8,5 +8,3 @@ export const setFieldTone = tone => {
       return 'neutral';
   }
 };
-
-export const clearTone = e => {};

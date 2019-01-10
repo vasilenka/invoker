@@ -12,25 +12,17 @@ class Textfield extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: this.props.value,
-      hint: '',
-      tone: this.props.tone,
-      message: this.props.message
+      value: this.props.value || '',
+      tone: this.props.tone || '',
+      message: this.props.message || ''
     };
   }
 
-  handleChange = value => {
+  onChange = value => {
     this.props.onChange(value, this.props.type);
     this.setState({
       ...this.state,
       value
-    });
-  };
-
-  handleFocus = e => {
-    this.setState({
-      ...this.state,
-      tone: ''
     });
   };
 
@@ -67,10 +59,10 @@ class Textfield extends Component {
       yupShape,
       message,
       tone,
-      handleChange,
-      handleBlur,
-      handleFocus,
-      handleClick,
+      onChange,
+      onBlur,
+      onFocus,
+      onClick,
       ...restProps
     } = this.props;
 
@@ -91,25 +83,23 @@ class Textfield extends Component {
           tertiaryLabel={tertiaryLabel}
         />
         <FieldInput
-          yupShape={yupShape}
-          disabled={disabled}
-          required={required}
-          setMessage={this.setMessage}
-          setTone={this.setTone}
-          onBlur={this.onBlur}
-          onChange={this.handleChange}
-          onFocus={this.handleFocus}
-          placeholder={placeholder}
-          type={type}
-          small={small}
-          tone={this.state.tone}
           id={id}
-          name={id}
-          defaultValue={defaultValue}
-          value={this.props.value}
+          type={type}
           className={classnames({
             [styles.spaceBottom]: (hint || this.state.error) && !inline
           })}
+          disabled={disabled}
+          required={required}
+          placeholder={placeholder}
+          small={small}
+          value={this.props.value}
+          setMessage={this.setMessage}
+          tone={this.state.tone}
+          setTone={this.setTone}
+          onBlur={this.onBlur}
+          onChange={this.onChange}
+          onFocus={this.onFocus}
+          yupShape={yupShape}
         />
 
         {this.state.tone && this.state.message && (

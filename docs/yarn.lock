@@ -6095,10 +6095,10 @@ invert-kv@^2.0.0:
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-2.0.0.tgz#7393f5afa59ec9ff5f67a27620d11c226e3eec02"
   integrity sha512-wPVv/y/QQ/Uiirj/vh3oP+1Ww+AWehmi1g5fFWGPF6IpCBCDVrhgHRMvrLfdYcwDh3QJbGXDW4JAuzxElLSqKA==
 
-invoker-base@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/invoker-base/-/invoker-base-1.0.3.tgz#8d631bddc7d5e143459a3b3acf4f48daf1d5330b"
-  integrity sha512-mn3Rb5kQ/fCFtbTrSlJ2wI7Ey8j2ADOen+OpjCrSv+KUJ2Td279dEXOQUku+tTeGBxKGU8WfBU7k67UZ4tQ5+g==
+invoker-base@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/invoker-base/-/invoker-base-1.0.4.tgz#f07e07b2d1593080dc47c0751b7ab40bab913d49"
+  integrity sha512-C2e5Mk5fN1JKr0eOK/dl8BbAR1ft2ZwT4cZXJD+VjMo6R6nazR2IBITXqJsvHxoKkNyZ5nW7wH51KYzimCPpQQ==
 
 invoker-layout@^1.0.0:
   version "1.0.1"

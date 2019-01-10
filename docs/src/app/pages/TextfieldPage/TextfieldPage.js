@@ -96,19 +96,12 @@ let bodyProps = [
   }
 ];
 
-// const yupShape = {
-//   email: yup
-//     .string()
-//     .email('Email is not valid')
-//     .required('Email is required')
-// };
-
 class TextfieldPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'herlamb@ng',
-      password: ''
+      email: 'herlamb@ng.ongki',
+      password: 'password'
     };
   }
 
@@ -145,9 +138,11 @@ class TextfieldPage extends Component {
             onChange={this.handleChange}
             label="Email"
             secondaryLabel="(Please jangan alay)"
-            tertiaryLabel={<Text link>why we need this?</Text>}
-            // message="There's some error here"
-            // tone="critical"
+            tertiaryLabel={
+              <Text link component="a">
+                why we need this?
+              </Text>
+            }
           />
           <Textfield
             className={styles.field}
@@ -159,9 +154,6 @@ class TextfieldPage extends Component {
             placeholder="This is a good placeholder text"
             label="Password"
             secondaryLabel=""
-            // tertiaryLabel={<Text link>why we need this?</Text>}
-            // message="There's some error here"
-            // tone="critical"
           />
         </Preview>
       </React.Fragment>
