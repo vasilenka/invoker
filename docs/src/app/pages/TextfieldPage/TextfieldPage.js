@@ -101,8 +101,8 @@ class TextfieldPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: ''
+      email: 'usern@me',
+      password: 'P@ssw0rd'
     };
   }
 
@@ -159,14 +159,6 @@ class TextfieldPage extends Component {
         </Preview>
         <Code>
           {`
-constructor(props) {
-  super(props);
-  this.state = {
-    email: 'herlamb@ng',
-    password: 'password'
-  };
-}
-
 <Textfield
   className={styles.field}
   id="email"

@@ -61,7 +61,9 @@ class App extends Component {
                 Components
               </Text>
               <Link to="/sandbox">
-                <Text className={styles.link}>Sandbox</Text>
+                <Text className={styles.link} link>
+                  Sandbox
+                </Text>
               </Link>
               <Link to="/mask">
                 <Text className={styles.link} link>
