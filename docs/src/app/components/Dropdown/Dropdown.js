@@ -1,19 +1,20 @@
 import styles from './Dropdown.module.scss';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import classnames from 'classnames';
 
 import { ReactComponent as ExpandMore } from './icons/expand-more.svg';
 import { ReactComponent as ExpandLess } from './icons/expand-less.svg';
 
 const Dropdown = ({
+  children,
   id,
   className,
-  isExpanded,
-  type,
   withArrow,
   small,
+  options,
   ...restProps
 }) => {
+  const inputEl = useRef(null);
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -24,6 +25,7 @@ const Dropdown = ({
       })}
     >
       <select
+        ref={inputEl}
         id={id}
         name={id}
         className={classnames({
@@ -32,18 +34,35 @@ const Dropdown = ({
         })}
         onClick={() => setExpanded(true)}
         onChange={() => setExpanded(false)}
+        {...restProps}
       >
-        <option value="">hello world</option>
-        <option value="">ongki herlambang</option>
-        <option value="">khairani ummah</option>
+        {options &&
+          options.map((option, index) => {
+            if (Array.isArray(option.value)) {
+              return (
+                <optgroup label={option.label}>
+                  {option.value.map((opt, index) => (
+                    <option key={`${index}${opt.value}`} value={opt.value}>
+                      {opt.label}
+                    </option>
+                  ))}
+                </optgroup>
+              );
+            }
+            return (
+              <option key={`${index}${option.value}`} value={option.value}>
+                {option.label}
+              </option>
+            );
+          })}
       </select>
       {withArrow ? (
         expanded ? (
-          <span className={styles.arrowContainer}>
+          <span aria-hidden className={styles.arrowContainer}>
             <ExpandMore className={styles.arrow} />
           </span>
         ) : (
-          <span className={styles.arrowContainer}>
+          <span aria-hidden className={styles.arrowContainer}>
             <ExpandMore className={styles.arrow} />
           </span>
         )

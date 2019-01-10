@@ -2,19 +2,22 @@
 
 .root {
   position: relative;
+  box-sizing: border-box;
 }
 
 .arrowContainer {
   position: absolute;
   right: 16px;
-  top: 16px;
+  top: calc(50% - 8px);
   user-select: none;
+  pointer-events: none;
 }
 
 .arrow {
   width: 16px;
   height: 16px;
   fill: $dark-alpha-50;
+  pointer-events: none;
   user-select: none;
 }
 
