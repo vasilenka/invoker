@@ -1,113 +1,86 @@
 import styles from './Textfield.module.scss';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
 
-import { setFieldTone } from './helper/fieldHelper';
+// import { setFieldTone } from './helper/fieldHelper';
 
 import FieldLabel from './../FieldLabel/FieldLabel';
 import FieldInput from './../FieldInput/FieldInput';
 import FieldHint from './../FieldHint/FieldHint';
 
-class Textfield extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: this.props.value || '',
-      tone: this.props.tone || '',
-      message: this.props.message || ''
-    };
-  }
+const Textfield = ({
+  id,
+  label,
+  secondaryLabel,
+  tertiaryLabel,
+  className,
+  placeholder,
+  value,
+  defaultValue,
+  hint,
+  small,
+  type,
+  inline,
+  disabled,
+  required,
+  yupShape,
+  message,
+  tone,
+  onChange,
+  onBlur,
+  onFocus,
+  onClick,
+  ...restProps
+}) => {
+  const [toneHook, setToneHook] = useState(tone || '');
+  const [messageHook, setMessageHook] = useState(message || '');
+  const [valueHook, setValueHook] = useState(value || '');
 
-  onChange = value => {
-    this.props.onChange(value, this.props.type);
-    this.setState({
-      ...this.state,
-      value
-    });
+  const handleChange = value => {
+    setValueHook(value);
+    onChange(value, type);
   };
+  const setMessage = message => setMessageHook(message);
+  const setTone = tone => setToneHook(tone);
 
-  setMessage = message => {
-    this.setState({
-      ...this.state,
-      message
-    });
-  };
+  return (
+    <div
+      {...restProps}
+      className={classnames({
+        [styles.root]: true,
+        [className]: className
+      })}
+    >
+      <FieldLabel
+        id={id}
+        label={label}
+        small={small}
+        inline={inline}
+        secondaryLabel={secondaryLabel}
+        tertiaryLabel={tertiaryLabel}
+      />
+      <FieldInput
+        id={id}
+        type={type}
+        disabled={disabled}
+        required={required}
+        placeholder={placeholder}
+        small={small}
+        value={valueHook}
+        setMessage={setMessage}
+        tone={toneHook}
+        setTone={setTone}
+        onBlur={onBlur}
+        onChange={handleChange}
+        onFocus={onFocus}
+        yupShape={yupShape}
+      />
 
-  setTone = tone => {
-    this.setState({
-      ...this.state,
-      tone: setFieldTone(tone)
-    });
-  };
-
-  render() {
-    const {
-      id,
-      label,
-      secondaryLabel,
-      tertiaryLabel,
-      className,
-      placeholder,
-      value,
-      defaultValue,
-      hint,
-      small,
-      type,
-      inline,
-      disabled,
-      required,
-      yupShape,
-      message,
-      tone,
-      onChange,
-      onBlur,
-      onFocus,
-      onClick,
-      ...restProps
-    } = this.props;
-
-    return (
-      <div
-        {...restProps}
-        className={classnames({
-          [styles.root]: true,
-          [className]: className
-        })}
-      >
-        <FieldLabel
-          id={id}
-          label={label}
-          small={small}
-          inline={inline}
-          secondaryLabel={secondaryLabel}
-          tertiaryLabel={tertiaryLabel}
-        />
-        <FieldInput
-          id={id}
-          type={type}
-          className={classnames({
-            [styles.spaceBottom]: (hint || this.state.error) && !inline
-          })}
-          disabled={disabled}
-          required={required}
-          placeholder={placeholder}
-          small={small}
-          value={this.props.value}
-          setMessage={this.setMessage}
-          tone={this.state.tone}
-          setTone={this.setTone}
-          onBlur={this.onBlur}
-          onChange={this.onChange}
-          onFocus={this.onFocus}
-          yupShape={yupShape}
-        />
-
-        {this.state.tone && this.state.message && (
-          <FieldHint tone={this.state.tone}>{this.state.message}</FieldHint>
-        )}
-      </div>
-    );
-  }
-}
+      {toneHook && messageHook && (
+        <FieldHint tone={toneHook}>{messageHook}</FieldHint>
+      )}
+    </div>
+  );
+};
 
 export default Textfield;

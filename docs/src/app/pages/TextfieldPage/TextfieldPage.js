@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Header from './../../docs/Header/Header';
 import Subheader from './../../docs/Subheader/Subheader';
 import Preview from './../../docs/Preview/Preview';
+import Code from './../../docs/Code/Code';
 
 import Textfield from './../../components/Textfield/Textfield';
 import Table from './../../components/Table/Table';
@@ -100,7 +101,7 @@ class TextfieldPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'herlamb@ng.ongki',
+      email: 'herlamb@ng.com',
       password: 'password'
     };
   }
@@ -156,6 +157,38 @@ class TextfieldPage extends Component {
             secondaryLabel=""
           />
         </Preview>
+        <Code>
+          {`
+<Textfield
+  className={styles.field}
+  id="email"
+  type="email"
+  required
+  placeholder="This is a good placeholder text"
+  value={this.state.email}
+  onChange={this.handleChange}
+  label="Email"
+  secondaryLabel="(Please jangan alay)"
+  tertiaryLabel={
+    <Text link component="a">
+      why we need this?
+    </Text>
+  }
+/>
+
+<Textfield
+  className={styles.field}
+  id="password"
+  type="password"
+  value={this.state.password}
+  required
+  onChange={this.handleChange}
+  placeholder="This is a good placeholder text"
+  label="Password"
+  secondaryLabel=""
+/>
+          `}
+        </Code>
       </React.Fragment>
     );
   }

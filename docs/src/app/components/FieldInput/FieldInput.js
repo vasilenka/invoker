@@ -12,8 +12,8 @@ class FieldInput extends Component {
     super(props);
     this.state = {
       value: this.props.value || '',
-      tone: this.props.tone || '',
-      message: this.props.message || ''
+      tone: this.props.tone,
+      message: this.props.message
     };
   }
 
@@ -42,22 +42,12 @@ class FieldInput extends Component {
           if (valid && setTone && setMessage) {
             setTone();
             setMessage();
-            this.setState({
-              ...this.state,
-              tone: '',
-              message: ''
-            });
           }
         })
         .catch(err => {
           if (setTone && setMessage) {
-            setTone('critical');
             setMessage(err.errors[0]);
-            this.setState({
-              ...this.state,
-              tone: 'critical',
-              message: err.errors[0]
-            });
+            setTone('critical');
           }
         });
     }
@@ -98,8 +88,8 @@ class FieldInput extends Component {
           }),
           () => {
             if (setTone && setMessage) {
-              setTone(this.state.tone);
               setMessage(this.state.message);
+              setTone(this.state.tone);
             }
           }
         );

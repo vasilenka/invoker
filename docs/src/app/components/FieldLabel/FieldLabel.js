@@ -32,7 +32,7 @@ class FieldLabel extends Component {
     let {
       id,
       label,
-      // inline,
+      inline,
       small,
       secondaryLabel,
       tertiaryLabel,
@@ -50,9 +50,9 @@ class FieldLabel extends Component {
       <Text
         {...restProps}
         className={classnames({
-          [styles.root]: true
-          // [styles.stack]: !inline,
-          // [styles.inline]: inline
+          [styles.root]: true,
+          [styles.stack]: !inline,
+          [styles.inline]: inline
         })}
         {...labelProps}
         component="label"
