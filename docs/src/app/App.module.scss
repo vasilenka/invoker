@@ -32,7 +32,8 @@
 
 .link {
   display: block;
-  padding: $space-vertical-s;
+  margin: $space-vertical-m;
+  width: fit-content;
 }
 
 .sidebarTitle {

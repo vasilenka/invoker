@@ -64,22 +64,34 @@ class App extends Component {
                 <Text className={styles.link}>Sandbox</Text>
               </Link>
               <Link to="/mask">
-                <Text className={styles.link}>Mask</Text>
+                <Text className={styles.link} link>
+                  Mask
+                </Text>
               </Link>
               <Link to="/text">
-                <Text className={styles.link}>Text</Text>
+                <Text className={styles.link} link>
+                  Text
+                </Text>
               </Link>
               <Link to="/textfield">
-                <Text className={styles.link}>Textfield</Text>
+                <Text className={styles.link} link>
+                  Textfield
+                </Text>
               </Link>
               <Link to="/field-label">
-                <Text className={styles.link}>FieldLabel</Text>
+                <Text className={styles.link} link>
+                  FieldLabel
+                </Text>
               </Link>
               <Link to="/field-input">
-                <Text className={styles.link}>FieldInput</Text>
+                <Text className={styles.link} link>
+                  FieldInput
+                </Text>
               </Link>
               <Link to="/field-hint">
-                <Text className={styles.link}>FieldHint</Text>
+                <Text className={styles.link} link>
+                  FieldHint
+                </Text>
               </Link>
             </LeftSection>
             {/* <RightSection fixed className={styles.rightSection}>

@@ -48,6 +48,10 @@ class FieldInput extends Component {
           if (setTone && setMessage) {
             setMessage(err.errors[0]);
             setTone('critical');
+            this.setState({
+              tone: 'critical',
+              message: err.errors[0]
+            });
           }
         });
     }

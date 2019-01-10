@@ -101,8 +101,8 @@ class TextfieldPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'herlamb@ng.com',
-      password: 'password'
+      email: '',
+      password: ''
     };
   }
 
@@ -134,7 +134,7 @@ class TextfieldPage extends Component {
             id="email"
             type="email"
             required
-            placeholder="This is a good placeholder text"
+            placeholder="Enter your email"
             value={this.state.email}
             onChange={this.handleChange}
             label="Email"
@@ -152,13 +152,21 @@ class TextfieldPage extends Component {
             value={this.state.password}
             required
             onChange={this.handleChange}
-            placeholder="This is a good placeholder text"
+            placeholder="Enter your password"
             label="Password"
             secondaryLabel=""
           />
         </Preview>
         <Code>
           {`
+constructor(props) {
+  super(props);
+  this.state = {
+    email: 'herlamb@ng',
+    password: 'password'
+  };
+}
+
 <Textfield
   className={styles.field}
   id="email"
