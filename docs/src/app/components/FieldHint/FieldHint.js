@@ -14,8 +14,7 @@ class FieldHint extends Component {
         {...restProps}
         className={classnames({
           [styles.root]: true,
-          [styles[tone]]: tone,
-          [styles.neutral]: !tone
+          [styles[tone]]: tone
         })}
       >
         {children}

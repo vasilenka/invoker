@@ -41,7 +41,7 @@ let bodyProps = [
     type: 'boolean',
     default: 'false',
     help:
-      'Add this props if you want to use small Textfield. By default, Textfield is using medium size.'
+      'Add this props if you want to use small FieldInput. By default, FieldInput is using medium size.'
   },
   {
     required: false,
@@ -125,7 +125,7 @@ const FieldInputPage = props => {
     <div className={styles.root}>
       <Header
         title="FieldInput"
-        description="Basic building block for input field for text."
+        description="Basic building block input field with baked-in validation for email, password, text, number and required field. But you can also plug your own validation if needed, no string attached."
       />
       <Table className={styles.tableProps} head={headProps} body={bodyProps} />
       <Subheader
@@ -184,7 +184,9 @@ const FieldInputPage = props => {
       <Divider large />
       <Subheader
         title="Custom validation schema"
-        description="You can validate the field using a custom validation schema by providing a Yup shape."
+        description={
+          'You can validate the field using a custom validation schema by providing a Yup shape.'
+        }
       />
       <Preview>
         <FieldLabel id="text" label="Story" />

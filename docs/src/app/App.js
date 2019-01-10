@@ -15,7 +15,10 @@ import TextfieldPage from './pages/TextfieldPage/TextfieldPage';
 import TextPage from './pages/TextPage/TextPage';
 import SandboxPage from './pages/Sandbox/Sandbox';
 import MaskPage from './pages/MaskPage/MaskPage';
+
+import FieldLabelPage from './pages/FieldLabelPage/FieldLabelPage';
 import FieldInputPage from './pages/FieldInputPage/FieldInputPage';
+import FieldHintPage from './pages/FieldHintPage/FieldHintPage';
 
 class App extends Component {
   constructor(props) {
@@ -48,7 +51,9 @@ class App extends Component {
                 <Route exact path="/textfield" component={TextfieldPage} />
                 <Route exact path="/sandbox" component={SandboxPage} />
                 <Route exact path="/mask" component={MaskPage} />
-                <Route exact path="/fieldinput" component={FieldInputPage} />
+                <Route exact path="/field-label" component={FieldLabelPage} />
+                <Route exact path="/field-input" component={FieldInputPage} />
+                <Route exact path="/field-hint" component={FieldHintPage} />
               </MainContent>
             </Container>
             <LeftSection fixed className={styles.leftSection}>
@@ -67,8 +72,14 @@ class App extends Component {
               <Link to="/textfield">
                 <Text className={styles.link}>Textfield</Text>
               </Link>
-              <Link to="/fieldinput">
+              <Link to="/field-label">
+                <Text className={styles.link}>FieldLabel</Text>
+              </Link>
+              <Link to="/field-input">
                 <Text className={styles.link}>FieldInput</Text>
+              </Link>
+              <Link to="/field-hint">
+                <Text className={styles.link}>FieldHint</Text>
               </Link>
             </LeftSection>
             {/* <RightSection fixed className={styles.rightSection}>
