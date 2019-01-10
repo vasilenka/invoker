@@ -1,6 +1,7 @@
 import styles from './FieldLabel.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import { any, bool, object, number, string, oneOfType } from 'prop-types';
 
 import Secondary from './../Secondary/Secondary';
 import Text from './../Text/Text';
@@ -64,5 +65,22 @@ class FieldLabel extends Component {
     );
   }
 }
+
+FieldLabel.propTypes = {
+  id: string.isRequired,
+  label: oneOfType([string, number]).isRequired,
+  inline: bool,
+  small: bool,
+  secondaryLabel: any,
+  tertiaryLabel: any,
+  className: oneOfType([string, object])
+};
+
+FieldLabel.defaultProps = {
+  inline: false,
+  small: false,
+  secondaryLabel: '',
+  tertiaryLabel: ''
+};
 
 export default FieldLabel;

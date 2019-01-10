@@ -1,6 +1,7 @@
 import styles from './FieldInput.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import { bool, func, object, string, oneOf, oneOfType } from 'prop-types';
 
 import * as yup from 'yup';
 import { defaultShape } from './helper/fieldInputHelper';
@@ -176,7 +177,7 @@ class FieldInput extends Component {
       required,
       small,
       disabled,
-      // inline,
+      inline,
       placeholder,
       value,
       setValue,
@@ -204,8 +205,8 @@ class FieldInput extends Component {
           [styles.root]: true,
           [styles.normal]: !small,
           [styles.small]: small,
-          // [styles.stack]: !inline,
-          // [styles.inline]: inline,
+          [styles.stack]: !inline,
+          [styles.inline]: inline,
           [styles[this.state.tone]]: this.state.tone,
           [styles.disabled]: disabled,
           [className]: className
@@ -216,5 +217,29 @@ class FieldInput extends Component {
     );
   }
 }
+
+FieldInput.propTypes = {
+  id: string.isRequired,
+  className: oneOfType([string, object]),
+  type: oneOf(['text', 'email', 'password', 'number']).isRequired,
+  required: bool,
+  disabled: bool,
+  small: bool,
+  value: string,
+  setValue: func,
+  tone: oneOf(['critical', 'neutral', 'positive', '']),
+  setTone: func,
+  setMessage: func,
+  placeholder: string,
+  yupShape: object
+};
+
+FieldInput.defaultProps = {
+  disabled: false,
+  value: '',
+  tone: '',
+  inline: false,
+  required: false
+};
 
 export default FieldInput;

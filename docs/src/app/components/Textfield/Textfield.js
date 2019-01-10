@@ -2,8 +2,6 @@ import styles from './Textfield.module.scss';
 import React, { useState } from 'react';
 import classnames from 'classnames';
 
-// import { setFieldTone } from './helper/fieldHelper';
-
 import FieldLabel from './../FieldLabel/FieldLabel';
 import FieldInput from './../FieldInput/FieldInput';
 import FieldHint from './../FieldHint/FieldHint';
@@ -60,6 +58,7 @@ const Textfield = ({
         tertiaryLabel={tertiaryLabel}
       />
       <FieldInput
+        className={styles.hello}
         id={id}
         type={type}
         disabled={disabled}
