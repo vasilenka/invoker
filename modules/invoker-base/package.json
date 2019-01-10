@@ -1,6 +1,6 @@
 {
   "name": "invoker-base",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CSS to reset browsers default styles",
   "main": "index.js",
   "directories": {
