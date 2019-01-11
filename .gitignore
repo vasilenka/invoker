@@ -9,9 +9,6 @@ css/*
 node_modules
 node_modules/*
 
-sandbox
-sandbox/*
-
 # General
 .DS_Store
 .AppleDouble

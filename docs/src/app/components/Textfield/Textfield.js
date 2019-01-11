@@ -38,6 +38,7 @@ const Textfield = ({
     setValueHook(value);
     onChange(value, type);
   };
+
   const setMessage = message => setMessageHook(message);
   const setTone = tone => setToneHook(tone);
 

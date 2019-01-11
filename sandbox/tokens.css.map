@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAiCA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EA+BE;AChEF;;EAEE;ACFF;;EAEE;ACFF;;EAEE;ACFF;;EAEE;ACFF;;;EAGE;ACHF;;EAEE;ACFF;;EAEE",
+"sources": ["../sass/mixins/_text-crop.scss","../sass/tokens/_font-stack.scss","../sass/tokens/_colors.scss","../sass/tokens/_spaces.scss","../sass/tokens/_border.scss","../sass/tokens/_radius.scss","../sass/tokens/_line-height.scss","../sass/tokens/_text-size.scss"],
+"names": [],
+"file": "tokens.css"
+}
