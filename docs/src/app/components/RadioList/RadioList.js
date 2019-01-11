@@ -4,15 +4,24 @@ import classnames from 'classnames';
 
 import RadioMark from './../RadioMark/RadioMark';
 import Text from './../Text/Text';
+import { RadioContext } from './../context/context';
 
 class RadioList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       selected: this.props.selected,
-      onChange: this.onChange
+      onChange: this.onChange,
+      name: ''
     };
   }
+
+  componentWillReceiveProps = () => {
+    this.setState({
+      ...this.state,
+      name: this.props.name
+    });
+  };
 
   onChange = value =>
     this.setState({ ...this.state, selected: value }, () => {
@@ -25,7 +34,6 @@ class RadioList extends Component {
       className,
       markClass,
       labelClass,
-      header,
       radioClass,
       options,
       selected,
@@ -37,50 +45,17 @@ class RadioList extends Component {
     } = this.props;
 
     return (
-      <div
-        className={classnames({
-          [styles.root]: true,
-          [className]: className
-        })}
-        {...restProps}
-      >
-        {header}
-        {options &&
-          options.map((radio, index) => (
-            <div
-              className={classnames({
-                [styles.defaultRadio]: true,
-                [radioClass]: radioClass
-              })}
-            >
-              <RadioMark
-                className={classnames({
-                  [styles.defaultMark]: true,
-                  [markClass]: markClass
-                })}
-                key={`${name}${index}`}
-                id={`radio__${name}${index}`}
-                name={name}
-                value={radio.value}
-                checked={radio.value === this.state.selected}
-                onChange={this.onChange}
-                onClick={this.onClick}
-                onFocus={this.onFocus}
-              />
-              <Text
-                className={classnames({
-                  [styles.defaultLabel]: true,
-                  [labelClass]: labelClass
-                })}
-                heading5
-                component="label"
-                htmlFor={`radio__${name}${index}`}
-              >
-                {radio.label}
-              </Text>
-            </div>
-          ))}
-      </div>
+      <RadioContext.Provider value={{ state: this.state, props: this.props }}>
+        <div
+          className={classnames({
+            [styles.root]: true,
+            [className]: className
+          })}
+          {...restProps}
+        >
+          {children}
+        </div>
+      </RadioContext.Provider>
     );
   }
 }

@@ -1,5 +1,5 @@
 import styles from './Sandbox.module.scss';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import classnames from 'classnames';
 
 import Header from './../../docs/Header/Header';
@@ -28,8 +28,12 @@ import Draft from './../../components/Draft/Draft';
 import Dropdown from './../../components/Dropdown/Dropdown';
 
 import RadioList from './../../components/RadioList/RadioList';
+import RadioMark from './../../components/RadioMark/RadioMark';
 import Banner from './../../components/Banner/Banner';
 import Toast from './../../components/Toast/Toast';
+
+import { RadioContext } from './../../components/context/context';
+import RadioLabel from '../../components/RadioLabel/RadioLabel';
 
 let options = [
   {
@@ -65,15 +69,15 @@ const radioOptions = [
         </span>
       </Text>
     ),
-    value: 'ongkiherlambang@gmail.com'
+    value: 'ongki'
   },
   {
     label: 'Khairani Ummah',
-    value: 'khairani.u@gmail.com'
+    value: 'khairani'
   },
   {
     label: 'Hanifan Mohamad',
-    value: 'hanifan@gmail.com'
+    value: 'hanifan'
   }
 ];
 
@@ -122,7 +126,7 @@ const DataTab = props => {
 const Sandbox = ({ className, ...restProps }) => {
   let [banner, setBanner] = useState(false);
   let [toast, setToast] = useState(false);
-  let [radio, setRadio] = useState('khairani');
+  let [radio, setRadio] = useState('hanifan');
 
   return (
     <React.Fragment>
@@ -225,10 +229,27 @@ const Sandbox = ({ className, ...restProps }) => {
         <RadioList
           name="hello"
           radioClass={styles.radioClass}
-          onChange={value => setRadio(value)}
+          onChange={selected => setRadio(selected)}
           selected={radio}
-          options={radioOptions}
-        />
+        >
+          {radioOptions &&
+            radioOptions.map((item, index) => (
+              <div
+                key={`radio__${index}`}
+                className={classnames(styles.radioClass)}
+              >
+                <RadioMark
+                  id={index}
+                  className={classnames(styles.markClass)}
+                  value={item.value}
+                  checked={item.value === radio}
+                />
+                <RadioLabel id={index} className={styles.labelClass}>
+                  {item.label}
+                </RadioLabel>
+              </div>
+            ))}
+        </RadioList>
         <Text component="p" medium>
           This is the selected radio:{' '}
           <Text heading5 style={{ fontWeight: '600' }}>

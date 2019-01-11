@@ -84,7 +84,15 @@
 }
 
 .radioClass {
+  display: flex;
+  align-items: center;
   margin: $space-vertical-sm;
-  // justify-content: space-between;
-  // flex-direction: row-reverse;
+}
+
+.markClass {
+  margin-right: $space-sm;
+}
+
+.labelClass {
+  cursor: pointer;
 }

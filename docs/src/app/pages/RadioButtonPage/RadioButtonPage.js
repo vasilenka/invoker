@@ -1,5 +1,5 @@
-import styles from './FieldHintPage.module.scss';
-import React from 'react';
+import styles from './RadioButtonPage.module.scss';
+import React, { useState } from 'react';
 
 import Header from './../../docs/Header/Header';
 import Subheader from './../../docs/Subheader/Subheader';
@@ -9,6 +9,8 @@ import Divider from './../../docs/Divider/Divider';
 
 import Table from './../../components/Table/Table';
 import FieldHint from './../../components/FieldHint/FieldHint';
+
+import RadioContext from './../../components/context/context';
 
 let headProps = ['', 'name', 'type', 'default'];
 
@@ -33,7 +35,9 @@ let bodyProps = [
   }
 ];
 
-const FieldHintPage = props => {
+const RadioButtonPage = props => {
+  const radioContext = useContext(RadioContext);
+
   return (
     <div className={styles.root}>
       <Header
@@ -73,4 +77,4 @@ const FieldHintPage = props => {
   );
 };
 
-export default FieldHintPage;
+export default RadioButtonPage;

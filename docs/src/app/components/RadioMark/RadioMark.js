@@ -1,6 +1,7 @@
 import styles from './RadioMark.module.scss';
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import classnames from 'classnames';
+import { RadioContext } from '../context/context';
 
 const RadioMark = ({
   className,
@@ -13,17 +14,17 @@ const RadioMark = ({
   onClick,
   ...restProps
 }) => {
-  const handleChange = e => {
-    onChange(e.target.value);
-  };
+  const context = useContext(RadioContext);
+
+  const handleChange = e => context.state.onChange(e.target.value);
 
   return (
     <input
-      id={id}
-      name={name}
+      id={`radio__${context.props.name}${id}`}
+      name={context.props.name}
       type="radio"
       onChange={handleChange}
-      checked={checked}
+      checked={checked || value === context.state.selected}
       value={value}
       className={classnames({
         [styles.root]: true,
