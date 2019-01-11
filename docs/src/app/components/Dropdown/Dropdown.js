@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import classnames from 'classnames';
 
 import { ReactComponent as ExpandMore } from './icons/expand-more.svg';
-import { ReactComponent as ExpandLess } from './icons/expand-less.svg';
+// import { ReactComponent as ExpandLess } from './icons/expand-less.svg';
 
 const Dropdown = ({
   children,

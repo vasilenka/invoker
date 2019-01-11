@@ -1,0 +1,15 @@
+@import '~invoker-tokens/index.scss';
+
+.root {
+  bottom: 10vh;
+  max-width: 560px;
+  width: 100%;
+}
+
+.toast {
+  padding: $space-ml;
+  background: $light-alpha-100;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 2px;
+}

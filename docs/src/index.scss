@@ -10,6 +10,10 @@
   text-decoration: none;
 }
 
+body {
+  position: relative;
+}
+
 :global {
   .Hide {
     display: none;
