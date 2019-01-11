@@ -5,6 +5,9 @@
 
 .field {
   margin: $space-stack-ml;
+  .label {
+    background: red !important;
+  }
 }
 
 .scrollingPage {

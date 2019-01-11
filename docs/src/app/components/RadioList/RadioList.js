@@ -1,60 +1,84 @@
 import styles from './RadioList.module.scss';
 import React, { Component } from 'react';
-// import classnames from 'classnames';
+import classnames from 'classnames';
 
-import Radio from './../Radio/Radio';
+import RadioMark from './../RadioMark/RadioMark';
+import Text from './../Text/Text';
 
 class RadioList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: this.props.selected
+      selected: this.props.selected,
+      onChange: this.onChange
     };
   }
 
-  onClick = value => {
-    this.setState({
-      ...this.state,
-      value: value
+  onChange = value =>
+    this.setState({ ...this.state, selected: value }, () => {
+      this.props.onChange(this.state.selected);
     });
-  };
-
-  onFocus = e => {
-    console.log('focusing!');
-  };
-
-  onChange = e => {
-    console.log(e.target);
-  };
+  onFocus = () => {};
 
   render() {
     let {
+      className,
+      markClass,
+      labelClass,
       header,
+      radioClass,
       options,
       selected,
-      id,
       value,
       name,
       children,
-      className,
+      onChange,
       ...restProps
     } = this.props;
 
     return (
-      <div className={styles.root} {...restProps}>
+      <div
+        className={classnames({
+          [styles.root]: true,
+          [className]: className
+        })}
+        {...restProps}
+      >
         {header}
         {options &&
           options.map((radio, index) => (
-            <Radio
-              key={`${id}${index}`}
-              id={id}
-              label={radio}
-              value={radio}
-              checked={this.state.value}
-              onChange={this.onChange}
-              onClick={this.onClick}
-              onFocus={this.onFocus}
-            />
+            <div
+              className={classnames({
+                [styles.defaultRadio]: true,
+                [radioClass]: radioClass
+              })}
+            >
+              <RadioMark
+                className={classnames({
+                  [styles.defaultMark]: true,
+                  [markClass]: markClass
+                })}
+                key={`${name}${index}`}
+                id={`radio__${name}${index}`}
+                name={name}
+                value={radio.value}
+                checked={radio.value === this.state.selected}
+                onChange={this.onChange}
+                onClick={this.onClick}
+                onFocus={this.onFocus}
+              />
+              <Text
+                className={classnames({
+                  [styles.defaultLabel]: true,
+                  [labelClass]: labelClass
+                })}
+                heading5
+                component="label"
+                htmlFor={`radio__${name}${index}`}
+              >
+                {radio.label}
+              </Text>
+            </div>
           ))}
       </div>
     );

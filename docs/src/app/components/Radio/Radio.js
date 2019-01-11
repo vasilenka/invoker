@@ -20,9 +20,17 @@ class Radio extends Component {
     });
   };
 
+  onChange = e => {
+    this.setState({
+      ...this.state,
+      value: e.target.value
+    });
+  };
+
   render() {
     let {
       id,
+      name,
       className,
       checked,
       label,
@@ -39,10 +47,10 @@ class Radio extends Component {
             [styles.focus]: this.state.focus
           })}
           id={id}
-          name={id}
+          name={name}
           type="radio"
           checked={checked === this.state.value}
-          onChange={onChange}
+          onChange={this.onChange}
         />
         <label
           className={classnames({

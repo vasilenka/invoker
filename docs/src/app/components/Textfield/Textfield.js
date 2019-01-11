@@ -59,7 +59,6 @@ const Textfield = ({
         tertiaryLabel={tertiaryLabel}
       />
       <FieldInput
-        className={styles.hello}
         id={id}
         type={type}
         disabled={disabled}

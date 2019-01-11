@@ -27,7 +27,7 @@ import Spinner from './../../components/Spinner/Spinner';
 import Draft from './../../components/Draft/Draft';
 import Dropdown from './../../components/Dropdown/Dropdown';
 
-import RadioMark from './../../components/RadioMark/RadioMark';
+import RadioList from './../../components/RadioList/RadioList';
 import Banner from './../../components/Banner/Banner';
 import Toast from './../../components/Toast/Toast';
 
@@ -52,6 +52,28 @@ let options = [
         value: 'hanifan@gmail.com'
       }
     ]
+  }
+];
+
+const radioOptions = [
+  {
+    label: (
+      <Text heading3 style={{ color: '#ff5a5b' }}>
+        hello there! General Kenobi{' '}
+        <span aria-label="robot emoji" role="img">
+          🤖
+        </span>
+      </Text>
+    ),
+    value: 'ongkiherlambang@gmail.com'
+  },
+  {
+    label: 'Khairani Ummah',
+    value: 'khairani.u@gmail.com'
+  },
+  {
+    label: 'Hanifan Mohamad',
+    value: 'hanifan@gmail.com'
   }
 ];
 
@@ -100,15 +122,11 @@ const DataTab = props => {
 const Sandbox = ({ className, ...restProps }) => {
   let [banner, setBanner] = useState(false);
   let [toast, setToast] = useState(false);
+  let [radio, setRadio] = useState('khairani');
 
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
-      {/* <Table
-        className={styles.tableProps}
-        head={headProps}
-        body={bodyProps}
-      /> */}
       <Subheader
         title="Tab"
         description="Tabs may be used to group between multiple selections."
@@ -137,7 +155,6 @@ const Sandbox = ({ className, ...restProps }) => {
       <Preview>
         <Luna multiple>
           {state => {
-            console.log(state.files[0]);
             return (
               <React.Fragment>
                 {state.files.length > 0 && (
@@ -205,11 +222,19 @@ const Sandbox = ({ className, ...restProps }) => {
       </Preview>
       <Divider large />
       <Preview>
-        <RadioMark />
-      </Preview>
-      <Divider large />
-      <Preview>
-        <input className={styles.appearance} type="file" />
+        <RadioList
+          name="hello"
+          radioClass={styles.radioClass}
+          onChange={value => setRadio(value)}
+          selected={radio}
+          options={radioOptions}
+        />
+        <Text component="p" medium>
+          This is the selected radio:{' '}
+          <Text heading5 style={{ fontWeight: '600' }}>
+            {radio}
+          </Text>
+        </Text>
       </Preview>
       <Divider large />
       <Preview>
