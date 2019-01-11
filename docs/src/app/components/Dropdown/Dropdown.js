@@ -40,7 +40,7 @@ const Dropdown = ({
           options.map((option, index) => {
             if (Array.isArray(option.value)) {
               return (
-                <optgroup label={option.label}>
+                <optgroup key={`${index}${option.value}`} label={option.label}>
                   {option.value.map((opt, index) => (
                     <option key={`${index}${opt.value}`} value={opt.value}>
                       {opt.label}

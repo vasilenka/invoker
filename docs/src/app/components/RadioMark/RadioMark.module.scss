@@ -1,0 +1,15 @@
+@import '~invoker-tokens/index.scss';
+
+.root {
+  position: relative;
+  display: none;
+}
+
+.root::after {
+  border-radius: 50%;
+  content: '';
+  width: 6px;
+  height: 6px;
+  display: block;
+  background: #eeeeee;
+}

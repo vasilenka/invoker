@@ -12,18 +12,18 @@ class RadioList extends Component {
     };
   }
 
-  handleClick = value => {
+  onClick = value => {
     this.setState({
       ...this.state,
       value: value
     });
   };
 
-  handleFocus = e => {
+  onFocus = e => {
     console.log('focusing!');
   };
 
-  handleChange = e => {
+  onChange = e => {
     console.log(e.target);
   };
 
@@ -46,15 +46,14 @@ class RadioList extends Component {
         {options &&
           options.map((radio, index) => (
             <Radio
-              key={index}
-              name={name}
-              id={`${name}${index}`}
+              key={`${id}${index}`}
+              id={id}
               label={radio}
               value={radio}
               checked={this.state.value}
-              onChange={this.handleChange}
-              onClick={this.handleClick}
-              onFocus={this.handleFocus}
+              onChange={this.onChange}
+              onClick={this.onClick}
+              onFocus={this.onFocus}
             />
           ))}
       </div>

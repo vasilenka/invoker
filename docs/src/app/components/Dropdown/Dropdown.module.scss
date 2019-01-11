@@ -34,6 +34,8 @@
   &:focus,
   &:active {
     border-color: $brand-primary-200;
+    appearance: none;
+    outline: none;
     transition: all 0.28s;
   }
 }
