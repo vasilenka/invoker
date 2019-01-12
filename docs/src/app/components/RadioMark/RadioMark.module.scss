@@ -72,3 +72,10 @@
   background-color: $brand-primary-200;
   transition: all 0.28s;
 }
+
+.disabled:hover,
+.disabled:focus,
+.disabled:active {
+  border-color: rgba(235, 235, 235, 1);
+  transition: all 0.28s;
+}

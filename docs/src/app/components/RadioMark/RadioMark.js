@@ -1,7 +1,7 @@
 import styles from './RadioMark.module.scss';
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import classnames from 'classnames';
-import { RadioContext } from '../context/context';
+import { RadioContext, RadioButtonContext } from '../context/context';
 
 const RadioMark = ({
   className,
@@ -14,23 +14,26 @@ const RadioMark = ({
   onClick,
   ...restProps
 }) => {
-  const context = useContext(RadioContext);
+  const listContext = useContext(RadioContext);
+  const buttonContext = useContext(RadioButtonContext);
 
-  const handleChange = e => context.state.onChange(e.target.value);
+  const handleChange = e => listContext.state.onChange(e.target.value);
 
   return (
     <input
-      id={`radio__${context.props.name}${id}`}
-      name={context.props.name}
+      id={`radio__${listContext.props.name}${buttonContext.index}`}
+      name={listContext.props.name}
       type="radio"
+      disabled={buttonContext.disabled}
       onChange={handleChange}
-      checked={checked || value === context.state.selected}
+      checked={checked || value === listContext.state.selected}
       value={value}
       className={classnames({
         [styles.root]: true,
         [styles.normal]: !large,
         [styles.large]: large,
-        [className]: className
+        [className]: className,
+        [styles.disabled]: buttonContext.disabled
       })}
       {...restProps}
     />

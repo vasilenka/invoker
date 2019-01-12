@@ -1,0 +1,16 @@
+@import '~invoker-tokens/index.scss';
+
+.root {
+}
+
+.radioClass {
+  margin: $space-vertical-sm;
+}
+
+.markClass {
+  margin-right: $space-sm;
+}
+
+.labelClass {
+  cursor: pointer;
+}

@@ -1,25 +1,27 @@
 import styles from './RadioLabel.module.scss';
 import React, { useContext } from 'react';
 import classnames from 'classnames';
-import { RadioContext } from '../context/context';
+import { RadioContext, RadioButtonContext } from '../context/context';
 
 import Text from './../Text/Text';
 
-const RadioLabel = ({ children, id, className, ...restProps }) => {
-  const context = useContext(RadioContext);
+const RadioLabel = ({ label, id, className, ...restProps }) => {
+  const listContext = useContext(RadioContext);
+  const buttonContext = useContext(RadioButtonContext);
 
   return (
     <Text
       className={classnames({
         [styles.root]: true,
-        [className]: className
+        [className]: className,
+        [styles.disabled]: buttonContext.disabled
       })}
       heading5
       component="label"
-      htmlFor={`radio__${context.props.name}${id}`}
+      htmlFor={`radio__${listContext.props.name}${buttonContext.index}`}
       {...restProps}
     >
-      {children}
+      {label}
     </Text>
   );
 };

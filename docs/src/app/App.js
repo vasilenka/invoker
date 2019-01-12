@@ -19,6 +19,7 @@ import MaskPage from './pages/MaskPage/MaskPage';
 import FieldLabelPage from './pages/FieldLabelPage/FieldLabelPage';
 import FieldInputPage from './pages/FieldInputPage/FieldInputPage';
 import FieldHintPage from './pages/FieldHintPage/FieldHintPage';
+import RadioListPage from './pages/RadioListPage/RadioListPage';
 
 class App extends Component {
   constructor(props) {
@@ -54,6 +55,7 @@ class App extends Component {
                 <Route exact path="/field-label" component={FieldLabelPage} />
                 <Route exact path="/field-input" component={FieldInputPage} />
                 <Route exact path="/field-hint" component={FieldHintPage} />
+                <Route exact path="/radio-list" component={RadioListPage} />
               </MainContent>
             </Container>
             <LeftSection fixed className={styles.leftSection}>
@@ -93,6 +95,11 @@ class App extends Component {
               <Link to="/field-hint">
                 <Text className={styles.link} link>
                   FieldHint
+                </Text>
+              </Link>
+              <Link to="/radio-list">
+                <Text className={styles.link} link>
+                  RadioList
                 </Text>
               </Link>
             </LeftSection>
