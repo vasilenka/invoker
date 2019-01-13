@@ -4,14 +4,7 @@ import classnames from 'classnames';
 
 const Toast = ({ className, children, ...restProps }) => {
   return (
-    <div
-      style={{
-        position: 'fixed',
-        bottom: 150,
-        left: '50%',
-        transform: 'translateX(-50%)'
-      }}
-    >
+    <div className={styles.container}>
       <div
         className={classnames({
           [styles.root]: true,

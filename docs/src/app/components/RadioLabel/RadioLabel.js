@@ -6,10 +6,10 @@ import { RadioContext, RadioButtonContext } from '../context/context';
 import Text from './../Text/Text';
 
 const RadioLabel = ({
-  label,
   id,
-  isDisabled,
+  label,
   className,
+  isDisabled,
   onClick,
   ...restProps
 }) => {

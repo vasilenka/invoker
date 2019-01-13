@@ -1,5 +1,13 @@
 @import '~invoker-tokens/index.scss';
 
+.container {
+  position: fixed;
+  bottom: 144px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
 .root {
   bottom: 10vh;
   max-width: 560px;

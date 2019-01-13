@@ -16,6 +16,12 @@ class CheckboxList extends Component {
             First checkbox label
           </Text>
         </Checkbox>
+        <Checkbox className={styles.checkbox}>
+          <Checkmark className={styles.mark} />
+          <Text className={styles.label} heading5>
+            Second checkbox label
+          </Text>
+        </Checkbox>
       </div>
     );
   }

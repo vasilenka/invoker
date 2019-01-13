@@ -30,6 +30,11 @@ import Dropdown from './../../components/Dropdown/Dropdown';
 import Banner from './../../components/Banner/Banner';
 import Toast from './../../components/Toast/Toast';
 
+// import CheckboxList from './../../components/CheckboxList/CheckboxList'
+import Checkbox from './../../components/Checkbox/Checkbox';
+import Checkmark from './../../components/Checkmark/Checkmark';
+import CheckLabel from '../../components/CheckLabel/CheckLabel';
+
 let options = [
   {
     label: 'Nurul Reza',
@@ -189,9 +194,9 @@ const Sandbox = ({ className, ...restProps }) => {
         </div>
       </Preview>
       <Divider large />
-      <Preview>
+      {/* <Preview>
         <Draft />
-      </Preview>
+      </Preview> */}
       <Divider large />
       <Preview>
         <Dropdown withArrow options={options} />
@@ -213,7 +218,7 @@ const Sandbox = ({ className, ...restProps }) => {
       <Divider large />
       <Preview>
         {toast && (
-          <Toast tone="positive" className={styles.ToastPosition}>
+          <Toast className={styles.ToastPosition}>
             <Text heading3 component="h4" style={{ fontWeight: '700' }}>
               Whoops!
             </Text>
@@ -225,6 +230,32 @@ const Sandbox = ({ className, ...restProps }) => {
         <Button small secondary onClick={() => setToast(!toast)}>
           Toggle Toast
         </Button>
+      </Preview>
+      <Divider large />
+      <Preview>
+        <Checkbox name="something[0]" id="hello" isChecked isDisabled>
+          <Checkmark className={styles.checkmark} />
+          <CheckLabel
+            className={styles.checklabel}
+            label="First checkbox label"
+          />
+        </Checkbox>
+
+        <Checkbox name="something[1]" id="hello">
+          <Checkmark large className={styles.checkmark} />
+          <CheckLabel
+            className={styles.checklabel}
+            label="Second checkbox label"
+          />
+        </Checkbox>
+
+        <Checkbox name="something[2]" id="hello">
+          <Checkmark large className={styles.checkmark} />
+          <CheckLabel
+            className={styles.checklabel}
+            label="Third checkbox label"
+          />
+        </Checkbox>
       </Preview>
       <Divider large />
     </React.Fragment>
