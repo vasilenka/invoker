@@ -5,20 +5,34 @@ import { RadioContext, RadioButtonContext } from '../context/context';
 
 import Text from './../Text/Text';
 
-const RadioLabel = ({ label, id, className, ...restProps }) => {
+const RadioLabel = ({
+  label,
+  id,
+  isDisabled,
+  className,
+  onClick,
+  ...restProps
+}) => {
   const listContext = useContext(RadioContext);
   const buttonContext = useContext(RadioButtonContext);
 
+  const handleClick = e => {
+    if (onClick) {
+      onClick(e);
+    }
+  };
+
   return (
     <Text
+      htmlFor={`radio__${listContext.props.name}${buttonContext.index}`}
       className={classnames({
         [styles.root]: true,
         [className]: className,
-        [styles.disabled]: buttonContext.disabled
+        [styles.disabled]: isDisabled || buttonContext.disabled
       })}
+      onClick={handleClick}
       heading5
       component="label"
-      htmlFor={`radio__${listContext.props.name}${buttonContext.index}`}
       {...restProps}
     >
       {label}

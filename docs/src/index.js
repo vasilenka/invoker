@@ -5,9 +5,6 @@ import ReactDOM from 'react-dom';
 
 import './index.scss';
 import 'invoker-layout/grid.module.scss';
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
-import './datepicker_override.scss';
 
 import App from './app/App';
 import * as serviceWorker from './serviceWorker';

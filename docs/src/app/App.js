@@ -5,7 +5,6 @@ import classnames from 'classnames';
 
 import Container from './layouts/Container/Container';
 import LeftSection from './layouts/LeftSection/LeftSection';
-// import RightSection from './layouts/RightSection/RightSection';
 import MainContent from './layouts/MainContent/MainContent';
 
 import Navbar from './components/Navbar/Navbar';
@@ -19,7 +18,7 @@ import MaskPage from './pages/MaskPage/MaskPage';
 import FieldLabelPage from './pages/FieldLabelPage/FieldLabelPage';
 import FieldInputPage from './pages/FieldInputPage/FieldInputPage';
 import FieldHintPage from './pages/FieldHintPage/FieldHintPage';
-import RadioListPage from './pages/RadioListPage/RadioListPage';
+import RadioInputPage from './pages/RadioInputPage/RadioInputPage';
 
 class App extends Component {
   constructor(props) {
@@ -55,7 +54,7 @@ class App extends Component {
                 <Route exact path="/field-label" component={FieldLabelPage} />
                 <Route exact path="/field-input" component={FieldInputPage} />
                 <Route exact path="/field-hint" component={FieldHintPage} />
-                <Route exact path="/radio-list" component={RadioListPage} />
+                <Route exact path="/radio-list" component={RadioInputPage} />
               </MainContent>
             </Container>
             <LeftSection fixed className={styles.leftSection}>
@@ -99,21 +98,10 @@ class App extends Component {
               </Link>
               <Link to="/radio-list">
                 <Text className={styles.link} link>
-                  RadioList
+                  RadioInput
                 </Text>
               </Link>
             </LeftSection>
-            {/* <RightSection fixed className={styles.rightSection}>
-              <Text heading6 component="h3" className={styles.sidebarTitle}>
-                Components
-              </Text>
-              <Link to="/text">
-                <Text className={styles.link}>Text</Text>
-              </Link>
-              <Link to="/textfield">
-                <Text className={styles.link}>Textfield</Text>
-              </Link>
-            </RightSection> */}
           </React.Fragment>
         </Router>
       </div>
