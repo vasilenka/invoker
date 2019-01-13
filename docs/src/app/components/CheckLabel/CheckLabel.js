@@ -1,5 +1,5 @@
 import styles from './CheckLabel.module.scss';
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import cx from 'classnames';
 
 import Text from './../Text/Text';
@@ -26,7 +26,7 @@ const CheckLabel = ({
       className={cx({
         [styles.root]: true,
         [className]: className,
-        [styles.disabled]: isDisabled || checkContext.disabled
+        [styles.disabled]: isDisabled || checkContext.isDisabled
       })}
       onClick={handleClick}
       heading5

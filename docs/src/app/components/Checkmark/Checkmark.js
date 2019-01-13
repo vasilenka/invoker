@@ -1,13 +1,10 @@
 import styles from './Checkmark.module.scss';
-import React, { useContext, useState } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import classnames from 'classnames';
 import { CheckboxContext } from '../context/context';
 
 const Checkmark = ({
-  id,
-  name,
   large,
-  value,
   isChecked,
   isDisabled,
   className,
@@ -19,18 +16,27 @@ const Checkmark = ({
   let Component = component ? component : 'span';
 
   const checkContext = useContext(CheckboxContext);
-  let [disabled, setDisable] = useState(checkContext.isDisabled);
-  let [checked, setChecked] = useState(isChecked);
+  let [disabled, setDisable] = useState(null);
+  let [checked, setChecked] = useState();
+  let [value, setValue] = useState();
 
   const handleChange = e => {
-    setChecked(!checked);
-    if (CheckboxContext.onChange) {
-      CheckboxContext.onChange(e);
-    }
-    if (onChange) {
-      onChange(e);
+    if (!disabled) {
+      setChecked(!checked);
+      if (checkContext.onChange) {
+        checkContext.onChange(!checked);
+      }
     }
   };
+
+  useEffect(
+    () => {
+      setDisable(checkContext.isDisabled);
+      setChecked(checkContext.isChecked);
+      setValue(checkContext.value);
+    },
+    [disabled, checked, value]
+  );
 
   return (
     <Component
@@ -43,25 +49,27 @@ const Checkmark = ({
       {...restProps}
     >
       <input
+        id={`checkbox__${checkContext.name}${checkContext.id}`}
+        type="checkbox"
+        name={checkContext.name}
         className={classnames({
           [styles.box]: true,
           [styles.normal]: !large,
           [styles.large]: large
         })}
-        type="checkbox"
-        name={name}
-        disabled={isDisabled || disabled}
-        id={`checkbox__${name || checkContext.name}${id || checkContext.id}`}
+        checked={checked || checkContext.isChecked}
+        disabled={disabled}
         value={value}
         onChange={handleChange}
       />
       <div
+        onClick={handleChange}
         className={classnames({
           [styles.checkmark]: true,
           [styles.hoverCheckmark]: checkContext.hover,
           [styles.normal]: !large,
           [styles.large]: large,
-          [styles.disabled]: isDisabled || disabled
+          [styles.disabled]: disabled
         })}
       />
     </Component>

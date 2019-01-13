@@ -2,28 +2,27 @@ import styles from './Checkbox.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import { CheckboxContext } from '../context/context';
+import { of } from 'rxjs';
 
 class Checkbox extends Component {
   constructor(props) {
     super(props);
     this.state = {
       hover: false,
-      isDisabled: this.props.isDisabled,
-      isChecked: this.props.isChecked,
-      name: this.props.name,
-      value: this.props.value,
+      isDisabled: this.props.isDisabled || false,
+      isChecked: this.props.isChecked || false,
+      name: this.props.name || '',
+      value: this.props.value || '',
       onChange: this.onChange
     };
   }
 
-  // state = {
-  //   hover: false,
-  //   isDisabled: false,
-  //   isChecked: false,
-  //   name: '',
-  //   value: '',
-  //   onChange: this.onChange,
-  // };
+  componentDidMount = () => {
+    let { setValue, isChecked } = this.props;
+    if (isChecked) {
+      setValue(this.props);
+    }
+  };
 
   onHover = e => {
     this.setState({
@@ -39,28 +38,20 @@ class Checkbox extends Component {
     });
   };
 
-  onChange = e => {
-    let { onChange } = this.props;
-
-    this.setState({
-      ...this.state,
-      value: e.target.value
-    });
-
-    if (onChange) {
-      onChange(e);
-    }
+  onChange = isChecked => {
+    let { setValue } = this.props;
+    this.setState(
+      {
+        ...this.state,
+        isChecked
+      },
+      () => {
+        if (setValue) {
+          setValue(this.state);
+        }
+      }
+    );
   };
-
-  // componentDidMount = () => {
-  //   let {id, name, isDisabled, isChecked} = this.props
-  //   this.setState({
-  //     isChecked,
-  //     isDisabled,
-  //     name,
-  //     id,
-  //   })
-  // }
 
   render() {
     let {
@@ -72,12 +63,13 @@ class Checkbox extends Component {
       isDisabled,
       children,
       className,
+      setValue,
       ...restProps
     } = this.props;
 
     return (
       <CheckboxContext.Provider value={this.state}>
-        <label
+        <div
           {...restProps}
           className={classnames({
             [styles.root]: true,
@@ -87,7 +79,7 @@ class Checkbox extends Component {
           onMouseLeave={this.onLeave}
         >
           {children}
-        </label>
+        </div>
       </CheckboxContext.Provider>
     );
   }
