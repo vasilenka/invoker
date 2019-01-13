@@ -18,9 +18,11 @@
   outline: none;
   appearance: none;
   opacity: 0;
+  cursor: pointer;
 }
 
 .checkmark {
+  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;

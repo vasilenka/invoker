@@ -13,7 +13,9 @@ class Checkbox extends Component {
       isChecked: this.props.isChecked || false,
       name: this.props.name || '',
       value: this.props.value || '',
-      onChange: this.onChange
+      onChange: this.onChange,
+      onHover: this.onHover,
+      onLeave: this.onLeave
     };
   }
 
@@ -75,8 +77,8 @@ class Checkbox extends Component {
             [styles.root]: true,
             [className]: className
           })}
-          onMouseEnter={this.onHover}
-          onMouseLeave={this.onLeave}
+          // onMouseEnter={this.onHover}
+          // onMouseLeave={this.onLeave}
         >
           {children}
         </div>

@@ -32,6 +32,8 @@ const CheckLabel = ({
       heading5
       component="label"
       {...restProps}
+      onMouseOver={checkContext.onHover}
+      onMouseLeave={checkContext.onLeave}
     >
       {label}
     </Text>

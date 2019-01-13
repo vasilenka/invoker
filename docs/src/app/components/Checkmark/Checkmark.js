@@ -71,6 +71,8 @@ const Checkmark = ({
           [styles.large]: large,
           [styles.disabled]: disabled
         })}
+        onMouseOver={checkContext.onHover}
+        onMouseLeave={checkContext.onLeave}
       />
     </Component>
   );
