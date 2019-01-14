@@ -1,73 +1,72 @@
 import styles from './Dropdown.module.scss';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 
 import { ReactComponent as ExpandMore } from './icons/expand-more.svg';
-// import { ReactComponent as ExpandLess } from './icons/expand-less.svg';
+import { DropdownContext } from '../context/context';
 
 const Dropdown = ({
   children,
   id,
   className,
   withArrow,
+  setValue,
+  onChange,
   small,
-  options,
+  value,
   ...restProps
 }) => {
-  const inputEl = useRef(null);
-  const [expanded, setExpanded] = useState(false);
+  const [selected, setSelected] = useState(value);
+  let inputEl = useRef(null);
+
+  const handleChange = e => {
+    setSelected(e.target.value);
+    if (setValue) {
+      setValue(e.target.value);
+    }
+    if (onChange) {
+      onChange(e);
+    }
+  };
+
+  useEffect(
+    selected => {
+      if (selected) {
+        setValue(selected);
+      }
+    },
+    [selected]
+  );
 
   return (
-    <div
-      className={classnames({
-        [styles.root]: true,
-        [className]: className
-      })}
-    >
-      <select
-        ref={inputEl}
-        id={id}
-        name={id}
+    <DropdownContext.Provider value={{ selected, setSelected }}>
+      <div
         className={classnames({
-          [styles.normal]: !small,
-          [styles.small]: small
+          [styles.root]: true,
+          [className]: className
         })}
-        onClick={() => setExpanded(true)}
-        onChange={() => setExpanded(false)}
-        {...restProps}
       >
-        {options &&
-          options.map((option, index) => {
-            if (Array.isArray(option.value)) {
-              return (
-                <optgroup key={`${index}${option.value}`} label={option.label}>
-                  {option.value.map((opt, index) => (
-                    <option key={`${index}${opt.value}`} value={opt.value}>
-                      {opt.label}
-                    </option>
-                  ))}
-                </optgroup>
-              );
-            }
-            return (
-              <option key={`${index}${option.value}`} value={option.value}>
-                {option.label}
-              </option>
-            );
+        <select
+          ref={inputEl}
+          id={id}
+          name={id}
+          className={classnames({
+            [styles.normal]: !small,
+            [styles.small]: small
           })}
-      </select>
-      {withArrow ? (
-        expanded ? (
+          value={selected}
+          onChange={handleChange}
+          {...restProps}
+        >
+          {children}
+        </select>
+        {withArrow ? (
           <span aria-hidden className={styles.arrowContainer}>
             <ExpandMore className={styles.arrow} />
           </span>
-        ) : (
-          <span aria-hidden className={styles.arrowContainer}>
-            <ExpandMore className={styles.arrow} />
-          </span>
-        )
-      ) : null}
-    </div>
+        ) : null}
+      </div>
+    </DropdownContext.Provider>
   );
 };
 

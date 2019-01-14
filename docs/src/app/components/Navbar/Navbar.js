@@ -13,9 +13,6 @@ const Navbar = ({ className, ...restProps }) => {
       <div className={classnames(styles.container)}>
         <div className={styles.brand}>
           <Logo className={styles.logo} />
-          <Text className={styles.name} heading4 component="h1">
-            Invoker
-          </Text>
         </div>
         <a
           href="https://github.com/vasilenka/invoker"

@@ -26,6 +26,7 @@ import Spinner from './../../components/Spinner/Spinner';
 
 import Draft from './../../components/Draft/Draft';
 import Dropdown from './../../components/Dropdown/Dropdown';
+import Option from './../../components/Option/Option';
 
 import Banner from './../../components/Banner/Banner';
 import Toast from './../../components/Toast/Toast';
@@ -194,7 +195,38 @@ const Sandbox = ({ className, ...restProps }) => {
       </Preview>
       <Divider large />
       <Preview>
-        <Dropdown withArrow options={options} />
+        <Dropdown
+          setValue={value => console.log(value)}
+          withArrow
+          value="hanifan@gmail.com"
+        >
+          {options &&
+            options.map((option, index) => {
+              if (Array.isArray(option.value)) {
+                return (
+                  <optgroup
+                    key={`${index}${option.value}`}
+                    label={option.label}
+                  >
+                    {option.value.map((opt, index) => (
+                      <Option
+                        key={`${index}${opt.value}`}
+                        value={opt.value}
+                        label={opt.label}
+                      />
+                    ))}
+                  </optgroup>
+                );
+              }
+              return (
+                <Option
+                  key={`${index}${option.value}`}
+                  value={option.value}
+                  label={option.label}
+                />
+              );
+            })}
+        </Dropdown>
       </Preview>
       <Divider large />
       <Preview>
