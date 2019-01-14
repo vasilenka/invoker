@@ -19,6 +19,7 @@ import FieldLabelPage from './pages/FieldLabelPage/FieldLabelPage';
 import FieldInputPage from './pages/FieldInputPage/FieldInputPage';
 import FieldHintPage from './pages/FieldHintPage/FieldHintPage';
 import RadioInputPage from './pages/RadioInputPage/RadioInputPage';
+import CheckboxPage from './pages/CheckboxPage/CheckboxPage';
 
 class App extends Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class App extends Component {
                 <Route exact path="/field-input" component={FieldInputPage} />
                 <Route exact path="/field-hint" component={FieldHintPage} />
                 <Route exact path="/radio-list" component={RadioInputPage} />
+                <Route exact path="/checkbox" component={CheckboxPage} />
               </MainContent>
             </Container>
             <LeftSection fixed className={styles.leftSection}>
@@ -98,7 +100,12 @@ class App extends Component {
               </Link>
               <Link to="/radio-list">
                 <Text className={styles.link} link>
-                  RadioInput
+                  Radio
+                </Text>
+              </Link>
+              <Link to="/checkbox">
+                <Text className={styles.link} link>
+                  Checkbox
                 </Text>
               </Link>
             </LeftSection>

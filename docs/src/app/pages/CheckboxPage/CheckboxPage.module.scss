@@ -1,0 +1,38 @@
+@import 'invoker-tokens/index.scss';
+
+.checkmark {
+  margin: $space-inline-sm;
+}
+
+.checkbox {
+  display: block;
+}
+
+.markRight {
+  display: flex;
+  justify-content: space-between;
+  margin: $space-vertical-l;
+  padding: $space-vertical-sm;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.labelLeft {
+  flex: 1;
+  margin-right: 64px;
+}
+
+.toRight {
+  margin-right: 0;
+}
+
+.specialCheckmark {
+}
+
+.specialChecklabel {
+  display: block;
+  padding: $space-vertical-m;
+  margin: $space-vertical-m;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}

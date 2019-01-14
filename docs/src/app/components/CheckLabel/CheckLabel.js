@@ -5,13 +5,7 @@ import cx from 'classnames';
 import Text from './../Text/Text';
 import { CheckboxContext } from '../context/context';
 
-const CheckLabel = ({
-  label,
-  className,
-  isDisabled,
-  onClick,
-  ...restProps
-}) => {
+const CheckLabel = ({ label, className, onClick, ...restProps }) => {
   const checkContext = useContext(CheckboxContext);
 
   const handleClick = e => {
@@ -26,7 +20,7 @@ const CheckLabel = ({
       className={cx({
         [styles.root]: true,
         [className]: className,
-        [styles.disabled]: isDisabled || checkContext.isDisabled
+        [styles.disabled]: checkContext.isDisabled
       })}
       onClick={handleClick}
       heading5

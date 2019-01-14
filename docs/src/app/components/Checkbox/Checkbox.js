@@ -2,7 +2,6 @@ import styles from './Checkbox.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import { CheckboxContext } from '../context/context';
-import { of } from 'rxjs';
 
 class Checkbox extends Component {
   constructor(props) {
@@ -13,6 +12,7 @@ class Checkbox extends Component {
       isChecked: this.props.isChecked || false,
       name: this.props.name || '',
       value: this.props.value || '',
+      id: this.props.id || '',
       onChange: this.onChange,
       onHover: this.onHover,
       onLeave: this.onLeave
@@ -57,7 +57,6 @@ class Checkbox extends Component {
 
   render() {
     let {
-      position,
       name,
       id,
       value,
@@ -77,8 +76,6 @@ class Checkbox extends Component {
             [styles.root]: true,
             [className]: className
           })}
-          // onMouseEnter={this.onHover}
-          // onMouseLeave={this.onLeave}
         >
           {children}
         </div>

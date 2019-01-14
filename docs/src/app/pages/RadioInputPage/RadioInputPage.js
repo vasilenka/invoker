@@ -208,7 +208,7 @@ const RadioButtonPage = props => {
   return (
     <div className={styles.root}>
       <Subheader
-        title="Radio Input"
+        title="Radio"
         description="Set of components to make a complete radio input. Use radio input when you have a few options that a user can choose from. Don't use radio input if the user can select more than one option from a list, or if there's only one option to select from. That's what Checkbox are for."
       />
       <Divider large />
@@ -231,7 +231,7 @@ const RadioButtonPage = props => {
 
       <Header
         title="RadioMark"
-        description="For a better readibility of your code, instead of a div, use RadioButton to wrap your RadioMark and RadioLabel. RadioButton will also manage the disabled status of a radio input."
+        description="A wrapper around the actual radio input element."
       />
       <Table
         className={styles.tableProps}
@@ -242,7 +242,7 @@ const RadioButtonPage = props => {
 
       <Header
         title="RadioLabel"
-        description="For a better readibility of your code, instead of a div, use RadioButton to wrap your RadioMark and RadioLabel. RadioButton will also manage the disabled status of a radio input."
+        description="A wrapper component for the radio label. By default, RadioLabel will wrap it's children with a Text component with heading5 value and label element."
       />
       <Table className={styles.tableProps} head={headProps} body={labelProps} />
 

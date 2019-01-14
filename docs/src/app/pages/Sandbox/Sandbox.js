@@ -30,11 +30,6 @@ import Dropdown from './../../components/Dropdown/Dropdown';
 import Banner from './../../components/Banner/Banner';
 import Toast from './../../components/Toast/Toast';
 
-// import CheckboxList from './../../components/CheckboxList/CheckboxList'
-import Checkbox from './../../components/Checkbox/Checkbox';
-import Checkmark from './../../components/Checkmark/Checkmark';
-import CheckLabel from '../../components/CheckLabel/CheckLabel';
-
 let options = [
   {
     label: 'Nurul Reza',
@@ -104,16 +99,6 @@ const DataTab = props => {
 const Sandbox = ({ className, ...restProps }) => {
   let [banner, setBanner] = useState(false);
   let [toast, setToast] = useState(false);
-  let [val, setValue] = useState(['']);
-
-  const validateValue = state => {
-    if (state.isChecked) {
-      val.push(state.value);
-      setValue([...val]);
-    } else {
-      setValue(val.filter(value => value !== state.value));
-    }
-  };
 
   return (
     <React.Fragment>
@@ -240,76 +225,6 @@ const Sandbox = ({ className, ...restProps }) => {
         <Button small secondary onClick={() => setToast(!toast)}>
           Toggle Toast
         </Button>
-      </Preview>
-      <Divider large />
-      <Preview>
-        <Checkbox
-          setValue={state => validateValue(state)}
-          name="something[0]"
-          id="hello"
-          isChecked
-          value="dushi3"
-        >
-          <Checkmark className={styles.checkmark} />
-          <CheckLabel
-            label={
-              <Text heading3>
-                You can anything as label here!{' '}
-                <span role="img" aria-label="three peach">
-                  🍑🍑🍑
-                </span>
-              </Text>
-            }
-          />
-        </Checkbox>
-
-        <Checkbox
-          setValue={state => validateValue(state)}
-          className={styles.markRight}
-          name="something[1]"
-          id="hello"
-          value="dushi."
-        >
-          <CheckLabel
-            className={styles.labelLeft}
-            label="Second checkbox label"
-          />
-          <Checkmark
-            large
-            className={classnames(styles.checkmark, styles.toRight)}
-          />
-        </Checkbox>
-
-        <Checkbox
-          setValue={state => validateValue(state)}
-          name="something[2]"
-          id="hello"
-          value="dushi2"
-        >
-          <Checkmark
-            large
-            className={classnames(styles.checkmark, styles.specialCheckmark)}
-          />
-          <CheckLabel
-            label="Third checkbox label"
-            className={styles.specialChecklabel}
-          />
-        </Checkbox>
-
-        {val.length > 0 && (
-          <Text>
-            Selected value is:{' '}
-            {val.map((el, index) => (
-              <Text
-                key={index}
-                heading5
-                style={{ paddingTop: '12px', paddingBottom: '12px' }}
-              >
-                {el}
-              </Text>
-            ))}
-          </Text>
-        )}
       </Preview>
       <Divider large />
     </React.Fragment>
