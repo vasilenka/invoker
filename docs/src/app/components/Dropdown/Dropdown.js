@@ -7,7 +7,7 @@ import { DropdownContext } from '../context/context';
 
 const Dropdown = ({
   children,
-  id,
+  name,
   className,
   withArrow,
   setValue,
@@ -17,7 +17,19 @@ const Dropdown = ({
   ...restProps
 }) => {
   const [selected, setSelected] = useState(value);
+  const [arrow, setArrow] = useState(withArrow);
   let inputEl = useRef(null);
+
+  useEffect(
+    () => {
+      if (withArrow !== undefined) {
+        setArrow(withArrow);
+      } else {
+        setArrow(true);
+      }
+    },
+    [arrow]
+  );
 
   const handleChange = e => {
     setSelected(e.target.value);
@@ -48,8 +60,7 @@ const Dropdown = ({
       >
         <select
           ref={inputEl}
-          id={id}
-          name={id}
+          name={name}
           className={classnames({
             [styles.normal]: !small,
             [styles.small]: small
@@ -60,7 +71,7 @@ const Dropdown = ({
         >
           {children}
         </select>
-        {withArrow ? (
+        {arrow ? (
           <span aria-hidden className={styles.arrowContainer}>
             <ExpandMore className={styles.arrow} />
           </span>

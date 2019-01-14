@@ -195,41 +195,6 @@ const Sandbox = ({ className, ...restProps }) => {
       </Preview>
       <Divider large />
       <Preview>
-        <Dropdown
-          setValue={value => console.log(value)}
-          withArrow
-          value="hanifan@gmail.com"
-        >
-          {options &&
-            options.map((option, index) => {
-              if (Array.isArray(option.value)) {
-                return (
-                  <optgroup
-                    key={`${index}${option.value}`}
-                    label={option.label}
-                  >
-                    {option.value.map((opt, index) => (
-                      <Option
-                        key={`${index}${opt.value}`}
-                        value={opt.value}
-                        label={opt.label}
-                      />
-                    ))}
-                  </optgroup>
-                );
-              }
-              return (
-                <Option
-                  key={`${index}${option.value}`}
-                  value={option.value}
-                  label={option.label}
-                />
-              );
-            })}
-        </Dropdown>
-      </Preview>
-      <Divider large />
-      <Preview>
         {banner && (
           <Banner tone="positive" className={styles.bannerPosition}>
             Whoops! Looks like you are having trouble loading the page.{' '}

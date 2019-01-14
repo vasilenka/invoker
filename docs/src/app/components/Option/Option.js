@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import cx from 'classnames';
 import { DropdownContext } from '../context/context';
 
-const Option = ({ className, value, label, onClick, ...restProps }) => {
+const Option = ({ value, label, onClick, isDisabled, ...restProps }) => {
   const dropdownContext = useContext(DropdownContext);
 
   const handleClick = e => {
@@ -16,7 +16,7 @@ const Option = ({ className, value, label, onClick, ...restProps }) => {
   };
 
   return (
-    <option value={value} onClick={handleClick}>
+    <option disabled={isDisabled} value={value} onClick={handleClick}>
       {label}
     </option>
   );
