@@ -110,6 +110,8 @@ const Sandbox = ({ className, ...restProps }) => {
   };
 
   const onChange = e => {
+    e.preventDefault();
+
     const files = Array.from(e.target.files);
     setUploading(true);
 
@@ -122,7 +124,7 @@ const Sandbox = ({ className, ...restProps }) => {
       })
         .then(res => res.json())
         .then(image => {
-          setImages(prevImage => prevImage.concat(image));
+          setImages(prevImage => [...prevImage.concat(image)]);
           setUploading(false);
         });
     });
