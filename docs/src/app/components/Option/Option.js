@@ -1,6 +1,6 @@
-import styles from './Option.module.scss';
+// import styles from './Option.module.scss';
 import React, { useContext } from 'react';
-import cx from 'classnames';
+// import cx from 'classnames';
 import { DropdownContext } from '../context/context';
 
 const Option = ({ value, label, onClick, isDisabled, ...restProps }) => {

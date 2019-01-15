@@ -1,5 +1,5 @@
 import styles from './Sandbox.module.scss';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 
 import Header from './../../docs/Header/Header';
@@ -8,7 +8,7 @@ import Preview from './../../docs/Preview/Preview';
 import Divider from './../../docs/Divider/Divider';
 
 import Text from './../../components/Text/Text';
-import Combobox from './../../components/Combobox/Combobox';
+// import Combobox from './../../components/Combobox/Combobox'
 import SinglePreview from './../../components/SinglePreview/SinglePreview';
 
 import Luna from '../../components/Luna/Luna';
@@ -25,35 +25,37 @@ import Bouncer from './../../components/Bouncer/Bouncer';
 import Spinner from './../../components/Spinner/Spinner';
 
 import Draft from './../../components/Draft/Draft';
-import Dropdown from './../../components/Dropdown/Dropdown';
-import Option from './../../components/Option/Option';
 
 import Banner from './../../components/Banner/Banner';
 import Toast from './../../components/Toast/Toast';
+import Downshift from 'downshift';
+import FieldLabel from '../../components/FieldLabel/FieldLabel';
+// import FieldInput from '../../components/FieldInput/FieldInput'
+import ControlledInput from '../../components/ControlledInput/ControlledInput';
 
-let options = [
-  {
-    label: 'Nurul Reza',
-    value: 'eza@gmail.com'
-  },
-  {
-    label: 'Madams team',
-    value: [
-      {
-        label: 'Ongki Herlambang',
-        value: 'ongkiherlambang@gmail.com'
-      },
-      {
-        label: 'Khairani Ummah',
-        value: 'khairani.u@gmail.com'
-      },
-      {
-        label: 'Hanifan Mohamad',
-        value: 'hanifan@gmail.com'
-      }
-    ]
-  }
-];
+// let options = [
+//   {
+//     label: 'Nurul Reza',
+//     value: 'eza@gmail.com'
+//   },
+//   {
+//     label: 'Madams team',
+//     value: [
+//       {
+//         label: 'Ongki Herlambang',
+//         value: 'ongkiherlambang@gmail.com'
+//       },
+//       {
+//         label: 'Khairani Ummah',
+//         value: 'khairani.u@gmail.com'
+//       },
+//       {
+//         label: 'Hanifan Mohamad',
+//         value: 'hanifan@gmail.com'
+//       }
+//     ]
+//   }
+// ];
 
 const DataTab = props => {
   return (
@@ -97,9 +99,44 @@ const DataTab = props => {
   );
 };
 
+const fruits = [
+  {
+    label: 'Apple 🍎',
+    value: 'apple'
+  },
+  {
+    label: 'Pear 🍐',
+    value: 'pear'
+  },
+  {
+    label: 'Orange 🍊',
+    value: 'orange'
+  },
+  {
+    label: 'Grape 🍇',
+    value: 'grape'
+  },
+  {
+    label: 'Banana 🍌',
+    value: 'banana'
+  }
+];
+
 const Sandbox = ({ className, ...restProps }) => {
   let [banner, setBanner] = useState(false);
   let [toast, setToast] = useState(false);
+  let [selectedCombo, setSelectedCombo] = useState('');
+
+  const handleSelection = selection => {
+    setSelectedCombo(selection);
+  };
+
+  useEffect(
+    () => {
+      console.log(selectedCombo);
+    },
+    [selectedCombo]
+  );
 
   return (
     <React.Fragment>
@@ -169,14 +206,62 @@ const Sandbox = ({ className, ...restProps }) => {
       <Divider large />
       <Subheader title="Combobox" />
       <Preview>
-        <Combobox
-          id="user"
-          isOpen
-          label="Choose your pokemon"
-          secondaryLabel="Choose a water type pokemon"
-          tertiaryLabel={<Text link>help?</Text>}
-          options={options}
-        />
+        <Downshift
+          initialInputValue="The initial value"
+          onChange={selection => handleSelection(selection)}
+          itemToString={item => (item ? item.value : '')}
+        >
+          {({
+            getInputProps,
+            getItemProps,
+            getLabelProps,
+            getMenuProps,
+            isOpen,
+            inputValue,
+            highlightedIndex,
+            selectedItem
+          }) => (
+            <div>
+              <FieldLabel
+                {...getLabelProps({
+                  id: 'somethingawesome',
+                  label: 'Dork souls',
+                  secondaryLabel: '(git gud)'
+                })}
+              >
+                Enter a fruit
+              </FieldLabel>
+              <ControlledInput {...getInputProps({ id: 'somethingawesome' })} />
+              <ul {...getMenuProps()}>
+                {isOpen
+                  ? fruits
+                      .filter(
+                        fruit => !inputValue || fruit.value.includes(inputValue)
+                      )
+                      .map((fruit, index) => (
+                        <li
+                          {...getItemProps({
+                            key: fruit.value,
+                            index,
+                            item: fruit,
+                            style: {
+                              backgroundColor:
+                                highlightedIndex === index
+                                  ? 'lightgray'
+                                  : 'white',
+                              fontWeight:
+                                selectedItem === fruit ? 'bold' : 'normal'
+                            }
+                          })}
+                        >
+                          {fruit.value}
+                        </li>
+                      ))
+                  : null}
+              </ul>
+            </div>
+          )}
+        </Downshift>
       </Preview>
       <Divider large />
       <Preview>

@@ -6,17 +6,24 @@ import { bool, func, object, string, oneOf, oneOfType } from 'prop-types';
 import * as yup from 'yup';
 import { defaultShape } from './helper/fieldInputHelper';
 
-// const callAll = (...fns) => (...args) => fns.forEach(fn => fn && fn(...args));
-
 class FieldInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: this.props.value || '',
+      value: this.props.value ? this.props.value : '',
       tone: this.props.tone,
       message: this.props.message
     };
   }
+
+  componentWillUpdate = () => {
+    let { setUpdatedValue } = this.props;
+    if (setUpdatedValue !== this.state.value) {
+      this.setState({
+        value: setUpdatedValue
+      });
+    }
+  };
 
   componentDidMount = () => {
     const {
@@ -61,21 +68,18 @@ class FieldInput extends Component {
   onChange = e => {
     const { onChange, setValue } = this.props;
     let value = e.target.value;
-    this.setState(
-      () => ({ value }),
-      () => {
-        if (setValue) {
-          setValue(this.state.value);
-        }
+    this.setState({ value }, () => {
+      if (setValue) {
+        setValue(this.state.value);
       }
-    );
+    });
     if (onChange) {
-      onChange(e.target.value);
+      onChange(e, value);
     }
   };
 
   onBlur = () => {
-    let { setMessage, setTone, type, onBlur } = this.props;
+    let { setMessage, setTone, type } = this.props;
 
     this.validationSchema
       .validate({
@@ -114,10 +118,6 @@ class FieldInput extends Component {
           }
         );
       });
-
-    if (onBlur) {
-      onBlur();
-    }
   };
 
   onFocus = e => {
@@ -172,6 +172,7 @@ class FieldInput extends Component {
     const {
       id,
       className,
+      setUpdatedValue,
       type,
       yupShape,
       required,
@@ -199,7 +200,7 @@ class FieldInput extends Component {
         onKeyDown={this.onKeyDown}
         onKeyUp={this.onKeyUp}
         onKeyPress={this.onKeyPress}
-        type={type || 'text'}
+        type={type}
         id={id}
         className={classnames({
           [styles.root]: true,
@@ -235,6 +236,7 @@ FieldInput.propTypes = {
 };
 
 FieldInput.defaultProps = {
+  type: 'text',
   disabled: false,
   value: '',
   tone: '',

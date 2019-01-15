@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import { ReactComponent as Logo } from './mid.svg';
 import { ReactComponent as Github } from './github.svg';
 
-import Text from './../Text/Text';
+// import Text from './../Text/Text';
 
 const Navbar = ({ className, ...restProps }) => {
   return (

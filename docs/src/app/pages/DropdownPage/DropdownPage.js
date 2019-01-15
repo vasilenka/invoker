@@ -1,6 +1,6 @@
 import styles from './DropdownPage.module.scss';
 import React, { useState } from 'react';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 
 import Header from '../../docs/Header/Header';
 import Subheader from '../../docs/Subheader/Subheader';
