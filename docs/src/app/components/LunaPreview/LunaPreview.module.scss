@@ -1,0 +1,12 @@
+@import 'invoker-tokens/index.scss';
+
+.root {
+  width: 200px;
+  height: 200px;
+}
+
+.delete {
+  padding: $space-inset-sm;
+  background: red;
+  color: #fff;
+}

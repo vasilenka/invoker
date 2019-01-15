@@ -30,32 +30,8 @@ import Banner from './../../components/Banner/Banner';
 import Toast from './../../components/Toast/Toast';
 import Downshift from 'downshift';
 import FieldLabel from '../../components/FieldLabel/FieldLabel';
-// import FieldInput from '../../components/FieldInput/FieldInput'
 import ControlledInput from '../../components/ControlledInput/ControlledInput';
-
-// let options = [
-//   {
-//     label: 'Nurul Reza',
-//     value: 'eza@gmail.com'
-//   },
-//   {
-//     label: 'Madams team',
-//     value: [
-//       {
-//         label: 'Ongki Herlambang',
-//         value: 'ongkiherlambang@gmail.com'
-//       },
-//       {
-//         label: 'Khairani Ummah',
-//         value: 'khairani.u@gmail.com'
-//       },
-//       {
-//         label: 'Hanifan Mohamad',
-//         value: 'hanifan@gmail.com'
-//       }
-//     ]
-//   }
-// ];
+import LunaPreview from '../../components/LunaPreview/LunaPreview';
 
 const DataTab = props => {
   return (
@@ -126,17 +102,54 @@ const Sandbox = ({ className, ...restProps }) => {
   let [banner, setBanner] = useState(false);
   let [toast, setToast] = useState(false);
   let [selectedCombo, setSelectedCombo] = useState('');
+  let [uploading, setUploading] = useState(false);
+  let [images, setImages] = useState([]);
 
   const handleSelection = selection => {
     setSelectedCombo(selection);
   };
 
+  const onChange = e => {
+    const files = Array.from(e.target.files);
+    setUploading(true);
+
+    files.forEach((file, i) => {
+      const formData = new FormData();
+      formData.append(i, file);
+      fetch('http://localhost:5000/image-upload', {
+        method: 'POST',
+        body: formData
+      })
+        .then(res => res.json())
+        .then(image => {
+          setImages(prevImage => prevImage.concat(image));
+          setUploading(false);
+        });
+    });
+  };
+
   useEffect(
     () => {
-      console.log(selectedCombo);
+      console.log('Images: ', images);
     },
-    [selectedCombo]
+    [selectedCombo, images]
   );
+
+  const content = () => {
+    switch (true) {
+      case uploading:
+        return <Spinner />;
+      case images.length > 0:
+        return <LunaPreview images={images} removeImage={removeImage} />;
+      default:
+        return null;
+    }
+  };
+
+  const removeImage = id => {
+    let newImages = images.filter(image => image.public_id !== id);
+    setImages(newImages);
+  };
 
   return (
     <React.Fragment>
@@ -167,11 +180,11 @@ const Sandbox = ({ className, ...restProps }) => {
       <Divider large />
       <Subheader title="Image Uploader" />
       <Preview>
-        <Luna multiple>
+        {/* <Luna multiple>
           {state => {
             return (
               <React.Fragment>
-                {state.files.length > 0 && (
+                {state.images.length > 0 && (
                   <header style={{ marginBottom: '16px' }}>
                     <Text heading3 component="h3">
                       Preview image
@@ -179,8 +192,8 @@ const Sandbox = ({ className, ...restProps }) => {
                   </header>
                 )}
                 <div className="row">
-                  {state.files.length > 0 &&
-                    state.files.map((file, index) => {
+                  {state.images.length > 0 &&
+                    state.images.map((file, index) => {
                       return (
                         <div
                           key={index}
@@ -196,12 +209,20 @@ const Sandbox = ({ className, ...restProps }) => {
                     })}
                 </div>
                 <Button primary small onClick={state.onClick}>
-                  Browse files
+                  Browse images
                 </Button>
               </React.Fragment>
             );
           }}
-        </Luna>
+        </Luna> */}
+        {content()}
+        <Divider medium />
+        <div>
+          <label htmlFor="multi">
+            <Text heading5>Upload file</Text>
+          </label>
+          <input type="file" id="multi" onChange={onChange} multiple />
+        </div>
       </Preview>
       <Divider large />
       <Subheader title="Combobox" />

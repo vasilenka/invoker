@@ -12,14 +12,14 @@ class Luna extends Component {
       onClick: this.handleClick,
       onError: this.handleError,
       deleteImage: this.deleteImage,
-      files: []
+      images: []
     };
   }
 
   deleteImage = index => {
-    const files = [...this.state.files];
-    files.splice(index, 1);
-    this.setState({ files });
+    const images = [...this.state.images];
+    images.splice(index, 1);
+    this.setState({ images });
   };
 
   handleClick = () => {
@@ -27,28 +27,30 @@ class Luna extends Component {
   };
 
   onChange = e => {
-    let files = e.target.files;
+    let images = e.target.files;
 
     if (!window.FileReader) {
       throw new Error("Sorry, your browser does'nt support for preview");
     }
 
-    for (let i = 0; i < files.length; i++) {
+    for (let i = 0; i < images.length; i++) {
       let reader = new FileReader();
       reader.onerror = r => {
         throw new Error(r);
       };
       reader.onload = r => {
-        const prevfiles = this.state.files;
+        const prevImages = this.state.images;
         this.setState({
-          files: prevfiles.concat({
-            url: r.target.result,
-            value: r,
-            file: files[i]
-          })
+          images: prevImages.concat([
+            {
+              url: r.target.result,
+              value: r,
+              file: images[i]
+            }
+          ])
         });
       };
-      reader.readAsDataURL(files[i]);
+      reader.readAsDataURL(images[i]);
     }
   };
 
