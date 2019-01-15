@@ -73,11 +73,6 @@ class App extends Component {
               <Text heading6 component="h4" style={{ paddingTop: '24px' }}>
                 PRIMITIVES
               </Text>
-              <Link to="/mask">
-                <Text className={styles.link} link>
-                  Mask
-                </Text>
-              </Link>
               <Link to="/text">
                 <Text className={styles.link} link>
                   Text
@@ -116,6 +111,14 @@ class App extends Component {
               <Link to="/dropdown">
                 <Text className={styles.link} link>
                   Dropdown
+                </Text>
+              </Link>
+              <Text heading6 component="h4" style={{ paddingTop: '24px' }}>
+                UTILS
+              </Text>
+              <Link to="/mask">
+                <Text className={styles.link} link>
+                  Mask
                 </Text>
               </Link>
             </LeftSection>
