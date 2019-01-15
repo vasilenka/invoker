@@ -16,15 +16,6 @@ class FieldInput extends Component {
     };
   }
 
-  componentWillUpdate = () => {
-    let { setUpdatedValue } = this.props;
-    if (setUpdatedValue !== this.state.value) {
-      this.setState({
-        value: setUpdatedValue
-      });
-    }
-  };
-
   componentDidMount = () => {
     const {
       yupShape,
@@ -172,7 +163,6 @@ class FieldInput extends Component {
     const {
       id,
       className,
-      setUpdatedValue,
       type,
       yupShape,
       required,
