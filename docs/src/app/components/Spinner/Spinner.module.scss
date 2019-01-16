@@ -14,30 +14,55 @@
 
 .loader {
   animation: rotate 1.2s infinite;
-  height: 24px;
-  width: 24px;
   position: relative;
-  background: transparent;
   border-radius: 9999px;
   background: #767676;
   box-shadow: 0px 0px 0px 9px #767676;
+}
+
+.small {
+  width: 16px;
+  height: 16px;
+}
+
+.medium {
+  height: 24px;
+  width: 24px;
+}
+
+.medium::after,
+.medium::before {
+  width: 6px;
+  height: 6px;
 }
 
 .loader::before,
 .loader::after {
   border-radius: 50%;
   content: '';
-  width: 6px;
-  height: 6px;
   display: block;
+}
+
+.small::before,
+.small::after {
+  width: 4px;
+  height: 4px;
 }
 
 .loader::before {
   position: absolute;
   bottom: 0;
   top: 0;
+}
+
+.medium::before {
   left: calc(50% - 3px);
   box-shadow: -9px 9px 0px 0px #ffffff;
+}
+
+.small::before {
+  left: calc(50% - 2px);
+  box-shadow: -6px 6px 0px 0px #ffffff;
 }
 
 .loader::after {
@@ -45,6 +70,16 @@
   bottom: 0;
   left: calc(50% - 3px);
   box-shadow: 9px -9px 0px 0px #ffffff;
+}
+
+.medium::after {
+  left: calc(50% - 3px);
+  box-shadow: 9px -9px 0px 0px #ffffff;
+}
+
+.small::after {
+  left: calc(50% - 2px);
+  box-shadow: 6px -6px 0px 0px #ffffff;
 }
 
 .loader:before {

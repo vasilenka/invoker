@@ -23,6 +23,12 @@ const PreloaderPage = ({ className, ...restProps }) => {
       <Subheader title="Spinner" />
       <Preview>
         <div style={{ height: '200px', width: '100%', position: 'relative' }}>
+          <Spinner small />
+        </div>
+      </Preview>
+      <Divider large />
+      <Preview>
+        <div style={{ height: '200px', width: '100%', position: 'relative' }}>
           <Spinner />
         </div>
       </Preview>
