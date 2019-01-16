@@ -21,6 +21,7 @@ import FieldHintPage from './pages/FieldHintPage/FieldHintPage';
 import RadioInputPage from './pages/RadioInputPage/RadioInputPage';
 import CheckboxPage from './pages/CheckboxPage/CheckboxPage';
 import DropdownPage from './pages/DropdownPage/DropdownPage';
+import PreloaderPage from './pages/PreloaderPage/PreloaderPage';
 
 class App extends Component {
   constructor(props) {
@@ -59,6 +60,7 @@ class App extends Component {
                 <Route exact path="/radio-list" component={RadioInputPage} />
                 <Route exact path="/checkbox" component={CheckboxPage} />
                 <Route exact path="/dropdown" component={DropdownPage} />
+                <Route exact path="/preloader" component={PreloaderPage} />
               </MainContent>
             </Container>
             <LeftSection fixed className={styles.leftSection}>
@@ -116,6 +118,11 @@ class App extends Component {
               <Link to="/mask">
                 <Text className={styles.link} link>
                   Mask
+                </Text>
+              </Link>
+              <Link to="/preloader">
+                <Text className={styles.link} link>
+                  Preloader
                 </Text>
               </Link>
             </LeftSection>

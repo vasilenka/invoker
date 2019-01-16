@@ -9,9 +9,9 @@ import Divider from './../../docs/Divider/Divider';
 
 import Text from './../../components/Text/Text';
 // import Combobox from './../../components/Combobox/Combobox'
-import SinglePreview from './../../components/SinglePreview/SinglePreview';
+// import SinglePreview from './../../components/SinglePreview/SinglePreview';
 
-import Luna from '../../components/Luna/Luna';
+// import Luna from '../../components/Luna/Luna';
 import Button from './../../components/Button/Button';
 
 import Tabs from './../../components/Tabs/Tabs';
@@ -21,7 +21,7 @@ import TabList from './../../components/TabList/TabList';
 import Tab from './../../components/Tab/Tab';
 import Card from './../../components/Card/Card';
 
-import Bouncer from './../../components/Bouncer/Bouncer';
+// import Bouncer from './../../components/Bouncer/Bouncer';
 import Spinner from './../../components/Spinner/Spinner';
 
 import Draft from './../../components/Draft/Draft';
@@ -287,16 +287,6 @@ const Sandbox = ({ className, ...restProps }) => {
         </Downshift>
       </Preview>
       <Divider large />
-      <Preview>
-        <div style={{ height: '200px', width: '100%', position: 'relative' }}>
-          <Spinner />
-        </div>
-      </Preview>
-      <Preview>
-        <div style={{ height: '200px', width: '100%', position: 'relative' }}>
-          <Bouncer />
-        </div>
-      </Preview>
       <Divider large />
       <Preview>
         <Draft />
