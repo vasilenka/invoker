@@ -30,8 +30,11 @@ import Banner from './../../components/Banner/Banner';
 import Toast from './../../components/Toast/Toast';
 import Downshift from 'downshift';
 import FieldLabel from '../../components/FieldLabel/FieldLabel';
-import ControlledInput from '../../components/ControlledInput/ControlledInput';
 import LunaPreview from '../../components/LunaPreview/LunaPreview';
+import Combobox from '../../components/Combobox/Combobox';
+import ComboboxInput from '../../components/ComboboxInput/ComboboxInput';
+import ComboboxItem from '../../components/ComboboxItem/ComboboxItem';
+import ComboboxContainer from '../../components/ComboboxContainer/ComboboxContainer';
 
 const DataTab = props => {
   return (
@@ -77,11 +80,25 @@ const DataTab = props => {
 
 const fruits = [
   {
-    label: 'Apple 🍎',
+    label: (
+      <Text heading4>
+        Apple{' '}
+        <span role="img" aria-label="apple emoji" style={{ color: 'red' }}>
+          🍎
+        </span>
+      </Text>
+    ),
     value: 'apple'
   },
   {
-    label: 'Pear 🍐',
+    label: (
+      <Text heading3>
+        Pear{' '}
+        <span role="img" aria-label="pear emoji" style={{ color: 'red' }}>
+          🍐
+        </span>
+      </Text>
+    ),
     value: 'pear'
   },
   {
@@ -132,7 +149,7 @@ const Sandbox = ({ className, ...restProps }) => {
 
   useEffect(
     () => {
-      console.log('Images: ', images);
+      // console.log('Images: ', images);
     },
     [selectedCombo, images]
   );
@@ -230,11 +247,12 @@ const Sandbox = ({ className, ...restProps }) => {
       <Subheader title="Combobox" />
       <Preview>
         <Downshift
-          initialInputValue="The initial value"
+          initialInputValue={fruits[0].value}
           onChange={selection => handleSelection(selection)}
           itemToString={item => (item ? item.value : '')}
         >
           {({
+            getRootProps,
             getInputProps,
             getItemProps,
             getLabelProps,
@@ -244,49 +262,47 @@ const Sandbox = ({ className, ...restProps }) => {
             highlightedIndex,
             selectedItem
           }) => (
-            <div>
+            <Combobox {...getRootProps()}>
               <FieldLabel
                 {...getLabelProps({
                   id: 'somethingawesome',
                   label: 'Dork souls',
                   secondaryLabel: '(git gud)'
                 })}
-              >
-                Enter a fruit
-              </FieldLabel>
-              <ControlledInput {...getInputProps({ id: 'somethingawesome' })} />
-              <ul {...getMenuProps()}>
+              />
+              <ComboboxInput
+                {...getInputProps({
+                  id: 'somethingawesome',
+                  placeholder: 'Dork souls 3, git gud!'
+                })}
+              />
+              <ComboboxContainer {...getMenuProps()}>
                 {isOpen
                   ? fruits
                       .filter(
                         fruit => !inputValue || fruit.value.includes(inputValue)
                       )
                       .map((fruit, index) => (
-                        <li
+                        <ComboboxItem
                           {...getItemProps({
-                            key: fruit.value,
                             index,
+                            key: fruit.value,
                             item: fruit,
-                            style: {
-                              backgroundColor:
-                                highlightedIndex === index
-                                  ? 'lightgray'
-                                  : 'white',
-                              fontWeight:
-                                selectedItem === fruit ? 'bold' : 'normal'
-                            }
+                            label: fruit.label,
+                            // defaultClass: styles.defaultItem,
+                            isHighlighted: highlightedIndex === index,
+                            // highlightedClass:styles.highlighted,
+                            isSelected: selectedItem === fruit
+                            // selectedClass: styles.selected,
                           })}
-                        >
-                          {fruit.value}
-                        </li>
+                        />
                       ))
                   : null}
-              </ul>
-            </div>
+              </ComboboxContainer>
+            </Combobox>
           )}
         </Downshift>
       </Preview>
-      <Divider large />
       <Divider large />
       <Preview>
         <Draft />

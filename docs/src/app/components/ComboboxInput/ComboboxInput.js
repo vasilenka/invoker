@@ -1,4 +1,4 @@
-import styles from './ControlledInput.module.scss';
+import styles from './ComboboxInput.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 // import { bool, func, object, string, oneOf, oneOfType } from 'prop-types'
@@ -6,7 +6,7 @@ import classnames from 'classnames';
 // import * as yup from 'yup'
 // import { defaultShape } from './helper/fieldInputHelper'
 
-class ControlledInput extends Component {
+class ComboboxInput extends Component {
   // constructor(props) {
   //   super(props)
   // this.state = {
@@ -201,6 +201,7 @@ class ControlledInput extends Component {
           [styles.disabled]: disabled,
           [className]: className
         })}
+        placeholder={placeholder}
         value={value}
         {...restProps}
       />
@@ -208,7 +209,7 @@ class ControlledInput extends Component {
   }
 }
 
-// ControlledInput.propTypes = {
+// ComboboxInput.propTypes = {
 //   id: string.isRequired,
 //   className: oneOfType([string, object]),
 //   type: oneOf(['text', 'email', 'password', 'number']).isRequired,
@@ -223,7 +224,7 @@ class ControlledInput extends Component {
 //   placeholder: string,
 // };
 
-// ControlledInput.defaultProps = {
+// ComboboxInput.defaultProps = {
 //   type: 'text',
 //   disabled: false,
 //   value: '',
@@ -232,4 +233,4 @@ class ControlledInput extends Component {
 //   required: false
 // };
 
-export default ControlledInput;
+export default ComboboxInput;

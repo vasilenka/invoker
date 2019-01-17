@@ -121,13 +121,29 @@
   margin-right: 0;
 }
 
-.specialCheckmark {
-}
-
 .specialChecklabel {
   display: block;
   padding: $space-vertical-m;
   margin: $space-vertical-m;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.item {
+  color: $dark-alpha-60;
+}
+
+.defaultItem {
+  padding: $space-squish-sm;
+  color: $dark-alpha-60;
+}
+
+.selected {
+  color: $dark-alpha-90;
+  font-weight: 700;
+}
+
+.highlighted {
+  color: $light-alpha-100;
+  background: $brand-primary-200;
 }
