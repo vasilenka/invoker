@@ -21,6 +21,8 @@ import TabList from './../../components/TabList/TabList';
 import Tab from './../../components/Tab/Tab';
 import Card from './../../components/Card/Card';
 
+import Code from '../../docs/Code/Code';
+
 // import Bouncer from './../../components/Bouncer/Bouncer';
 import Spinner from './../../components/Spinner/Spinner';
 
@@ -149,7 +151,7 @@ const Sandbox = ({ className, ...restProps }) => {
 
   useEffect(
     () => {
-      // console.log('Images: ', images);
+      console.log('Selected: ', selectedCombo);
     },
     [selectedCombo, images]
   );
@@ -262,7 +264,7 @@ const Sandbox = ({ className, ...restProps }) => {
             highlightedIndex,
             selectedItem
           }) => (
-            <Combobox {...getRootProps()}>
+            <Combobox {...getRootProps({ refKey: 'innerRef' })}>
               <FieldLabel
                 {...getLabelProps({
                   id: 'somethingawesome',
@@ -276,7 +278,7 @@ const Sandbox = ({ className, ...restProps }) => {
                   placeholder: 'Dork souls 3, git gud!'
                 })}
               />
-              <ComboboxContainer {...getMenuProps()}>
+              <ComboboxContainer {...getMenuProps({ refKey: 'innerRef' })}>
                 {isOpen
                   ? fruits
                       .filter(
@@ -303,6 +305,66 @@ const Sandbox = ({ className, ...restProps }) => {
           )}
         </Downshift>
       </Preview>
+      <Code>
+        {`
+<Downshift
+  initialInputValue={fruits[0].value}
+  onChange={selection => handleSelection(selection)}
+  itemToString={item => (item ? item.value : '')}
+>
+  {({
+    getRootProps,
+    getInputProps,
+    getItemProps,
+    getLabelProps,
+    getMenuProps,
+    isOpen,
+    inputValue,
+    highlightedIndex,
+    selectedItem
+  }) =>
+    <Combobox {...getRootProps({refKey: 'innerRef'})}>
+      <FieldLabel
+        {...getLabelProps({
+          id: 'somethingawesome',
+          label: 'Dork souls',
+          secondaryLabel: '(git gud)'
+        })}
+      />
+      <ComboboxInput
+        {...getInputProps({
+          id: 'somethingawesome',
+          placeholder: 'Dork souls 3, git gud!'
+        })}
+      />
+      <ComboboxContainer {...getMenuProps({refKey: 'innerRef'})}>
+        {isOpen
+          ? fruits
+              .filter(
+                fruit => !inputValue || fruit.value.includes(inputValue)
+              )
+              .map((fruit, index) => (
+                <ComboboxItem
+                  {...getItemProps({
+                    index,
+                    key: fruit.value,
+                    item: fruit,
+                    label: fruit.label,
+                    // defaultClass: styles.defaultItem,
+                    isHighlighted: highlightedIndex === index,
+                    // highlightedClass:styles.highlighted,
+                    isSelected: selectedItem === fruit
+                    // selectedClass: styles.selected,
+                  })}
+                />
+              ))
+          : null}
+      </ComboboxContainer>
+    </Combobox>
+  }
+</Downshift>
+        `}
+      </Code>
       <Divider large />
       <Preview>
         <Draft />
