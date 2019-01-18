@@ -1,5 +1,5 @@
 import styles from './Sandbox.module.scss';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 
 import Header from './../../docs/Header/Header';
@@ -27,6 +27,13 @@ import Draft from './../../components/Draft/Draft';
 import Banner from './../../components/Banner/Banner';
 import Toast from './../../components/Toast/Toast';
 // import LunaPreview from '../../components/LunaPreview/LunaPreview';
+
+import Siema from 'react-siema';
+
+import Image1 from './blue.jpg';
+import Image2 from './carbon.jpg';
+import Image from '../../components/Image/Image';
+import LoadingBar from '../../components/LoadingBar/LoadingBar';
 
 const DataTab = props => {
   return (
@@ -119,6 +126,31 @@ const Sandbox = ({ className, ...restProps }) => {
   //   let newImages = images.filter(image => image.public_id !== id);
   //   setImages(newImages);
   // };
+
+  // const [carousel, setCarousel] = useState()
+
+  // const carousel = new Siema({
+  //   selector: '.siema',
+  //   duration: 200,
+  //   easing: 'ease-out',
+  //   perPage: 1,
+  //   startIndex: 0,
+  //   draggable: true,
+  //   multipleDrag: true,
+  //   threshold: 20,
+  //   loop: false,
+  //   rtl: false,
+  //   onInit: () => {},
+  //   onChange: () => {},
+  // })
+
+  let carousel;
+  const siemaOptions = {
+    loop: true,
+    duration: 200,
+    perPage: 2,
+    rtl: true
+  };
 
   return (
     <React.Fragment>
@@ -226,6 +258,34 @@ const Sandbox = ({ className, ...restProps }) => {
         <Button small secondary onClick={() => setToast(!toast)}>
           Toggle Toast
         </Button>
+      </Preview>
+      <Divider large />
+      <Preview>
+        <Siema ref={slider => (carousel = slider)} {...siemaOptions}>
+          <div className={styles.slide}>
+            <Image src={Image1} alt="Blue" fit="cover" />
+          </div>
+          <div className={styles.slide}>
+            <Image src={Image2} alt="Carbon" fit="cover" />
+          </div>
+          <div className={styles.slide}>
+            <Image src={Image2} alt="Carbon" fit="cover" />
+          </div>
+          <div className={styles.slide}>
+            <Image src={Image2} alt="Carbon" fit="cover" />
+          </div>
+        </Siema>
+        <Divider small />
+        <Button secondary small onClick={() => carousel.prev()}>
+          {'<<'}
+        </Button>
+        <Button secondary small onClick={() => carousel.next()}>
+          {'>>'}
+        </Button>
+      </Preview>
+      <Divider large />
+      <Preview>
+        <LoadingBar />
       </Preview>
       <Divider large />
     </React.Fragment>
