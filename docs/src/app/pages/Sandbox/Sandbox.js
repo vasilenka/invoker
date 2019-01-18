@@ -1,5 +1,5 @@
 import styles from './Sandbox.module.scss';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
 
 import Header from './../../docs/Header/Header';
@@ -8,10 +8,9 @@ import Preview from './../../docs/Preview/Preview';
 import Divider from './../../docs/Divider/Divider';
 
 import Text from './../../components/Text/Text';
-// import Combobox from './../../components/Combobox/Combobox'
-// import SinglePreview from './../../components/SinglePreview/SinglePreview';
+import SinglePreview from './../../components/SinglePreview/SinglePreview';
 
-// import Luna from '../../components/Luna/Luna';
+import Luna from '../../components/Luna/Luna';
 import Button from './../../components/Button/Button';
 
 import Tabs from './../../components/Tabs/Tabs';
@@ -21,22 +20,13 @@ import TabList from './../../components/TabList/TabList';
 import Tab from './../../components/Tab/Tab';
 import Card from './../../components/Card/Card';
 
-import Code from '../../docs/Code/Code';
-
-// import Bouncer from './../../components/Bouncer/Bouncer';
-import Spinner from './../../components/Spinner/Spinner';
+// import Spinner from './../../components/Spinner/Spinner';
 
 import Draft from './../../components/Draft/Draft';
 
 import Banner from './../../components/Banner/Banner';
 import Toast from './../../components/Toast/Toast';
-import Downshift from 'downshift';
-import FieldLabel from '../../components/FieldLabel/FieldLabel';
-import LunaPreview from '../../components/LunaPreview/LunaPreview';
-import Combobox from '../../components/Combobox/Combobox';
-import ComboboxInput from '../../components/ComboboxInput/ComboboxInput';
-import ComboboxItem from '../../components/ComboboxItem/ComboboxItem';
-import ComboboxContainer from '../../components/ComboboxContainer/ComboboxContainer';
+// import LunaPreview from '../../components/LunaPreview/LunaPreview';
 
 const DataTab = props => {
   return (
@@ -80,97 +70,55 @@ const DataTab = props => {
   );
 };
 
-const fruits = [
-  {
-    label: (
-      <Text heading4>
-        Apple{' '}
-        <span role="img" aria-label="apple emoji" style={{ color: 'red' }}>
-          🍎
-        </span>
-      </Text>
-    ),
-    value: 'apple'
-  },
-  {
-    label: (
-      <Text heading3>
-        Pear{' '}
-        <span role="img" aria-label="pear emoji" style={{ color: 'red' }}>
-          🍐
-        </span>
-      </Text>
-    ),
-    value: 'pear'
-  },
-  {
-    label: 'Orange 🍊',
-    value: 'orange'
-  },
-  {
-    label: 'Grape 🍇',
-    value: 'grape'
-  },
-  {
-    label: 'Banana 🍌',
-    value: 'banana'
-  }
-];
-
 const Sandbox = ({ className, ...restProps }) => {
   let [banner, setBanner] = useState(false);
   let [toast, setToast] = useState(false);
-  let [selectedCombo, setSelectedCombo] = useState('');
-  let [uploading, setUploading] = useState(false);
-  let [images, setImages] = useState([]);
+  // let [uploading, setUploading] = useState(false)
+  // let [images, setImages] = useState([])
 
-  const handleSelection = selection => {
-    setSelectedCombo(selection);
-  };
+  // const onChange = e => {
+  //   e.preventDefault()
 
-  const onChange = e => {
-    e.preventDefault();
+  //   const files = Array.from(e.target.files)
+  //   setUploading(true)
 
-    const files = Array.from(e.target.files);
-    setUploading(true);
+  //   files.forEach((file, i) => {
+  //     const formData = new FormData()
+  //     formData.append(i, file)
+  //     fetch('http://localhost:5000/image-upload', {
+  //       method: 'POST',
+  //       body: formData
+  //     })
+  //       .then(res => res.json())
+  //       .then(image => {
+  //         setImages(prevImage => [...prevImage.concat(image)]);
+  //         setUploading(false);
+  //       });
+  //   });
+  // };
 
-    files.forEach((file, i) => {
-      const formData = new FormData();
-      formData.append(i, file);
-      fetch('http://localhost:5000/image-upload', {
-        method: 'POST',
-        body: formData
-      })
-        .then(res => res.json())
-        .then(image => {
-          setImages(prevImage => [...prevImage.concat(image)]);
-          setUploading(false);
-        });
-    });
-  };
+  // useEffect(
+  //   () => {
+  //     console.log('Selected: ', images);
+  //   },
+  //   [images]
+  // );
 
-  useEffect(
-    () => {
-      console.log('Selected: ', selectedCombo);
-    },
-    [selectedCombo, images]
-  );
+  // const content = () => {
+  //   switch (true) {
+  //     case uploading:
+  //       return <Spinner small/>;
+  //     case images.length > 0:
+  //       return <LunaPreview images={images} removeImage={removeImage} />;
+  //     default:
+  //       return null;
+  //   }
+  // };
 
-  const content = () => {
-    switch (true) {
-      case uploading:
-        return <Spinner />;
-      case images.length > 0:
-        return <LunaPreview images={images} removeImage={removeImage} />;
-      default:
-        return null;
-    }
-  };
-
-  const removeImage = id => {
-    let newImages = images.filter(image => image.public_id !== id);
-    setImages(newImages);
-  };
+  // const removeImage = id => {
+  //   let newImages = images.filter(image => image.public_id !== id);
+  //   setImages(newImages);
+  // };
 
   return (
     <React.Fragment>
@@ -201,7 +149,7 @@ const Sandbox = ({ className, ...restProps }) => {
       <Divider large />
       <Subheader title="Image Uploader" />
       <Preview>
-        {/* <Luna multiple>
+        <Luna multiple>
           {state => {
             return (
               <React.Fragment>
@@ -235,136 +183,16 @@ const Sandbox = ({ className, ...restProps }) => {
               </React.Fragment>
             );
           }}
-        </Luna> */}
-        {content()}
-        <Divider medium />
+        </Luna>
+        {/* {content()} */}
+        {/* <Divider medium />
         <div>
           <label htmlFor="multi">
             <Text heading5>Upload file</Text>
           </label>
-          <input type="file" id="multi" onChange={onChange} multiple />
-        </div>
+          <input className={styles.imageInput} type="file" id="multi" onChange={onChange} multiple />
+        </div> */}
       </Preview>
-      <Divider large />
-      <Subheader title="Combobox" />
-      <Preview>
-        <Downshift
-          initialInputValue={fruits[0].value}
-          onChange={selection => handleSelection(selection)}
-          itemToString={item => (item ? item.value : '')}
-        >
-          {({
-            getRootProps,
-            getInputProps,
-            getItemProps,
-            getLabelProps,
-            getMenuProps,
-            isOpen,
-            inputValue,
-            highlightedIndex,
-            selectedItem
-          }) => (
-            <Combobox {...getRootProps({ refKey: 'innerRef' })}>
-              <FieldLabel
-                {...getLabelProps({
-                  id: 'somethingawesome',
-                  label: 'Dork souls',
-                  secondaryLabel: '(git gud)'
-                })}
-              />
-              <ComboboxInput
-                {...getInputProps({
-                  id: 'somethingawesome',
-                  placeholder: 'Dork souls 3, git gud!'
-                })}
-              />
-              <ComboboxContainer {...getMenuProps({ refKey: 'innerRef' })}>
-                {isOpen
-                  ? fruits
-                      .filter(
-                        fruit => !inputValue || fruit.value.includes(inputValue)
-                      )
-                      .map((fruit, index) => (
-                        <ComboboxItem
-                          {...getItemProps({
-                            index,
-                            key: fruit.value,
-                            item: fruit,
-                            label: fruit.label,
-                            // defaultClass: styles.defaultItem,
-                            isHighlighted: highlightedIndex === index,
-                            // highlightedClass:styles.highlighted,
-                            isSelected: selectedItem === fruit
-                            // selectedClass: styles.selected,
-                          })}
-                        />
-                      ))
-                  : null}
-              </ComboboxContainer>
-            </Combobox>
-          )}
-        </Downshift>
-      </Preview>
-      <Code>
-        {`
-<Downshift
-  initialInputValue={fruits[0].value}
-  onChange={selection => handleSelection(selection)}
-  itemToString={item => (item ? item.value : '')}
->
-  {({
-    getRootProps,
-    getInputProps,
-    getItemProps,
-    getLabelProps,
-    getMenuProps,
-    isOpen,
-    inputValue,
-    highlightedIndex,
-    selectedItem
-  }) =>
-    <Combobox {...getRootProps({refKey: 'innerRef'})}>
-      <FieldLabel
-        {...getLabelProps({
-          id: 'somethingawesome',
-          label: 'Dork souls',
-          secondaryLabel: '(git gud)'
-        })}
-      />
-      <ComboboxInput
-        {...getInputProps({
-          id: 'somethingawesome',
-          placeholder: 'Dork souls 3, git gud!'
-        })}
-      />
-      <ComboboxContainer {...getMenuProps({refKey: 'innerRef'})}>
-        {isOpen
-          ? fruits
-              .filter(
-                fruit => !inputValue || fruit.value.includes(inputValue)
-              )
-              .map((fruit, index) => (
-                <ComboboxItem
-                  {...getItemProps({
-                    index,
-                    key: fruit.value,
-                    item: fruit,
-                    label: fruit.label,
-                    // defaultClass: styles.defaultItem,
-                    isHighlighted: highlightedIndex === index,
-                    // highlightedClass:styles.highlighted,
-                    isSelected: selectedItem === fruit
-                    // selectedClass: styles.selected,
-                  })}
-                />
-              ))
-          : null}
-      </ComboboxContainer>
-    </Combobox>
-  }
-</Downshift>
-        `}
-      </Code>
       <Divider large />
       <Preview>
         <Draft />

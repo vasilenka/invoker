@@ -22,6 +22,7 @@ import RadioInputPage from './pages/RadioInputPage/RadioInputPage';
 import CheckboxPage from './pages/CheckboxPage/CheckboxPage';
 import DropdownPage from './pages/DropdownPage/DropdownPage';
 import PreloaderPage from './pages/PreloaderPage/PreloaderPage';
+import ComboboxPage from './pages/ComboboxPage/ComboboxPage';
 
 class App extends Component {
   constructor(props) {
@@ -53,13 +54,14 @@ class App extends Component {
                 <Route exact path="/text" component={TextPage} />
                 <Route exact path="/textfield" component={TextfieldPage} />
                 <Route exact path="/sandbox" component={SandboxPage} />
-                <Route exact path="/mask" component={MaskPage} />
                 <Route exact path="/field-label" component={FieldLabelPage} />
                 <Route exact path="/field-input" component={FieldInputPage} />
                 <Route exact path="/field-hint" component={FieldHintPage} />
                 <Route exact path="/radio-list" component={RadioInputPage} />
                 <Route exact path="/checkbox" component={CheckboxPage} />
                 <Route exact path="/dropdown" component={DropdownPage} />
+                <Route exact path="/combobox" component={ComboboxPage} />
+                <Route exact path="/mask" component={MaskPage} />
                 <Route exact path="/preloader" component={PreloaderPage} />
               </MainContent>
             </Container>
@@ -112,6 +114,12 @@ class App extends Component {
                   Dropdown
                 </Text>
               </Link>
+              <Link to="/combobox">
+                <Text className={styles.link} link>
+                  Combobox
+                </Text>
+              </Link>
+
               <Text heading6 component="h4" style={{ paddingTop: '24px' }}>
                 UTILS
               </Text>

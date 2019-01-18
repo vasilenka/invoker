@@ -6,10 +6,8 @@ const ComboboxItem = ({
   isSelected,
   isHighlighted,
   label,
-  index,
   item,
   component,
-  className,
   defaultClass,
   highlightedClass,
   selectedClass,
@@ -25,8 +23,7 @@ const ComboboxItem = ({
         [styles.selected]: !selectedClass && isSelected,
         [defaultClass]: defaultClass,
         [highlightedClass]: isHighlighted && highlightedClass,
-        [selectedClass]: isSelected && selectedClass,
-        [className]: className
+        [selectedClass]: isSelected && selectedClass
       })}
       {...restProps}
     >

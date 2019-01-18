@@ -147,3 +147,11 @@
   color: $light-alpha-100;
   background: $brand-primary-200;
 }
+
+.imageInput {
+  appearance: none;
+  border-radius: 3px;
+  padding: $space-inset-sm;
+  background: $brand-primary-200;
+  color: $light-alpha-100;
+}
