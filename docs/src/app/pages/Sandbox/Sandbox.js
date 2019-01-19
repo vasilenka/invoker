@@ -100,21 +100,29 @@ const Sandbox = ({ className, ...restProps }) => {
     [activeIndex]
   );
 
-  const nextImage = maxIndex => {
+  const nextImage = max => {
     setIsTransitioning(true);
     setTimeout(() => {
-      setActiveIndex(activeIndex + 1);
+      if (activeIndex < max) {
+        setActiveIndex(activeIndex + 1);
+      } else {
+        setActiveIndex(0);
+      }
     }, 250);
     // setAlbums(albums.concat(albums.splice(0, 1)))
   };
 
-  const prevImage = maxIndex => {
+  const prevImage = max => {
     setIsTransitioning(true);
     // let newAlbums = [...albums]
     // newAlbums.unshift(newAlbums.pop())
     // setAlbums(newAlbums)
     setTimeout(() => {
-      setActiveIndex(activeIndex - 1);
+      if (activeIndex > 0) {
+        setActiveIndex(activeIndex - 1);
+      } else {
+        setActiveIndex(max);
+      }
     }, 250);
   };
 
@@ -409,18 +417,29 @@ const Sandbox = ({ className, ...restProps }) => {
                   >
                     <Image fit="cover" src={album.url} alt={album.title} />
                   </div>
-                  <Text heading2 breakWord component="h4">
-                    {album.id}
+                  <Text heading1 truncate component="h4">
+                    {album.id} - {album.title}
                   </Text>
                 </div>
               ))}
           </div>
           {isTransitioning && <div className={styles.imageSlider} />}
         </div>
-        <Button primary small onClick={() => prevImage(19)}>
+        <Button
+          disabled={isTransitioning}
+          style={{ marginRight: '12px' }}
+          primary
+          small
+          onClick={() => prevImage(albums.length - 1)}
+        >
           prev
         </Button>
-        <Button primary small onClick={() => nextImage(19)}>
+        <Button
+          disabled={isTransitioning}
+          primary
+          small
+          onClick={() => nextImage(albums.length - 1)}
+        >
           next
         </Button>
       </Preview>

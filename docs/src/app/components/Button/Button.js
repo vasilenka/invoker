@@ -12,6 +12,7 @@ const Button = ({
   className,
   small,
   large,
+  disabled,
   ...restProps
 }) => {
   return (
@@ -32,6 +33,7 @@ const Button = ({
 
         [className]: className
       })}
+      disabled={disabled}
     >
       {children}
     </button>
