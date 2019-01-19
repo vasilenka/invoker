@@ -86,6 +86,8 @@ const Sandbox = ({ className, ...restProps }) => {
   let [albums, setAlbums] = useState();
   let [activeIndex, setActiveIndex] = useState(0);
   let [isTransitioning, setIsTransitioning] = useState(false);
+  let [fromLeft, setFromLeft] = useState(false);
+  let [fromRight, setFromRight] = useState(false);
 
   useEffect(() => {
     setAlbums(kda);
@@ -95,12 +97,15 @@ const Sandbox = ({ className, ...restProps }) => {
     () => {
       setTimeout(() => {
         setIsTransitioning(false);
+        setFromLeft(false);
+        setFromRight(false);
       }, 800);
     },
     [activeIndex]
   );
 
   const nextImage = max => {
+    setFromRight(true);
     setIsTransitioning(true);
     setTimeout(() => {
       if (activeIndex < max) {
@@ -113,6 +118,7 @@ const Sandbox = ({ className, ...restProps }) => {
   };
 
   const prevImage = max => {
+    setFromLeft(true);
     setIsTransitioning(true);
     // let newAlbums = [...albums]
     // newAlbums.unshift(newAlbums.pop())
@@ -403,7 +409,15 @@ const Sandbox = ({ className, ...restProps }) => {
                 </div>
               ))}
           </div>
-          {isTransitioning && <div className={styles.imageSlider} />}
+          {isTransitioning && (
+            <div
+              className={classnames({
+                [styles.imageSlider]: true,
+                [styles.fromRight]: fromRight,
+                [styles.fromLeft]: fromLeft
+              })}
+            />
+          )}
         </div>
         <Divider medium />
         <Button

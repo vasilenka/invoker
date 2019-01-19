@@ -169,8 +169,16 @@
   right: 0;
   bottom: 0;
   max-height: 320px;
+}
+
+.fromRight {
   transform: translateX(100%);
   animation: translateImage 0.8s linear 1;
+}
+
+.fromLeft {
+  transform: translateX(-100%);
+  animation: translateImageReverse 0.8s linear 1;
 }
 
 @keyframes translateImage {
@@ -185,6 +193,21 @@
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes translateImageReverse {
+  0% {
+    transform: translateX(-100%);
+  }
+  30% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
 
