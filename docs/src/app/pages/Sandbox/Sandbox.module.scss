@@ -163,12 +163,12 @@
 
 .imageSlider {
   position: absolute;
-  background: $brand-secondary-100;
+  background: $brand-primary-100;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  max-height: 216px;
+  max-height: 320px;
   transform: translateX(100%);
   animation: translateImage 0.8s linear 1;
 }
@@ -176,21 +176,15 @@
 @keyframes translateImage {
   0% {
     transform: translateX(100%);
-    opacity: 1;
   }
   30% {
     transform: translateX(0%);
   }
-
-  60% {
+  50% {
     transform: translateX(0%);
-  }
-  99% {
-    opacity: 1;
   }
   100% {
     transform: translateX(-100%);
-    opacity: 0;
   }
 }
 

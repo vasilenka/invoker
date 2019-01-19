@@ -35,6 +35,9 @@ import Image2 from './carbon.jpg';
 import Image from '../../components/Image/Image';
 import LoadingBar from '../../components/LoadingBar/LoadingBar';
 
+import kda from './data';
+import abstract from './abstract';
+
 const DataTab = props => {
   return (
     <Tabs className={styles.sideTab}>
@@ -86,9 +89,7 @@ const Sandbox = ({ className, ...restProps }) => {
   let [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/photos')
-      .then(res => res.json())
-      .then(data => setAlbums(data.filter((album, index) => index < 20)));
+    setAlbums(kda);
   }, []);
 
   useEffect(
@@ -385,7 +386,7 @@ const Sandbox = ({ className, ...restProps }) => {
             overflow: 'hidden',
             position: 'relative',
             padding: 0,
-            height: '320px'
+            height: '400px'
           }}
         >
           <div
@@ -411,20 +412,25 @@ const Sandbox = ({ className, ...restProps }) => {
                     className={styles.containerItem}
                     style={{
                       width: '100%',
-                      height: '216px',
+                      height: '320px',
                       marginBottom: '24px'
                     }}
                   >
                     <Image fit="cover" src={album.url} alt={album.title} />
                   </div>
-                  <Text heading1 truncate component="h4">
-                    {album.id} - {album.title}
+                  <Text heading2 truncate>
+                    {album.id}
+                    <span style={{ color: 'rgba(0,0,0,.44)' }}>
+                      /{albums.length}
+                    </span>{' '}
+                    - {album.title}
                   </Text>
                 </div>
               ))}
           </div>
           {isTransitioning && <div className={styles.imageSlider} />}
         </div>
+        <Divider medium />
         <Button
           disabled={isTransitioning}
           style={{ marginRight: '12px' }}
