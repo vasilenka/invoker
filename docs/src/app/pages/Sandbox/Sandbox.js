@@ -308,30 +308,6 @@ const Sandbox = ({ className, ...restProps }) => {
       </Preview>
       <Divider large />
       <Preview>
-        <Siema ref={slider => (carousel = slider)} {...siemaOptions}>
-          <div className={styles.slide}>
-            <Image src={Image1} alt="Blue" fit="cover" />
-          </div>
-          <div className={styles.slide}>
-            <Image src={Image2} alt="Carbon" fit="cover" />
-          </div>
-          <div className={styles.slide}>
-            <Image src={Image2} alt="Carbon" fit="cover" />
-          </div>
-          <div className={styles.slide}>
-            <Image src={Image2} alt="Carbon" fit="cover" />
-          </div>
-        </Siema>
-        <Divider small />
-        <Button secondary small onClick={() => carousel.prev()}>
-          {'<<'}
-        </Button>
-        <Button secondary small onClick={() => carousel.next()}>
-          {'>>'}
-        </Button>
-      </Preview>
-      <Divider large />
-      <Preview>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div
             style={{
