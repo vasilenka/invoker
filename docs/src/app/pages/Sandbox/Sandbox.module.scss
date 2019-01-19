@@ -160,3 +160,40 @@
   width: 320px;
   height: 320px;
 }
+
+.imageSlider {
+  position: absolute;
+  background: $brand-primary-200;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 216px;
+  transform: translateX(100%);
+  animation: translateImage 0.8s linear 1;
+}
+
+@keyframes translateImage {
+  0% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(0%);
+  }
+
+  60% {
+    transform: translateX(0%);
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.containerItem {
+  background: $brand-primary-200;
+}

@@ -80,6 +80,44 @@ const DataTab = props => {
 const Sandbox = ({ className, ...restProps }) => {
   let [banner, setBanner] = useState(false);
   let [toast, setToast] = useState(false);
+
+  let [albums, setAlbums] = useState();
+  let [activeIndex, setActiveIndex] = useState(0);
+  let [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/photos')
+      .then(res => res.json())
+      .then(data => setAlbums(data.filter((album, index) => index < 20)));
+  }, []);
+
+  useEffect(
+    () => {
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 800);
+    },
+    [activeIndex]
+  );
+
+  const nextImage = maxIndex => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setActiveIndex(activeIndex + 1);
+    }, 250);
+    // setAlbums(albums.concat(albums.splice(0, 1)))
+  };
+
+  const prevImage = maxIndex => {
+    setIsTransitioning(true);
+    // let newAlbums = [...albums]
+    // newAlbums.unshift(newAlbums.pop())
+    // setAlbums(newAlbums)
+    setTimeout(() => {
+      setActiveIndex(activeIndex - 1);
+    }, 250);
+  };
+
   // let [uploading, setUploading] = useState(false)
   // let [images, setImages] = useState([])
 
@@ -285,7 +323,106 @@ const Sandbox = ({ className, ...restProps }) => {
       </Preview>
       <Divider large />
       <Preview>
-        <LoadingBar />
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div
+            style={{
+              padding: '0px 12px',
+              width: '120px',
+              height: '2px',
+              maxWidth: '120px',
+              marginBottom: '12px'
+            }}
+          >
+            <LoadingBar />
+          </div>
+          <div
+            style={{
+              padding: '0px 12px',
+              width: '120px',
+              height: '2px',
+              maxWidth: '120px',
+              marginBottom: '12px'
+            }}
+          >
+            <LoadingBar />
+          </div>
+          <div
+            style={{
+              padding: '0px 12px',
+              width: '120px',
+              height: '2px',
+              maxWidth: '120px',
+              marginBottom: '12px'
+            }}
+          >
+            <LoadingBar />
+          </div>
+          <div
+            style={{
+              padding: '0px 12px',
+              width: '120px',
+              height: '2px',
+              maxWidth: '120px',
+              marginBottom: '12px'
+            }}
+          >
+            <LoadingBar />
+          </div>
+        </div>
+      </Preview>
+      <Divider large />
+      <Preview>
+        <div
+          style={{
+            overflow: 'hidden',
+            position: 'relative',
+            padding: 0,
+            height: '320px'
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              width: '100%',
+              position: 'absolute',
+              transform: `translateX(-${activeIndex * 100}%)`
+            }}
+          >
+            {albums &&
+              albums.map(album => (
+                <div
+                  key={album.id}
+                  style={{
+                    flex: 1,
+                    listStyle: 'none',
+                    width: '100%',
+                    minWidth: '100%'
+                  }}
+                >
+                  <div
+                    className={styles.containerItem}
+                    style={{
+                      width: '100%',
+                      height: '216px',
+                      marginBottom: '24px'
+                    }}
+                  >
+                    <Image fit="cover" src={album.url} alt={album.title} />
+                  </div>
+                  <Text heading2 breakWord component="h4">
+                    {album.id}
+                  </Text>
+                </div>
+              ))}
+          </div>
+          {isTransitioning && <div className={styles.imageSlider} />}
+        </div>
+        <Button primary small onClick={() => prevImage(19)}>
+          prev
+        </Button>
+        <Button primary small onClick={() => nextImage(19)}>
+          next
+        </Button>
       </Preview>
       <Divider large />
     </React.Fragment>
