@@ -20,13 +20,13 @@ import TabList from './../../components/TabList/TabList';
 import Tab from './../../components/Tab/Tab';
 import Card from './../../components/Card/Card';
 
-// import Spinner from './../../components/Spinner/Spinner';
+// import Spinner from './../../components/Spinner/Spinner'
 
 import Draft from './../../components/Draft/Draft';
 
 import Banner from './../../components/Banner/Banner';
 import Toast from './../../components/Toast/Toast';
-// import LunaPreview from '../../components/LunaPreview/LunaPreview';
+// import LunaPreview from '../../components/LunaPreview/LunaPreview'
 
 import Siema from 'react-siema';
 
@@ -36,7 +36,6 @@ import Image from '../../components/Image/Image';
 import LoadingBar from '../../components/LoadingBar/LoadingBar';
 
 import kda from './data';
-import abstract from './abstract';
 
 const DataTab = props => {
   return (
