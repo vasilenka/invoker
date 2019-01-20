@@ -34,6 +34,7 @@ const Button = ({
         [className]: className
       })}
       disabled={disabled}
+      {...restProps}
     >
       {children}
     </button>

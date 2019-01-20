@@ -32,6 +32,7 @@ import Image from '../../components/Image/Image';
 import LoadingBar from '../../components/LoadingBar/LoadingBar';
 
 import kda from './data';
+import Overlapping from '../../components/Overlapping/Overlapping';
 
 const DataTab = props => {
   return (
@@ -128,73 +129,91 @@ const Sandbox = ({ className, ...restProps }) => {
     // setAlbums(newAlbums)
   };
 
-  // let [uploading, setUploading] = useState(false)
-  // let [images, setImages] = useState([])
-
-  // const onChange = e => {
-  //   e.preventDefault()
-
-  //   const files = Array.from(e.target.files)
-  //   setUploading(true)
-
-  //   files.forEach((file, i) => {
-  //     const formData = new FormData()
-  //     formData.append(i, file)
-  //     fetch('http://localhost:5000/image-upload', {
-  //       method: 'POST',
-  //       body: formData
-  //     })
-  //       .then(res => res.json())
-  //       .then(image => {
-  //         setImages(prevImage => [...prevImage.concat(image)]);
-  //         setUploading(false);
-  //       });
-  //   });
-  // };
-
-  // useEffect(
-  //   () => {
-  //     console.log('Selected: ', images);
-  //   },
-  //   [images]
-  // );
-
-  // const content = () => {
-  //   switch (true) {
-  //     case uploading:
-  //       return <Spinner small/>;
-  //     case images.length > 0:
-  //       return <LunaPreview images={images} removeImage={removeImage} />;
-  //     default:
-  //       return null;
-  //   }
-  // };
-
-  // const removeImage = id => {
-  //   let newImages = images.filter(image => image.public_id !== id);
-  //   setImages(newImages);
-  // };
-
-  // const [carousel, setCarousel] = useState()
-
-  // const carousel = new Siema({
-  //   selector: '.siema',
-  //   duration: 200,
-  //   easing: 'ease-out',
-  //   perPage: 1,
-  //   startIndex: 0,
-  //   draggable: true,
-  //   multipleDrag: true,
-  //   threshold: 20,
-  //   loop: false,
-  //   rtl: false,
-  //   onInit: () => {},
-  //   onChange: () => {},
-  // })
-
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+      <Preview>
+        <Overlapping data={kda} />
+      </Preview>
+      <Divider large />
+      <Preview>
+        <div
+          style={{
+            overflow: 'hidden',
+            position: 'relative',
+            padding: 0,
+            height: '400px'
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              width: '100%',
+              position: 'absolute',
+              transform: `translateX(-${activeIndex * 100}%)`
+            }}
+          >
+            {albums &&
+              albums.map(album => (
+                <div
+                  key={album.id}
+                  style={{
+                    flex: 1,
+                    listStyle: 'none',
+                    width: '100%',
+                    minWidth: '100%'
+                  }}
+                >
+                  <div
+                    className={styles.containerItem}
+                    style={{
+                      width: '100%',
+                      height: '320px',
+                      marginBottom: '24px'
+                    }}
+                  >
+                    <Image fit="cover" src={album.url} alt={album.title} />
+                  </div>
+                  <Text heading2 truncate>
+                    {album.id}
+                    <span style={{ color: 'rgba(0,0,0,.44)' }}>
+                      /{albums.length}
+                    </span>{' '}
+                    - {album.title}
+                  </Text>
+                </div>
+              ))}
+          </div>
+          {isTransitioning && (
+            <div
+              className={classnames({
+                [styles.imageSlider]: true,
+                [styles.fromRight]: fromRight,
+                [styles.fromLeft]: fromLeft
+              })}
+            />
+          )}
+        </div>
+        <Divider medium />
+        <Button
+          disabled={isTransitioning}
+          style={{ marginRight: '12px' }}
+          primary
+          small
+          onClick={() => prevImage(albums.length - 1)}
+        >
+          prev
+        </Button>
+        <Button
+          disabled={isTransitioning}
+          primary
+          small
+          onClick={() => nextImage(albums.length - 1)}
+        >
+          next
+        </Button>
+      </Preview>
+      <Divider large />
       <Subheader
         title="Tab"
         description="Tabs may be used to group between multiple selections."
@@ -349,86 +368,55 @@ const Sandbox = ({ className, ...restProps }) => {
         </div>
       </Preview>
       <Divider large />
-      <Preview>
-        <div
-          style={{
-            overflow: 'hidden',
-            position: 'relative',
-            padding: 0,
-            height: '400px'
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              width: '100%',
-              position: 'absolute',
-              transform: `translateX(-${activeIndex * 100}%)`
-            }}
-          >
-            {albums &&
-              albums.map(album => (
-                <div
-                  key={album.id}
-                  style={{
-                    flex: 1,
-                    listStyle: 'none',
-                    width: '100%',
-                    minWidth: '100%'
-                  }}
-                >
-                  <div
-                    className={styles.containerItem}
-                    style={{
-                      width: '100%',
-                      height: '320px',
-                      marginBottom: '24px'
-                    }}
-                  >
-                    <Image fit="cover" src={album.url} alt={album.title} />
-                  </div>
-                  <Text heading2 truncate>
-                    {album.id}
-                    <span style={{ color: 'rgba(0,0,0,.44)' }}>
-                      /{albums.length}
-                    </span>{' '}
-                    - {album.title}
-                  </Text>
-                </div>
-              ))}
-          </div>
-          {isTransitioning && (
-            <div
-              className={classnames({
-                [styles.imageSlider]: true,
-                [styles.fromRight]: fromRight,
-                [styles.fromLeft]: fromLeft
-              })}
-            />
-          )}
-        </div>
-        <Divider medium />
-        <Button
-          disabled={isTransitioning}
-          style={{ marginRight: '12px' }}
-          primary
-          small
-          onClick={() => prevImage(albums.length - 1)}
-        >
-          prev
-        </Button>
-        <Button
-          disabled={isTransitioning}
-          primary
-          small
-          onClick={() => nextImage(albums.length - 1)}
-        >
-          next
-        </Button>
-      </Preview>
-      <Divider large />
     </React.Fragment>
   );
 };
 
 export default Sandbox;
+
+// let [uploading, setUploading] = useState(false)
+// let [images, setImages] = useState([])
+
+// const onChange = e => {
+//   e.preventDefault()
+
+//   const files = Array.from(e.target.files)
+//   setUploading(true)
+
+//   files.forEach((file, i) => {
+//     const formData = new FormData()
+//     formData.append(i, file)
+//     fetch('http://localhost:5000/image-upload', {
+//       method: 'POST',
+//       body: formData
+//     })
+//       .then(res => res.json())
+//       .then(image => {
+//         setImages(prevImage => [...prevImage.concat(image)]);
+//         setUploading(false);
+//       });
+//   });
+// };
+
+// useEffect(
+//   () => {
+//     console.log('Selected: ', images);
+//   },
+//   [images]
+// );
+
+// const content = () => {
+//   switch (true) {
+//     case uploading:
+//       return <Spinner small/>;
+//     case images.length > 0:
+//       return <LunaPreview images={images} removeImage={removeImage} />;
+//     default:
+//       return null;
+//   }
+// };
+
+// const removeImage = id => {
+//   let newImages = images.filter(image => image.public_id !== id);
+//   setImages(newImages);
+// };

@@ -1,8 +1,5 @@
 @import '~invoker-tokens/index.scss';
 
-// .root {
-// }
-
 .imageCaption {
   color: $light-alpha-100;
   padding: $space-inset-sm;
@@ -173,19 +170,21 @@
 
 .fromRight {
   transform: translateX(100%);
-  animation: translateImage 0.8s linear 1;
+  animation: translateImage 0.8s 1 cubic-bezier(0.8, 0, 0.2, 1);
 }
+
+// cubic-bezier(.8,0,.2,1)
 
 .fromLeft {
   transform: translateX(-100%);
-  animation: translateImageReverse 0.8s linear 1;
+  animation: translateImageReverse 0.8s 1 cubic-bezier(0.8, 0, 0.2, 1);
 }
 
 @keyframes translateImage {
   0% {
     transform: translateX(100%);
   }
-  30% {
+  40% {
     transform: translateX(0%);
   }
   50% {
@@ -200,7 +199,7 @@
   0% {
     transform: translateX(-100%);
   }
-  30% {
+  40% {
     transform: translateX(0%);
   }
   50% {
@@ -214,3 +213,59 @@
 .containerItem {
   background: $brand-secondary-100;
 }
+
+// .containerClip {
+//   opacity: 0;
+//   clip-path: inset(0 0 0 0);
+//   transition-property: clip-path;
+//   transform: translateX(-10%);
+//   transition-duration: .8s;
+//   transition-timing-function: cubic-bezier(.8,0,.2,1);
+// }
+
+// .activeImage {
+//   opacity: 1;
+// }
+
+// .enter {
+//   transform: translateX(0%);
+//   transition-property: transform;
+//   transition-duration: .8s;
+//   transition-timing-function: cubic-bezier(.8,0,.2,1);
+//   // animation: entering .8s 1 cubic-bezier(.8,0,.2,1);
+// }
+
+// .clipping {
+//   z-index: 99999;
+//   // animation: clipping .8s 1 cubic-bezier(.8,0,.2,1);
+//   clip-path: inset(0 0 0 100%);
+//   transform: translateX(0%);
+//   transition-property: transform, clip-path;
+//   transition-duration: .8s;
+//   transition-timing-function: cubic-bezier(.8,0,.2,1);
+// }
+
+// @keyframes entering {
+//   0% {
+//     transform: translateX(-10%);
+//   }
+
+//   100% {
+//     transform: translateX(0%);
+//   }
+// }
+
+// @keyframes clipping {
+//   0% {
+//     opacity: 1;
+//     // clip-path: inset(0 0 0 0);
+//   }
+
+//   99% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//     // clip-path: inset(0 0 0 100%);
+//   }
+// }
