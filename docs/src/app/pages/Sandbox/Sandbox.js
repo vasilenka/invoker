@@ -136,7 +136,7 @@ const Sandbox = ({ className, ...restProps }) => {
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
       <Preview>
-        <Overlapping data={kda}>
+        <Overlapping data={kda} className={styles.iseng}>
           <CarouselOverlapping style={{ height: '320px' }}>
             {data =>
               data.map((kda, index) => (

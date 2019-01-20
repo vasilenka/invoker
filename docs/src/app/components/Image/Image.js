@@ -74,6 +74,7 @@ class Image extends Component {
         })}
         aria-label={alt}
         role="img"
+        {...restProps}
       >
         {childContent}
       </div>
