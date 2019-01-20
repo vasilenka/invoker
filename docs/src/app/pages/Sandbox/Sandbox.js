@@ -28,10 +28,6 @@ import Banner from './../../components/Banner/Banner';
 import Toast from './../../components/Toast/Toast';
 // import LunaPreview from '../../components/LunaPreview/LunaPreview'
 
-import Siema from 'react-siema';
-
-import Image1 from './blue.jpg';
-import Image2 from './carbon.jpg';
 import Image from '../../components/Image/Image';
 import LoadingBar from '../../components/LoadingBar/LoadingBar';
 
@@ -120,9 +116,6 @@ const Sandbox = ({ className, ...restProps }) => {
   const prevImage = max => {
     setFromLeft(true);
     setIsTransitioning(true);
-    // let newAlbums = [...albums]
-    // newAlbums.unshift(newAlbums.pop())
-    // setAlbums(newAlbums)
     setTimeout(() => {
       if (activeIndex > 0) {
         setActiveIndex(activeIndex - 1);
@@ -130,6 +123,9 @@ const Sandbox = ({ className, ...restProps }) => {
         setActiveIndex(max);
       }
     }, 250);
+    // let newAlbums = [...albums]
+    // newAlbums.unshift(newAlbums.pop())
+    // setAlbums(newAlbums)
   };
 
   // let [uploading, setUploading] = useState(false)
@@ -195,14 +191,6 @@ const Sandbox = ({ className, ...restProps }) => {
   //   onInit: () => {},
   //   onChange: () => {},
   // })
-
-  let carousel;
-  const siemaOptions = {
-    loop: true,
-    duration: 200,
-    perPage: 2,
-    rtl: true
-  };
 
   return (
     <React.Fragment>
