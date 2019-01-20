@@ -1,7 +1,6 @@
 import styles from './Overlapping.module.scss';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
-import Image from '../Image/Image';
 import { OverlappingContext } from './../context/context';
 
 const Overlapping = ({ data, children, className, ...restProps }) => {
@@ -11,6 +10,32 @@ const Overlapping = ({ data, children, className, ...restProps }) => {
   let [fromLeft, setFromLeft] = useState(false);
   let [fromRight, setFromRight] = useState(false);
   let [isTransitioning, setIsTransitioning] = useState(false);
+  let [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(
+    () => {
+      if (isPlaying) {
+        let timeout = setTimeout(() => {
+          setIsTransitioning(true);
+          setFromLeft(true);
+          setClippingIndex(activeIndex);
+          setActiveIndex((activeIndex + 1) % data.length);
+          let secondTiemout = setTimeout(() => {
+            if (activeIndex < data.length - 1) {
+              setTranslateIndex(activeIndex + 1);
+            } else {
+              setTranslateIndex(0);
+            }
+            setFromLeft(false);
+            setIsTransitioning(false);
+          }, 800);
+          return () => clearTimeout(secondTiemout);
+        }, 3000);
+        return () => clearTimeout(timeout);
+      }
+    },
+    [activeIndex, isPlaying]
+  );
 
   const next = max => {
     setIsTransitioning(true);
@@ -63,7 +88,9 @@ const Overlapping = ({ data, children, className, ...restProps }) => {
         fromLeft,
         fromRight,
         clippingIndex,
-        isTransitioning
+        isTransitioning,
+        isPlaying,
+        setIsPlaying
       }}
     >
       <div

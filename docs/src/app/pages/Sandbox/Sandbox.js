@@ -179,6 +179,69 @@ const Sandbox = ({ className, ...restProps }) => {
               </button>
             )}
           </CarouselControl>
+          <CarouselControl>
+            {({ isPlaying, setIsPlaying }) =>
+              isPlaying ? (
+                <div
+                  style={{ padding: '6px 12px', cursor: 'pointer' }}
+                  onClick={() => setIsPlaying(false)}
+                >
+                  Pause
+                </div>
+              ) : (
+                <div
+                  style={{ padding: '6px 12px', cursor: 'pointer' }}
+                  onClick={() => setIsPlaying(true)}
+                >
+                  Play
+                </div>
+              )
+            }
+          </CarouselControl>
+        </Overlapping>
+      </Preview>
+      <Divider large />
+      <Preview>
+        <Overlapping data={kda}>
+          <CarouselOverlapping style={{ height: '344px' }}>
+            {data =>
+              data.map((kda, index) => (
+                <OverlappingItem
+                  style={{ height: '320px' }}
+                  key={kda.id}
+                  index={index}
+                  item={kda}
+                >
+                  <Image fit="cover" src={kda.url} alt={kda.title} />
+                </OverlappingItem>
+              ))
+            }
+          </CarouselOverlapping>
+          <CarouselControl>
+            {({ data, isTransitioning, prev }) => (
+              <Button
+                style={{ marginRight: '12px' }}
+                small
+                primary
+                disabled={isTransitioning}
+                onClick={() => prev(data.length - 1)}
+              >
+                Prev
+              </Button>
+            )}
+          </CarouselControl>
+          <CarouselControl>
+            {({ data, isTransitioning, next }) => (
+              <Button
+                small
+                primary
+                disabled={isTransitioning}
+                onClick={() => next(data.length - 1)}
+              >
+                Next
+              </Button>
+            )}
+          </CarouselControl>
         </Overlapping>
       </Preview>
       <Divider large />
