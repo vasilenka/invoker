@@ -33,6 +33,9 @@ import LoadingBar from '../../components/LoadingBar/LoadingBar';
 
 import kda from './data';
 import Overlapping from '../../components/Overlapping/Overlapping';
+import CarouselControl from '../../components/CarouselControl/CarouselControl';
+import CarouselOverlapping from '../../components/CarouselOverlapping/CarouselOverlapping';
+import OverlappingItem from '../../components/OverlappingItem/OverlappingItem';
 
 const DataTab = props => {
   return (
@@ -133,7 +136,50 @@ const Sandbox = ({ className, ...restProps }) => {
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
       <Preview>
-        <Overlapping data={kda} />
+        <Overlapping data={kda}>
+          <CarouselOverlapping style={{ height: '320px' }}>
+            {data =>
+              data.map((kda, index) => (
+                <OverlappingItem
+                  style={{ height: '320px' }}
+                  key={kda.id}
+                  index={index}
+                  item={kda}
+                >
+                  <Image fit="cover" src={kda.url} alt={kda.title} />
+                </OverlappingItem>
+              ))
+            }
+          </CarouselOverlapping>
+          <CarouselControl>
+            {({ data, isTransitioning, prev }) => (
+              <button
+                type="button"
+                className={styles.controlLeft}
+                disabled={isTransitioning}
+                small
+                primary
+                onClick={() => prev(data.length - 1)}
+              >
+                Prev
+              </button>
+            )}
+          </CarouselControl>
+          <CarouselControl>
+            {({ data, isTransitioning, next }) => (
+              <button
+                type="button"
+                className={styles.controlRight}
+                disabled={isTransitioning}
+                small
+                primary
+                onClick={() => next(data.length - 1)}
+              >
+                Next
+              </button>
+            )}
+          </CarouselControl>
+        </Overlapping>
       </Preview>
       <Divider large />
       <Preview>

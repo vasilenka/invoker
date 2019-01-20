@@ -269,3 +269,40 @@
 //     // clip-path: inset(0 0 0 100%);
 //   }
 // }
+
+.CarouselControl {
+  outline: none;
+  border: none;
+  position: absolute;
+  top: calc(50% - 16px);
+  width: 64px;
+  height: 32px;
+  background: $brand-primary-40;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: all 0.28s;
+  color: $light-alpha-70;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &:hover {
+    background: $brand-primary-200;
+    color: $light-alpha-100;
+    transition: all 0.28s;
+  }
+}
+
+.controlLeft {
+  composes: CarouselControl;
+  left: 0;
+}
+
+.controlRight {
+  composes: CarouselControl;
+  right: 0;
+}
