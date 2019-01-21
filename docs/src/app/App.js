@@ -23,6 +23,7 @@ import CheckboxPage from './pages/CheckboxPage/CheckboxPage';
 import DropdownPage from './pages/DropdownPage/DropdownPage';
 import PreloaderPage from './pages/PreloaderPage/PreloaderPage';
 import ComboboxPage from './pages/ComboboxPage/ComboboxPage';
+import AirtablePage from './pages/AirtablePage/AirtablePage';
 
 class App extends Component {
   constructor(props) {
@@ -51,9 +52,10 @@ class App extends Component {
           <React.Fragment>
             <Container fixLeft fixRight className={styles.mainContainer}>
               <MainContent>
+                <Route exact path="/sandbox" component={SandboxPage} />
+                <Route exact path="/airtable" component={AirtablePage} />
                 <Route exact path="/text" component={TextPage} />
                 <Route exact path="/textfield" component={TextfieldPage} />
-                <Route exact path="/sandbox" component={SandboxPage} />
                 <Route exact path="/field-label" component={FieldLabelPage} />
                 <Route exact path="/field-input" component={FieldInputPage} />
                 <Route exact path="/field-hint" component={FieldHintPage} />
@@ -69,6 +71,11 @@ class App extends Component {
               <Link to="/sandbox">
                 <Text className={styles.link} link>
                   Sandbox
+                </Text>
+              </Link>
+              <Link to="/airtable">
+                <Text className={styles.link} link>
+                  Airtable
                 </Text>
               </Link>
               <Text heading6 component="h4" style={{ paddingTop: '24px' }}>

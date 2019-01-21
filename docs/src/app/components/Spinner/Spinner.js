@@ -2,7 +2,7 @@ import styles from './Spinner.module.scss';
 import React from 'react';
 import classnames from 'classnames';
 
-const Spinner2 = ({ small, medium, className, ...restProps }) => {
+const Spinner = ({ small, medium, className, ...restProps }) => {
   return (
     <div
       className={classnames({ [styles.root]: true, [className]: className })}
@@ -19,4 +19,4 @@ const Spinner2 = ({ small, medium, className, ...restProps }) => {
   );
 };
 
-export default Spinner2;
+export default Spinner;

@@ -1,4 +1,13 @@
 @import 'invoker-tokens/index.scss';
 
 .root {
+  composes: container-bleed from global;
+}
+
+.row {
+  composes: row from global;
+}
+
+.post {
+  composes: col-sm-6 col-md-4 from global;
 }
