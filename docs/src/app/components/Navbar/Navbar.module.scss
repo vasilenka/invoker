@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: $space-vertical-m;
+  padding: $space-vertical-sm;
   composes: container-bleed from global;
   z-index: 99999;
 }
@@ -21,6 +21,7 @@
 .brand {
   display: inline-flex;
   align-items: center;
+  min-height: 36px;
   justify-content: flex-start;
   margin: $space-horizontal-ml;
 }

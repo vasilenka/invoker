@@ -1,6 +1,6 @@
-import styles from './CarouselControl.module.scss';
+// import styles from './CarouselControl.module.scss';
 import React, { useContext } from 'react';
-import cx from 'classnames';
+// import cx from 'classnames';
 import { OverlappingContext } from './../context/context';
 
 const CarouselNext = ({ children, ...restProps }) => {

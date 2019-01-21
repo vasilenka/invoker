@@ -37,6 +37,8 @@ import CarouselControl from '../../components/CarouselControl/CarouselControl';
 import CarouselOverlapping from '../../components/CarouselOverlapping/CarouselOverlapping';
 import OverlappingItem from '../../components/OverlappingItem/OverlappingItem';
 
+import Lab from '../../components/Lab/Lab';
+
 const DataTab = props => {
   return (
     <Tabs className={styles.sideTab}>
@@ -135,6 +137,7 @@ const Sandbox = ({ className, ...restProps }) => {
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+      <Lab />
       <Preview>
         <Overlapping data={kda} className={styles.iseng}>
           <CarouselOverlapping style={{ height: '320px' }}>
@@ -157,8 +160,6 @@ const Sandbox = ({ className, ...restProps }) => {
                 type="button"
                 className={styles.controlLeft}
                 disabled={isTransitioning}
-                small
-                primary
                 onClick={() => prev(data.length - 1)}
               >
                 Prev
@@ -171,8 +172,6 @@ const Sandbox = ({ className, ...restProps }) => {
                 type="button"
                 className={styles.controlRight}
                 disabled={isTransitioning}
-                small
-                primary
                 onClick={() => next(data.length - 1)}
               >
                 Next
