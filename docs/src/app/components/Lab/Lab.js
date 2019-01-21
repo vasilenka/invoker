@@ -18,15 +18,7 @@ class Lab extends Component {
                   style={{ marginBottom: '48px' }}
                   className={styles.post}
                 >
-                  <div
-                    style={{
-                      width: '100%',
-                      height: '280px',
-                      marginBottom: '16px',
-                      overflow: 'hidden',
-                      borderRadius: '8px'
-                    }}
-                  >
+                  <div className={styles.imageContainer}>
                     <Image src={post.fields.cover_url} fit="cover" />
                   </div>
                   <Text
