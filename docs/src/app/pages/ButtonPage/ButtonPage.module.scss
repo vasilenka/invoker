@@ -1,0 +1,9 @@
+@import 'invoker-tokens/index.scss';
+
+.root {
+}
+
+.button:not(:last-child) {
+  margin: $space-inline-sm;
+  margin-bottom: 12px;
+}

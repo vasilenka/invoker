@@ -1,14 +1,18 @@
 import styles from './Button.module.scss';
 import React from 'react';
 import classnames from 'classnames';
+import { bool, node, object, string, oneOf, oneOfType } from 'prop-types';
 
 const Button = ({
+  type,
   children,
   primary,
   onClick,
   secondary,
   secondaryAlt,
   primaryBold,
+  primaryAlt,
+  primaryAltBold,
   className,
   small,
   large,
@@ -17,7 +21,7 @@ const Button = ({
 }) => {
   return (
     <button
-      type="button"
+      type={type || 'button'}
       onClick={onClick}
       className={classnames({
         [styles.secondary]: secondary,
@@ -26,10 +30,15 @@ const Button = ({
         [styles.primaryMedium]: primary,
         [styles.primaryBold]: primaryBold,
 
-        [styles.small]: !secondaryAlt && small ? true : false,
-        [styles.smallAlt]: secondaryAlt && small ? true : false,
-        [styles.large]: !small && !secondaryAlt ? true : false,
-        [styles.largeAlt]: secondaryAlt && !small ? true : false,
+        [styles.primaryAltMedium]: primaryAlt,
+        [styles.primaryAltBold]: primaryAltBold,
+
+        [styles.small]: !secondaryAlt && small,
+        [styles.smallAlt]: secondaryAlt && small,
+        [styles.large]: !small && !secondaryAlt,
+        [styles.largeAlt]: secondaryAlt && !small,
+
+        [styles.disabled]: disabled,
 
         [className]: className
       })}
@@ -39,6 +48,23 @@ const Button = ({
       {children}
     </button>
   );
+};
+
+Button.displayName = 'Button';
+
+Button.defaultProps = {
+  large: true,
+  disabled: false,
+  type: 'button'
+};
+
+Button.propTypes = {
+  className: oneOfType([string, object]),
+  type: oneOf(['button', 'submit']),
+  disabled: bool,
+  small: bool,
+  large: bool,
+  children: node.isRequired
 };
 
 export default Button;

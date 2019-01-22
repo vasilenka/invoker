@@ -59,6 +59,28 @@
   }
 }
 
+.primaryAlt {
+  composes: root;
+  border-color: $brand-secondary-100;
+  color: $light-alpha-100;
+  background-color: $brand-secondary-100;
+  transition: all 0.4s ease;
+
+  &:hover {
+    border-color: $brand-secondary-200;
+    transition: all 0.24s ease;
+    background-color: $brand-secondary-200;
+  }
+}
+
+.primaryAltMedium {
+  composes: primaryAlt medium;
+}
+
+.primaryAltBold {
+  composes: primaryAlt bold;
+}
+
 .primaryMedium {
   composes: primary medium;
 }
@@ -130,4 +152,10 @@
 .outline_full {
   composes: outline;
   width: 100%;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  user-select: none;
 }

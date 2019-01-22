@@ -24,6 +24,7 @@ import DropdownPage from './pages/DropdownPage/DropdownPage';
 import PreloaderPage from './pages/PreloaderPage/PreloaderPage';
 import ComboboxPage from './pages/ComboboxPage/ComboboxPage';
 import AirtablePage from './pages/AirtablePage/AirtablePage';
+import ButtonPage from './pages/ButtonPage/ButtonPage';
 
 class App extends Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class App extends Component {
                 <Route exact path="/sandbox" component={SandboxPage} />
                 <Route exact path="/airtable" component={AirtablePage} />
                 <Route exact path="/text" component={TextPage} />
+                <Route exact path="/button" component={ButtonPage} />
                 <Route exact path="/textfield" component={TextfieldPage} />
                 <Route exact path="/field-label" component={FieldLabelPage} />
                 <Route exact path="/field-input" component={FieldInputPage} />
@@ -81,14 +83,24 @@ class App extends Component {
               <Text heading6 component="h4" style={{ paddingTop: '24px' }}>
                 PRIMITIVES
               </Text>
-              <Link to="/text">
+              <Link to="/button">
                 <Text className={styles.link} link>
-                  Text
+                  Button
                 </Text>
               </Link>
-              <Link to="/textfield">
+              <Link to="/checkbox">
                 <Text className={styles.link} link>
-                  Textfield
+                  Checkbox
+                </Text>
+              </Link>
+              <Link to="/combobox">
+                <Text className={styles.link} link>
+                  Combobox
+                </Text>
+              </Link>
+              <Link to="/dropdown">
+                <Text className={styles.link} link>
+                  Dropdown
                 </Text>
               </Link>
               <Link to="/field-label">
@@ -106,24 +118,19 @@ class App extends Component {
                   FieldHint
                 </Text>
               </Link>
+              <Link to="/text">
+                <Text className={styles.link} link>
+                  Text
+                </Text>
+              </Link>
+              <Link to="/textfield">
+                <Text className={styles.link} link>
+                  Textfield
+                </Text>
+              </Link>
               <Link to="/radio-list">
                 <Text className={styles.link} link>
                   Radio
-                </Text>
-              </Link>
-              <Link to="/checkbox">
-                <Text className={styles.link} link>
-                  Checkbox
-                </Text>
-              </Link>
-              <Link to="/dropdown">
-                <Text className={styles.link} link>
-                  Dropdown
-                </Text>
-              </Link>
-              <Link to="/combobox">
-                <Text className={styles.link} link>
-                  Combobox
                 </Text>
               </Link>
 
