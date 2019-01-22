@@ -40,14 +40,14 @@ class Draft extends Component {
       let contentState = this.state.editorState.getCurrentContent();
       if (this.state.displayedNote === 'new') {
         let note = { content: convertToRaw(contentState) };
-        console.log(note.content);
+        // console.log(note.content);
         note['content'] = JSON.stringify(note.content);
         if (createNote) {
           createNote(note.content);
         }
       } else {
         let note = { content: convertToRaw(contentState) };
-        console.log(note.content);
+        // console.log(note.content);
         note['content'] = JSON.stringify(note.content);
         if (updateNote) {
           updateNote(this.state.displayedNote, note.content);

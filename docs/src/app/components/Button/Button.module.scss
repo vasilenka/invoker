@@ -57,6 +57,12 @@
     transition: all 0.24s ease;
     background-color: $brand-primary-300;
   }
+
+  &.disabled {
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.6);
+    user-select: none;
+  }
 }
 
 .primaryAlt {
@@ -70,6 +76,12 @@
     border-color: $brand-secondary-200;
     transition: all 0.24s ease;
     background-color: $brand-secondary-200;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.6);
+    user-select: none;
   }
 }
 
@@ -109,6 +121,13 @@
     border-color: $dark-alpha-80;
     transition: all 0.24s ease;
   }
+
+  &.disabled {
+    cursor: not-allowed;
+    color: $dark-alpha-50;
+    border-color: $dark-alpha-30;
+    user-select: none;
+  }
 }
 
 .secondaryAlt {
@@ -124,6 +143,13 @@
     background: $dark-alpha-10;
     border-color: $dark-alpha-80;
     transition: all 0.24s ease;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    color: $dark-alpha-50;
+    border-color: $dark-alpha-30;
+    user-select: none;
   }
 }
 
@@ -152,10 +178,4 @@
 .outline_full {
   composes: outline;
   width: 100%;
-}
-
-.disabled {
-  cursor: not-allowed;
-  opacity: 0.4;
-  user-select: none;
 }
