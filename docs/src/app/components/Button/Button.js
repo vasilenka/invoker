@@ -6,6 +6,8 @@ import { bool, node, object, string, oneOf, oneOfType } from 'prop-types';
 const Button = ({
   type,
   children,
+  icon,
+  stretch,
   primary,
   onClick,
   secondary,
@@ -39,13 +41,17 @@ const Button = ({
         [styles.largeAlt]: secondaryAlt && !small,
 
         [styles.disabled]: disabled,
+        [styles.stretch]: stretch,
 
         [className]: className
       })}
       disabled={disabled}
       {...restProps}
     >
-      {children}
+      <span className={styles.children}>
+        {icon && <span className={styles.icon}>{icon}</span>}
+        {children}
+      </span>
     </button>
   );
 };

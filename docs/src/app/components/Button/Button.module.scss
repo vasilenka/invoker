@@ -9,6 +9,25 @@
   font-family: $font-primary;
 }
 
+.stretch {
+  width: 100%;
+}
+
+.children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin: $space-inline-s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .medium {
   font-weight: $medium;
 }

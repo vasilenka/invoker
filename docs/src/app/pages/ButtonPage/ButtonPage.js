@@ -11,6 +11,8 @@ import Button from './../../components/Button/Button';
 import Table from '../../components/Table/Table';
 import Code from '../../docs/Code/Code';
 
+import { ReactComponent as Google } from './google.svg';
+
 let headProps = ['', 'props', 'type', 'default'];
 let buttonProps = [
   {
@@ -49,6 +51,13 @@ let buttonProps = [
   },
   {
     required: false,
+    name: 'stretch',
+    type: 'boolean',
+    help: '',
+    default: 'false'
+  },
+  {
+    required: false,
     name: 'disabled',
     type: 'boolean',
     help: '',
@@ -66,7 +75,10 @@ let buttonProps = [
 const ButtonPage = ({ className, ...restProps }) => {
   return (
     <React.Fragment>
-      <Header title="Button" description="Bring some action!" />
+      <Header
+        title="Button"
+        description="The Button did not provide any synthetic event out of the box. Pass any synthetic events that you need on your own. Let's bring some action!"
+      />
       <Table
         className={styles.tableProps}
         head={headProps}
@@ -123,8 +135,84 @@ const ButtonPage = ({ className, ...restProps }) => {
       </Preview>
       <Code>
         {`
-<Button className={styles.button} primary>Button Primary</Button>
-<Button className={styles.button} primary small>Button Primary Small</Button>
+<Button primary>Button Primary</Button>
+<Button primary small>Button Primary Small</Button>
+        `}
+      </Code>
+      <Divider large />
+      <Subheader
+        title="with Icon"
+        description="The icon container has dimension of 20px square for all sizes. Always use SVG format when available and import the file as ReactComponent."
+      />
+      <Preview>
+        <Button
+          style={{ marginRight: '12px' }}
+          secondaryAlt
+          icon={<Google style={{ width: '20px', height: '20px' }} />}
+        >
+          Continue with Google
+        </Button>
+        <Button
+          secondaryAlt
+          small
+          icon={<Google style={{ width: '20px', height: '20px' }} />}
+        >
+          Sign-in with Google
+        </Button>
+      </Preview>
+      <Code>
+        {`
+<Button
+  secondaryAlt
+  icon={<Google style={{ width: '20px', height: '20px' }}/>}
+  >
+  Continue with Google
+</Button>
+<Button
+  secondaryAlt
+  small
+  icon={<Google style={{ width: '20px', height: '20px' }}/>}
+  >
+  Sign-in with Google
+</Button>
+        `}
+      </Code>
+      <Divider large />
+      <Subheader
+        title="Stretched"
+        description="The Button is set to inline by default. Add stretch props if you want to stretch the button to fill the container width."
+      />
+      <Preview>
+        <Button style={{ marginBottom: '12px' }} primary stretch>
+          Stretched button good for authentication page
+        </Button>
+        <Button style={{ marginBottom: '12px' }} primaryAlt stretch>
+          or you can use it for modals too
+        </Button>
+        <Button style={{ marginBottom: '12px' }} secondaryAlt stretch>
+          Stretched secondary button
+        </Button>
+      </Preview>
+      <Code>
+        {`
+<Button
+  primary
+  stretch
+  >
+  Stretched button good for authentication page
+</Button>
+<Button
+  primaryAlt
+  stretch
+  >
+  or you can use it for modals too
+</Button>
+<Button
+  secondaryAlt
+  stretch
+  >
+  Stretched secondary button
+</Button>
         `}
       </Code>
       <Divider large />
