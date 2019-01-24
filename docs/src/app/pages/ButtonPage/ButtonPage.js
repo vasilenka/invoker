@@ -74,7 +74,7 @@ let buttonProps = [
 
 const ButtonPage = ({ className, ...restProps }) => {
   return (
-    <React.Fragment>
+    <>
       <Header
         title="Button"
         description="The Button did not provide any synthetic event out of the box. Pass any synthetic events that you need on your own. Let's bring some action!"
@@ -216,7 +216,7 @@ const ButtonPage = ({ className, ...restProps }) => {
         `}
       </Code>
       <Divider large />
-    </React.Fragment>
+    </>
   );
 };
 

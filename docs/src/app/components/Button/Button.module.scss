@@ -78,7 +78,6 @@
   }
 
   &.disabled {
-    cursor: not-allowed;
     color: rgba(255, 255, 255, 0.6);
     user-select: none;
   }
@@ -98,7 +97,6 @@
   }
 
   &.disabled {
-    cursor: not-allowed;
     color: rgba(255, 255, 255, 0.6);
     user-select: none;
   }
@@ -142,7 +140,6 @@
   }
 
   &.disabled {
-    cursor: not-allowed;
     color: $dark-alpha-50;
     border-color: $dark-alpha-30;
     user-select: none;
@@ -165,7 +162,6 @@
   }
 
   &.disabled {
-    cursor: not-allowed;
     color: $dark-alpha-50;
     border-color: $dark-alpha-30;
     user-select: none;

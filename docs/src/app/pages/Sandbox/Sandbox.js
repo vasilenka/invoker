@@ -36,6 +36,16 @@ import Overlapping from '../../components/Overlapping/Overlapping';
 import CarouselControl from '../../components/CarouselControl/CarouselControl';
 import CarouselOverlapping from '../../components/CarouselOverlapping/CarouselOverlapping';
 import OverlappingItem from '../../components/OverlappingItem/OverlappingItem';
+import Slider from '../../components/Slider/Slider';
+
+import img1 from './img/1.jpg';
+import img2 from './img/2.jpg';
+import img3 from './img/3.jpg';
+import img4 from './img/4.jpg';
+import img5 from './img/5.jpg';
+import img6 from './img/6.jpg';
+
+const images = [img1, img2, img3, img4, img5, img6];
 
 const DataTab = props => {
   return (
@@ -135,6 +145,10 @@ const Sandbox = ({ className, ...restProps }) => {
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+      <Preview>
+        <Slider items={images} column="3" />
+      </Preview>
+      <Divider large />
       <Preview>
         <Overlapping data={kda} className={styles.iseng}>
           <CarouselOverlapping style={{ height: '320px' }}>

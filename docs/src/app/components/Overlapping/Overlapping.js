@@ -30,7 +30,7 @@ const Overlapping = ({ data, children, className, ...restProps }) => {
             setIsTransitioning(false);
           }, 800);
           return () => clearTimeout(secondTiemout);
-        }, 3000);
+        }, 1500);
         return () => clearTimeout(timeout);
       }
     },
