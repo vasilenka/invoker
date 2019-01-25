@@ -20,8 +20,6 @@ import TabList from './../../components/TabList/TabList';
 import Tab from './../../components/Tab/Tab';
 import Card from './../../components/Card/Card';
 
-// import Spinner from './../../components/Spinner/Spinner'
-
 import Draft from './../../components/Draft/Draft';
 
 import Banner from './../../components/Banner/Banner';
@@ -44,6 +42,7 @@ import img3 from './img/3.jpg';
 import img4 from './img/4.jpg';
 import img5 from './img/5.jpg';
 import img6 from './img/6.jpg';
+import Tooltips from '../../components/Tooltips/Tooltips';
 
 const images = [img1, img2, img3, img4, img5, img6];
 
@@ -145,6 +144,14 @@ const Sandbox = ({ className, ...restProps }) => {
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+      <Preview>
+        <Tooltips right message="You show me I have reason I still love myself">
+          <Button small primary>
+            Hey, come here!
+          </Button>
+        </Tooltips>
+      </Preview>
+      <Divider large />
       <Preview>
         <Slider items={images} column="3" />
       </Preview>
@@ -492,50 +499,3 @@ const Sandbox = ({ className, ...restProps }) => {
 };
 
 export default Sandbox;
-
-// let [uploading, setUploading] = useState(false)
-// let [images, setImages] = useState([])
-
-// const onChange = e => {
-//   e.preventDefault()
-
-//   const files = Array.from(e.target.files)
-//   setUploading(true)
-
-//   files.forEach((file, i) => {
-//     const formData = new FormData()
-//     formData.append(i, file)
-//     fetch('http://localhost:5000/image-upload', {
-//       method: 'POST',
-//       body: formData
-//     })
-//       .then(res => res.json())
-//       .then(image => {
-//         setImages(prevImage => [...prevImage.concat(image)]);
-//         setUploading(false);
-//       });
-//   });
-// };
-
-// useEffect(
-//   () => {
-//     console.log('Selected: ', images);
-//   },
-//   [images]
-// );
-
-// const content = () => {
-//   switch (true) {
-//     case uploading:
-//       return <Spinner small/>;
-//     case images.length > 0:
-//       return <LunaPreview images={images} removeImage={removeImage} />;
-//     default:
-//       return null;
-//   }
-// };
-
-// const removeImage = id => {
-//   let newImages = images.filter(image => image.public_id !== id);
-//   setImages(newImages);
-// };

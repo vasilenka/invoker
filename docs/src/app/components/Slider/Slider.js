@@ -30,9 +30,8 @@ class Slider extends Component {
 
   nextSlide = () => {
     if (
-      this.state.activeIndex <
-      this.state.items.length - 1
-      // && this.state.activeIndex < this.state.maxIndex
+      this.state.activeIndex < this.state.items.length - 1 &&
+      this.state.activeIndex < this.state.maxIndex
     ) {
       this.setState(
         {
