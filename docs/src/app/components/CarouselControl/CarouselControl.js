@@ -5,7 +5,6 @@ import { OverlappingContext } from './../context/context';
 
 const CarouselNext = ({ children, ...restProps }) => {
   let context = useContext(OverlappingContext);
-
   return <React.Fragment {...restProps}>{children(context)}</React.Fragment>;
 };
 
