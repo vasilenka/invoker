@@ -1,34 +1,15 @@
 @import 'invoker-tokens/index.scss';
 
 .root {
+  composes: container-bleed from global;
   overflow: hidden;
-  width: 100%;
-  position: relative;
-  height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
 }
 
 .wrapper {
-  position: absolute;
-  display: flex;
-  width: 100%;
+  composes: row from global;
+  flex-wrap: nowrap;
 }
 
 .image {
   border-radius: 12px;
 }
-
-.itemContainer {
-  // padding: 12px;
-  margin-right: 12px;
-}
-
-// .itemContainer:first-child {
-//   margin-left: -12px;
-// }
-
-// .itemContainer:last-child {
-//   margin-right: -12px;
-// }

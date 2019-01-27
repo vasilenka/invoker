@@ -40,12 +40,12 @@ const Tooltips = ({
             [styles.tooltipsContainer]: true,
             [styles.top]: !bottom && !left && !right,
             [styles.right]: right,
-            [styles.center]: top || bottom,
-            [styles.middle]: true
+            [styles.middle]: false
           })}
         >
           <div
             className={cx({
+              [styles.center]: top || bottom,
               [styles.tooltips]: true
             })}
           >

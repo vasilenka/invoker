@@ -145,7 +145,7 @@ const Sandbox = ({ className, ...restProps }) => {
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
       <Preview>
-        <Tooltips right message="You show me I have reason I still love myself">
+        <Tooltips top message="BTS - Answer, love myself">
           <Button small primary>
             Hey, come here!
           </Button>

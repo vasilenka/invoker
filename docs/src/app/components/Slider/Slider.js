@@ -58,11 +58,8 @@ class Slider extends Component {
     <div
       ref={this.myRef}
       key={index}
-      className={styles.itemContainer}
+      className={cx(styles.itemContainer, 'col-sm-4')}
       style={{
-        // marginRight: '12px',
-        flex: '1',
-        minWidth: `${100 / this.props.column}%`,
         height: '200px'
       }}
     >
@@ -78,8 +75,7 @@ class Slider extends Component {
   render() {
     let { children, className, ...restProps } = this.props;
     let sliderStyle = {
-      transform: `translateX(-${this.state.activeIndex * this.state.width +
-        this.state.activeIndex * 12}px)`,
+      transform: `translateX(-${this.state.activeIndex * this.state.width}px)`,
       transition: 'all .4s cubic-bezier(0.8, 0, 0.2, 1)'
     };
 
