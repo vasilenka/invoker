@@ -28,7 +28,9 @@ export const sizes = [
   'heading3',
   'heading4',
   'heading5',
-  'heading6'
+  'heading5Alt',
+  'heading6',
+  'heading6Alt'
 ];
 
 const getBooleanSizePropTypes = () => {

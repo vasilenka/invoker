@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 import { SliderContext } from './../context/context';
 import Image from '../Image/Image';
-import Button from '../Button/Button';
+import Text from '../Text/Text';
 
 class Slider extends Component {
   constructor(props) {
@@ -17,7 +17,8 @@ class Slider extends Component {
       column: this.props.column,
       maxIndex: this.props.items.length - this.props.column,
       minIndex: this.props.column - 1,
-      width: 0
+      width: 0,
+      renderImage: this.renderImage
     };
     this.myRef = React.createRef();
   }
@@ -55,52 +56,38 @@ class Slider extends Component {
   };
 
   renderImage = (img, index) => (
-    <div
-      ref={this.myRef}
-      key={index}
-      className={cx(styles.itemContainer, 'col-sm-4')}
-      style={{
-        height: '200px'
-      }}
-    >
-      <Image
-        className={cx(styles.image)}
-        src={img}
-        fit="cover"
-        alt="hello world"
-      />
+    <div ref={this.myRef} key={index} className={cx(styles.column, 'col-sm-6')}>
+      <div
+        style={{
+          height: '200px',
+          marginBottom: '12px'
+        }}
+      >
+        <Image
+          className={cx(styles.image)}
+          src={img}
+          fit="cover"
+          alt="hello world"
+        />
+      </div>
+      <Text heading5Alt component="h2">
+        Campaign Number One on The Planet
+      </Text>
+      <Text small component="p">
+        Catch a wave with World Surf League experiences hosted by pro surfers
+        around the world.
+      </Text>
     </div>
   );
 
   render() {
     let { children, className, ...restProps } = this.props;
-    let sliderStyle = {
-      transform: `translateX(-${this.state.activeIndex * this.state.width}px)`,
-      transition: 'all .4s cubic-bezier(0.8, 0, 0.2, 1)'
-    };
 
     return (
       <SliderContext.Provider value={this.state}>
-        <div
-          className={cx({
-            [styles.root]: true,
-            [className]: className
-          })}
-          {...restProps}
-        >
-          <div style={sliderStyle} className={styles.wrapper}>
-            {this.state.items &&
-              this.state.items.map((item, index) =>
-                this.renderImage(item, index)
-              )}
-          </div>
+        <div className={styles.root} {...restProps}>
+          {children}
         </div>
-        <Button primary small onClick={this.prevSlide}>
-          Prev
-        </Button>
-        <Button primary small onClick={this.nextSlide}>
-          Next
-        </Button>
       </SliderContext.Provider>
     );
   }

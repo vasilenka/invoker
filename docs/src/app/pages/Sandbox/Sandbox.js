@@ -43,8 +43,13 @@ import img4 from './img/4.jpg';
 import img5 from './img/5.jpg';
 import img6 from './img/6.jpg';
 import Tooltips from '../../components/Tooltips/Tooltips';
+import SliderControl from '../../components/SliderControl/SliderControl';
 
-const images = [img1, img2, img3, img4, img5, img6];
+import { ReactComponent as Prev } from './img/prev.svg';
+import { ReactComponent as Next } from './img/next.svg';
+import SliderContainer from '../../components/SliderContainer/SliderContainer';
+
+const images = [img6, img2, img3, img4, img5, img1];
 
 const DataTab = props => {
   return (
@@ -152,10 +157,46 @@ const Sandbox = ({ className, ...restProps }) => {
         </Tooltips>
       </Preview>
       <Divider large />
-      <Preview>
-        <Slider items={images} column="3" />
+
+      <Preview clean>
+        <Slider items={images} column="2">
+          <SliderContainer className={styles.wrapper}>
+            {images &&
+              (({ renderImage }) =>
+                images.map((item, index) => renderImage(item, index)))}
+          </SliderContainer>
+          <SliderControl>
+            {context => (
+              <div
+                className={classnames(
+                  styles.buttonRound,
+                  styles.roundLeft,
+                  styles.buttonLeft
+                )}
+                onClick={context.prevSlide}
+              >
+                <Prev />
+              </div>
+            )}
+          </SliderControl>
+          <SliderControl>
+            {context => (
+              <div
+                className={classnames(
+                  styles.buttonRound,
+                  styles.roundRight,
+                  styles.buttonRight
+                )}
+                onClick={context.nextSlide}
+              >
+                <Next />
+              </div>
+            )}
+          </SliderControl>
+        </Slider>
       </Preview>
       <Divider large />
+
       <Preview>
         <Overlapping data={kda} className={styles.iseng}>
           <CarouselOverlapping style={{ height: '320px' }}>

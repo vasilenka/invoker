@@ -310,3 +310,37 @@
 .iseng {
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
+
+.buttonRound {
+  cursor: pointer;
+  border-radius: 9999px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: $dark-alpha-70;
+  background: $light-alpha-100;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.14);
+  border: 2px solid transparent;
+}
+
+.roundLeft {
+  padding-left: 6px;
+}
+
+.roundRight {
+  padding-left: 9px;
+}
+
+.buttonRight {
+  position: absolute;
+  top: calc(100px - 20px);
+  right: calc(0px - 24px);
+}
+
+.buttonLeft {
+  position: absolute;
+  top: calc(100px - 20px);
+  left: calc(0px - 24px);
+}

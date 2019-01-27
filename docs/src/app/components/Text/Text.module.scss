@@ -62,7 +62,7 @@
   font-size: $heading-4;
   line-height: 26px;
   letter-spacing: -0.8px;
-  font-weight: $medium;
+  font-weight: $bold;
 }
 .heading5 {
   composes: root;
@@ -72,6 +72,14 @@
   letter-spacing: -0.24px;
   font-weight: $medium;
 }
+.heading5Alt {
+  composes: root;
+  color: $dark-alpha-80;
+  font-size: $heading-5;
+  line-height: 22px;
+  letter-spacing: -0.24px;
+  font-weight: $bold;
+}
 .heading6 {
   composes: root;
   color: $dark-alpha-80;
@@ -79,6 +87,14 @@
   line-height: 18px;
   letter-spacing: -0.24px;
   font-weight: $medium;
+}
+.heading6Alt {
+  composes: root;
+  color: $dark-alpha-80;
+  font-size: $heading-6;
+  line-height: 18px;
+  letter-spacing: -0.24px;
+  font-weight: $bold;
 }
 
 // Body Text

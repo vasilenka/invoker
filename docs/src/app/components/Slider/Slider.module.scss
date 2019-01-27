@@ -1,15 +1,19 @@
 @import 'invoker-tokens/index.scss';
 
 .root {
-  composes: container-bleed from global;
-  overflow: hidden;
+  position: relative;
 }
 
 .wrapper {
-  composes: row from global;
-  flex-wrap: nowrap;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.column {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .image {
-  border-radius: 12px;
+  border-radius: 3px;
 }
