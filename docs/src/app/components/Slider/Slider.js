@@ -8,6 +8,7 @@ import Text from '../Text/Text';
 class Slider extends Component {
   constructor(props) {
     super(props);
+    this.colRef = React.createRef();
     this.state = {
       activeIndex: 0,
       items: this.props.items,
@@ -18,15 +19,16 @@ class Slider extends Component {
       maxIndex: this.props.items.length - this.props.column,
       minIndex: this.props.column - 1,
       width: 0,
-      renderImage: this.renderImage
+      ref: this.colRef
     };
-    this.myRef = React.createRef();
   }
 
   componentDidMount = () => {
-    this.setState({ width: this.myRef.current.clientWidth }, () => {
-      console.log(this.state.width);
-    });
+    if (this.state.ref) {
+      this.setState({
+        width: this.state.ref.current.clientWidth
+      });
+    }
   };
 
   nextSlide = () => {
@@ -55,36 +57,11 @@ class Slider extends Component {
     }
   };
 
-  renderImage = (img, index) => (
-    <div ref={this.myRef} key={index} className={cx(styles.column, 'col-sm-6')}>
-      <div
-        style={{
-          height: '200px',
-          marginBottom: '12px'
-        }}
-      >
-        <Image
-          className={cx(styles.image)}
-          src={img}
-          fit="cover"
-          alt="hello world"
-        />
-      </div>
-      <Text heading5Alt component="h2">
-        Campaign Number One on The Planet
-      </Text>
-      <Text small component="p">
-        Catch a wave with World Surf League experiences hosted by pro surfers
-        around the world.
-      </Text>
-    </div>
-  );
-
   render() {
-    let { children, className, ...restProps } = this.props;
+    let { children, className, colRef, ...restProps } = this.props;
 
     return (
-      <SliderContext.Provider value={this.state}>
+      <SliderContext.Provider value={this.state} {...restProps}>
         <div className={styles.root} {...restProps}>
           {children}
         </div>

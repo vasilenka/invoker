@@ -1,5 +1,5 @@
 import styles from './Sandbox.module.scss';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import classnames from 'classnames';
 
 import Header from './../../docs/Header/Header';
@@ -146,6 +146,8 @@ const Sandbox = ({ className, ...restProps }) => {
     // setAlbums(newAlbums)
   };
 
+  let colRef = useRef();
+
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
@@ -162,8 +164,35 @@ const Sandbox = ({ className, ...restProps }) => {
         <Slider items={images} column="2">
           <SliderContainer className={styles.wrapper}>
             {images &&
-              (({ renderImage }) =>
-                images.map((item, index) => renderImage(item, index)))}
+              (({ ref }) =>
+                images.map((img, index) => (
+                  <div
+                    ref={ref}
+                    key={index}
+                    className={classnames(styles.column, 'col-sm-6')}
+                  >
+                    <div
+                      style={{
+                        height: '200px',
+                        marginBottom: '12px'
+                      }}
+                    >
+                      <Image
+                        className={classnames(styles.imageCarousel)}
+                        src={img}
+                        fit="cover"
+                        alt="hello world"
+                      />
+                    </div>
+                    <Text heading5Alt component="h2">
+                      Campaign Number One on The Planet
+                    </Text>
+                    <Text small component="p">
+                      Catch a wave with World Surf League experiences hosted by
+                      pro surfers around the world.
+                    </Text>
+                  </div>
+                )))}
           </SliderContainer>
           <SliderControl>
             {context => (

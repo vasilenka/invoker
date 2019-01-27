@@ -9,8 +9,6 @@ const SliderContainer = ({ children, className, ...restProps }) => {
     transform: `translateX(-${context.activeIndex * context.width}px)`
   };
 
-  useEffect(() => {}, []);
-
   return (
     <div
       className={cx({
