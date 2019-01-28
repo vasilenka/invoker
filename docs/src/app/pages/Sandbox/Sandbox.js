@@ -152,7 +152,16 @@ const Sandbox = ({ className, ...restProps }) => {
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
 
-      <Preview clean>
+      <Preview clean style={{ background: 'rgba(0,0,0,.80)' }}>
+        <Text display3 component="h2" breakWord className={styles.title}>
+          BTS Cypher Pt. 3: Killer
+        </Text>
+        <Text component="p" medium className={styles.body}>
+          Have smoke and carbon monoxide detectors? Great! Check that they’re
+          working and make sure your listing description is up-to-date. Don’t
+          have them? You can get a free detector and read other safety tips on
+          our updated Home Safety page.
+        </Text>
         <Text heading4Alt withCarrot link component="a" target="#">
           Show all (2000+)
         </Text>
