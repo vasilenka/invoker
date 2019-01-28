@@ -1,5 +1,5 @@
 import styles from './Sandbox.module.scss';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 
 import Header from './../../docs/Header/Header';
@@ -48,6 +48,8 @@ import SliderControl from '../../components/SliderControl/SliderControl';
 import { ReactComponent as Prev } from './img/prev.svg';
 import { ReactComponent as Next } from './img/next.svg';
 import SliderContainer from '../../components/SliderContainer/SliderContainer';
+import SliderItem from '../../components/SliderItem/SliderItem';
+import IconButton from '../../components/IconButton/IconButton';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -146,8 +148,6 @@ const Sandbox = ({ className, ...restProps }) => {
     // setAlbums(newAlbums)
   };
 
-  let colRef = useRef();
-
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
@@ -161,65 +161,60 @@ const Sandbox = ({ className, ...restProps }) => {
       <Divider large />
 
       <Preview clean>
-        <Slider items={images} column="2">
+        <Slider items={images} column="3">
           <SliderContainer className={styles.wrapper}>
-            {images &&
-              (({ ref }) =>
-                images.map((img, index) => (
+            {() =>
+              images.map((img, index) => (
+                <SliderItem
+                  key={index}
+                  className={classnames(styles.column, 'col-sm-4')}
+                >
                   <div
-                    ref={ref}
-                    key={index}
-                    className={classnames(styles.column, 'col-sm-6')}
+                    style={{
+                      height: '360px',
+                      marginBottom: '12px'
+                    }}
                   >
-                    <div
-                      style={{
-                        height: '200px',
-                        marginBottom: '12px'
-                      }}
-                    >
-                      <Image
-                        className={classnames(styles.imageCarousel)}
-                        src={img}
-                        fit="cover"
-                        alt="hello world"
-                      />
-                    </div>
-                    <Text heading5Alt component="h2">
-                      Campaign Number One on The Planet
-                    </Text>
-                    <Text small component="p">
-                      Catch a wave with World Surf League experiences hosted by
-                      pro surfers around the world.
-                    </Text>
+                    <Image
+                      className={classnames(styles.imageCarousel)}
+                      src={img}
+                      fit="cover"
+                      alt="hello world"
+                    />
                   </div>
-                )))}
+                  <Text heading4 component="h2">
+                    Campaign Number One on The Planet
+                  </Text>
+                  <Text small component="p">
+                    Catch a wave with World Surf League experiences hosted by
+                    pro surfers around the world.
+                  </Text>
+                </SliderItem>
+              ))
+            }
           </SliderContainer>
           <SliderControl>
             {context => (
-              <div
-                className={classnames(
-                  styles.buttonRound,
-                  styles.roundLeft,
-                  styles.buttonLeft
-                )}
+              <IconButton
+                primaryAlt
+                large
+                className={classnames(styles.roundLeft, styles.buttonLeft)}
                 onClick={context.prevSlide}
               >
                 <Prev />
-              </div>
+              </IconButton>
             )}
           </SliderControl>
           <SliderControl>
             {context => (
-              <div
-                className={classnames(
-                  styles.buttonRound,
-                  styles.roundRight,
-                  styles.buttonRight
-                )}
+              <IconButton
+                secondary
+                large
+                className={classnames(styles.roundRight, styles.buttonRight)}
                 onClick={context.nextSlide}
               >
                 <Next />
-              </div>
+              </IconButton>
             )}
           </SliderControl>
         </Slider>

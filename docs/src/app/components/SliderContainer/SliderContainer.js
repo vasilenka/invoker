@@ -1,5 +1,5 @@
 import styles from './SliderContainer.module.scss';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import cx from 'classnames';
 import { SliderContext } from '../context/context';
 

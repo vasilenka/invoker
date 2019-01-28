@@ -2,8 +2,6 @@ import styles from './Slider.module.scss';
 import React, { Component } from 'react';
 import cx from 'classnames';
 import { SliderContext } from './../context/context';
-import Image from '../Image/Image';
-import Text from '../Text/Text';
 
 class Slider extends Component {
   constructor(props) {
@@ -58,11 +56,17 @@ class Slider extends Component {
   };
 
   render() {
-    let { children, className, colRef, ...restProps } = this.props;
+    let { children, className, ...restProps } = this.props;
 
     return (
       <SliderContext.Provider value={this.state} {...restProps}>
-        <div className={styles.root} {...restProps}>
+        <div
+          className={cx({
+            [styles.root]: true,
+            [className]: className
+          })}
+          {...restProps}
+        >
           {children}
         </div>
       </SliderContext.Provider>
