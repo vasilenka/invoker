@@ -11,9 +11,9 @@ import Divider from '../../docs/Divider/Divider';
 import Table from '../../components/Table/Table';
 
 import Checkbox from '../../components/Checkbox/Checkbox';
-import CheckMark from '../../components/CheckMark/CheckMark';
 import CheckLabel from '../../components/CheckLabel/CheckLabel';
 import Text from '../../components/Text/Text';
+import CheckMark from '../../components/CheckMark/CheckMark';
 
 let headProps = ['', 'name', 'type', 'default'];
 
