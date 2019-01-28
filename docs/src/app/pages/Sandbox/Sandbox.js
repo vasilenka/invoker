@@ -151,6 +151,14 @@ const Sandbox = ({ className, ...restProps }) => {
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+
+      <Preview clean>
+        <Text heading4Alt withCarrot link component="a" target="#">
+          Show all (2000+)
+        </Text>
+      </Preview>
+      <Divider large />
+
       <Preview>
         <Tooltips top message="BTS - Answer, love myself">
           <Button small primary>

@@ -15,6 +15,8 @@ import stylesLight from '../Light/Light.module.scss';
 
 import withTextProps from '../private/withTextProps';
 
+import { ReactComponent as CarrotRight } from './carrot-right.svg';
+
 const Text = ({
   left,
   right,
@@ -37,6 +39,7 @@ const Text = ({
   dark,
   baseline,
   truncate,
+  withCarrot,
   breakWord,
   ...restProps
 }) => {
@@ -73,6 +76,7 @@ const Text = ({
       >
         {children}
       </span>
+      {link && withCarrot && <CarrotRight className={styles.carrot} />}
     </Component>
   );
 };

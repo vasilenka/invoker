@@ -64,6 +64,14 @@
   letter-spacing: -0.8px;
   font-weight: $bold;
 }
+.heading4Alt {
+  composes: root;
+  color: $dark-alpha-80;
+  font-size: $heading-4;
+  line-height: 26px;
+  letter-spacing: -0.8px;
+  font-weight: $medium;
+}
 .heading5 {
   composes: root;
   color: $dark-alpha-80;
@@ -185,7 +193,7 @@
     // background-size: 100% 1.5px;
     // text-shadow: textshadow($light-alpha-100);
     text-decoration: underline;
-    color: $brand-primary-300;
+    // color: $brand-primary-300;
   }
 }
 
@@ -213,4 +221,8 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   line-height: normal;
+}
+
+.carrot {
+  margin-left: $space-s;
 }

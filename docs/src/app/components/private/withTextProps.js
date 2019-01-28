@@ -27,6 +27,7 @@ export const sizes = [
   'heading2',
   'heading3',
   'heading4',
+  'heading4Alt',
   'heading5',
   'heading5Alt',
   'heading6',
