@@ -50,6 +50,7 @@ import { ReactComponent as Next } from './img/next.svg';
 import SliderContainer from '../../components/SliderContainer/SliderContainer';
 import SliderItem from '../../components/SliderItem/SliderItem';
 import IconButton from '../../components/IconButton/IconButton';
+import Badge from '../../components/Badge/Badge';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -154,7 +155,7 @@ const Sandbox = ({ className, ...restProps }) => {
 
       <Preview clean style={{ background: 'rgba(0,0,0,.80)' }}>
         <Text display3 component="h2" breakWord className={styles.title}>
-          BTS Cypher Pt. 3: Killer
+          Cypher Pt. 4: Baepsae
         </Text>
         <Text component="p" medium className={styles.body}>
           Have smoke and carbon monoxide detectors? Great! Check that they’re
@@ -166,10 +167,34 @@ const Sandbox = ({ className, ...restProps }) => {
           Show all (2000+)
         </Text>
       </Preview>
+      <Preview clean>
+        <Card large>
+          <Badge primary large>
+            BETA
+          </Badge>
+          <Text
+            display3
+            component="h2"
+            truncate
+            style={{ marginBottom: '12px' }}
+          >
+            Cypher Pt. 4: Baepsae
+          </Text>
+          <Text component="p" medium>
+            Have smoke and carbon monoxide detectors? Great! Check that they’re
+            working and make sure your listing description is up-to-date. Don’t
+            have them? You can get a free detector and read other safety tips on
+            our updated Home Safety page.
+          </Text>
+          <Text heading4Alt withCarrot link component="a" target="#">
+            Show all (2000+)
+          </Text>
+        </Card>
+      </Preview>
       <Divider large />
 
       <Preview>
-        <Tooltips top message="BTS - Answer, love myself">
+        <Tooltips top message="Have smoke and carbon monoxide detectors?">
           <Button small primary>
             Hey, come here!
           </Button>
@@ -213,7 +238,7 @@ const Sandbox = ({ className, ...restProps }) => {
           <SliderControl>
             {context => (
               <IconButton
-                primaryAlt
+                secondary
                 large
                 className={classnames(styles.roundLeft, styles.buttonLeft)}
                 onClick={context.prevSlide}
@@ -501,7 +526,7 @@ const Sandbox = ({ className, ...restProps }) => {
         {banner && (
           <Banner tone="positive" className={styles.bannerPosition}>
             Whoops! Looks like you are having trouble loading the page.{' '}
-            <Text component="a" link>
+            <Text component="a" link className={styles.lightLink}>
               Reload the page
             </Text>
           </Banner>

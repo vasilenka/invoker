@@ -208,6 +208,16 @@
 
 .carrot {
   margin-left: $space-s;
+  animation: carrotTransform 0.4s 1 cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+@keyframes carrotTransform {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 4px;
+  }
 }
 
 .fancyLink {

@@ -357,3 +357,12 @@
 .body {
   color: $light-alpha-90;
 }
+
+.lightLink {
+  margin-left: $space-xs;
+  color: $dark-alpha-70;
+  font-weight: 600;
+  &:hover {
+    color: $dark-alpha-80;
+  }
+}

@@ -52,6 +52,13 @@ let bodyProps = [
     type: '"truncate" | "breakWord"',
     help: 'Use the value directly as a props in Text component',
     default: '-'
+  },
+  {
+    name: 'withCarrot',
+    type: 'boolean',
+    help:
+      'Add a Carrot component at the end of the Text. The Carrot color will follow the Text color. Best used for link component.',
+    default: 'false'
   }
 ];
 
@@ -112,7 +119,21 @@ const TextPage = ({ className, ...restProps }) => {
         >
           Heading3 as link text
         </Text>
+        <Text
+          // className={classnames(styles.textList, styles.link)}
+          heading4Alt
+          link
+          withCarrot
+          component="h4"
+        >
+          Heading4Alt as link text, with carrot
+        </Text>
       </Preview>
+      <Divider large />
+      <Subheader
+        title="Light Text"
+        description="For now we don't provide built-in styling for light text color. You can add your own style or className to set the color of the text."
+      />
       <Divider large />
       <Subheader
         title="Overflow"
