@@ -135,28 +135,35 @@ $brand-sky-300
 ## Dark Colors
 > Text colors
 
-Semua dark colors sudah diuji dengan background putih `#FFFFFF` serta dan memenuhi standar contrast ratio WCAG AA. Untuk penggunaan dengan background selain warna putih silahkan lakukan pengujian lagi.
+Semua `dark colors` sudah diuji dengan background putih `#FFFFFF` serta dan memenuhi standar contrast ratio WCAG AA. Untuk penggunaan dengan background selain warna putih silahkan lakukan pengujian lagi.
 
 ```SCSS
-$dark-hex-90 // Headings
-$dark-hex-80 // Headings and Body texts in text-heavy page such as blog post
-$dark-hex-70 // Body texts
-$dark-hex-60 // Captions and subtitles
-$dark-hex-50 // Icons
-
-// Alternaive colors using alpha value.
+// Colors using alpha value.
 // Preferable!
 $dark-alpha-90
 $dark-alpha-80
 $dark-alpha-70
 $dark-alpha-60
 $dark-alpha-50
-
 // Lighter dark color -- For Borders and Shadow
+$dark-alpha-40
 $dark-alpha-30
 $dark-alpha-20
 $dark-alpha-10
-$dark-alpha-05
+
+// HEX Value
+// Use this when you are sure about it or when it's necessary, i.e. alpha value not widely supported for developing HTML email
+$dark-hex-90 // Headings
+$dark-hex-80 // Headings and Body texts in text-heavy page such as blog post
+$dark-hex-70 // Body texts
+$dark-hex-60 // Captions and subtitles
+$dark-hex-50 // Icons
+// Lighter dark color -- For Borders and Shadow
+$dark-hex-40
+$dark-hex-30
+$dark-hex-20
+$dark-hex-10
+
 ```
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-90.png "Dark 90 - #0F0F0F")
 ![alt-text](https://raw.githubusercontent.com/vasilenka/invoker/master/src/colors/dark-80.png "Dark 80 - #292929")
@@ -199,8 +206,8 @@ $sys-success-300 // Hover, active, focus and tap
 ## Background
 > Use these colors for background only.
 
-Semua background color sudah diuji dan memenuhi standar contrast **WCAG AA** untuk penggunaan pada warna teks `$dark-50`, `$dark-60`, dan `$dark-70`.
-Untuk penggunaan dengan teks `$dark-40`, dapat mengacu pada contrast ratio pada gambar masing-masing warna.
+Semua background color sudah diuji dan memenuhi standar contrast **WCAG AA** untuk penggunaan pada warna teks `$dark-70`, `$dark-80`, dan `$dark-90`.
+Untuk penggunaan dengan teks `$dark-50`, dapat mengacu pada contrast ratio pada gambar masing-masing warna.
 
 ### Dust
 ```scss
