@@ -26,7 +26,6 @@
 
 .containerMiddle {
   position: absolute;
-  align-items: center;
   top: 50%;
   padding-left: 100%;
 }
@@ -40,34 +39,30 @@
 .tooltipsTop {
   composes: tooltips;
   padding-bottom: 6px;
-  bottom: calc(100% + 2px);
+  bottom: calc(100% + 4px);
 }
 
 .tooltipsRight {
   composes: tooltips;
   padding-left: 6px;
-  left: calc(100% + 2px);
+  left: calc(100% + 4px);
 }
 
 .tooltipsBottom {
   composes: tooltips;
   padding-top: 6px;
-  top: calc(100% + 2px);
+  top: calc(100% + 4px);
 }
 
 .tooltipsLeft {
   composes: tooltips;
   padding-right: 6px;
-  right: calc(100% + 2px);
+  right: calc(100% + 4px);
 }
 
 .tooltipsAlignTop {
   top: 0;
 }
-
-// .tooltipsAlignMiddle {
-//   top: -50%;
-// }
 
 .tooltipsAlignBottom {
   bottom: 0;

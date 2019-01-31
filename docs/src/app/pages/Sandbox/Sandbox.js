@@ -196,9 +196,22 @@ const Sandbox = ({ className, ...restProps }) => {
       <Preview>
         <Tooltips
           right
-          withArrow
           content={
             <>
+              <Text
+                small
+                component="p"
+                style={{ color: '#FFFFFF', marginBottom: 0 }}
+              >
+                Have smoke and carbon monoxide detectors?
+              </Text>
+              <Text
+                small
+                component="p"
+                style={{ color: '#FFFFFF', marginBottom: 0 }}
+              >
+                Have smoke and carbon monoxide detectors?
+              </Text>
               <Text
                 small
                 component="p"
@@ -209,7 +222,7 @@ const Sandbox = ({ className, ...restProps }) => {
             </>
           }
         >
-          <Button small primary>
+          <Button small primary style={{ height: '200px' }}>
             Hey, come here!
           </Button>
         </Tooltips>
