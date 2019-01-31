@@ -5,16 +5,21 @@ import Text from '../Text/Text';
 
 const Tooltips = ({
   children,
-  arrowLeft,
-  arrowCenter,
-  arrowRight,
   content,
   large,
   onHover,
   top,
+  topLeft,
+  topRight,
   bottom,
+  bottomLeft,
+  bottomRight,
   left,
+  leftTop,
+  leftBottom,
   right,
+  rightTop,
+  rightBottom,
   className,
   ...restProps
 }) => {
@@ -38,34 +43,45 @@ const Tooltips = ({
       {...restProps}
     >
       {children}
-      {hover && (
+      {
         <div
           className={cx({
-            [styles.tooltipsContainer]: true,
-            [styles.tooltipsContainerLeft]: arrowLeft,
-            [styles.tooltipsContainerRight]: arrowRight,
-            [styles.tooltipsContainerCenter]: arrowCenter
+            [styles.container]: true,
+            [styles.containerLeft]: topLeft || bottomLeft,
+            [styles.containerRight]: topRight || bottomRight || left,
+            [styles.containerCenter]: top || bottom,
+            [styles.containerMiddle]: left || right
           })}
         >
           <div
             className={cx({
-              [styles.tooltipsTop]: top,
-              [styles.tooltipsBottom]: bottom
+              [styles.tooltipsTop]: top || topLeft || topRight,
+              [styles.tooltipsBottom]: bottom || bottomLeft || bottomRight,
+              [styles.tooltipsLeft]: left || leftTop || leftBottom,
+              [styles.tooltipsRight]: right || rightTop || rightBottom,
+              [styles.tooltipsAlignMiddle]: left || right,
+              [styles.tooltipsAlignTop]: leftTop || rightTop,
+              [styles.tooltipsAlignBottom]: leftBottom || rightBottom
             })}
           >
             <div className={styles.content}>{content}</div>
             <div
               className={cx({
-                [styles.arrowPositionTop]: bottom,
-                [styles.arrowPositionBottom]: top,
-                [styles.arrowAlignLeft]: arrowLeft,
-                [styles.arrowAlignCenter]: arrowCenter,
-                [styles.arrowAlignRight]: arrowRight
+                [styles.arrowPositionTop]: bottom || bottomRight || bottomLeft,
+                [styles.arrowPositionBottom]: top || topLeft || topRight,
+                [styles.arrowPositionLeft]: right || rightTop || rightBottom,
+                [styles.arrowPositionRight]: left || leftTop || leftBottom,
+                [styles.arrowAlignLeft]: topLeft || bottomLeft,
+                [styles.arrowAlignCenter]: top || bottom,
+                [styles.arrowAlignRight]: topRight || bottomRight,
+                [styles.arrowAlignTop]: leftTop || rightTop,
+                [styles.arrowAlignMiddle]: left || right,
+                [styles.arrowAlignBottom]: leftBottom || rightBottom
               })}
             />
           </div>
         </div>
-      )}
+      }
     </div>
   );
 };

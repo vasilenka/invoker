@@ -5,25 +5,34 @@
   width: max-content;
 }
 
-.tooltipsContainer {
-  top: 0;
+.container {
   display: flex;
+}
+
+.containerLeft {
+  justify-content: flex-start;
   align-items: flex-end;
 }
 
-.tooltipsContainerLeft {
-  justify-content: flex-start;
-}
-
-.tooltipsContainerRight {
+.containerRight {
   justify-content: flex-end;
+  align-items: flex-end;
 }
 
-.tooltipsContainerCenter {
+.containerCenter {
   justify-content: center;
+  align-items: center;
+}
+
+.containerMiddle {
+  position: absolute;
+  align-items: center;
+  top: 50%;
+  padding-left: 100%;
 }
 
 .tooltips {
+  align-self: center;
   position: absolute;
   z-index: 999999;
 }
@@ -34,10 +43,34 @@
   bottom: calc(100% + 2px);
 }
 
+.tooltipsRight {
+  composes: tooltips;
+  padding-left: 6px;
+  left: calc(100% + 2px);
+}
+
 .tooltipsBottom {
   composes: tooltips;
   padding-top: 6px;
   top: calc(100% + 2px);
+}
+
+.tooltipsLeft {
+  composes: tooltips;
+  padding-right: 6px;
+  right: calc(100% + 2px);
+}
+
+.tooltipsAlignTop {
+  top: 0;
+}
+
+// .tooltipsAlignMiddle {
+//   top: -50%;
+// }
+
+.tooltipsAlignBottom {
+  bottom: 0;
 }
 
 .content {
@@ -45,6 +78,7 @@
   background: $dark-hex-80;
   border-radius: 3px;
   padding: $space-inset-sm;
+  box-shadow: $shadow-l;
 }
 
 .arrow {
@@ -53,31 +87,61 @@
   height: 0;
   border-color: transparent;
   border-style: solid;
-  margin-left: -6px;
 }
 
 .arrowPositionTop {
   composes: arrow;
-  border-width: 0px 6px 6px;
+  border-width: 0px 6px 6px 6px;
   border-bottom-color: $dark-hex-80;
   top: 0px;
 }
 
-.arrowAlignLeft {
-  left: 12px;
-}
-
-.arrowAlignCenter {
-  left: 50%;
-}
-
-.arrowAlignRight {
-  right: 12px;
+.arrowPositionRight {
+  composes: arrow;
+  border-width: 6px 0px 6px 6px;
+  border-left-color: $dark-hex-80;
+  right: 0px;
 }
 
 .arrowPositionBottom {
   composes: arrow;
-  border-width: 6px 6px 0px;
+  border-width: 6px 6px 0px 6px;
   border-top-color: $dark-hex-80;
   bottom: 0px;
+}
+
+.arrowPositionLeft {
+  composes: arrow;
+  border-width: 6px 6px 6px 0px;
+  border-right-color: $dark-hex-80;
+}
+
+.arrowAlignLeft {
+  left: 12px;
+  margin-left: -6px;
+}
+
+.arrowAlignCenter {
+  left: 50%;
+  margin-left: -6px;
+}
+
+.arrowAlignRight {
+  right: 12px;
+  margin-right: -6px;
+}
+
+.arrowAlignMiddle {
+  top: calc(50% - 6px);
+  margin-left: -6px;
+}
+
+.arrowAlignTop {
+  top: 12px;
+  margin-left: -6px;
+}
+
+.arrowAlignBottom {
+  bottom: 12px;
+  margin-left: -6px;
 }
