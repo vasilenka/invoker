@@ -51,6 +51,7 @@ import SliderContainer from '../../components/SliderContainer/SliderContainer';
 import SliderItem from '../../components/SliderItem/SliderItem';
 import IconButton from '../../components/IconButton/IconButton';
 import Badge from '../../components/Badge/Badge';
+import Popout from '../../components/Popout/Popout';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -149,6 +150,31 @@ const Sandbox = ({ className, ...restProps }) => {
     // setAlbums(newAlbums)
   };
 
+  const tooltips = (
+    <Text
+      small
+      component="p"
+      style={{ color: '#FFFFFF', marginBottom: 0, maxWidth: '200px' }}
+    >
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et.
+    </Text>
+  );
+
+  const popout = (
+    <>
+      <Text heading3 component="h3" style={{ maxWidth: '200px' }}>
+        Consetetur sadipscing elitr, sed diam.
+      </Text>
+      <Text small component="p" style={{ marginBottom: 0, maxWidth: '200px' }}>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet,
+        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+        labore et.
+      </Text>
+    </>
+  );
+
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
@@ -194,38 +220,158 @@ const Sandbox = ({ className, ...restProps }) => {
       <Divider large />
 
       <Preview>
-        <Tooltips
-          right
-          content={
-            <>
-              <Text
-                small
-                component="p"
-                style={{ color: '#FFFFFF', marginBottom: 0 }}
-              >
-                Have smoke and carbon monoxide detectors?
-              </Text>
-              <Text
-                small
-                component="p"
-                style={{ color: '#FFFFFF', marginBottom: 0 }}
-              >
-                Have smoke and carbon monoxide detectors?
-              </Text>
-              <Text
-                small
-                component="p"
-                style={{ color: '#FFFFFF', marginBottom: 0 }}
-              >
-                Have smoke and carbon monoxide detectors?
-              </Text>
-            </>
-          }
-        >
-          <Button small primary style={{ height: '200px' }}>
-            Hey, come here!
-          </Button>
-        </Tooltips>
+        <div style={{ display: 'inline-flex', flexWrap: 'wrap' }}>
+          <Tooltips className={styles.tooltips} rightTop content={tooltips}>
+            <Button small primary>
+              RightTop
+            </Button>
+          </Tooltips>
+          <Tooltips className={styles.tooltips} right content={tooltips}>
+            <Button small primary>
+              Right
+            </Button>
+          </Tooltips>
+          <Tooltips className={styles.tooltips} rightBottom content={tooltips}>
+            <Button small primary>
+              RightBottom
+            </Button>
+          </Tooltips>
+          <Tooltips className={styles.tooltips} leftTop content={tooltips}>
+            <Button small primary>
+              LeftTop
+            </Button>
+          </Tooltips>
+          <Tooltips className={styles.tooltips} left content={tooltips}>
+            <Button small primary>
+              Left
+            </Button>
+          </Tooltips>
+          <Tooltips className={styles.tooltips} leftBottom content={tooltips}>
+            <Button small primary>
+              LeftBottom
+            </Button>
+          </Tooltips>
+          <Tooltips className={styles.tooltips} topLeft content={tooltips}>
+            <Button small primary>
+              TopLeft
+            </Button>
+          </Tooltips>
+          <Tooltips className={styles.tooltips} top content={tooltips}>
+            <Button small primary>
+              Top
+            </Button>
+          </Tooltips>
+          <Tooltips className={styles.tooltips} topRight content={tooltips}>
+            <Button small primary>
+              TopRight
+            </Button>
+          </Tooltips>
+          <Tooltips className={styles.tooltips} bottomLeft content={tooltips}>
+            <Button small primary>
+              BottomLeft
+            </Button>
+          </Tooltips>
+          <Tooltips className={styles.tooltips} bottom content={tooltips}>
+            <Button small primary>
+              Bottom
+            </Button>
+          </Tooltips>
+          <Tooltips className={styles.tooltips} bottomRight content={tooltips}>
+            <Button small primary>
+              BottomRight
+            </Button>
+          </Tooltips>
+        </div>
+      </Preview>
+      <Divider large />
+
+      <Preview clean>
+        <div style={{ display: 'inline-flex', flexWrap: 'wrap' }}>
+          <Popout className={styles.tooltips} rightTop content={popout}>
+            {handlePopout => (
+              <Button onClick={handlePopout} small primary>
+                RightTop
+              </Button>
+            )}
+          </Popout>
+          <Popout className={styles.tooltips} right content={popout}>
+            {handlePopout => (
+              <Button onClick={handlePopout} small primary>
+                Right
+              </Button>
+            )}
+          </Popout>
+          <Popout className={styles.tooltips} rightBottom content={popout}>
+            {handlePopout => (
+              <Button onClick={handlePopout} small primary>
+                RightBottom
+              </Button>
+            )}
+          </Popout>
+          <Popout className={styles.tooltips} leftTop content={popout}>
+            {handlePopout => (
+              <Button onClick={handlePopout} small primary>
+                LeftTop
+              </Button>
+            )}
+          </Popout>
+          <Popout className={styles.tooltips} left content={popout}>
+            {handlePopout => (
+              <Button onClick={handlePopout} small primary>
+                Left
+              </Button>
+            )}
+          </Popout>
+          <Popout className={styles.tooltips} leftBottom content={popout}>
+            {handlePopout => (
+              <Button onClick={handlePopout} small primary>
+                LeftBottom
+              </Button>
+            )}
+          </Popout>
+          <Popout className={styles.tooltips} topLeft content={popout}>
+            {handlePopout => (
+              <Button onClick={handlePopout} small primary>
+                TopLeft
+              </Button>
+            )}
+          </Popout>
+          <Popout className={styles.tooltips} top content={popout}>
+            {handlePopout => (
+              <Button onClick={handlePopout} small primary>
+                Top
+              </Button>
+            )}
+          </Popout>
+          <Popout className={styles.tooltips} topRight content={popout}>
+            {handlePopout => (
+              <Button onClick={handlePopout} small primary>
+                TopRight
+              </Button>
+            )}
+          </Popout>
+          <Popout className={styles.tooltips} bottomLeft content={popout}>
+            {handlePopout => (
+              <Button onClick={handlePopout} small primary>
+                BottomLeft
+              </Button>
+            )}
+          </Popout>
+          <Popout className={styles.tooltips} bottom content={popout}>
+            {handlePopout => (
+              <Button onClick={handlePopout} small primary>
+                Bottom
+              </Button>
+            )}
+          </Popout>
+          <Popout className={styles.tooltips} bottomRight content={popout}>
+            {handlePopout => (
+              <Button onClick={handlePopout} small primary>
+                BottomRight
+              </Button>
+            )}
+          </Popout>
+        </div>
       </Preview>
       <Divider large />
 

@@ -1,13 +1,13 @@
-import styles from './Tooltips.module.scss';
+import styles from './Popout.module.scss';
 import React from 'react';
 import cx from 'classnames';
 import Text from '../Text/Text';
 
-const Tooltips = ({
+const Popout = ({
   children,
   content,
   large,
-  onHover,
+  onClick,
   top,
   topLeft,
   topRight,
@@ -23,27 +23,25 @@ const Tooltips = ({
   className,
   ...restProps
 }) => {
-  let [hover, setHover] = React.useState(false);
+  let [isOpen, setIsOpen] = React.useState(false);
 
-  const handleHover = () => {
-    setHover(true);
-    if (onHover) {
-      onHover();
+  const handlePopout = () => {
+    setIsOpen(!isOpen);
+    if (onClick) {
+      onClick();
     }
   };
 
   return (
     <div
-      onMouseOver={handleHover}
-      onMouseOut={() => setHover(false)}
       className={cx({
         [styles.root]: true,
         [className]: className
       })}
       {...restProps}
     >
-      {children}
-      {hover && (
+      {children(handlePopout)}
+      {isOpen && (
         <div
           className={cx({
             [styles.container]: true,
@@ -55,13 +53,13 @@ const Tooltips = ({
         >
           <div
             className={cx({
-              [styles.tooltipsTop]: top || topLeft || topRight,
-              [styles.tooltipsBottom]: bottom || bottomLeft || bottomRight,
-              [styles.tooltipsLeft]: left || leftTop || leftBottom,
-              [styles.tooltipsRight]: right || rightTop || rightBottom,
-              [styles.tooltipsAlignMiddle]: left || right,
-              [styles.tooltipsAlignTop]: leftTop || rightTop,
-              [styles.tooltipsAlignBottom]: leftBottom || rightBottom
+              [styles.popoutTop]: top || topLeft || topRight,
+              [styles.popoutBottom]: bottom || bottomLeft || bottomRight,
+              [styles.popoutLeft]: left || leftTop || leftBottom,
+              [styles.popoutRight]: right || rightTop || rightBottom,
+              [styles.popoutAlignMiddle]: left || right,
+              [styles.popoutAlignTop]: leftTop || rightTop,
+              [styles.popoutAlignBottom]: leftBottom || rightBottom
             })}
           >
             <div className={styles.content}>{content}</div>
@@ -86,4 +84,4 @@ const Tooltips = ({
   );
 };
 
-export default Tooltips;
+export default Popout;
