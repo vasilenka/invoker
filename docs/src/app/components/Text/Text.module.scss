@@ -206,12 +206,12 @@
   line-height: normal;
 }
 
-.carrot {
+.chevron {
   margin-left: $space-s;
-  animation: carrotTransform 0.4s 1 cubic-bezier(0.8, 0, 0.2, 1);
+  animation: chevronTransform 0.4s 1 cubic-bezier(0.8, 0, 0.2, 1);
 }
 
-@keyframes carrotTransform {
+@keyframes chevronTransform {
   0% {
     margin-left: 0;
   }

@@ -2,41 +2,82 @@
 
 .root {
   position: relative;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.tooltipsContainer {
-  position: absolute;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   width: max-content;
 }
 
+.tooltipsContainer {
+  top: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.tooltipsContainerLeft {
+  justify-content: flex-start;
+}
+
+.tooltipsContainerRight {
+  justify-content: flex-end;
+}
+
+.tooltipsContainerCenter {
+  justify-content: center;
+}
+
 .tooltips {
-  background: $dark-alpha-80;
+  position: absolute;
+  z-index: 999999;
+}
+
+.tooltipsTop {
+  composes: tooltips;
+  padding-bottom: 6px;
+  bottom: calc(100% + 2px);
+}
+
+.tooltipsBottom {
+  composes: tooltips;
+  padding-top: 6px;
+  top: calc(100% + 2px);
+}
+
+.content {
+  width: max-content;
+  background: $dark-hex-80;
   border-radius: 3px;
-  min-width: fit-content;
-  padding: $space-squish-s;
+  padding: $space-inset-sm;
 }
 
-.center {
-  left: calc(-50%);
+.arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  margin-left: -6px;
 }
 
-.top {
-  top: calc(-100% - 4px);
+.arrowPositionTop {
+  composes: arrow;
+  border-width: 0px 6px 6px;
+  border-bottom-color: $dark-hex-80;
+  top: 0px;
 }
 
-.middle {
-  bottom: calc(50% - 14px);
+.arrowAlignLeft {
+  left: 12px;
 }
 
-.right {
-  left: calc(100% + 4px);
+.arrowAlignCenter {
+  left: 50%;
 }
 
-.tooltipsText {
-  color: $light-alpha-100;
+.arrowAlignRight {
+  right: 12px;
+}
+
+.arrowPositionBottom {
+  composes: arrow;
+  border-width: 6px 6px 0px;
+  border-top-color: $dark-hex-80;
+  bottom: 0px;
 }

@@ -5,10 +5,13 @@ import Text from '../Text/Text';
 
 const Tooltips = ({
   children,
-  message,
+  arrowLeft,
+  arrowCenter,
+  arrowRight,
+  content,
   large,
-  top,
   onHover,
+  top,
   bottom,
   left,
   right,
@@ -34,28 +37,35 @@ const Tooltips = ({
       })}
       {...restProps}
     >
+      {children}
       {hover && (
         <div
           className={cx({
             [styles.tooltipsContainer]: true,
-            [styles.top]: !bottom && !left && !right,
-            [styles.right]: right,
-            [styles.middle]: false
+            [styles.tooltipsContainerLeft]: arrowLeft,
+            [styles.tooltipsContainerRight]: arrowRight,
+            [styles.tooltipsContainerCenter]: arrowCenter
           })}
         >
           <div
             className={cx({
-              [styles.center]: top || bottom,
-              [styles.tooltips]: true
+              [styles.tooltipsTop]: top,
+              [styles.tooltipsBottom]: bottom
             })}
           >
-            <Text small className={styles.tooltipsText}>
-              {message}
-            </Text>
+            <div className={styles.content}>{content}</div>
+            <div
+              className={cx({
+                [styles.arrowPositionTop]: bottom,
+                [styles.arrowPositionBottom]: top,
+                [styles.arrowAlignLeft]: arrowLeft,
+                [styles.arrowAlignCenter]: arrowCenter,
+                [styles.arrowAlignRight]: arrowRight
+              })}
+            />
           </div>
         </div>
       )}
-      {children}
     </div>
   );
 };

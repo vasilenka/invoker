@@ -163,7 +163,7 @@ const Sandbox = ({ className, ...restProps }) => {
           have them? You can get a free detector and read other safety tips on
           our updated Home Safety page.
         </Text>
-        <Text heading4Alt withCarrot link component="a" target="#">
+        <Text heading4Alt withChevron link component="a" target="#">
           Show all (2000+)
         </Text>
       </Preview>
@@ -186,7 +186,7 @@ const Sandbox = ({ className, ...restProps }) => {
             have them? You can get a free detector and read other safety tips on
             our updated Home Safety page.
           </Text>
-          <Text heading4Alt withCarrot link component="a" target="#">
+          <Text heading4Alt withChevron link component="a" target="#">
             Show all (2000+)
           </Text>
         </Card>
@@ -194,7 +194,24 @@ const Sandbox = ({ className, ...restProps }) => {
       <Divider large />
 
       <Preview>
-        <Tooltips top message="Have smoke and carbon monoxide detectors?">
+        <Tooltips
+          top
+          arrowCenter
+          content={
+            <>
+              <Text small component="p" style={{ color: '#FFFFFF' }}>
+                Have smoke and carbon monoxide detectors?
+              </Text>
+              <Text
+                small
+                component="p"
+                style={{ color: '#FFFFFF', marginBottom: 0 }}
+              >
+                Paljoooo ofwoooods asjdkajd
+              </Text>
+            </>
+          }
+        >
           <Button small primary>
             Hey, come here!
           </Button>

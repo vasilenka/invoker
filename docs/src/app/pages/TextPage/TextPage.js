@@ -54,10 +54,10 @@ let bodyProps = [
     default: '-'
   },
   {
-    name: 'withCarrot',
+    name: 'withChevron',
     type: 'boolean',
     help:
-      'Add a Carrot component at the end of the Text. The Carrot color will follow the Text color. Best used for link component.',
+      'Add a Chevron component at the end of the Text. The Chevron color will follow the Text color. Best used for link component.',
     default: 'false'
   }
 ];
@@ -123,10 +123,10 @@ const TextPage = ({ className, ...restProps }) => {
           // className={classnames(styles.textList, styles.link)}
           heading4Alt
           link
-          withCarrot
+          withChevron
           component="h4"
         >
-          Heading4Alt as link text, with carrot
+          Heading4Alt as link text, with chevron
         </Text>
       </Preview>
       <Divider large />
