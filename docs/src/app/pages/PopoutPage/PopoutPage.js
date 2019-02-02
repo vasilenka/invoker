@@ -18,9 +18,9 @@ let buttonProps = [
   {
     required: true,
     name: 'children',
-    type: 'React.Node',
+    type: 'fn(setVisibility, visible, popoutRef, wrapperRef) => React.Node',
     help:
-      'You can pass anything as the children. This component will be used as the trigger event of the Tooltips.',
+      'Popout is using RenderProp pattern. Pass a function as children. The children will be used as the trigger event of the Tooltips.',
     default: '-'
   },
   {
@@ -50,13 +50,6 @@ let buttonProps = [
     help: 'Use the value directly as the props.',
     default: '-'
   }
-  // {
-  //   required: false,
-  //   name: 'onHover',
-  //   type: 'fn() => Event',
-  //   help: 'Pass your own event handler for the Button.',
-  //   default: '-'
-  // }
 ];
 
 const popout = (
@@ -74,21 +67,6 @@ const popout = (
 );
 
 const PopoutPage = ({ className, ...restProps }) => {
-  // let [reference, setReference] = React.useState();
-
-  // React.useEffect(() => {
-  //   if(document && reference.current) {
-  //     document.addEventListener('mousedown', docClick, false)
-  //     document.addEventListener('touchend', docClick, false)
-  //   }
-  // }, [reference])
-
-  // const docClick = (e) => {
-  //   if(!reference.current.contains(e.target)) {
-  //     setReference(null)
-  //   }
-  // }
-
   return (
     <div>
       <Header
@@ -107,85 +85,85 @@ const PopoutPage = ({ className, ...restProps }) => {
       <Preview>
         <div style={{ display: 'inline-flex', flexWrap: 'wrap' }}>
           <Popout className={styles.tooltips} rightTop content={popout}>
-            {handleClick => (
-              <Button onClick={() => handleClick()} small primary>
+            {(setVisible, visible, popRef, wrapperRef) => (
+              <Button onClick={() => setVisible(!visible)} small primary>
                 RightTop
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} right content={popout}>
-            {handleClick => (
-              <Button onClick={() => handleClick()} small primary>
+            {(setVisible, visible, popRef, wrapperRef) => (
+              <Button onClick={() => setVisible(!visible)} small primary>
                 Right
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} rightBottom content={popout}>
-            {handleClick => (
-              <Button onClick={() => handleClick()} small primary>
+            {(setVisible, visible, popRef, wrapperRef) => (
+              <Button onClick={() => setVisible(!visible)} small primary>
                 RightBottom
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} leftTop content={popout}>
-            {handleClick => (
-              <Button onClick={() => handleClick()} small primary>
+            {(setVisible, visible, popRef, wrapperRef) => (
+              <Button onClick={() => setVisible(!visible)} small primary>
                 LeftTop
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} left content={popout}>
-            {handleClick => (
-              <Button onClick={() => handleClick()} small primary>
+            {(setVisible, visible, popRef, wrapperRef) => (
+              <Button onClick={() => setVisible(!visible)} small primary>
                 Left
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} leftBottom content={popout}>
-            {handleClick => (
-              <Button onClick={() => handleClick()} small primary>
+            {(setVisible, visible, popRef, wrapperRef) => (
+              <Button onClick={() => setVisible(!visible)} small primary>
                 LeftBottom
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} topLeft content={popout}>
-            {handleClick => (
-              <Button onClick={() => handleClick()} small primary>
+            {(setVisible, visible, popRef, wrapperRef) => (
+              <Button onClick={() => setVisible(!visible)} small primary>
                 TopLeft
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} top content={popout}>
-            {handleClick => (
-              <Button onClick={() => handleClick()} small primary>
+            {(setVisible, visible, popRef, wrapperRef) => (
+              <Button onClick={() => setVisible(!visible)} small primary>
                 Top
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} topRight content={popout}>
-            {handleClick => (
-              <Button onClick={() => handleClick()} small primary>
+            {(setVisible, visible, popRef, wrapperRef) => (
+              <Button onClick={() => setVisible(!visible)} small primary>
                 TopRight
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} bottomLeft content={popout}>
-            {handleClick => (
-              <Button onClick={() => handleClick()} small primary>
+            {(setVisible, visible, popRef, wrapperRef) => (
+              <Button onClick={() => setVisible(!visible)} small primary>
                 BottomLeft
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} bottom content={popout}>
-            {handleClick => (
-              <Button onClick={() => handleClick()} small primary>
+            {(setVisible, visible, popRef, wrapperRef) => (
+              <Button onClick={() => setVisible(!visible)} small primary>
                 Bottom
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} bottomRight content={popout}>
-            {handleClick => (
-              <Button onClick={() => handleClick()} small primary>
+            {(setVisible, visible, popRef, wrapperRef) => (
+              <Button onClick={() => setVisible(!visible)} small primary>
                 BottomRight
               </Button>
             )}

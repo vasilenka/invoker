@@ -89,7 +89,6 @@
 }
 
 .arrowPositionTop {
-  composes: arrow;
   border-top-color: $dark-alpha-30;
   border-left-color: $dark-alpha-30;
   border-right-color: transparent;
@@ -98,7 +97,6 @@
 }
 
 .arrowPositionRight {
-  composes: arrow;
   border-right-color: $dark-alpha-30;
   border-top-color: $dark-alpha-30;
   border-bottom-color: transparent;
@@ -107,7 +105,6 @@
 }
 
 .arrowPositionBottom {
-  composes: arrow;
   border-right-color: $dark-alpha-30;
   border-bottom-color: $dark-alpha-30;
   border-left-color: transparent;
@@ -116,7 +113,6 @@
 }
 
 .arrowPositionLeft {
-  composes: arrow;
   border-bottom-color: $dark-alpha-30;
   border-left-color: $dark-alpha-30;
   border-right-color: transparent;

@@ -19,24 +19,13 @@ const Popout = ({
   right,
   rightTop,
   rightBottom,
-  withArrow,
+  withArrow = true,
   className,
   ...restProps
 }) => {
   let [visible, setVisible] = React.useState(false);
   const popRef = React.useRef(null);
   const wrapperRef = React.useRef(null);
-
-  const handleClick = function(e) {
-    if (visible) {
-      setVisible(false);
-    } else {
-      setVisible(true);
-    }
-    if (onClick) {
-      onClick(e);
-    }
-  };
 
   React.useEffect(
     () => {
@@ -69,7 +58,7 @@ const Popout = ({
       })}
       {...restProps}
     >
-      {children(handleClick, popRef)}
+      {children(setVisible, visible, popRef, wrapperRef)}
       {visible && (
         <div
           ref={popRef}
