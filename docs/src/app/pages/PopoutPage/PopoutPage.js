@@ -84,7 +84,12 @@ const PopoutPage = ({ className, ...restProps }) => {
       />
       <Preview>
         <div style={{ display: 'inline-flex', flexWrap: 'wrap' }}>
-          <Popout className={styles.tooltips} rightTop content={popout}>
+          <Popout
+            className={styles.tooltips}
+            withArrow={false}
+            rightTop
+            content={popout}
+          >
             {(setVisible, visible, popRef, wrapperRef) => (
               <Button onClick={() => setVisible(!visible)} small primary>
                 RightTop
@@ -172,29 +177,45 @@ const PopoutPage = ({ className, ...restProps }) => {
       </Preview>
       <Code>
         {`
-const tooltips = (
-  <Text
-    small
-    component="p"
-    style={{ color: '#FFFFFF', marginBottom: 0, maxWidth: '200px' }}
-    >
-    Additional information to help user understand more about the current element.
-  </Text>
-)
+const popout = (
+  <>
+    <Text heading3 component="h3" style={{ maxWidth: '200px' }}>
+      Consetetur sadipscing elitr, sed diam.
+    </Text>
+    <Text small component="p" style={{ marginBottom: 0, maxWidth: '200px' }}>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet,
+      consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+      labore et.
+    </Text>
+  </>
+);
 
-<Tooltips rightTop content={tooltips}>
-  <Button small primary>rightTop</Button>
-</Tooltips>
+<Popout withArrow={false} rightTop content={popout}>
+  {(setVisible, visible, popRef, wrapperRef) => (
+    <Button onClick={() => setVisible(!visible)} small primary>
+      RightTop
+    </Button>
+  )}
+</Popout>
 
-<Tooltips withArrow={false} right content={tooltips}>
-  <Button small primary>right</Button>
-</Tooltips>
+<Popout right content={popout}>
+  {(setVisible, visible, popRef, wrapperRef) => (
+    <Button onClick={() => setVisible(!visible)} small primary>
+      Right
+    </Button>
+  )}
+</Popout>
 
 ...
 
-<Tooltips bottomRight content={tooltips}>
-  <Button small primary>bottomRight</Button>
-</Tooltips>
+<Popout bottomRight content={popout}>
+  {(setVisible, visible, popRef, wrapperRef) => (
+    <Button onClick={() => setVisible(!visible)} small primary>
+      BottomRight
+    </Button>
+  )}
+</Popout>
 
         `}
       </Code>

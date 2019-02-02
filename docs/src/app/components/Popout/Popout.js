@@ -5,8 +5,6 @@ import cx from 'classnames';
 const Popout = ({
   children,
   content,
-  large,
-  onClick,
   top,
   topLeft,
   topRight,
