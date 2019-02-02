@@ -7,7 +7,6 @@ const Popout = ({
   content,
   large,
   onClick,
-  onBlur,
   top,
   topLeft,
   topRight,
@@ -20,14 +19,20 @@ const Popout = ({
   right,
   rightTop,
   rightBottom,
+  withArrow,
   className,
   ...restProps
 }) => {
   let [visible, setVisible] = React.useState(false);
   const popRef = React.useRef(null);
+  const wrapperRef = React.useRef(null);
 
   const handleClick = function(e) {
-    setVisible(!visible);
+    if (visible) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
     if (onClick) {
       onClick(e);
     }
@@ -44,14 +49,20 @@ const Popout = ({
   );
 
   const docClick = e => {
-    if (visible && !popRef.current.contains(e.target)) {
+    if (
+      visible &&
+      wrapperRef.current &&
+      !wrapperRef.current.contains(e.target)
+    ) {
       setVisible(false);
+      document.removeEventListener('mousedown', docClick, false);
+      document.removeEventListener('touchend', docClick, false);
     }
   };
 
   return (
     <div
-      ref={popRef}
+      ref={wrapperRef}
       className={cx({
         [styles.root]: true,
         [className]: className
@@ -61,6 +72,7 @@ const Popout = ({
       {children(handleClick, popRef)}
       {visible && (
         <div
+          ref={popRef}
           className={cx({
             [styles.container]: true,
             [styles.containerLeft]: topLeft || bottomLeft,
@@ -83,6 +95,7 @@ const Popout = ({
             <div className={styles.content}>{content}</div>
             <div
               className={cx({
+                [styles.arrow]: withArrow,
                 [styles.arrowPositionTop]: bottom || bottomRight || bottomLeft,
                 [styles.arrowPositionBottom]: top || topLeft || topRight,
                 [styles.arrowPositionLeft]: right || rightTop || rightBottom,
