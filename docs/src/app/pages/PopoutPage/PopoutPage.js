@@ -90,84 +90,84 @@ const PopoutPage = ({ className, ...restProps }) => {
             rightTop
             content={popout}
           >
-            {(setVisible, visible, popRef, wrapperRef) => (
+            {(setVisible, visible) => (
               <Button onClick={() => setVisible(!visible)} small primary>
                 RightTop
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} right content={popout}>
-            {(setVisible, visible, popRef, wrapperRef) => (
+            {(setVisible, visible) => (
               <Button onClick={() => setVisible(!visible)} small primary>
                 Right
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} rightBottom content={popout}>
-            {(setVisible, visible, popRef, wrapperRef) => (
+            {(setVisible, visible) => (
               <Button onClick={() => setVisible(!visible)} small primary>
                 RightBottom
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} leftTop content={popout}>
-            {(setVisible, visible, popRef, wrapperRef) => (
+            {(setVisible, visible) => (
               <Button onClick={() => setVisible(!visible)} small primary>
                 LeftTop
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} left content={popout}>
-            {(setVisible, visible, popRef, wrapperRef) => (
+            {(setVisible, visible) => (
               <Button onClick={() => setVisible(!visible)} small primary>
                 Left
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} leftBottom content={popout}>
-            {(setVisible, visible, popRef, wrapperRef) => (
+            {(setVisible, visible) => (
               <Button onClick={() => setVisible(!visible)} small primary>
                 LeftBottom
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} topLeft content={popout}>
-            {(setVisible, visible, popRef, wrapperRef) => (
+            {(setVisible, visible) => (
               <Button onClick={() => setVisible(!visible)} small primary>
                 TopLeft
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} top content={popout}>
-            {(setVisible, visible, popRef, wrapperRef) => (
+            {(setVisible, visible) => (
               <Button onClick={() => setVisible(!visible)} small primary>
                 Top
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} topRight content={popout}>
-            {(setVisible, visible, popRef, wrapperRef) => (
+            {(setVisible, visible) => (
               <Button onClick={() => setVisible(!visible)} small primary>
                 TopRight
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} bottomLeft content={popout}>
-            {(setVisible, visible, popRef, wrapperRef) => (
+            {(setVisible, visible) => (
               <Button onClick={() => setVisible(!visible)} small primary>
                 BottomLeft
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} bottom content={popout}>
-            {(setVisible, visible, popRef, wrapperRef) => (
+            {(setVisible, visible) => (
               <Button onClick={() => setVisible(!visible)} small primary>
                 Bottom
               </Button>
             )}
           </Popout>
           <Popout className={styles.tooltips} bottomRight content={popout}>
-            {(setVisible, visible, popRef, wrapperRef) => (
+            {(setVisible, visible) => (
               <Button onClick={() => setVisible(!visible)} small primary>
                 BottomRight
               </Button>
@@ -191,32 +191,20 @@ const popout = (
   </>
 );
 
-<Popout withArrow={false} rightTop content={popout}>
-  {(setVisible, visible, popRef, wrapperRef) => (
+<Popout
+  rightTop
+  content={popout}>
+  {(
+    setVisible,
+    visible,
+    popoutRef,
+    wrapperRef,
+  ) =>
     <Button onClick={() => setVisible(!visible)} small primary>
       RightTop
     </Button>
-  )}
+  }
 </Popout>
-
-<Popout right content={popout}>
-  {(setVisible, visible, popRef, wrapperRef) => (
-    <Button onClick={() => setVisible(!visible)} small primary>
-      Right
-    </Button>
-  )}
-</Popout>
-
-...
-
-<Popout bottomRight content={popout}>
-  {(setVisible, visible, popRef, wrapperRef) => (
-    <Button onClick={() => setVisible(!visible)} small primary>
-      BottomRight
-    </Button>
-  )}
-</Popout>
-
         `}
       </Code>
       <Divider large />

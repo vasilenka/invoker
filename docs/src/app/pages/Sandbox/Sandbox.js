@@ -50,10 +50,11 @@ import SliderContainer from '../../components/SliderContainer/SliderContainer';
 import SliderItem from '../../components/SliderItem/SliderItem';
 import IconButton from '../../components/IconButton/IconButton';
 import Badge from '../../components/Badge/Badge';
+import Image from '../../components/Image/Image';
+
+const LazyTest = lazy(() => import('./LazyTest'));
 
 const images = [img6, img2, img3, img4, img5, img1];
-
-const Image = lazy(() => import('../../components/Image/Image'));
 
 const DataTab = props => {
   return (
@@ -217,14 +218,12 @@ const Sandbox = ({ className, ...restProps }) => {
                       marginBottom: '12px'
                     }}
                   >
-                    <Suspense fallback={<Spinner />}>
-                      <Image
-                        className={classnames(styles.imageCarousel)}
-                        src={img}
-                        fit="cover"
-                        alt="hello world"
-                      />
-                    </Suspense>
+                    <Image
+                      className={classnames(styles.imageCarousel)}
+                      src={img}
+                      fit="cover"
+                      alt="hello world"
+                    />
                   </div>
                   <Text heading4 component="h2">
                     Campaign Number One on The Planet
@@ -276,9 +275,7 @@ const Sandbox = ({ className, ...restProps }) => {
                   index={index}
                   item={kda}
                 >
-                  <Suspense fallback={<Spinner />}>
-                    <Image fit="cover" src={kda.url} alt={kda.title} />
-                  </Suspense>
+                  <Image fit="cover" src={kda.url} alt={kda.title} />
                 </OverlappingItem>
               ))
             }
@@ -330,6 +327,11 @@ const Sandbox = ({ className, ...restProps }) => {
       </Preview>
       <Divider large />
       <Preview>
+        <Suspense fallback={<Spinner />}>
+          <LazyTest />
+        </Suspense>
+      </Preview>
+      <Preview>
         <Overlapping data={kda}>
           <CarouselOverlapping style={{ height: '344px' }}>
             {data =>
@@ -340,9 +342,7 @@ const Sandbox = ({ className, ...restProps }) => {
                   index={index}
                   item={kda}
                 >
-                  <Suspense fallback={<Spinner />}>
-                    <Image fit="cover" src={kda.url} alt={kda.title} />
-                  </Suspense>
+                  <Image fit="cover" src={kda.url} alt={kda.title} />
                 </OverlappingItem>
               ))
             }
@@ -411,9 +411,7 @@ const Sandbox = ({ className, ...restProps }) => {
                       marginBottom: '24px'
                     }}
                   >
-                    <Suspense fallback={<Spinner />}>
-                      <Image fit="cover" src={album.url} alt={album.title} />
-                    </Suspense>
+                    <Image fit="cover" src={album.url} alt={album.title} />
                   </div>
                   <Text heading2 truncate>
                     {album.id}
