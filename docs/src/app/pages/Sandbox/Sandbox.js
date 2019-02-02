@@ -1,5 +1,5 @@
 import styles from './Sandbox.module.scss';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import classnames from 'classnames';
 
 import Header from './../../docs/Header/Header';
@@ -26,7 +26,6 @@ import Banner from './../../components/Banner/Banner';
 import Toast from './../../components/Toast/Toast';
 // import LunaPreview from '../../components/LunaPreview/LunaPreview'
 
-import Image from '../../components/Image/Image';
 import LoadingBar from '../../components/LoadingBar/LoadingBar';
 
 import kda from './data';
@@ -35,6 +34,7 @@ import CarouselControl from '../../components/CarouselControl/CarouselControl';
 import CarouselOverlapping from '../../components/CarouselOverlapping/CarouselOverlapping';
 import OverlappingItem from '../../components/OverlappingItem/OverlappingItem';
 import Slider from '../../components/Slider/Slider';
+import Spinner from '../../components/Spinner/Spinner';
 
 import img1 from './img/1.jpg';
 import img2 from './img/2.jpg';
@@ -42,7 +42,6 @@ import img3 from './img/3.jpg';
 import img4 from './img/4.jpg';
 import img5 from './img/5.jpg';
 import img6 from './img/6.jpg';
-import Tooltips from '../../components/Tooltips/Tooltips';
 import SliderControl from '../../components/SliderControl/SliderControl';
 
 import { ReactComponent as Prev } from './img/prev.svg';
@@ -51,9 +50,10 @@ import SliderContainer from '../../components/SliderContainer/SliderContainer';
 import SliderItem from '../../components/SliderItem/SliderItem';
 import IconButton from '../../components/IconButton/IconButton';
 import Badge from '../../components/Badge/Badge';
-import Popout from '../../components/Popout/Popout';
 
 const images = [img6, img2, img3, img4, img5, img1];
+
+const Image = lazy(() => import('../../components/Image/Image'));
 
 const DataTab = props => {
   return (
@@ -150,30 +150,12 @@ const Sandbox = ({ className, ...restProps }) => {
     // setAlbums(newAlbums)
   };
 
-  const tooltips = (
-    <Text
-      small
-      component="p"
-      style={{ color: '#FFFFFF', marginBottom: 0, maxWidth: '200px' }}
-    >
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-      eirmod tempor invidunt ut labore et.
-    </Text>
-  );
-
-  const popout = (
-    <>
-      <Text heading3 component="h3" style={{ maxWidth: '200px' }}>
-        Consetetur sadipscing elitr, sed diam.
-      </Text>
-      <Text small component="p" style={{ marginBottom: 0, maxWidth: '200px' }}>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet,
-        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-        labore et.
-      </Text>
-    </>
-  );
+  // <Image
+  //     className={classnames(styles.imageCarousel)}
+  //     src={img}
+  //     fit="cover"
+  //     alt="hello world"
+  //     />
 
   return (
     <React.Fragment>
@@ -219,163 +201,8 @@ const Sandbox = ({ className, ...restProps }) => {
       </Preview>
       <Divider large />
 
-      <Preview>
-        <div style={{ display: 'inline-flex', flexWrap: 'wrap' }}>
-          <Tooltips className={styles.tooltips} rightTop content={tooltips}>
-            <Button small primary>
-              RightTop
-            </Button>
-          </Tooltips>
-          <Tooltips className={styles.tooltips} right content={tooltips}>
-            <Button small primary>
-              Right
-            </Button>
-          </Tooltips>
-          <Tooltips className={styles.tooltips} rightBottom content={tooltips}>
-            <Button small primary>
-              RightBottom
-            </Button>
-          </Tooltips>
-          <Tooltips className={styles.tooltips} leftTop content={tooltips}>
-            <Button small primary>
-              LeftTop
-            </Button>
-          </Tooltips>
-          <Tooltips className={styles.tooltips} left content={tooltips}>
-            <Button small primary>
-              Left
-            </Button>
-          </Tooltips>
-          <Tooltips className={styles.tooltips} leftBottom content={tooltips}>
-            <Button small primary>
-              LeftBottom
-            </Button>
-          </Tooltips>
-          <Tooltips className={styles.tooltips} topLeft content={tooltips}>
-            <Button small primary>
-              TopLeft
-            </Button>
-          </Tooltips>
-          <Tooltips className={styles.tooltips} top content={tooltips}>
-            <Button small primary>
-              Top
-            </Button>
-          </Tooltips>
-          <Tooltips className={styles.tooltips} topRight content={tooltips}>
-            <Button small primary>
-              TopRight
-            </Button>
-          </Tooltips>
-          <Tooltips className={styles.tooltips} bottomLeft content={tooltips}>
-            <Button small primary>
-              BottomLeft
-            </Button>
-          </Tooltips>
-          <Tooltips className={styles.tooltips} bottom content={tooltips}>
-            <Button small primary>
-              Bottom
-            </Button>
-          </Tooltips>
-          <Tooltips className={styles.tooltips} bottomRight content={tooltips}>
-            <Button small primary>
-              BottomRight
-            </Button>
-          </Tooltips>
-        </div>
-      </Preview>
-      <Divider large />
-
       <Preview clean>
-        <div style={{ display: 'inline-flex', flexWrap: 'wrap' }}>
-          <Popout className={styles.tooltips} rightTop content={popout}>
-            {handlePopout => (
-              <Button onClick={handlePopout} small primary>
-                RightTop
-              </Button>
-            )}
-          </Popout>
-          <Popout className={styles.tooltips} right content={popout}>
-            {handlePopout => (
-              <Button onClick={handlePopout} small primary>
-                Right
-              </Button>
-            )}
-          </Popout>
-          <Popout className={styles.tooltips} rightBottom content={popout}>
-            {handlePopout => (
-              <Button onClick={handlePopout} small primary>
-                RightBottom
-              </Button>
-            )}
-          </Popout>
-          <Popout className={styles.tooltips} leftTop content={popout}>
-            {handlePopout => (
-              <Button onClick={handlePopout} small primary>
-                LeftTop
-              </Button>
-            )}
-          </Popout>
-          <Popout className={styles.tooltips} left content={popout}>
-            {handlePopout => (
-              <Button onClick={handlePopout} small primary>
-                Left
-              </Button>
-            )}
-          </Popout>
-          <Popout className={styles.tooltips} leftBottom content={popout}>
-            {handlePopout => (
-              <Button onClick={handlePopout} small primary>
-                LeftBottom
-              </Button>
-            )}
-          </Popout>
-          <Popout className={styles.tooltips} topLeft content={popout}>
-            {handlePopout => (
-              <Button onClick={handlePopout} small primary>
-                TopLeft
-              </Button>
-            )}
-          </Popout>
-          <Popout className={styles.tooltips} top content={popout}>
-            {handlePopout => (
-              <Button onClick={handlePopout} small primary>
-                Top
-              </Button>
-            )}
-          </Popout>
-          <Popout className={styles.tooltips} topRight content={popout}>
-            {handlePopout => (
-              <Button onClick={handlePopout} small primary>
-                TopRight
-              </Button>
-            )}
-          </Popout>
-          <Popout className={styles.tooltips} bottomLeft content={popout}>
-            {handlePopout => (
-              <Button onClick={handlePopout} small primary>
-                BottomLeft
-              </Button>
-            )}
-          </Popout>
-          <Popout className={styles.tooltips} bottom content={popout}>
-            {handlePopout => (
-              <Button onClick={handlePopout} small primary>
-                Bottom
-              </Button>
-            )}
-          </Popout>
-          <Popout className={styles.tooltips} bottomRight content={popout}>
-            {handlePopout => (
-              <Button onClick={handlePopout} small primary>
-                BottomRight
-              </Button>
-            )}
-          </Popout>
-        </div>
-      </Preview>
-      <Divider large />
-
-      <Preview clean>
+        <Spinner />
         <Slider items={images} column="3">
           <SliderContainer className={styles.wrapper}>
             {() =>
@@ -390,12 +217,14 @@ const Sandbox = ({ className, ...restProps }) => {
                       marginBottom: '12px'
                     }}
                   >
-                    <Image
-                      className={classnames(styles.imageCarousel)}
-                      src={img}
-                      fit="cover"
-                      alt="hello world"
-                    />
+                    <Suspense fallback={<Spinner />}>
+                      <Image
+                        className={classnames(styles.imageCarousel)}
+                        src={img}
+                        fit="cover"
+                        alt="hello world"
+                      />
+                    </Suspense>
                   </div>
                   <Text heading4 component="h2">
                     Campaign Number One on The Planet
@@ -447,7 +276,9 @@ const Sandbox = ({ className, ...restProps }) => {
                   index={index}
                   item={kda}
                 >
-                  <Image fit="cover" src={kda.url} alt={kda.title} />
+                  <Suspense fallback={<Spinner />}>
+                    <Image fit="cover" src={kda.url} alt={kda.title} />
+                  </Suspense>
                 </OverlappingItem>
               ))
             }
@@ -509,7 +340,9 @@ const Sandbox = ({ className, ...restProps }) => {
                   index={index}
                   item={kda}
                 >
-                  <Image fit="cover" src={kda.url} alt={kda.title} />
+                  <Suspense fallback={<Spinner />}>
+                    <Image fit="cover" src={kda.url} alt={kda.title} />
+                  </Suspense>
                 </OverlappingItem>
               ))
             }
@@ -578,7 +411,9 @@ const Sandbox = ({ className, ...restProps }) => {
                       marginBottom: '24px'
                     }}
                   >
-                    <Image fit="cover" src={album.url} alt={album.title} />
+                    <Suspense fallback={<Spinner />}>
+                      <Image fit="cover" src={album.url} alt={album.title} />
+                    </Suspense>
                   </div>
                   <Text heading2 truncate>
                     {album.id}

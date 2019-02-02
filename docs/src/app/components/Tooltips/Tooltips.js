@@ -1,12 +1,10 @@
 import styles from './Tooltips.module.scss';
 import React from 'react';
 import cx from 'classnames';
-import Text from '../Text/Text';
 
 const Tooltips = ({
   children,
   content,
-  large,
   onHover,
   top,
   topLeft,
@@ -20,6 +18,7 @@ const Tooltips = ({
   right,
   rightTop,
   rightBottom,
+  withArrow = true,
   className,
   ...restProps
 }) => {
@@ -67,6 +66,7 @@ const Tooltips = ({
             <div className={styles.content}>{content}</div>
             <div
               className={cx({
+                [styles.arrow]: withArrow,
                 [styles.arrowPositionTop]: bottom || bottomRight || bottomLeft,
                 [styles.arrowPositionBottom]: top || topLeft || topRight,
                 [styles.arrowPositionLeft]: right || rightTop || rightBottom,

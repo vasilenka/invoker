@@ -15,12 +15,12 @@ const Preview = ({ clean, children, className, ...restProps }) => {
         Preview
       </Text>
       <div
-        {...restProps}
         className={classnames({
           [styles.root]: true,
           [className]: className,
           [styles.clean]: clean
         })}
+        {...restProps}
       >
         {children}
       </div>

@@ -26,6 +26,8 @@ import ComboboxPage from './pages/ComboboxPage/ComboboxPage';
 import AirtablePage from './pages/AirtablePage/AirtablePage';
 import ButtonPage from './pages/ButtonPage/ButtonPage';
 import BadgePage from './pages/BadgePage/BadgePage';
+import TooltipsPage from './pages/TooltipsPage/TooltipsPage';
+import PopoutPage from './pages/PopoutPage/PopoutPage';
 
 class App extends Component {
   constructor(props) {
@@ -69,6 +71,8 @@ class App extends Component {
                 <Route exact path="/mask" component={MaskPage} />
                 <Route exact path="/preloader" component={PreloaderPage} />
                 <Route exact path="/badge" component={BadgePage} />
+                <Route exact path="/tooltips" component={TooltipsPage} />
+                <Route exact path="/popout" component={PopoutPage} />
               </MainContent>
             </Container>
             <LeftSection fixed className={styles.leftSection}>
@@ -152,6 +156,16 @@ class App extends Component {
               <Link to="/badge">
                 <Text className={styles.link} link>
                   Badge
+                </Text>
+              </Link>
+              <Link to="/tooltips">
+                <Text className={styles.link} link>
+                  Tooltips
+                </Text>
+              </Link>
+              <Link to="/popout">
+                <Text className={styles.link} link>
+                  Popout
                 </Text>
               </Link>
             </LeftSection>

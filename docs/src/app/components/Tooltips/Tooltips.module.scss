@@ -85,28 +85,28 @@
 }
 
 .arrowPositionTop {
-  composes: arrow;
+  // composes: arrow;
   border-width: 0px 6px 6px 6px;
   border-bottom-color: $dark-hex-80;
   top: 0px;
 }
 
 .arrowPositionRight {
-  composes: arrow;
+  // composes: arrow;
   border-width: 6px 0px 6px 6px;
   border-left-color: $dark-hex-80;
   right: 0px;
 }
 
 .arrowPositionBottom {
-  composes: arrow;
+  // composes: arrow;
   border-width: 6px 6px 0px 6px;
   border-top-color: $dark-hex-80;
   bottom: 0px;
 }
 
 .arrowPositionLeft {
-  composes: arrow;
+  // composes: arrow;
   border-width: 6px 6px 6px 0px;
   border-right-color: $dark-hex-80;
 }

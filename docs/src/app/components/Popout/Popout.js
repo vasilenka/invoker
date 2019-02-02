@@ -1,13 +1,13 @@
 import styles from './Popout.module.scss';
 import React from 'react';
 import cx from 'classnames';
-import Text from '../Text/Text';
 
 const Popout = ({
   children,
   content,
   large,
   onClick,
+  onBlur,
   top,
   topLeft,
   topRight,
@@ -23,25 +23,43 @@ const Popout = ({
   className,
   ...restProps
 }) => {
-  let [isOpen, setIsOpen] = React.useState(false);
+  let [visible, setVisible] = React.useState(false);
+  const popRef = React.useRef(null);
 
-  const handlePopout = () => {
-    setIsOpen(!isOpen);
+  const handleClick = function(e) {
+    setVisible(!visible);
     if (onClick) {
-      onClick();
+      onClick(e);
+    }
+  };
+
+  React.useEffect(
+    () => {
+      if (document && visible) {
+        document.addEventListener('mousedown', docClick, false);
+        document.addEventListener('touchend', docClick, false);
+      }
+    },
+    [visible]
+  );
+
+  const docClick = e => {
+    if (visible && !popRef.current.contains(e.target)) {
+      setVisible(false);
     }
   };
 
   return (
     <div
+      ref={popRef}
       className={cx({
         [styles.root]: true,
         [className]: className
       })}
       {...restProps}
     >
-      {children(handlePopout)}
-      {isOpen && (
+      {children(handleClick, popRef)}
+      {visible && (
         <div
           className={cx({
             [styles.container]: true,
