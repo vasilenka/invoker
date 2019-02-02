@@ -1,13 +1,12 @@
-import './app/assets/fonts/fonts';
-
 import React from 'react';
 import { hydrate, render } from 'react-dom';
-
 import './index.scss';
 import 'invoker-layout/grid.module.scss';
 
 import App from './app/App';
 import * as serviceWorker from './serviceWorker';
+
+import './app/assets/fonts/fonts';
 
 const root = document.getElementById('root');
 if (root.hasChildNodes()) {

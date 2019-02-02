@@ -14,7 +14,6 @@ import TextfieldPage from './pages/TextfieldPage/TextfieldPage';
 import TextPage from './pages/TextPage/TextPage';
 import SandboxPage from './pages/Sandbox/Sandbox';
 import MaskPage from './pages/MaskPage/MaskPage';
-
 import FieldLabelPage from './pages/FieldLabelPage/FieldLabelPage';
 import FieldInputPage from './pages/FieldInputPage/FieldInputPage';
 import FieldHintPage from './pages/FieldHintPage/FieldHintPage';
@@ -28,6 +27,24 @@ import ButtonPage from './pages/ButtonPage/ButtonPage';
 import BadgePage from './pages/BadgePage/BadgePage';
 import TooltipsPage from './pages/TooltipsPage/TooltipsPage';
 import PopoutPage from './pages/PopoutPage/PopoutPage';
+
+// const TextfieldPage = lazy(() => import('./pages/TextfieldPage/TextfieldPage'));
+// const TextPage = lazy(() => import('./pages/TextPage/TextPage'));
+// const SandboxPage = lazy(() => import('./pages/Sandbox/Sandbox'));
+// const MaskPage = lazy(() => import('./pages/MaskPage/MaskPage'));
+// const FieldLabelPage = lazy(() => import('./pages/FieldLabelPage/FieldLabelPage'));
+// const FieldInputPage = lazy(() => import('./pages/FieldInputPage/FieldInputPage'));
+// const FieldHintPage = lazy(() => import('./pages/FieldHintPage/FieldHintPage'));
+// const RadioInputPage = lazy(() => import('./pages/RadioInputPage/RadioInputPage'));
+// const CheckboxPage = lazy(() => import('./pages/CheckboxPage/CheckboxPage'));
+// const DropdownPage = lazy(() => import('./pages/DropdownPage/DropdownPage'));
+// const PreloaderPage = lazy(() => import('./pages/PreloaderPage/PreloaderPage'));
+// const ComboboxPage = lazy(() => import('./pages/ComboboxPage/ComboboxPage'));
+// const AirtablePage = lazy(() => import('./pages/AirtablePage/AirtablePage'));
+// const ButtonPage = lazy(() => import('./pages/ButtonPage/ButtonPage'));
+// const BadgePage = lazy(() => import('./pages/BadgePage/BadgePage'));
+// const TooltipsPage = lazy(() => import('./pages/TooltipsPage/TooltipsPage'));
+// const PopoutPage = lazy(() => import('./pages/PopoutPage/PopoutPage'));
 
 class App extends Component {
   constructor(props) {

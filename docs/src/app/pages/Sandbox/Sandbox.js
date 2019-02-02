@@ -53,7 +53,6 @@ import Badge from '../../components/Badge/Badge';
 import Image from '../../components/Image/Image';
 
 import LazyTest from './LazyTest';
-// const LazyTest = lazy(() => import('./LazyTest'));
 
 const images = [img6, img2, img3, img4, img5, img1];
 
