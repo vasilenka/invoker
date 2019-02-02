@@ -1,5 +1,5 @@
 import styles from './Sandbox.module.scss';
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 
 import Header from './../../docs/Header/Header';
@@ -52,7 +52,8 @@ import IconButton from '../../components/IconButton/IconButton';
 import Badge from '../../components/Badge/Badge';
 import Image from '../../components/Image/Image';
 
-const LazyTest = lazy(() => import('./LazyTest'));
+import LazyTest from './LazyTest';
+// const LazyTest = lazy(() => import('./LazyTest'));
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -327,9 +328,7 @@ const Sandbox = ({ className, ...restProps }) => {
       </Preview>
       <Divider large />
       <Preview>
-        <Suspense fallback={<Spinner />}>
-          <LazyTest />
-        </Suspense>
+        <LazyTest />
       </Preview>
       <Preview>
         <Overlapping data={kda}>
