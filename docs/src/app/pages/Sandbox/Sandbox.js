@@ -42,6 +42,7 @@ import img3 from './img/3.jpg';
 import img4 from './img/4.jpg';
 import img5 from './img/5.jpg';
 import img6 from './img/6.jpg';
+import hopes from './img/hopes.jpg';
 import SliderControl from '../../components/SliderControl/SliderControl';
 
 import { ReactComponent as Prev } from './img/prev.svg';
@@ -51,6 +52,8 @@ import SliderItem from '../../components/SliderItem/SliderItem';
 import IconButton from '../../components/IconButton/IconButton';
 import Badge from '../../components/Badge/Badge';
 import Image from '../../components/Image/Image';
+
+import Cropper from '../../components/Cropper/Cropper';
 
 import LazyTest from './LazyTest';
 
@@ -151,16 +154,14 @@ const Sandbox = ({ className, ...restProps }) => {
     // setAlbums(newAlbums)
   };
 
-  // <Image
-  //     className={classnames(styles.imageCarousel)}
-  //     src={img}
-  //     fit="cover"
-  //     alt="hello world"
-  //     />
-
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+
+      <Preview clean>
+        <Cropper src={hopes} />
+      </Preview>
+      <Divider large />
 
       <Preview clean style={{ background: 'rgba(0,0,0,.80)' }}>
         <Text display3 component="h2" breakWord className={styles.title}>
