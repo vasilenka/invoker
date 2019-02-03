@@ -53,9 +53,11 @@ import IconButton from '../../components/IconButton/IconButton';
 import Badge from '../../components/Badge/Badge';
 import Image from '../../components/Image/Image';
 
-import Cropper from '../../components/Cropper/Cropper';
+// import Cropper from '../../components/Cropper/Cropper';
 
 import LazyTest from './LazyTest';
+import Dialog from '../../components/Dialog/Dialog';
+import Socky from '../../components/Socky/Socky';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -111,8 +113,16 @@ const Sandbox = ({ className, ...restProps }) => {
   let [fromLeft, setFromLeft] = useState(false);
   let [fromRight, setFromRight] = useState(false);
 
+  let [dialog, setDialog] = useState(false);
+
+  let [originalImage, setOriginalImage] = React.useState();
+  let [imageCropped, setImageCropped] = React.useState();
+  // let [blobCropped, setBlobCropped] = React.useState(null);
+  // let [dataCropped, setDataCropped] = React.useState();
+
   useEffect(() => {
     setAlbums(kda);
+    setOriginalImage(hopes);
   }, []);
 
   useEffect(
@@ -122,8 +132,14 @@ const Sandbox = ({ className, ...restProps }) => {
         setFromLeft(false);
         setFromRight(false);
       }, 800);
+      let body = document.querySelector('body');
+      if (dialog) {
+        body.style.overflow = 'hidden';
+      } else {
+        body.style.overflow = 'unset';
+      }
     },
-    [activeIndex]
+    [activeIndex, dialog]
   );
 
   const nextImage = max => {
@@ -154,14 +170,41 @@ const Sandbox = ({ className, ...restProps }) => {
     // setAlbums(newAlbums)
   };
 
+  const handleImageData = (img, blob) => {
+    setImageCropped(img);
+    // setBlobCropped(blob);
+    // setDataCropped(data);
+  };
+
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
 
-      <Preview clean>
-        <Cropper src={hopes} />
+      <Preview>
+        {imageCropped ? (
+          <Image
+            src={imageCropped}
+            containerStyle={{ marginBottom: '24px' }}
+            alt="Hello there!"
+            naturalWidth="720"
+            naturalHeight="1080"
+          />
+        ) : null}
+        <Button primary small onClick={() => setDialog(true)}>
+          Open editor
+        </Button>
       </Preview>
-      <Divider large />
+
+      {dialog && (
+        <Dialog dark>
+          <Socky
+            getImageData={handleImageData}
+            closeDialog={() => setDialog(false)}
+            ratio={720 / 1080}
+            src={imageCropped || originalImage}
+          />
+        </Dialog>
+      )}
 
       <Preview clean style={{ background: 'rgba(0,0,0,.80)' }}>
         <Text display3 component="h2" breakWord className={styles.title}>

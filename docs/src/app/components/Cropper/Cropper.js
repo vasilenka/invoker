@@ -1,4 +1,4 @@
-import './Cropper.scss';
+// import './Cropper.scss';
 import styles from './Cropper.module.scss';
 import React from 'react';
 import ImageEditorRc from 'react-cropper-image-editor';
@@ -27,7 +27,6 @@ const Cropper = ({ className, src, name, height, ...restProps }) => {
       axios({
         method: 'post',
         url: 'https://arcane-tor-41675.herokuapp.com/process',
-        // url: 'http://localhost:5000/process',
         data: formData,
         config: {
           headers: { 'Content-Type': 'multipart/form-data' }

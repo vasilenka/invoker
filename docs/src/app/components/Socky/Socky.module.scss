@@ -1,0 +1,42 @@
+@import 'invoker-tokens/index.scss';
+
+.root {
+  height: 100%;
+
+  @include screen(mobile) {
+    padding: $space-inset-m;
+  }
+
+  @include screen(tabPortrait) {
+    padding: $space-inset-l;
+  }
+
+  @include screen(tabLandscape) {
+    padding: $space-inset-ll;
+  }
+}
+
+.toolbar {
+  @include screen(desktop) {
+    position: absolute;
+    width: 40%;
+    top: 0;
+    height: 100%;
+    padding-top: 80px;
+    padding-right: $space-ll;
+    padding-bottom: $space-ll;
+  }
+}
+
+.canvas {
+  @include screen(desktop) {
+    position: absolute;
+    width: 60%;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding-top: $space-ll;
+    padding-right: $space-ll;
+    padding-bottom: $space-ll;
+  }
+}

@@ -41,6 +41,8 @@ class Image extends Component {
     const {
       children,
       className,
+      containerClass,
+      containerStyle,
       bgColor,
       fit,
       src,
@@ -80,10 +82,14 @@ class Image extends Component {
       </div>
     ) : (
       <div
-        className={styles.container}
+        className={classnames({
+          [styles.container]: true,
+          [containerClass]: containerClass
+        })}
         style={{
           backgroundColor: bgColor,
-          paddingBottom: `${(naturalHeight / naturalWidth) * 100}%`
+          paddingBottom: `${(naturalHeight / naturalWidth) * 100}%`,
+          ...containerStyle
         }}
       >
         <img
