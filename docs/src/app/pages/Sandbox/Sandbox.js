@@ -215,7 +215,7 @@ const Sandbox = ({ className, ...restProps }) => {
             data={dataCropped}
             getImageData={handleImageData}
             closeDialog={() => setDialog(false)}
-            ratio={16 / 16}
+            ratio={720 / 1080}
             src={originalImage}
             header={
               <Text heading3 style={{ color: '#ffffff' }} component="h2">

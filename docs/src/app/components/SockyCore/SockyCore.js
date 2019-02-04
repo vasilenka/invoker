@@ -1,7 +1,7 @@
 import './SockyCore.scss';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Cropper from 'cropperjs';
+import Socky from 'cropperjs';
 
 const optionProps = [
   'dragMode',
@@ -56,7 +56,7 @@ class SockyCore extends Component {
           Object.assign({}, prevOptions, { [propKey]: this.props[propKey] }),
         {}
       );
-    this.cropper = new Cropper(this.img, options);
+    this.cropper = new Socky(this.img, options);
   }
 
   componentWillReceiveProps(nextProps) {

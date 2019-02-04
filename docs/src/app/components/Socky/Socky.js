@@ -23,6 +23,7 @@ const Socky = ({
   ...restProps
 }) => {
   const sockyRef = React.useRef();
+  window.ref = sockyRef;
 
   let [image, setImage] = React.useState();
   let [blob, setBlob] = React.useState();
@@ -70,8 +71,8 @@ const Socky = ({
         sockyRef.current.getCropBoxData().height) /
       2;
     sockyRef.current.setCropBoxData({
-      top,
-      left
+      top: top < 0 ? 0 : top,
+      left: left < 0 ? 0 : left
     });
   };
 
