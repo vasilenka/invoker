@@ -5,6 +5,8 @@ import SockyCore from '../SockyCore/SockyCore';
 
 const SockyCanvas = ({
   children,
+  data,
+  secondary,
   sockyRef,
   className,
   height,
@@ -26,7 +28,9 @@ const SockyCanvas = ({
         ref={sockyRef}
         src={src}
         viewMode={1}
+        autoCrop={true}
         dragMode="move"
+        data={secondary ? data : null}
         crossOrigin="true"
         responseType="blob/base64"
         style={{
@@ -36,9 +40,9 @@ const SockyCanvas = ({
         aspectRatio={ratio}
         imageName={name}
         background={false}
-        minCropBoxWidth={1440}
+        minCropBoxWidth={1080}
         guides={false}
-        cropBoxMovable={false}
+        cropBoxMovable={secondary ? true : false}
         cropBoxResizable={false}
       />
     </div>

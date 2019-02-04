@@ -83,6 +83,25 @@
   }
 }
 
+.primaryLight {
+  composes: root;
+  border-color: $light-alpha-100;
+  color: $dark-alpha-70;
+  background-color: $light-alpha-100;
+  transition: all 0.4s ease;
+
+  &:hover {
+    border-color: $light-alpha-100;
+    transition: all 0.24s ease;
+    background-color: $light-alpha-100;
+  }
+
+  &.disabled {
+    color: $light-alpha-70;
+    user-select: none;
+  }
+}
+
 .primaryAlt {
   composes: root;
   border-color: $brand-secondary-100;
@@ -114,8 +133,16 @@
   composes: primary medium;
 }
 
+.primaryMediumLight {
+  composes: primaryLight medium;
+}
+
 .primaryBold {
   composes: primary bold;
+}
+
+.primaryBoldLight {
+  composes: primaryLight bold;
 }
 
 .primary_full {
@@ -146,6 +173,28 @@
   }
 }
 
+.secondaryLight {
+  composes: root;
+  font-weight: $medium;
+  border-width: 1px;
+  border-color: $light-alpha-100;
+  background: transparent;
+  color: $light-alpha-90;
+  transition: all 0.4s ease;
+
+  &:hover {
+    color: $light-alpha-100;
+    border-color: $light-alpha-100;
+    transition: all 0.24s ease;
+  }
+
+  &.disabled {
+    color: $dark-alpha-50;
+    border-color: $dark-alpha-30;
+    user-select: none;
+  }
+}
+
 .secondaryAlt {
   composes: root;
   font-weight: $bold;
@@ -164,6 +213,28 @@
   &.disabled {
     color: $dark-alpha-50;
     border-color: $dark-alpha-30;
+    user-select: none;
+  }
+}
+
+.secondaryAltLight {
+  composes: root;
+  font-weight: $bold;
+  border-width: 2px;
+  border-color: $light-alpha-80;
+  background: transparent;
+  color: $light-alpha-100;
+  transition: all 0.4s ease;
+
+  &:hover {
+    color: $light-alpha-100;
+    border-color: $light-alpha-100;
+    transition: all 0.24s ease;
+  }
+
+  &.disabled {
+    color: $light-alpha-70;
+    border-color: $light-alpha-70;
     user-select: none;
   }
 }

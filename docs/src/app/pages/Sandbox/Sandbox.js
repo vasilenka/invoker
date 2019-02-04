@@ -117,8 +117,8 @@ const Sandbox = ({ className, ...restProps }) => {
 
   let [originalImage, setOriginalImage] = React.useState();
   let [imageCropped, setImageCropped] = React.useState();
-  // let [blobCropped, setBlobCropped] = React.useState(null);
-  // let [dataCropped, setDataCropped] = React.useState();
+  let [blobCropped, setBlobCropped] = React.useState(null);
+  let [dataCropped, setDataCropped] = React.useState();
 
   useEffect(() => {
     setAlbums(kda);
@@ -170,10 +170,13 @@ const Sandbox = ({ className, ...restProps }) => {
     // setAlbums(newAlbums)
   };
 
-  const handleImageData = (img, blob) => {
+  let [canvas, setCanvas] = React.useState();
+
+  const handleImageData = (img, blob, data, canvas) => {
     setImageCropped(img);
     // setBlobCropped(blob);
-    // setDataCropped(data);
+    setDataCropped(data);
+    setCanvas(canvas);
   };
 
   return (
@@ -198,10 +201,13 @@ const Sandbox = ({ className, ...restProps }) => {
       {dialog && (
         <Dialog dark>
           <Socky
+            // secondary
+            canvas={canvas}
+            data={dataCropped}
             getImageData={handleImageData}
             closeDialog={() => setDialog(false)}
             ratio={720 / 1080}
-            src={imageCropped || originalImage}
+            src={originalImage}
           />
         </Dialog>
       )}

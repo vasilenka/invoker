@@ -11,6 +11,8 @@ import Button from './../Button/Button';
 const Socky = ({
   children,
   data,
+  secondary,
+  canvas,
   className,
   ratio,
   getImageData,
@@ -22,23 +24,28 @@ const Socky = ({
 
   let [image, setImage] = React.useState();
   let [blob, setBlob] = React.useState();
-  // let [imageData, setImageData] = React.useState(data)
+  let [imageData, setImageData] = React.useState(data);
+  let [canvasData, setCanvasData] = React.useState(canvas);
 
   React.useEffect(
     () => {
-      // if(data) {
-      //   sockyRef.current.setData(data)
-      // }
       if (getImageData && image && blob) {
-        getImageData(image, blob);
+        getImageData(image, blob, imageData);
         handleClose();
       }
+      if (secondary && imageData) {
+        sockyRef.current.setData(imageData);
+      }
+      if (secondary && canvasData) {
+        sockyRef.current.setCanvasData(canvasData);
+      }
     },
-    [image, blob]
+    [image, blob, imageData, canvasData]
   );
 
   const setCroppedImage = () => {
-    // setImageData(sockyRef.current.getData())
+    setImageData(sockyRef.current.getData());
+    setCanvasData(sockyRef.current.getImageData());
     setImage(sockyRef.current.getCroppedCanvas().toDataURL());
     sockyRef.current.getCroppedCanvas().toBlob(blob => {
       setBlob(blob);
@@ -62,19 +69,22 @@ const Socky = ({
         <Text heading2 style={{ color: '#ffffff' }} component="h2">
           Edit photo
         </Text>
-        <Button
-          small
-          primary
-          onClick={setCroppedImage}
-          style={{ marginRight: '12px' }}
-        >
-          Save and replace
-        </Button>
-        <Button small secondaryAlt onClick={handleClose}>
-          Close editor
-        </Button>
+        <footer>
+          <Button
+            primary
+            onClick={setCroppedImage}
+            style={{ marginRight: '12px' }}
+          >
+            Save and replace
+          </Button>
+          <Button secondaryAlt light onClick={handleClose}>
+            Cancel
+          </Button>
+        </footer>
       </SockyToolbar>
       <SockyCanvas
+        secondary={secondary}
+        data={imageData}
         sockyRef={sockyRef}
         src={src}
         className={styles.canvas}

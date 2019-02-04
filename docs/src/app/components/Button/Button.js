@@ -11,6 +11,7 @@ const Button = ({
   primary,
   onClick,
   secondary,
+  light,
   secondaryAlt,
   primaryBold,
   primaryAlt,
@@ -26,11 +27,15 @@ const Button = ({
       type={type || 'button'}
       onClick={onClick}
       className={classnames({
-        [styles.secondary]: secondary,
-        [styles.secondaryAlt]: secondaryAlt,
+        [styles.secondary]: secondary && !light,
+        [styles.secondaryLight]: secondary && light,
+        [styles.secondaryAlt]: secondaryAlt && !light,
+        [styles.secondaryAltLight]: secondaryAlt && light,
 
-        [styles.primaryMedium]: primary,
-        [styles.primaryBold]: primaryBold,
+        [styles.primaryMedium]: primary && !light,
+        [styles.primaryMediumLight]: primary && light,
+        [styles.primaryBold]: primaryBold && !light,
+        [styles.primaryBoldLight]: primaryBold && light,
 
         [styles.primaryAltMedium]: primaryAlt,
         [styles.primaryAltBold]: primaryAltBold,
