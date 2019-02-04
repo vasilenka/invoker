@@ -6,7 +6,17 @@
   top: 0;
   right: 0;
   bottom: 0;
+  min-height: max-content;
   left: 0;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.scroll {
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .dark {

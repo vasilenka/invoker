@@ -1,33 +1,86 @@
 @import 'invoker-tokens/index.scss';
 
 .root {
-  height: 100%;
-  padding: $space-inset-ll;
-}
-
-.toolbar {
   display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  position: absolute;
-  width: 40%;
-  min-width: 40%;
-  top: 0;
   height: 100%;
-  padding-top: 80px;
-  padding-right: $space-ll;
-  padding-bottom: $space-ll;
+  width: 100%;
+  @include screen(phone) {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    padding: 0;
+  }
+  @include screen(tabPortrait) {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    padding: 0;
+  }
+  @include screen(tabLandscape) {
+    flex-direction: row;
+    padding: $space-inset-ll;
+    justify-content: space-between;
+  }
+  @include screen(desktop) {
+    flex-direction: row;
+    padding: $space-inset-ll;
+    justify-content: space-between;
+  }
+  @include screen(desktopWide) {
+    flex-direction: row;
+    padding: $space-inset-ll;
+    justify-content: space-between;
+  }
 }
 
-.canvas {
-  position: absolute;
-  width: 60%;
-  min-width: 60%;
-  top: 0;
-  right: 0;
-  height: 100%;
-  padding-top: $space-ll;
-  padding-right: $space-ll;
-  padding-bottom: $space-ll;
+.title,
+.cancel {
+  @include screen(phone) {
+    display: none;
+  }
+  @include screen(tabPortrait) {
+    display: none;
+  }
+  @include screen(tabLandscape) {
+    display: unset;
+  }
+  @include screen(desktop) {
+    display: unset;
+  }
+  @include screen(desktopWide) {
+    display: unset;
+  }
+}
+
+.footer {
+  width: 100%;
+}
+
+.save {
+  @include screen(phone) {
+    width: 100%;
+    margin-right: 0;
+  }
+  @include screen(tabPortrait) {
+    width: 100%;
+    margin-right: 0;
+  }
+  @include screen(tabLandscape) {
+    width: unset;
+    margin: $space-inline-sm;
+  }
+  @include screen(desktop) {
+    width: unset;
+    margin: $space-inline-sm;
+  }
+  @include screen(desktopWide) {
+    width: unset;
+    margin: $space-inline-sm;
+  }
+}
+
+.headerTitle {
+  color: $light-alpha-100;
+}
+
+.headerSubtitle {
+  color: $light-alpha-80;
 }

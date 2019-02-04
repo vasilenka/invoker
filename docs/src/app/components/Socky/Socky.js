@@ -7,9 +7,11 @@ import SockyToolbar from '../SockyToolbar/SockyToolbar';
 
 import Text from '../Text/Text';
 import Button from './../Button/Button';
+import SockyHeader from '../SockyHeader/SockyHeader';
 
 const Socky = ({
   children,
+  header,
   data,
   secondary,
   canvas,
@@ -58,6 +60,21 @@ const Socky = ({
     }
   };
 
+  const handleZoom = () => {
+    let left =
+      (sockyRef.current.getContainerData().width -
+        sockyRef.current.getCropBoxData().width) /
+      2;
+    let top =
+      (sockyRef.current.getContainerData().height -
+        sockyRef.current.getCropBoxData().height) /
+      2;
+    sockyRef.current.setCropBoxData({
+      top,
+      left
+    });
+  };
+
   return (
     <div
       className={cx({
@@ -65,19 +82,25 @@ const Socky = ({
       })}
       {...restProps}
     >
-      <SockyToolbar className={styles.toolbar}>
-        <Text heading2 style={{ color: '#ffffff' }} component="h2">
+      <SockyToolbar>
+        <Text
+          className={styles.title}
+          heading2
+          style={{ color: '#ffffff' }}
+          component="h2"
+        >
           Edit photo
         </Text>
-        <footer>
-          <Button
-            primary
-            onClick={setCroppedImage}
-            style={{ marginRight: '12px' }}
-          >
+        <footer className={styles.footer}>
+          <Button primary className={styles.save} onClick={setCroppedImage}>
             Save and replace
           </Button>
-          <Button secondaryAlt light onClick={handleClose}>
+          <Button
+            secondaryAlt
+            light
+            className={styles.cancel}
+            onClick={handleClose}
+          >
             Cancel
           </Button>
         </footer>
@@ -87,9 +110,10 @@ const Socky = ({
         data={imageData}
         sockyRef={sockyRef}
         src={src}
-        className={styles.canvas}
         ratio={ratio}
+        zoom={handleZoom}
       />
+      <SockyHeader onClick={handleClose}>{header}</SockyHeader>
     </div>
   );
 };

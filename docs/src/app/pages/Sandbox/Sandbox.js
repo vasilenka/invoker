@@ -43,6 +43,7 @@ import img4 from './img/4.jpg';
 import img5 from './img/5.jpg';
 import img6 from './img/6.jpg';
 import hopes from './img/hopes.jpg';
+// import hello from './img/hello.jpeg';
 import SliderControl from '../../components/SliderControl/SliderControl';
 
 import { ReactComponent as Prev } from './img/prev.svg';
@@ -117,7 +118,7 @@ const Sandbox = ({ className, ...restProps }) => {
 
   let [originalImage, setOriginalImage] = React.useState();
   let [imageCropped, setImageCropped] = React.useState();
-  let [blobCropped, setBlobCropped] = React.useState(null);
+  // let [blobCropped, setBlobCropped] = React.useState(null);
   let [dataCropped, setDataCropped] = React.useState();
 
   useEffect(() => {
@@ -133,10 +134,18 @@ const Sandbox = ({ className, ...restProps }) => {
         setFromRight(false);
       }, 800);
       let body = document.querySelector('body');
+      let html = document.querySelector('html');
+      let root = document.querySelector('#root');
       if (dialog) {
         body.style.overflow = 'hidden';
+        html.style.overflow = 'hidden';
+        root.style.height = '100vh';
+        body.style.height = '100vh';
       } else {
         body.style.overflow = 'unset';
+        html.style.overflow = 'unset';
+        root.style.height = '';
+        body.style.height = '';
       }
     },
     [activeIndex, dialog]
@@ -199,15 +208,20 @@ const Sandbox = ({ className, ...restProps }) => {
       </Preview>
 
       {dialog && (
-        <Dialog dark>
+        <Dialog dark hidden>
           <Socky
             // secondary
             canvas={canvas}
             data={dataCropped}
             getImageData={handleImageData}
             closeDialog={() => setDialog(false)}
-            ratio={720 / 1080}
+            ratio={16 / 16}
             src={originalImage}
+            header={
+              <Text heading3 style={{ color: '#ffffff' }} component="h2">
+                Edit photo
+              </Text>
+            }
           />
         </Dialog>
       )}

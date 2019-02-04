@@ -8,6 +8,7 @@ const SockyCanvas = ({
   data,
   secondary,
   sockyRef,
+  zoom,
   className,
   height,
   name,
@@ -35,15 +36,19 @@ const SockyCanvas = ({
         responseType="blob/base64"
         style={{
           height: '100%',
-          width: '100%'
+          width: '100%',
+          minCanvasHeight: '100%'
         }}
         aspectRatio={ratio}
         imageName={name}
         background={false}
         minCropBoxWidth={1080}
+        minCropBoxHeight={1080}
         guides={false}
+        center={false}
         cropBoxMovable={secondary ? true : false}
         cropBoxResizable={false}
+        zoom={zoom}
       />
     </div>
   );
