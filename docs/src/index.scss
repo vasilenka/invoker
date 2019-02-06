@@ -21,4 +21,8 @@ body {
   .Hide {
     display: none;
   }
+
+  .topLayer {
+    z-index: 99999999;
+  }
 }

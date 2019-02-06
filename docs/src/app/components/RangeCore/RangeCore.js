@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-export default class DragRange extends React.Component {
+export default class RangeCore extends React.Component {
   static propTypes = {
     yAxis: PropTypes.bool, // default is x
     percent: PropTypes.bool, // if value should be x width or y height
@@ -173,6 +173,8 @@ export default class DragRange extends React.Component {
     this.handleDoubleClick(e);
     this.props.onMouseDown(e);
 
+    this.container.classList.add('topLayer');
+
     // TODO first delta prev values
     // this.prevValue = this.props.value
     // this.prevEvent = e
@@ -233,6 +235,7 @@ export default class DragRange extends React.Component {
     this.setState({ startIsDraggingOnMove: false });
     this.endIsDragging(e);
     this.props.onMouseUp(e);
+    this.container.classList.remove('topLayer');
   };
 
   endIsDragging = e => {
@@ -283,9 +286,9 @@ export default class DragRange extends React.Component {
   };
 
   componentDidMount = () => {
-    this.container.addEventListener('touchstart', this.touchHandler, true);
-    this.container.addEventListener('touchmove', this.touchHandler, true);
-    this.container.addEventListener('touchend', this.touchHandler, true);
+    this.container.addEventListener('touchstart', this.touchHandler, false);
+    this.container.addEventListener('touchmove', this.touchHandler, false);
+    this.container.addEventListener('touchend', this.touchHandler, false);
 
     this.handleSetTarget();
     document.addEventListener('mousemove', this.handleMouseMove);
@@ -296,6 +299,10 @@ export default class DragRange extends React.Component {
     document.removeEventListener('mousemove', this.handleMouseMove);
     document.removeEventListener('mouseup', this.handleMouseUp);
     document.removeEventListener('mouseout', this.handleMouseUp);
+
+    this.container.removeEventListener('touchstart', this.touchHandler, false);
+    this.container.removeEventListener('touchmove', this.touchHandler, false);
+    this.container.removeEventListener('touchend', this.touchHandler, false);
 
     if (this.state.target)
       this.state.target.removeEventListener('mousedown', this.handleMouseDown);

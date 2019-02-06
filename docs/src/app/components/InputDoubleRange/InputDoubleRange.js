@@ -6,6 +6,8 @@ import RangeCore from './../RangeCore/RangeCore';
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
+import RangeThumb from '../RangeThumb/RangeThumb';
+import RangeRail from '../RangeRail/RangeRail';
 
 const InputRange = ({
   children,
@@ -25,6 +27,11 @@ const InputRange = ({
   getValueMax,
   ...restProps
 }) => {
+  const thumbMinRef = React.useRef();
+  const thumbMaxRef = React.useRef();
+  const minContainerRef = React.useRef();
+  const maxContainerRef = React.useRef();
+
   let [minVal, setMinVal] = React.useState(minValue);
   let [maxVal, setMaxVal] = React.useState(maxValue);
 
@@ -35,29 +42,25 @@ const InputRange = ({
     `${((minVal - min) / max) * 100}`
   );
 
-  React.useEffect(
-    () => {
-      if (getValueMin) {
-        getValueMin(minVal);
-      }
-      if (getValueMax) {
-        getValueMax(maxVal);
-      }
-    },
-    [minVal, maxVal, offsetLeft, offsetRight]
-  );
-
   const handleMinChange = val => {
     setMinVal(val);
+    if (getValueMin) {
+      getValueMin(minVal);
+    }
     setOffsetLeft(`${((minVal - min) / max) * 100}`);
   };
 
   const handleMaxChange = val => {
     setMaxVal(val);
+    if (getValueMax) {
+      getValueMax(maxVal);
+    }
     setOffsetRight(`${((max - val) / max) * 100}`);
   };
 
   const styleProgress = css`
+    user-select: none;
+    height: 4px;
     left: ${offsetLeft}%;
     right: ${offsetRight}%;
   `;
@@ -70,50 +73,37 @@ const InputRange = ({
     right: calc(${offsetRight}% - 14px);
   `;
 
-  const styleRailLeft = css`
-    position: absolute;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    background: transparent;
-    height: 4px;
-    top: -12px;
-    right: 0;
-    bottom: 0px;
-    left: 0;
-  `;
-
-  const styleRailRight = css`
-    position: absolute;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    background: transparent;
-    height: 4px;
-    top: -12px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  `;
-
   const styleRailLeftLine = css`
+    overflow: hidden;
+    top: 12px;
+    height: 4px;
     left: 0;
-    right: calc(${100 - offsetLeft}%);
+    ${'' /* right: calc(${100 - offsetLeft}%); */}
+    right: 0;
+  `;
+  const styleRailLeftLineIndicator = css`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 3px;
+    transform: translate3d(-${100 - offsetLeft}%, 0px, 0px);
   `;
 
   const styleRailRightLine = css`
+    top: 12px;
+    height: 4px;
     right: 0;
     left: calc(${100 - offsetRight}%);
   `;
 
   return (
-    <div
-      className={cx({
-        [styles.root]: true,
-        [className]: className
-      })}
-    >
+    <>
       <RangeCore
-        className={styles.container}
-        css={styleRailLeft}
+        className={styles.root}
+        ref={minContainerRef}
+        sibling={maxContainerRef.current}
         percent
         onChange={val => handleMinChange(val)}
         value={minVal}
@@ -121,21 +111,16 @@ const InputRange = ({
         min={min}
         max={maxVal}
       >
-        <div className={cx(styles.thumb)} css={styleThumbLeft}>
-          {affordance && (
-            <>
-              <div className={styles.affordance} />
-              <div className={styles.affordance} />
-              <div className={styles.affordance} />
-            </>
-          )}
-        </div>
-        <div css={styleRailLeftLine} className={cx(styles.rail)} />
+        <RangeThumb withAffordance={affordance} css={styleThumbLeft} />
+        <RangeRail transparent css={styleRailLeftLine}>
+          <RangeRail bgRail css={styleRailLeftLineIndicator} />
+        </RangeRail>
       </RangeCore>
 
       <RangeCore
-        className={styles.container}
-        css={styleRailRight}
+        className={styles.root}
+        ref={maxContainerRef}
+        sibling={minContainerRef.current}
         percent
         onChange={val => handleMaxChange(val)}
         value={maxVal}
@@ -143,20 +128,11 @@ const InputRange = ({
         min={minVal}
         max={max}
       >
-        <div className={cx(styles.thumb)} css={styleThumbRight}>
-          {affordance && (
-            <>
-              <div className={styles.affordance} />
-              <div className={styles.affordance} />
-              <div className={styles.affordance} />
-            </>
-          )}
-        </div>
-        <div css={styleRailRightLine} className={cx(styles.rail)} />
+        <RangeThumb withAffordance={affordance} css={styleThumbRight} />
+        <RangeRail bgRail css={styleRailRightLine} />
       </RangeCore>
-
-      <div css={styleProgress} className={cx(styles.progress)} />
-    </div>
+      {/* <RangeRail css={styleProgress}/> */}
+    </>
   );
 };
 

@@ -6,9 +6,12 @@ import RangeCore from './../RangeCore/RangeCore';
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
+import RangeThumb from '../RangeThumb/RangeThumb';
+import RangeRail from '../RangeRail/RangeRail';
 
 const InputRange = ({
   children,
+  getValue,
   affordance,
   dark,
   light,
@@ -23,26 +26,10 @@ const InputRange = ({
   className,
   ...restProps
 }) => {
-  const thumbRef = React.useRef();
-
   let [val, setVal] = React.useState(value);
-
   let [offset, setOffset] = React.useState(
     `${100 - ((val - min) / max) * 100}`
   );
-
-  React.useEffect(
-    () => {
-      // console.log('VALUE: ', val);
-      // console.log('OFFSET', offset);
-    },
-    [val, offset]
-  );
-
-  const handleChange = val => {
-    setVal(val);
-    setOffset(`${100 - ((val - min) / max) * 100}`);
-  };
 
   const styleProgress = css`
     transform: translate3d(-${offset}%, 0px, 0px);
@@ -51,6 +38,14 @@ const InputRange = ({
   const styleThumb = css`
     left: calc(${100 - offset}% - 14px);
   `;
+
+  const handleChange = val => {
+    setVal(val);
+    if (getValue) {
+      getValue(val);
+    }
+    setOffset(`${100 - ((val - min) / max) * 100}`);
+  };
 
   return (
     <RangeCore
@@ -64,26 +59,12 @@ const InputRange = ({
         [styles.root]: true,
         [className]: className
       })}
+      {...restProps}
     >
-      <div ref={thumbRef} className={cx(styles.thumb)} css={styleThumb}>
-        {affordance && (
-          <>
-            <div className={styles.affordance} />
-            <div className={styles.affordance} />
-            <div className={styles.affordance} />
-          </>
-        )}
-      </div>
-
-      <div
-        className={cx({
-          [styles.progressContainer]: true,
-          [styles.light]: light,
-          [styles.dark]: dark
-        })}
-      >
-        <div css={styleProgress} className={cx(styles.progress)} />
-      </div>
+      <RangeThumb withAffordance css={styleThumb} />
+      <RangeRail bgRail className={styles.progressContainer}>
+        <RangeRail css={styleProgress} className={cx(styles.progress)} />
+      </RangeRail>
     </RangeCore>
   );
 };

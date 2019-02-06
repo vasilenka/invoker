@@ -59,7 +59,9 @@ import LazyTest from './LazyTest';
 import Dialog from '../../components/Dialog/Dialog';
 import Socky from '../../components/Socky/Socky';
 import InputRange from '../../components/InputRange/InputRange';
+
 import InputDoubleRange from '../../components/InputDoubleRange/InputDoubleRange';
+import InputDouble from '../../components/InputDoubleRange/InputDouble';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -197,20 +199,37 @@ const Sandbox = ({ className, ...restProps }) => {
   let [valueMin, setValueMin] = React.useState();
   let [valueMax, setValueMax] = React.useState();
 
+  let [value1, setValue1] = React.useState(10);
+  let [value2, setValue2] = React.useState(20);
+  let [value3, setValue3] = React.useState(30);
+
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
 
       <Preview clean>
-        <InputDoubleRange
+        <InputDouble
           affordance
           min={0}
           max={100}
-          minValue={0}
-          maxValue={100}
+          minValue={value1}
+          maxValue={value3}
+          // getValue={val => setValue1(val)}
+          unit={5}
+          step={1}
+          dark
+        />
+      </Preview>
+
+      <Preview clean>
+        <InputDoubleRange
+          affordance={false}
+          min={0}
+          max={100}
+          minValue={10}
+          maxValue={90}
           getValueMin={v => setValueMin(v)}
           getValueMax={v => setValueMax(v)}
-          unit={5}
           step={1}
           dark
         />
@@ -229,11 +248,52 @@ const Sandbox = ({ className, ...restProps }) => {
           affordance
           min={0}
           max={100}
-          value={17}
+          value={value1}
+          getValue={val => setValue1(val)}
           unit={5}
           step={1}
           dark
         />
+        <Divider large />
+        <Text heading4 component="h3">
+          value: {value1}
+        </Text>
+      </Preview>
+      <Divider large />
+
+      <Preview clean>
+        <InputRange
+          affordance
+          min={0}
+          max={100}
+          value={value2}
+          getValue={val => setValue2(val)}
+          unit={5}
+          step={1}
+          dark
+        />
+        <Divider large />
+        <Text heading4 component="h3">
+          value: {value2}
+        </Text>
+      </Preview>
+      <Divider large />
+
+      <Preview clean>
+        <InputRange
+          affordance
+          min={0}
+          max={100}
+          value={value3}
+          getValue={val => setValue3(val)}
+          unit={5}
+          step={1}
+          dark
+        />
+        <Divider large />
+        <Text heading4 component="h3">
+          value: {value3}
+        </Text>
       </Preview>
       <Divider large />
 
