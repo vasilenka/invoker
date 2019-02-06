@@ -59,6 +59,7 @@ import LazyTest from './LazyTest';
 import Dialog from '../../components/Dialog/Dialog';
 import Socky from '../../components/Socky/Socky';
 import InputRange from '../../components/InputRange/InputRange';
+import InputDoubleRange from '../../components/InputDoubleRange/InputDoubleRange';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -193,9 +194,35 @@ const Sandbox = ({ className, ...restProps }) => {
   //   setSliderValue(val)
   // }
 
+  let [valueMin, setValueMin] = React.useState();
+  let [valueMax, setValueMax] = React.useState();
+
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+
+      <Preview clean>
+        <InputDoubleRange
+          affordance
+          min={0}
+          max={100}
+          minValue={0}
+          maxValue={100}
+          getValueMin={v => setValueMin(v)}
+          getValueMax={v => setValueMax(v)}
+          unit={5}
+          step={1}
+          dark
+        />
+        <Divider large />
+        <Text heading3 component="p">
+          Min: {valueMin}
+        </Text>
+        <Text heading3 component="p">
+          Max: {valueMax}
+        </Text>
+      </Preview>
+      <Divider large />
 
       <Preview clean>
         <InputRange

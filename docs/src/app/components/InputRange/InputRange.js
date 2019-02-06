@@ -2,9 +2,10 @@ import styles from './InputRange.module.scss';
 import React from 'react';
 import cx from 'classnames';
 
+import RangeCore from './../RangeCore/RangeCore';
+
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import DragRange from './Range';
 
 const InputRange = ({
   children,
@@ -17,6 +18,7 @@ const InputRange = ({
   vertical,
   max,
   value,
+  maxValue,
   step,
   className,
   ...restProps
@@ -24,14 +26,15 @@ const InputRange = ({
   const thumbRef = React.useRef();
 
   let [val, setVal] = React.useState(value);
+
   let [offset, setOffset] = React.useState(
     `${100 - ((val - min) / max) * 100}`
   );
 
   React.useEffect(
     () => {
-      console.log('VALUE: ', val);
-      console.log('OFFSET', offset);
+      // console.log('VALUE: ', val);
+      // console.log('OFFSET', offset);
     },
     [val, offset]
   );
@@ -50,7 +53,7 @@ const InputRange = ({
   `;
 
   return (
-    <DragRange
+    <RangeCore
       percent
       onChange={newVal => handleChange(newVal)}
       value={val}
@@ -81,7 +84,7 @@ const InputRange = ({
       >
         <div css={styleProgress} className={cx(styles.progress)} />
       </div>
-    </DragRange>
+    </RangeCore>
   );
 };
 

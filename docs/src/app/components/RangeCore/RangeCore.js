@@ -283,10 +283,9 @@ export default class DragRange extends React.Component {
   };
 
   componentDidMount = () => {
-    document.addEventListener('touchstart', this.touchHandler, true);
-    document.addEventListener('touchmove', this.touchHandler, true);
-    document.addEventListener('touchend', this.touchHandler, true);
-    document.addEventListener('touchcancel', this.touchHandler, true);
+    this.container.addEventListener('touchstart', this.touchHandler, true);
+    this.container.addEventListener('touchmove', this.touchHandler, true);
+    this.container.addEventListener('touchend', this.touchHandler, true);
 
     this.handleSetTarget();
     document.addEventListener('mousemove', this.handleMouseMove);
@@ -296,6 +295,7 @@ export default class DragRange extends React.Component {
   componentWillUnmount = () => {
     document.removeEventListener('mousemove', this.handleMouseMove);
     document.removeEventListener('mouseup', this.handleMouseUp);
+    document.removeEventListener('mouseout', this.handleMouseUp);
 
     if (this.state.target)
       this.state.target.removeEventListener('mousedown', this.handleMouseDown);
@@ -314,6 +314,7 @@ export default class DragRange extends React.Component {
         }}
         onMouseDown={onMouseDown}
         className={this.props.className}
+        style={this.props.style}
       >
         {p.children}
       </Component>
