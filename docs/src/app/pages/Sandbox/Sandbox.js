@@ -42,8 +42,7 @@ import img3 from './img/3.jpg';
 import img4 from './img/4.jpg';
 import img5 from './img/5.jpg';
 import img6 from './img/6.jpg';
-import hopes from './img/hopes.jpg';
-// import hello from './img/hello.jpeg';
+import hello from './img/hello.jpeg';
 import SliderControl from '../../components/SliderControl/SliderControl';
 
 import { ReactComponent as Prev } from './img/prev.svg';
@@ -59,6 +58,7 @@ import Image from '../../components/Image/Image';
 import LazyTest from './LazyTest';
 import Dialog from '../../components/Dialog/Dialog';
 import Socky from '../../components/Socky/Socky';
+import InputRange from '../../components/InputRange/InputRange';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -123,7 +123,7 @@ const Sandbox = ({ className, ...restProps }) => {
 
   useEffect(() => {
     setAlbums(kda);
-    setOriginalImage(hopes);
+    setOriginalImage(hello);
   }, []);
 
   useEffect(
@@ -188,9 +188,27 @@ const Sandbox = ({ className, ...restProps }) => {
     setCanvas(canvas);
   };
 
+  // let [sliderValue, setSliderValue] = React.useState(0)
+  // const getSliderValue = (val, e) => {
+  //   setSliderValue(val)
+  // }
+
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+
+      <Preview clean>
+        <InputRange
+          affordance
+          min={0}
+          max={100}
+          value={17}
+          unit={5}
+          step={1}
+          dark
+        />
+      </Preview>
+      <Divider large />
 
       <Preview>
         {imageCropped ? (
@@ -215,8 +233,9 @@ const Sandbox = ({ className, ...restProps }) => {
             data={dataCropped}
             getImageData={handleImageData}
             closeDialog={() => setDialog(false)}
-            ratio={720 / 1080}
+            ratio={16 / 16}
             src={originalImage}
+            maxZoom={3}
             header={
               <Text heading3 style={{ color: '#ffffff' }} component="h2">
                 Edit photo

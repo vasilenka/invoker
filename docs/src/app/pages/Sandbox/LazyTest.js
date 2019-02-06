@@ -11,7 +11,7 @@ const LazyTest = ({ children, className, ...restProps }) => {
       <ObserverWrapper
         options={{
           threshold: 0,
-          rootMargin: '0px 0px 500px 0px',
+          rootMargin: '0px 0px 0px 0px',
           triggerOnce: true
         }}
         className={styles.root}

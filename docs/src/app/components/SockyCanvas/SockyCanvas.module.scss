@@ -15,8 +15,8 @@
   }
   @include screen(tabLandscape) {
     flex: unset;
-    width: 60%;
-    min-width: 60%;
+    width: 55%;
+    min-width: 55%;
     height: 100%;
     position: absolute;
     top: 0;
@@ -27,14 +27,14 @@
   }
   @include screen(desktop) {
     flex: unset;
-    width: 60%;
-    min-width: 60%;
+    width: 55%;
+    min-width: 55%;
     height: 100%;
   }
   @include screen(desktopWide) {
     flex: unset;
-    width: 60%;
-    min-width: 60%;
+    width: 55%;
+    min-width: 55%;
     height: 100%;
   }
 }

@@ -2,7 +2,7 @@ import styles from './SockyHeader.module.scss';
 import React from 'react';
 import cx from 'classnames';
 
-import { ReactComponent as Close } from './close.svg';
+import SockyClose from '../SockyClose/SockyClose';
 
 const SockyHeader = ({ children, className, onClick, ...restProps }) => {
   return (
@@ -12,9 +12,7 @@ const SockyHeader = ({ children, className, onClick, ...restProps }) => {
       })}
     >
       {children}
-      <div className={styles.close}>
-        <Close onClick={onClick} />
-      </div>
+      <SockyClose light className={styles.close} onClick={onClick} />
     </div>
   );
 };

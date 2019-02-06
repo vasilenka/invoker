@@ -8,9 +8,11 @@ import SockyToolbar from '../SockyToolbar/SockyToolbar';
 import Text from '../Text/Text';
 import Button from './../Button/Button';
 import SockyHeader from '../SockyHeader/SockyHeader';
+import SockyZoom from '../SockyZoom/SockyZoom';
 
 const Socky = ({
   children,
+  maxZoom,
   header,
   data,
   secondary,
@@ -29,6 +31,26 @@ const Socky = ({
   let [blob, setBlob] = React.useState();
   let [imageData, setImageData] = React.useState(data);
   let [canvasData, setCanvasData] = React.useState(canvas);
+
+  let [zoomValue, setZoomValue] = React.useState(0);
+
+  React.useEffect(
+    () => {
+      if (zoomValue) {
+        const container = sockyRef.current.getCropBoxData();
+        const cropbox = sockyRef.current.getCropBoxData();
+        console.log(container.width / 2, cropbox.width / 2);
+        sockyRef.current.zoomTo(
+          zoomValue
+          // {
+          //   x: container.width / 2,
+          //   y: container.height / 2,
+          // }
+        );
+      }
+    },
+    [zoomValue]
+  );
 
   React.useEffect(
     () => {
@@ -92,6 +114,14 @@ const Socky = ({
         >
           Edit photo
         </Text>
+        <SockyZoom
+          id="socky_zoom"
+          name="socky_zoom"
+          min={0}
+          max={maxZoom}
+          value={zoomValue}
+          setZoom={value => setZoomValue(value)}
+        />
         <footer className={styles.footer}>
           <Button primary className={styles.save} onClick={setCroppedImage}>
             Save and replace

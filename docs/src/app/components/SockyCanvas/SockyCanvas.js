@@ -9,6 +9,7 @@ const SockyCanvas = ({
   secondary,
   sockyRef,
   zoom,
+  zoomValue,
   className,
   height,
   name,
@@ -45,7 +46,8 @@ const SockyCanvas = ({
         minCropBoxWidth={1080}
         minCropBoxHeight={1080}
         guides={false}
-        center={false}
+        center={true}
+        // zoomOnTouch={false}
         cropBoxMovable={secondary ? true : false}
         cropBoxResizable={false}
         zoom={zoom}
