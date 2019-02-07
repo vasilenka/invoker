@@ -2,138 +2,117 @@ import styles from './InputDoubleRange.module.scss';
 import React from 'react';
 import cx from 'classnames';
 
-import RangeCore from './../RangeCore/RangeCore';
+import RangeCore from '../RangeCore/RangeCore';
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import RangeThumb from '../RangeThumb/RangeThumb';
 import RangeRail from '../RangeRail/RangeRail';
 
-const InputRange = ({
+const InputDoubleRange = ({
   children,
+  getValue,
   affordance,
   dark,
   light,
   unit,
   min,
-  horizontal,
-  vertical,
   max,
   minValue,
   maxValue,
+  horizontal,
+  vertical,
   step,
   className,
-  getValueMin,
-  getValueMax,
   ...restProps
 }) => {
-  const thumbMinRef = React.useRef();
-  const thumbMaxRef = React.useRef();
-  const minContainerRef = React.useRef();
-  const maxContainerRef = React.useRef();
-
   let [minVal, setMinVal] = React.useState(minValue);
   let [maxVal, setMaxVal] = React.useState(maxValue);
 
-  let [offsetRight, setOffsetRight] = React.useState(
-    `${((max - maxVal) / max) * 100}`
+  let [offset, setOffset] = React.useState(
+    `${100 - ((minVal - min) / max) * 100}`
   );
-  let [offsetLeft, setOffsetLeft] = React.useState(
-    `${((minVal - min) / max) * 100}`
+  let [offsetRight, setOffsetRight] = React.useState(
+    `${100 - ((maxVal - min) / max) * 100}`
   );
 
-  const handleMinChange = val => {
+  React.useEffect(
+    () => {
+      if (getValue) {
+        getValue({
+          minVal,
+          maxVal
+        });
+      }
+    },
+    [minVal, maxVal]
+  );
+
+  const styleProgress = css`
+    left: calc(${100 - offset}% - 14px);
+    right: calc(${offsetRight}% - 14px);
+  `;
+
+  const styleThumb = css`
+    left: calc(${100 - offset}% - 14px);
+  `;
+
+  const styleThumbRight = css`
+    left: calc(${100 - offsetRight}% - 14px);
+  `;
+
+  const styleRightRail = css`
+    right: 0;
+    left: calc(28px);
+  `;
+
+  const handleChange = val => {
     setMinVal(val);
-    if (getValueMin) {
-      getValueMin(minVal);
-    }
-    setOffsetLeft(`${((minVal - min) / max) * 100}`);
+    setOffset(`${100 - ((val - min) / max) * 100}`);
   };
 
   const handleMaxChange = val => {
     setMaxVal(val);
-    if (getValueMax) {
-      getValueMax(maxVal);
-    }
-    setOffsetRight(`${((max - val) / max) * 100}`);
+    setOffsetRight(`${100 - ((val - min) / max) * 100}`);
   };
 
-  const styleProgress = css`
-    user-select: none;
-    height: 4px;
-    left: ${offsetLeft}%;
-    right: ${offsetRight}%;
-  `;
-
-  const styleThumbLeft = css`
-    left: calc(${offsetLeft}% - 14px);
-  `;
-
-  const styleThumbRight = css`
-    right: calc(${offsetRight}% - 14px);
-  `;
-
-  const styleRailLeftLine = css`
-    overflow: hidden;
-    top: 12px;
-    height: 4px;
-    left: 0;
-    ${'' /* right: calc(${100 - offsetLeft}%); */}
-    right: 0;
-  `;
-  const styleRailLeftLineIndicator = css`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    border-radius: 3px;
-    transform: translate3d(-${100 - offsetLeft}%, 0px, 0px);
-  `;
-
-  const styleRailRightLine = css`
-    top: 12px;
-    height: 4px;
-    right: 0;
-    left: calc(${100 - offsetRight}%);
-  `;
-
   return (
-    <>
+    <div className={styles.root}>
       <RangeCore
-        className={styles.root}
-        ref={minContainerRef}
-        sibling={maxContainerRef.current}
         percent
-        onChange={val => handleMinChange(val)}
+        onChange={newVal => handleChange(newVal)}
         value={minVal}
         rate={step}
         min={min}
         max={maxVal}
+        className={cx({
+          [styles.rail]: true,
+          [className]: className
+        })}
+        {...restProps}
       >
-        <RangeThumb withAffordance={affordance} css={styleThumbLeft} />
-        <RangeRail transparent css={styleRailLeftLine}>
-          <RangeRail bgRail css={styleRailLeftLineIndicator} />
-        </RangeRail>
+        <RangeThumb withAffordance css={styleThumb} />
       </RangeCore>
-
       <RangeCore
-        className={styles.root}
-        ref={maxContainerRef}
-        sibling={minContainerRef.current}
         percent
-        onChange={val => handleMaxChange(val)}
+        onChange={newVal => handleMaxChange(newVal)}
         value={maxVal}
         rate={step}
         min={minVal}
         max={max}
+        css={styleRightRail}
+        className={cx({
+          [styles.rail]: true,
+          [className]: className
+        })}
+        {...restProps}
       >
-        <RangeThumb withAffordance={affordance} css={styleThumbRight} />
-        <RangeRail bgRail css={styleRailRightLine} />
+        <RangeThumb withAffordance css={styleThumbRight} />
       </RangeCore>
-      {/* <RangeRail css={styleProgress}/> */}
-    </>
+      <RangeRail bgRail className={cx(styles.progressContainer)} />
+      <RangeRail css={styleProgress} className={cx(styles.progress)} />
+    </div>
   );
 };
 
-export default InputRange;
+export default InputDoubleRange;

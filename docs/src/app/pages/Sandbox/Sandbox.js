@@ -61,7 +61,6 @@ import Socky from '../../components/Socky/Socky';
 import InputRange from '../../components/InputRange/InputRange';
 
 import InputDoubleRange from '../../components/InputDoubleRange/InputDoubleRange';
-import InputDouble from '../../components/InputDoubleRange/InputDouble';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -196,49 +195,37 @@ const Sandbox = ({ className, ...restProps }) => {
   //   setSliderValue(val)
   // }
 
-  let [valueMin, setValueMin] = React.useState();
-  let [valueMax, setValueMax] = React.useState();
-
   let [value1, setValue1] = React.useState(10);
   let [value2, setValue2] = React.useState(20);
   let [value3, setValue3] = React.useState(30);
+
+  let doubleInitial = { min: 0, max: 20 };
+  let [doubleValue, setDoubleValue] = React.useState(doubleInitial);
 
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
 
       <Preview clean>
-        <InputDouble
+        <InputDoubleRange
           affordance
           min={0}
           max={100}
-          minValue={value1}
-          maxValue={value3}
-          // getValue={val => setValue1(val)}
+          minValue={doubleInitial.min}
+          maxValue={doubleInitial.max}
+          getValue={({ minVal, maxVal }) =>
+            setDoubleValue({ min: minVal, max: maxVal })
+          }
           unit={5}
-          step={1}
-          dark
-        />
-      </Preview>
-
-      <Preview clean>
-        <InputDoubleRange
-          affordance={false}
-          min={0}
-          max={100}
-          minValue={10}
-          maxValue={90}
-          getValueMin={v => setValueMin(v)}
-          getValueMax={v => setValueMax(v)}
           step={1}
           dark
         />
         <Divider large />
         <Text heading3 component="p">
-          Min: {valueMin}
+          bottom: {doubleValue.min}
         </Text>
         <Text heading3 component="p">
-          Max: {valueMax}
+          top: {doubleValue.max}
         </Text>
       </Preview>
       <Divider large />
