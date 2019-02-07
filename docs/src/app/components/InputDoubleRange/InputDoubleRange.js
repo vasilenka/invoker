@@ -11,6 +11,7 @@ import RangeRail from '../RangeRail/RangeRail';
 
 const InputDoubleRange = ({
   children,
+  percent,
   getValue,
   affordance,
   dark,
@@ -36,18 +37,6 @@ const InputDoubleRange = ({
     `${100 - ((maxVal - min) / max) * 100}`
   );
 
-  React.useEffect(
-    () => {
-      if (getValue) {
-        getValue({
-          minVal,
-          maxVal
-        });
-      }
-    },
-    [minVal, maxVal]
-  );
-
   const styleProgress = css`
     left: calc(${100 - offset}% - 14px);
     right: calc(${offsetRight}% - 14px);
@@ -66,6 +55,18 @@ const InputDoubleRange = ({
     left: calc(28px);
   `;
 
+  React.useEffect(
+    () => {
+      if (getValue) {
+        getValue({
+          minVal,
+          maxVal
+        });
+      }
+    },
+    [minVal, maxVal]
+  );
+
   const handleChange = val => {
     setMinVal(val);
     setOffset(`${100 - ((val - min) / max) * 100}`);
@@ -79,9 +80,10 @@ const InputDoubleRange = ({
   return (
     <div className={styles.root}>
       <RangeCore
-        percent
+        percent={percent}
         onChange={newVal => handleChange(newVal)}
         value={minVal}
+        unit={unit}
         rate={step}
         min={min}
         max={maxVal}
@@ -94,9 +96,10 @@ const InputDoubleRange = ({
         <RangeThumb withAffordance css={styleThumb} />
       </RangeCore>
       <RangeCore
-        percent
+        percent={percent}
         onChange={newVal => handleMaxChange(newVal)}
         value={maxVal}
+        unit={unit}
         rate={step}
         min={minVal}
         max={max}

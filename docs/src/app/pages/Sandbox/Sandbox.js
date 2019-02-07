@@ -208,6 +208,7 @@ const Sandbox = ({ className, ...restProps }) => {
 
       <Preview clean>
         <InputDoubleRange
+          percent
           affordance
           min={0}
           max={100}
@@ -216,7 +217,6 @@ const Sandbox = ({ className, ...restProps }) => {
           getValue={({ minVal, maxVal }) =>
             setDoubleValue({ min: minVal, max: maxVal })
           }
-          unit={5}
           step={1}
           dark
         />
