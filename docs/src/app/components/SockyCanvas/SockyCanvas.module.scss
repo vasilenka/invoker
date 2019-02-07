@@ -38,3 +38,24 @@
     height: 100%;
   }
 }
+
+.canvas {
+  // position: relative;
+  height: 100%;
+  width: 100%;
+  @include screen(phone) {
+    max-height: 60vh;
+  }
+  @include screen(tabPortrait) {
+    max-height: 60vh;
+  }
+  @include screen(tabLandscape) {
+    max-height: 100%;
+  }
+  @include screen(desktop) {
+    max-height: 100%;
+  }
+  @include screen(desktopWide) {
+    max-height: 100%;
+  }
+}

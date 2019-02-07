@@ -1,15 +1,15 @@
-import styles from './InputDoubleRange.module.scss';
+import styles from './InputRangeDouble.module.scss';
 import React from 'react';
 import cx from 'classnames';
 
-import RangeCore from '../RangeCore/RangeCore';
+import RangeCore from '../Range/RangeCore/RangeCore';
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import RangeThumb from '../RangeThumb/RangeThumb';
-import RangeRail from '../RangeRail/RangeRail';
+import RangeThumb from './../Range/RangeThumb/RangeThumb';
+import RangeRail from './../Range/RangeRail/RangeRail';
 
-const InputDoubleRange = ({
+const InputRangeDouble = ({
   children,
   percent,
   getValue,
@@ -55,6 +55,16 @@ const InputDoubleRange = ({
     left: calc(28px);
   `;
 
+  const handleChange = val => {
+    setMinVal(val);
+    setOffset(`${100 - ((val - min) / max) * 100}`);
+  };
+
+  const handleMaxChange = val => {
+    setMaxVal(val);
+    setOffsetRight(`${100 - ((val - min) / max) * 100}`);
+  };
+
   React.useEffect(
     () => {
       if (getValue) {
@@ -66,16 +76,6 @@ const InputDoubleRange = ({
     },
     [minVal, maxVal]
   );
-
-  const handleChange = val => {
-    setMinVal(val);
-    setOffset(`${100 - ((val - min) / max) * 100}`);
-  };
-
-  const handleMaxChange = val => {
-    setMaxVal(val);
-    setOffsetRight(`${100 - ((val - min) / max) * 100}`);
-  };
 
   return (
     <div className={styles.root}>
@@ -118,4 +118,4 @@ const InputDoubleRange = ({
   );
 };
 
-export default InputDoubleRange;
+export default InputRangeDouble;

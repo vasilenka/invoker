@@ -27,6 +27,7 @@ const SockyCanvas = ({
       {...restProps}
     >
       <SockyCore
+        className={styles.canvas}
         ref={sockyRef}
         src={src}
         viewMode={1}
@@ -35,11 +36,6 @@ const SockyCanvas = ({
         data={secondary ? data : null}
         crossOrigin="true"
         responseType="blob/base64"
-        style={{
-          height: '100%',
-          width: '100%',
-          minCanvasHeight: '100%'
-        }}
         aspectRatio={ratio}
         imageName={name}
         background={false}
@@ -48,7 +44,7 @@ const SockyCanvas = ({
         guides={false}
         center={true}
         // zoomOnTouch={false}
-        cropBoxMovable={secondary ? true : false}
+        cropBoxMovable={false}
         cropBoxResizable={false}
         zoom={zoom}
       />

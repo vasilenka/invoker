@@ -1,8 +1,8 @@
 import styles from './SockyZoom.module.scss';
 import React from 'react';
 import cx from 'classnames';
-import RangeSlider from '../RangeSlider/RangeSlider';
 import Text from '../Text/Text';
+import RangeSlider from '../RangeSlider/RangeSlider';
 
 const SockyZoom = ({
   children,
@@ -31,8 +31,6 @@ const SockyZoom = ({
         Zoom
       </Text>
       <RangeSlider
-        name={name}
-        id={id}
         min={min || 0}
         max={max || 4}
         step={0.02}

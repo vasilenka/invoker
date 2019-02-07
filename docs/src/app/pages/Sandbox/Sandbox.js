@@ -53,14 +53,12 @@ import IconButton from '../../components/IconButton/IconButton';
 import Badge from '../../components/Badge/Badge';
 import Image from '../../components/Image/Image';
 
-// import Cropper from '../../components/Cropper/Cropper';
-
 import LazyTest from './LazyTest';
 import Dialog from '../../components/Dialog/Dialog';
 import Socky from '../../components/Socky/Socky';
-import InputRange from '../../components/InputRange/InputRange';
 
-import InputDoubleRange from '../../components/InputDoubleRange/InputDoubleRange';
+import InputRange from '../../components/InputRange/InputRange';
+import InputRangeDouble from '../../components/InputRangeDouble/InputRangeDouble';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -190,14 +188,7 @@ const Sandbox = ({ className, ...restProps }) => {
     setCanvas(canvas);
   };
 
-  // let [sliderValue, setSliderValue] = React.useState(0)
-  // const getSliderValue = (val, e) => {
-  //   setSliderValue(val)
-  // }
-
   let [value1, setValue1] = React.useState(10);
-  let [value2, setValue2] = React.useState(20);
-  let [value3, setValue3] = React.useState(30);
 
   let doubleInitial = { min: 0, max: 20 };
   let [doubleValue, setDoubleValue] = React.useState(doubleInitial);
@@ -207,7 +198,7 @@ const Sandbox = ({ className, ...restProps }) => {
       <Header title="Sandbox" description="Experimental components" />
 
       <Preview clean>
-        <InputDoubleRange
+        <InputRangeDouble
           percent
           affordance
           min={0}
@@ -232,6 +223,7 @@ const Sandbox = ({ className, ...restProps }) => {
 
       <Preview clean>
         <InputRange
+          percent
           affordance
           min={0}
           max={100}
@@ -244,42 +236,6 @@ const Sandbox = ({ className, ...restProps }) => {
         <Divider large />
         <Text heading4 component="h3">
           value: {value1}
-        </Text>
-      </Preview>
-      <Divider large />
-
-      <Preview clean>
-        <InputRange
-          affordance
-          min={0}
-          max={100}
-          value={value2}
-          getValue={val => setValue2(val)}
-          unit={5}
-          step={1}
-          dark
-        />
-        <Divider large />
-        <Text heading4 component="h3">
-          value: {value2}
-        </Text>
-      </Preview>
-      <Divider large />
-
-      <Preview clean>
-        <InputRange
-          affordance
-          min={0}
-          max={100}
-          value={value3}
-          getValue={val => setValue3(val)}
-          unit={5}
-          step={1}
-          dark
-        />
-        <Divider large />
-        <Text heading4 component="h3">
-          value: {value3}
         </Text>
       </Preview>
       <Divider large />
@@ -307,7 +263,7 @@ const Sandbox = ({ className, ...restProps }) => {
             data={dataCropped}
             getImageData={handleImageData}
             closeDialog={() => setDialog(false)}
-            ratio={16 / 16}
+            ratio={720 / 1080}
             src={originalImage}
             maxZoom={3}
             header={

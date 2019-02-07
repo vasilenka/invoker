@@ -249,7 +249,6 @@ class SockyCore extends Component {
         src={null}
         crossOrigin={null}
         alt={null}
-        style={this.props.style}
         className={this.props.className}
       >
         <img

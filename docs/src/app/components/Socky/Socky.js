@@ -37,9 +37,9 @@ const Socky = ({
   React.useEffect(
     () => {
       if (zoomValue) {
-        const container = sockyRef.current.getCropBoxData();
-        const cropbox = sockyRef.current.getCropBoxData();
-        console.log(container.width / 2, cropbox.width / 2);
+        // const container = sockyRef.current.getCropBoxData();
+        // const cropbox = sockyRef.current.getCropBoxData();
+        // console.log(container.width / 2, cropbox.width / 2);
         sockyRef.current.zoomTo(
           zoomValue
           // {

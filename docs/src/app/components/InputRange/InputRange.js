@@ -2,12 +2,12 @@ import styles from './InputRange.module.scss';
 import React from 'react';
 import cx from 'classnames';
 
-import RangeCore from './../RangeCore/RangeCore';
+import RangeCore from './../Range/RangeCore/RangeCore';
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import RangeThumb from '../RangeThumb/RangeThumb';
-import RangeRail from '../RangeRail/RangeRail';
+import RangeThumb from '../Range/RangeThumb/RangeThumb';
+import RangeRail from '../Range/RangeRail/RangeRail';
 
 const InputRange = ({
   children,

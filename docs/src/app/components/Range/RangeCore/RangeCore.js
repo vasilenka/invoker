@@ -286,6 +286,7 @@ export default class RangeCore extends React.Component {
   };
 
   componentDidMount = () => {
+    // Map the TouchEvent to MouseEvent and apply it only within the container
     this.container.addEventListener('touchstart', this.touchHandler, false);
     this.container.addEventListener('touchmove', this.touchHandler, false);
     this.container.addEventListener('touchend', this.touchHandler, false);
