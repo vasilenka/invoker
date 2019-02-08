@@ -21,6 +21,10 @@
   border-radius: 2px;
   background: rgba(255, 255, 255, 0.12);
 
+  ::-ms-fill-lower {
+    background: $light-alpha-100;
+  }
+
   &::-moz-focus-inner {
     border: 0;
   }
