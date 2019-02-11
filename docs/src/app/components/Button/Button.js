@@ -5,6 +5,8 @@ import { bool, node, object, string, oneOf, oneOfType } from 'prop-types';
 
 const Button = ({
   type,
+  href,
+  component,
   children,
   icon,
   stretch,
@@ -22,7 +24,51 @@ const Button = ({
   disabled,
   ...restProps
 }) => {
-  return (
+  const handleClickLink = e => {
+    e.preventDefault();
+    if (onClick) {
+      onClick(e);
+    }
+  };
+
+  return component === 'a' ? (
+    <a
+      href={href}
+      onClick={handleClickLink}
+      className={classnames({
+        [styles.link]: true,
+        [styles.secondary]: secondary && !light,
+        [styles.secondaryLight]: secondary && light,
+        [styles.secondaryAlt]: secondaryAlt && !light,
+        [styles.secondaryAltLight]: secondaryAlt && light,
+
+        [styles.primaryMedium]: primary && !light,
+        [styles.primaryMediumLight]: primary && light,
+        [styles.primaryBold]: primaryBold && !light,
+        [styles.primaryBoldLight]: primaryBold && light,
+
+        [styles.primaryAltMedium]: primaryAlt,
+        [styles.primaryAltBold]: primaryAltBold,
+
+        [styles.small]: !secondaryAlt && small,
+        [styles.smallAlt]: secondaryAlt && small,
+        [styles.large]: !small && !secondaryAlt,
+        [styles.largeAlt]: secondaryAlt && !small,
+
+        [styles.disabled]: disabled,
+        [styles.stretch]: stretch,
+
+        [className]: className
+      })}
+      disabled={disabled}
+      {...restProps}
+    >
+      <span className={styles.childrenLink}>
+        {icon && <span className={styles.icon}>{icon}</span>}
+        {children}
+      </span>
+    </a>
+  ) : (
     <button
       type={type || 'button'}
       onClick={onClick}

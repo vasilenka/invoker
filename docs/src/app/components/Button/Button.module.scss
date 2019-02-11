@@ -7,6 +7,13 @@
   border-style: solid;
   letter-spacing: normal;
   font-family: $font-primary;
+  text-decoration: none;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .stretch {
@@ -15,6 +22,12 @@
 
 .children {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.childrenLink {
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 }

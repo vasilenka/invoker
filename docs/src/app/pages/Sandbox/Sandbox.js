@@ -197,6 +197,36 @@ const Sandbox = ({ className, ...restProps }) => {
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
 
+      <Preview>
+        <Button
+          className={styles.buttonLink}
+          component="a"
+          primary
+          small
+          href="http://meridian.id"
+        >
+          Go to website
+        </Button>
+        <Button
+          className={styles.buttonLink}
+          component="a"
+          primary
+          small
+          href="http://meridian.id"
+        >
+          Go to website
+        </Button>
+        <Button
+          className={styles.buttonLink}
+          component="a"
+          primary
+          small
+          href="http://meridian.id"
+        >
+          Go to website
+        </Button>
+      </Preview>
+
       <Preview clean>
         <InputRangeDouble
           percent

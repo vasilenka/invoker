@@ -153,6 +153,16 @@ const ButtonPage = ({ className, ...restProps }) => {
           Continue with Google
         </Button>
         <Button
+          style={{ marginRight: '12px' }}
+          secondaryAlt
+          small
+          icon={<Google style={{ width: '20px', height: '20px' }} />}
+        >
+          Sign-in with Google
+        </Button>
+        <Button
+          component="a"
+          href="http://meridian.id"
           secondaryAlt
           small
           icon={<Google style={{ width: '20px', height: '20px' }} />}
