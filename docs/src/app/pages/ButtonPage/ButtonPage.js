@@ -226,6 +226,32 @@ const ButtonPage = ({ className, ...restProps }) => {
         `}
       </Code>
       <Divider large />
+      <Subheader
+        title="Better SEO performance"
+        description="Search engine crawler like Googlebot needed an <a> tag element with href attribute to crawl another page or source."
+      />
+      <Preview>
+        <Button
+          href="http://meridian.id"
+          component="a"
+          style={{ marginBottom: '12px' }}
+          primary
+        >
+          Button with &#60;a&#62; tag and href attribute
+        </Button>
+      </Preview>
+      <Code>
+        {`
+<Button
+  component="a"
+  href="http://meridian.id"
+  primary
+  >
+  Button with <a> tag and href attribute
+</Button>
+        `}
+      </Code>
+      <Divider large />
     </>
   );
 };
