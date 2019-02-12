@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import styles from './App.module.scss';
 import classnames from 'classnames';
+import { Helmet } from 'react-helmet';
 
 import Container from './layouts/Container/Container';
 import LeftSection from './layouts/LeftSection/LeftSection';
@@ -69,6 +70,13 @@ class App extends Component {
     return (
       <div className={classnames(styles.root)}>
         <Navbar />
+        <Helmet>
+          <title>Invoker</title>
+          <meta
+            name="description"
+            content="An opiniated component library so you can prototype and test your ideas faster."
+          />
+        </Helmet>
         <Router>
           <React.Fragment>
             <Container fixLeft fixRight className={styles.mainContainer}>

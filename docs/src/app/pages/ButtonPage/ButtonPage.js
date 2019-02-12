@@ -1,6 +1,7 @@
 import styles from './ButtonPage.module.scss';
 import React from 'react';
 import cx from 'classnames';
+import { Helmet } from 'react-helmet';
 
 import Header from './../../docs/Header/Header';
 import Subheader from './../../docs/Subheader/Subheader';
@@ -75,6 +76,13 @@ let buttonProps = [
 const ButtonPage = ({ className, ...restProps }) => {
   return (
     <>
+      <Helmet>
+        <title>Button | Invoker</title>
+        <meta
+          name="description"
+          content="A wrapper for button component with complete functionality and flexible styling. Also with better SEO support, if that's your thing."
+        />
+      </Helmet>
       <Header
         title="Button"
         description="The Button did not provide any synthetic event out of the box. Pass any synthetic events that you need on your own. Let's bring some action!"
