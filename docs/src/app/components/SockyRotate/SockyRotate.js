@@ -12,17 +12,15 @@ const SockyRotate = ({
 }) => {
   let [rotate, setRotate] = React.useState(0);
 
-  React.useLayoutEffect(
+  React.useEffect(
     () => {
-      if (getRotateValue) {
-        getRotateValue(rotate);
-      }
+      getRotateValue(rotate);
     },
     [rotate]
   );
 
   const handleRotation = () => {
-    if (rotate < 360) {
+    if (rotate < 270) {
       setRotate(rotate + 90);
     } else {
       setRotate(0);

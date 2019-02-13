@@ -21,6 +21,7 @@ const Socky = ({
   className,
   ratio,
   getImageData,
+  getRotationValue,
   closeDialog,
   src,
   ...restProps
@@ -102,6 +103,9 @@ const Socky = ({
   const handleRotate = val => {
     if (sockyRef.current) {
       sockyRef.current.rotateTo(val);
+    }
+    if (getRotationValue) {
+      getRotationValue(val);
     }
   };
 

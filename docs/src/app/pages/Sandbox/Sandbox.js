@@ -193,6 +193,10 @@ const Sandbox = ({ className, ...restProps }) => {
   let doubleInitial = { min: 0, max: 20 };
   let [doubleValue, setDoubleValue] = React.useState(doubleInitial);
 
+  const handleRotation = val => {
+    console.log(val);
+  };
+
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
@@ -262,6 +266,7 @@ const Sandbox = ({ className, ...restProps }) => {
             canvas={canvas}
             data={dataCropped}
             getImageData={handleImageData}
+            getRotationValue={handleRotation}
             closeDialog={() => setDialog(false)}
             ratio={720 / 1080}
             src={originalImage}
