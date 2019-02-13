@@ -36,6 +36,28 @@ const Socky = ({
 
   let [zoomValue, setZoomValue] = React.useState(0);
 
+  React.useEffect(() => {
+    window.addEventListener('ready', function() {
+      let cropperBox = document.getElementsByClassName('cropper-crop-box');
+      if (cropperBox[0]) {
+        cropperBox[0].addEventListener(
+          'touchstart',
+          function(e) {
+            e.preventDefault();
+          },
+          true
+        );
+        cropperBox[0].addEventListener(
+          'touchend',
+          function(e) {
+            e.preventDefault();
+          },
+          true
+        );
+      }
+    });
+  }, []);
+
   React.useEffect(
     () => {
       if (zoomValue) {
