@@ -9,6 +9,7 @@ import Text from '../Text/Text';
 import Button from './../Button/Button';
 import SockyHeader from '../SockyHeader/SockyHeader';
 import SockyZoom from '../SockyZoom/SockyZoom';
+import SockyRotate from '../SockyRotate/SockyRotate';
 
 const Socky = ({
   children,
@@ -98,6 +99,12 @@ const Socky = ({
     });
   };
 
+  const handleRotate = val => {
+    if (sockyRef.current) {
+      sockyRef.current.rotateTo(val);
+    }
+  };
+
   return (
     <div
       className={cx({
@@ -114,14 +121,17 @@ const Socky = ({
         >
           Edit photo
         </Text>
-        <SockyZoom
-          id="socky_zoom"
-          name="socky_zoom"
-          min={0}
-          max={maxZoom}
-          value={zoomValue}
-          setZoom={value => setZoomValue(value)}
-        />
+        <div>
+          <SockyZoom
+            id="socky_zoom"
+            name="socky_zoom"
+            min={0}
+            max={maxZoom}
+            value={zoomValue}
+            setZoom={value => setZoomValue(value)}
+          />
+          <SockyRotate getRotateValue={handleRotate} />
+        </div>
         <footer className={styles.footer}>
           <Button primary className={styles.save} onClick={setCroppedImage}>
             Save and replace

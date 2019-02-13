@@ -18,7 +18,7 @@ const SockyZoom = ({
 }) => {
   let [sliderValue, setSliderValue] = React.useState(value);
 
-  React.useEffect(
+  React.useLayoutEffect(
     () => {
       setZoom(sliderValue);
     },
