@@ -36,8 +36,6 @@ const Socky = ({
 
   let [zoomValue, setZoomValue] = React.useState(0);
 
-  let [element, setElement] = React.useState(null);
-
   React.useEffect(() => {
     window.addEventListener('ready', function() {
       let cropperBox = document.getElementsByClassName('cropper-crop-box');
@@ -47,7 +45,6 @@ const Socky = ({
           'touchstart',
           function(e) {
             e.preventDefault();
-            console.log(e.target);
           },
           true
         );
@@ -55,7 +52,6 @@ const Socky = ({
           'touchend',
           function(e) {
             e.preventDefault();
-            console.log(e.target);
           },
           true
         );
@@ -65,7 +61,6 @@ const Socky = ({
           'touchstart',
           function(e) {
             e.preventDefault();
-            console.log(e.target);
           },
           true
         );
@@ -73,7 +68,6 @@ const Socky = ({
           'touchend',
           function(e) {
             e.preventDefault();
-            console.log(e.target);
           },
           true
         );
@@ -179,9 +173,6 @@ const Socky = ({
             value={zoomValue}
             setZoom={value => setZoomValue(value)}
           />
-          <Text small component="p">
-            {element}
-          </Text>
           <SockyRotate getRotateValue={handleRotate} />
         </div>
         <footer className={styles.footer}>

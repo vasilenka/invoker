@@ -641,10 +641,6 @@ const Sandbox = ({ className, ...restProps }) => {
       </Preview>
       <Divider large />
       <Preview>
-        <Draft />
-      </Preview>
-      <Divider large />
-      <Preview>
         {banner && (
           <Banner tone="positive" className={styles.bannerPosition}>
             Whoops! Looks like you are having trouble loading the page.{' '}
