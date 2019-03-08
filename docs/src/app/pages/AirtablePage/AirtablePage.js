@@ -6,7 +6,7 @@ import Header from './../../docs/Header/Header';
 import Divider from './../../docs/Divider/Divider';
 
 import Lab from '../../primitives/Lab/Lab';
-import Spinner from '../../primitives/Spinner/Spinner';
+import Spinner from '../../primitives/preloader/Spinner/Spinner';
 import Airtable from 'airtable';
 
 Airtable.configure({

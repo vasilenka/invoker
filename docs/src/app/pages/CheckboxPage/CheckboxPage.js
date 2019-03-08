@@ -8,7 +8,7 @@ import Preview from '../../docs/Preview/Preview';
 import Code from '../../docs/Code/Code';
 import Divider from '../../docs/Divider/Divider';
 
-import Table from '../../primitives/Table/Table';
+import Table from '../../components/Table/Table';
 
 import Checkbox from '../../primitives/Checkbox/Checkbox';
 import CheckLabel from '../../primitives/CheckLabel/CheckLabel';

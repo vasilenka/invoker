@@ -1,7 +1,7 @@
 import styles from './LazyTest.module.scss';
 import React, { lazy, Suspense } from 'react';
-import ObserverWrapper from '../../components/ObserverWrapper/ObserverWrapper';
-import Spinner from '../../components/Spinner/Spinner';
+import ObserverWrapper from '../../primitives/ObserverWrapper/ObserverWrapper';
+import Spinner from '../../primitives/preloader/Spinner/Spinner';
 
 const ImageTest = lazy(() => import('./ImageTest'));
 

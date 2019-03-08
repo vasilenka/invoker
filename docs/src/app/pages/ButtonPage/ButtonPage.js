@@ -9,7 +9,7 @@ import Preview from './../../docs/Preview/Preview';
 import Divider from './../../docs/Divider/Divider';
 
 import Button from './../../primitives/Button/Button';
-import Table from '../../primitives/Table/Table';
+import Table from '../../components/Table/Table';
 import Code from '../../docs/Code/Code';
 
 import { ReactComponent as Google } from './google.svg';

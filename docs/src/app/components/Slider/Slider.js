@@ -1,7 +1,7 @@
 import styles from './Slider.module.scss';
 import React, { Component } from 'react';
 import cx from 'classnames';
-import { SliderContext } from './../context/context';
+import { SliderContext } from './../../primitives/context/context';
 
 class Slider extends Component {
   constructor(props) {

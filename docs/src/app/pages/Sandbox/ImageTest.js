@@ -1,7 +1,8 @@
 import React from 'react';
-import Image from '../../components/Image/Image';
-import LazyImage from '../../components/LazyImage/LazyImage';
-import Spinner from '../../components/Spinner/Spinner';
+
+import LazyImage from '../../primitives/LazyImage/LazyImage';
+import Image from '../../primitives/Image/Image';
+import Spinner from '../../primitives/preloader/Spinner/Spinner';
 
 const ImageTest = () => {
   return (

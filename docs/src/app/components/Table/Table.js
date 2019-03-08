@@ -4,7 +4,8 @@ import classnames from 'classnames';
 
 import TableRow from './../TableRow/TableRow';
 import TableHeader from './../TableHeader/TableHeader';
-import Text from '../Text/Text';
+
+import Text from './../../primitives/Text/Text';
 
 class Table extends Component {
   render() {

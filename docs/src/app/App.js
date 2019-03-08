@@ -9,7 +9,7 @@ import LeftSection from './layouts/LeftSection/LeftSection';
 import MainContent from './layouts/MainContent/MainContent';
 
 import Navbar from './components/Navbar/Navbar';
-import Text from './components/Text/Text';
+import Text from './primitives/Text/Text';
 
 import TextfieldPage from './pages/TextfieldPage/TextfieldPage';
 import TextPage from './pages/TextPage/TextPage';
@@ -69,7 +69,6 @@ class App extends Component {
   render() {
     return (
       <div className={classnames(styles.root)}>
-        <Navbar />
         <Helmet>
           <title>Invoker</title>
           <meta
@@ -79,6 +78,7 @@ class App extends Component {
         </Helmet>
         <Router>
           <React.Fragment>
+            <Navbar />
             <Container fixLeft fixRight className={styles.mainContainer}>
               <MainContent>
                 <Route exact path="/sandbox" component={SandboxPage} />

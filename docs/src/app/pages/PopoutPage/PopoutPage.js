@@ -9,7 +9,7 @@ import Divider from './../../docs/Divider/Divider';
 import Code from '../../docs/Code/Code';
 
 import Button from './../../primitives/Button/Button';
-import Table from '../../primitives/Table/Table';
+import Table from '../../components/Table/Table';
 import Text from '../../primitives/Text/Text';
 import Popout from '../../primitives/Popout/Popout';
 

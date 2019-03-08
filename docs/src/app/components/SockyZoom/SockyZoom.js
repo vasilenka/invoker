@@ -1,8 +1,9 @@
 import styles from './SockyZoom.module.scss';
 import React from 'react';
 import cx from 'classnames';
-import Text from '../Text/Text';
-import RangeSlider from '../RangeSlider/RangeSlider';
+
+import Text from './../../primitives/Text/Text';
+import RangeSlider from './../../primitives/RangeSlider/RangeSlider';
 
 const SockyZoom = ({
   children,

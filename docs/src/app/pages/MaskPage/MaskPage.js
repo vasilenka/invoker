@@ -3,7 +3,7 @@ import React from 'react';
 // import classnames from 'classnames';
 
 import Text from './../../primitives/Text/Text';
-import Table from './../../primitives/Table/Table';
+import Table from './../../components/Table/Table';
 import Mask from './../../primitives/Mask/Mask';
 import Image from './../../primitives/Image/Image';
 

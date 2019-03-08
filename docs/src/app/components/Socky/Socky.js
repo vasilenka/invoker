@@ -5,8 +5,9 @@ import cx from 'classnames';
 import SockyCanvas from '../SockyCanvas/SockyCanvas';
 import SockyToolbar from '../SockyToolbar/SockyToolbar';
 
-import Text from '../Text/Text';
-import Button from './../Button/Button';
+import Text from './../../primitives/Text/Text';
+import Button from './../../primitives/Button/Button';
+
 import SockyHeader from '../SockyHeader/SockyHeader';
 import SockyZoom from '../SockyZoom/SockyZoom';
 import SockyRotate from '../SockyRotate/SockyRotate';

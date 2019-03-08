@@ -1,7 +1,8 @@
 import styles from './SockyRotate.module.scss';
 import React from 'react';
 import cx from 'classnames';
-import Text from '../Text/Text';
+
+import Text from './../../primitives/Text/Text';
 
 const SockyRotate = ({
   children,

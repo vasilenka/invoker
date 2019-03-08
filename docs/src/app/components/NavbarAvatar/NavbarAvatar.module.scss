@@ -1,0 +1,23 @@
+@import 'invoker-tokens/index.scss';
+
+.root {
+  cursor: pointer;
+  padding: 18px 0;
+  transition: all 0.36s cubic-bezier(0.8, 0, 0.2, 1);
+
+  &:hover {
+    box-shadow: inset 0px -3px 0px 0px $brand-primary-200;
+    transition: all 0.28s cubic-bezier(0.8, 0, 0.2, 1);
+  }
+}
+
+.container {
+  width: 28px;
+  height: 28px;
+  box-shadow: 0px 0px 0px 2px $dark-alpha-30;
+  border-radius: $radius-xxl;
+}
+
+.picture {
+  border-radius: $radius-xxl;
+}

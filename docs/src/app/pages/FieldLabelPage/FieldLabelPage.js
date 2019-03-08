@@ -7,7 +7,7 @@ import Preview from './../../docs/Preview/Preview';
 import Code from './../../docs/Code/Code';
 import Divider from './../../docs/Divider/Divider';
 
-import Table from './../../primitives/Table/Table';
+import Table from './../../components/Table/Table';
 import Text from './../../primitives/Text/Text';
 import FieldLabel from './../../primitives/FieldLabel/FieldLabel';
 

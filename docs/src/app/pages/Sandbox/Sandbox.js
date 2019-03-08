@@ -9,9 +9,11 @@ import Subheader from './../../docs/Subheader/Subheader';
 import Preview from './../../docs/Preview/Preview';
 import Divider from './../../docs/Divider/Divider';
 
+import Socky from '../../components/Socky/Socky';
+
 import Text from './../../primitives/Text/Text';
 import SinglePreview from './../../primitives/SinglePreview/SinglePreview';
-import Luna from '../../primitives/Luna/Luna';
+import Luna from '../../components/Luna/Luna';
 import Button from './../../primitives/Button/Button';
 import Tabs from './../../primitives/Tabs/Tabs';
 import TabPanels from './../../primitives/TabPanels/TabPanels';
@@ -26,8 +28,12 @@ import Overlapping from '../../primitives/Overlapping/Overlapping';
 import CarouselControl from '../../primitives/CarouselControl/CarouselControl';
 import CarouselOverlapping from '../../primitives/CarouselOverlapping/CarouselOverlapping';
 import OverlappingItem from '../../primitives/OverlappingItem/OverlappingItem';
-import Slider from '../../primitives/Slider/Slider';
-import Spinner from '../../primitives/Spinner/Spinner';
+import Spinner from '../../primitives/preloader/Spinner/Spinner';
+
+import Slider from '../../components/Slider/Slider';
+import SliderControl from '../../components/SliderControl/SliderControl';
+import SliderContainer from '../../components/SliderContainer/SliderContainer';
+import SliderItem from '../../components/SliderItem/SliderItem';
 
 import img1 from './img/1.jpg';
 import img2 from './img/2.jpg';
@@ -36,20 +42,16 @@ import img4 from './img/4.jpg';
 import img5 from './img/5.jpg';
 import img6 from './img/6.jpg';
 import hello from './img/hello.jpeg';
-import SliderControl from '../../primitives/SliderControl/SliderControl';
 
 import { ReactComponent as Prev } from './img/prev.svg';
 import { ReactComponent as Next } from './img/next.svg';
-import SliderContainer from '../../primitives/SliderContainer/SliderContainer';
-import SliderItem from '../../primitives/SliderItem/SliderItem';
 import IconButton from '../../primitives/IconButton/IconButton';
 import Badge from '../../primitives/Badge/Badge';
 import Image from '../../primitives/Image/Image';
 
 import LazyTest from './LazyTest';
-import Dialog from '../../primitives/Dialog/Dialog';
-import Socky from '../../primitives/Socky/Socky';
 
+import Dialog from '../../primitives/Dialog/Dialog';
 import InputRange from '../../primitives/InputRange/InputRange';
 import InputRangeDouble from '../../primitives/InputRangeDouble/InputRangeDouble';
 

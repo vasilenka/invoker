@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import requiredIcon from './img/required.svg';
 
-import Text from './../Text/Text';
+import Text from './../../primitives/Text/Text';
 
 const TableRow = ({ className, children, ...restProps }) => {
   return (
