@@ -5,7 +5,7 @@ import Prism from 'prismjs';
 import 'prismjs/components/prism-jsx.min';
 import './glamor';
 
-import Text from './../../components/Text/Text';
+import Text from './../../primitives/Text/Text';
 
 const Code = ({ children, className, ...restProps }) => {
   useEffect(() => Prism.highlightAll());

@@ -5,8 +5,8 @@ import classnames from 'classnames';
 import Header from './../../docs/Header/Header';
 import Divider from './../../docs/Divider/Divider';
 
-import Lab from '../../components/Lab/Lab';
-import Spinner from '../../components/Spinner/Spinner';
+import Lab from '../../primitives/Lab/Lab';
+import Spinner from '../../primitives/Spinner/Spinner';
 import Airtable from 'airtable';
 
 Airtable.configure({

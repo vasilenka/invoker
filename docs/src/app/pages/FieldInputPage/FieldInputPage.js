@@ -9,10 +9,10 @@ import Preview from './../../docs/Preview/Preview';
 import Code from './../../docs/Code/Code';
 import Divider from './../../docs/Divider/Divider';
 
-import Table from './../../components/Table/Table';
-import Text from './../../components/Text/Text';
-import FieldInput from './../../components/FieldInput/FieldInput';
-import FieldLabel from './../../components/FieldLabel/FieldLabel';
+import Table from './../../primitives/Table/Table';
+import Text from './../../primitives/Text/Text';
+import FieldInput from './../../primitives/FieldInput/FieldInput';
+import FieldLabel from './../../primitives/FieldLabel/FieldLabel';
 
 let headProps = ['', 'name', 'type', 'default'];
 

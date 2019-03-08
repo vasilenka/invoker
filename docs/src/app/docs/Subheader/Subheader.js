@@ -1,7 +1,7 @@
 import styles from './Subheader.module.scss';
 import React from 'react';
 
-import Text from './../../components/Text/Text';
+import Text from './../../primitives/Text/Text';
 
 const Subheader = ({ title, description, className, ...restProps }) => {
   return (

@@ -7,8 +7,8 @@ import Preview from './../../docs/Preview/Preview';
 import Code from './../../docs/Code/Code';
 import Divider from './../../docs/Divider/Divider';
 
-import Table from './../../components/Table/Table';
-import FieldHint from './../../components/FieldHint/FieldHint';
+import Table from './../../primitives/Table/Table';
+import FieldHint from './../../primitives/FieldHint/FieldHint';
 
 let headProps = ['', 'name', 'type', 'default'];
 

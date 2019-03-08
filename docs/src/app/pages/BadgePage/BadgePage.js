@@ -2,8 +2,8 @@ import styles from './BadgePage.module.scss';
 import React from 'react';
 // import classnames from 'classnames';
 
-import Table from './../../components/Table/Table';
-import Badge from './../../components/Badge/Badge';
+import Table from './../../primitives/Table/Table';
+import Badge from './../../primitives/Badge/Badge';
 
 import Header from './../../docs/Header/Header';
 import Subheader from './../../docs/Subheader/Subheader';

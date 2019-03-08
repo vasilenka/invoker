@@ -1,16 +1,12 @@
-// import styles from './PreloaderPage.module.scss'
 import React from 'react';
-// import cx from 'classnames'
 
 import Header from './../../docs/Header/Header';
 import Subheader from './../../docs/Subheader/Subheader';
 import Preview from './../../docs/Preview/Preview';
 import Divider from './../../docs/Divider/Divider';
 
-// import Text from './../../components/Text/Text'
-
-import Bouncer from './../../components/Bouncer/Bouncer';
-import Spinner from './../../components/Spinner/Spinner';
+import Bouncer from './../../primitives/Bouncer/Bouncer';
+import Spinner from './../../primitives/Spinner/Spinner';
 
 const PreloaderPage = ({ className, ...restProps }) => {
   return (

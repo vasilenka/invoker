@@ -2,7 +2,7 @@ import styles from './Header.module.scss';
 import React from 'react';
 import classnames from 'classnames';
 
-import Text from './../../components/Text/Text';
+import Text from './../../primitives/Text/Text';
 
 const Header = ({ title, description, source, className, ...restProps }) => {
   return (

@@ -6,12 +6,12 @@ import Header from './../../docs/Header/Header';
 import Subheader from './../../docs/Subheader/Subheader';
 import Preview from './../../docs/Preview/Preview';
 import Divider from './../../docs/Divider/Divider';
-
-import Button from './../../components/Button/Button';
-import Table from '../../components/Table/Table';
 import Code from '../../docs/Code/Code';
-import Tooltips from '../../components/Tooltips/Tooltips';
-import Text from '../../components/Text/Text';
+
+import Button from './../../primitives/Button/Button';
+import Table from '../../primitives/Table/Table';
+import Tooltips from '../../primitives/Tooltips/Tooltips';
+import Text from '../../primitives/Text/Text';
 
 let headProps = ['', 'props', 'type', 'default'];
 let buttonProps = [

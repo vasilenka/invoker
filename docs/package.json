@@ -68,10 +68,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.5",
-    "@storybook/addon-actions": "^4.0.4",
-    "@storybook/addon-links": "^4.0.4",
-    "@storybook/addons": "^4.0.4",
-    "@storybook/react": "^4.0.4",
     "babel-loader": "^8.0.4",
     "eslint-plugin-react-hooks": "^0.0.0",
     "import-http": "^0.3.0",

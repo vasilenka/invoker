@@ -8,13 +8,13 @@ import Preview from '../../docs/Preview/Preview';
 import Code from '../../docs/Code/Code';
 import Divider from '../../docs/Divider/Divider';
 
-import Table from '../../components/Table/Table';
+import Table from '../../primitives/Table/Table';
 
-import RadioList from '../../components/RadioList/RadioList';
-import RadioButton from '../../components/RadioButton/RadioButton';
-import RadioMark from '../../components/RadioMark/RadioMark';
-import RadioLabel from '../../components/RadioLabel/RadioLabel';
-import Text from '../../components/Text/Text';
+import RadioList from '../../primitives/RadioList/RadioList';
+import RadioButton from '../../primitives/RadioButton/RadioButton';
+import RadioMark from '../../primitives/RadioMark/RadioMark';
+import RadioLabel from '../../primitives/RadioLabel/RadioLabel';
+import Text from '../../primitives/Text/Text';
 
 let headProps = ['', 'name', 'type', 'default'];
 
@@ -209,7 +209,7 @@ const RadioButtonPage = props => {
     <div className={styles.root}>
       <Subheader
         title="Radio"
-        description="Set of components to make a complete radio input. Use radio input when you have a few options that a user can choose from. Don't use radio input if the user can select more than one option from a list, or if there's only one option to select from. That's what Checkbox are for."
+        description="Set of primtives to make a complete radio input. Use radio input when you have a few options that a user can choose from. Don't use radio input if the user can select more than one option from a list, or if there's only one option to select from. That's what Checkbox are for."
       />
       <Divider large />
 

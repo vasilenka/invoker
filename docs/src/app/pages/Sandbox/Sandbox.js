@@ -2,39 +2,32 @@ import styles from './Sandbox.module.scss';
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 
+import kda from './data';
+
 import Header from './../../docs/Header/Header';
 import Subheader from './../../docs/Subheader/Subheader';
 import Preview from './../../docs/Preview/Preview';
 import Divider from './../../docs/Divider/Divider';
 
-import Text from './../../components/Text/Text';
-import SinglePreview from './../../components/SinglePreview/SinglePreview';
-
-import Luna from '../../components/Luna/Luna';
-import Button from './../../components/Button/Button';
-
-import Tabs from './../../components/Tabs/Tabs';
-import TabPanels from './../../components/TabPanels/TabPanels';
-import TabPanel from './../../components/TabPanel/TabPanel';
-import TabList from './../../components/TabList/TabList';
-import Tab from './../../components/Tab/Tab';
-import Card from './../../components/Card/Card';
-
-import Draft from './../../components/Draft/Draft';
-
-import Banner from './../../components/Banner/Banner';
-import Toast from './../../components/Toast/Toast';
-// import LunaPreview from '../../components/LunaPreview/LunaPreview'
-
-import LoadingBar from '../../components/LoadingBar/LoadingBar';
-
-import kda from './data';
-import Overlapping from '../../components/Overlapping/Overlapping';
-import CarouselControl from '../../components/CarouselControl/CarouselControl';
-import CarouselOverlapping from '../../components/CarouselOverlapping/CarouselOverlapping';
-import OverlappingItem from '../../components/OverlappingItem/OverlappingItem';
-import Slider from '../../components/Slider/Slider';
-import Spinner from '../../components/Spinner/Spinner';
+import Text from './../../primitives/Text/Text';
+import SinglePreview from './../../primitives/SinglePreview/SinglePreview';
+import Luna from '../../primitives/Luna/Luna';
+import Button from './../../primitives/Button/Button';
+import Tabs from './../../primitives/Tabs/Tabs';
+import TabPanels from './../../primitives/TabPanels/TabPanels';
+import TabPanel from './../../primitives/TabPanel/TabPanel';
+import TabList from './../../primitives/TabList/TabList';
+import Tab from './../../primitives/Tab/Tab';
+import Card from './../../primitives/Card/Card';
+import Banner from './../../primitives/Banner/Banner';
+import Toast from './../../primitives/Toast/Toast';
+import LoadingBar from '../../primitives/LoadingBar/LoadingBar';
+import Overlapping from '../../primitives/Overlapping/Overlapping';
+import CarouselControl from '../../primitives/CarouselControl/CarouselControl';
+import CarouselOverlapping from '../../primitives/CarouselOverlapping/CarouselOverlapping';
+import OverlappingItem from '../../primitives/OverlappingItem/OverlappingItem';
+import Slider from '../../primitives/Slider/Slider';
+import Spinner from '../../primitives/Spinner/Spinner';
 
 import img1 from './img/1.jpg';
 import img2 from './img/2.jpg';
@@ -43,22 +36,22 @@ import img4 from './img/4.jpg';
 import img5 from './img/5.jpg';
 import img6 from './img/6.jpg';
 import hello from './img/hello.jpeg';
-import SliderControl from '../../components/SliderControl/SliderControl';
+import SliderControl from '../../primitives/SliderControl/SliderControl';
 
 import { ReactComponent as Prev } from './img/prev.svg';
 import { ReactComponent as Next } from './img/next.svg';
-import SliderContainer from '../../components/SliderContainer/SliderContainer';
-import SliderItem from '../../components/SliderItem/SliderItem';
-import IconButton from '../../components/IconButton/IconButton';
-import Badge from '../../components/Badge/Badge';
-import Image from '../../components/Image/Image';
+import SliderContainer from '../../primitives/SliderContainer/SliderContainer';
+import SliderItem from '../../primitives/SliderItem/SliderItem';
+import IconButton from '../../primitives/IconButton/IconButton';
+import Badge from '../../primitives/Badge/Badge';
+import Image from '../../primitives/Image/Image';
 
 import LazyTest from './LazyTest';
-import Dialog from '../../components/Dialog/Dialog';
-import Socky from '../../components/Socky/Socky';
+import Dialog from '../../primitives/Dialog/Dialog';
+import Socky from '../../primitives/Socky/Socky';
 
-import InputRange from '../../components/InputRange/InputRange';
-import InputRangeDouble from '../../components/InputRangeDouble/InputRangeDouble';
+import InputRange from '../../primitives/InputRange/InputRange';
+import InputRangeDouble from '../../primitives/InputRangeDouble/InputRangeDouble';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -118,7 +111,7 @@ const Sandbox = ({ className, ...restProps }) => {
 
   let [originalImage, setOriginalImage] = React.useState();
   let [imageCropped, setImageCropped] = React.useState();
-  // let [blobCropped, setBlobCropped] = React.useState(null);
+  // let [blobCropped, setBlobCropped] = React.useState(null)
   let [dataCropped, setDataCropped] = React.useState();
 
   useEffect(() => {
@@ -183,7 +176,7 @@ const Sandbox = ({ className, ...restProps }) => {
 
   const handleImageData = (img, blob, data, canvas) => {
     setImageCropped(img);
-    // setBlobCropped(blob);
+    // setBlobCropped(blob)
     setDataCropped(data);
     setCanvas(canvas);
   };

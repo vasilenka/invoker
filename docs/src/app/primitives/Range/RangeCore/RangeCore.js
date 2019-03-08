@@ -292,14 +292,29 @@ export default class RangeCore extends React.Component {
     this.container.addEventListener('touchend', this.touchHandler, false);
 
     this.handleSetTarget();
-    document.addEventListener('mousemove', this.handleMouseMove);
-    document.addEventListener('mouseup', this.handleMouseUp);
+    this.container.parentNode.parentNode.addEventListener(
+      'mousemove',
+      this.handleMouseMove
+    );
+    this.container.parentNode.parentNode.addEventListener(
+      'mouseup',
+      this.handleMouseUp
+    );
   };
 
   componentWillUnmount = () => {
-    document.removeEventListener('mousemove', this.handleMouseMove);
-    document.removeEventListener('mouseup', this.handleMouseUp);
-    document.removeEventListener('mouseout', this.handleMouseUp);
+    this.container.parentNode.parentNode.removeEventListener(
+      'mousemove',
+      this.handleMouseMove
+    );
+    this.container.parentNode.parentNode.removeEventListener(
+      'mouseup',
+      this.handleMouseUp
+    );
+    this.container.parentNode.parentNode.removeEventListener(
+      'mouseout',
+      this.handleMouseUp
+    );
 
     this.container.removeEventListener('touchstart', this.touchHandler, false);
     this.container.removeEventListener('touchmove', this.touchHandler, false);

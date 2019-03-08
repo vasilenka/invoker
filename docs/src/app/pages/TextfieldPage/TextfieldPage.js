@@ -6,9 +6,9 @@ import Subheader from './../../docs/Subheader/Subheader';
 import Preview from './../../docs/Preview/Preview';
 import Code from './../../docs/Code/Code';
 
-import Textfield from './../../components/Textfield/Textfield';
-import Table from './../../components/Table/Table';
-import Text from './../../components/Text/Text';
+import Textfield from './../../primitives/Textfield/Textfield';
+import Table from './../../primitives/Table/Table';
+import Text from './../../primitives/Text/Text';
 
 let headProps = ['', 'name', 'type', 'default'];
 

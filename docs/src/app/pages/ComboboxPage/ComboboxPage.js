@@ -1,6 +1,7 @@
 import styles from './ComboboxPage.module.scss';
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
+import Downshift from 'downshift';
 
 import Header from '../../docs/Header/Header';
 import Subheader from '../../docs/Subheader/Subheader';
@@ -8,16 +9,13 @@ import Preview from '../../docs/Preview/Preview';
 import Code from '../../docs/Code/Code';
 import Divider from '../../docs/Divider/Divider';
 
-import Table from '../../components/Table/Table';
-
-import Text from '../../components/Text/Text';
-
-import Downshift from 'downshift';
-import FieldLabel from '../../components/FieldLabel/FieldLabel';
-import ComboboxItem from '../../components/ComboboxItem/ComboboxItem';
-import Combobox from '../../components/Combobox/Combobox';
-import ComboboxInput from '../../components/ComboboxInput/ComboboxInput';
-import ComboboxContainer from '../../components/ComboboxContainer/ComboboxContainer';
+import Table from '../../primitives/Table/Table';
+import Text from '../../primitives/Text/Text';
+import FieldLabel from '../../primitives/FieldLabel/FieldLabel';
+import ComboboxItem from '../../primitives/ComboboxItem/ComboboxItem';
+import Combobox from '../../primitives/Combobox/Combobox';
+import ComboboxInput from '../../primitives/ComboboxInput/ComboboxInput';
+import ComboboxContainer from '../../primitives/ComboboxContainer/ComboboxContainer';
 
 const fruits = [
   {
