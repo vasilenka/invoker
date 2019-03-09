@@ -15,7 +15,12 @@ const content = (
 
 const NavbarAvatar = ({ children, src, className, ...restProps }) => {
   return (
-    <Popout withArrow={false} bottomRight content={content}>
+    <Popout
+      withArrow={false}
+      bottomRight
+      content={content}
+      containerClassName={styles.popout}
+    >
       {(setVisible, visible) => (
         <div
           onClick={() => setVisible(!visible)}

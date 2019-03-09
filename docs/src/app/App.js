@@ -8,7 +8,7 @@ import Container from './layouts/Container/Container';
 import LeftSection from './layouts/LeftSection/LeftSection';
 import MainContent from './layouts/MainContent/MainContent';
 
-import Navbar from './components/Navbar/Navbar';
+import NavbarAlt from './components/NavbarAlt/NavbarAlt';
 import Text from './primitives/Text/Text';
 
 import TextfieldPage from './pages/TextfieldPage/TextfieldPage';
@@ -28,6 +28,7 @@ import ButtonPage from './pages/ButtonPage/ButtonPage';
 import BadgePage from './pages/BadgePage/BadgePage';
 import TooltipsPage from './pages/TooltipsPage/TooltipsPage';
 import PopoutPage from './pages/PopoutPage/PopoutPage';
+import ContainerPage from './pages/ContainerPage/ContainerPage';
 
 // const TextfieldPage = lazy(() => import('./pages/TextfieldPage/TextfieldPage'));
 // const TextPage = lazy(() => import('./pages/TextPage/TextPage'));
@@ -78,11 +79,12 @@ class App extends Component {
         </Helmet>
         <Router>
           <React.Fragment>
-            <Navbar />
+            <NavbarAlt />
             <Container fixLeft fixRight className={styles.mainContainer}>
               <MainContent>
                 <Route exact path="/sandbox" component={SandboxPage} />
                 <Route exact path="/airtable" component={AirtablePage} />
+                <Route exact path="/container" component={ContainerPage} />
                 <Route exact path="/text" component={TextPage} />
                 <Route exact path="/button" component={ButtonPage} />
                 <Route exact path="/textfield" component={TextfieldPage} />
@@ -109,6 +111,14 @@ class App extends Component {
               <Link to="/airtable">
                 <Text className={styles.link} link>
                   Airtable
+                </Text>
+              </Link>
+              <Text heading6 component="h4" style={{ paddingTop: '24px' }}>
+                LAYOUT
+              </Text>
+              <Link to="/container">
+                <Text className={styles.link} link>
+                  Container
                 </Text>
               </Link>
               <Text heading6 component="h4" style={{ paddingTop: '24px' }}>

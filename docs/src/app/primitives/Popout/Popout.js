@@ -19,6 +19,7 @@ const Popout = ({
   rightBottom,
   withArrow = true,
   className,
+  containerClassName,
   ...restProps
 }) => {
   let [visible, setVisible] = React.useState(false);
@@ -65,7 +66,8 @@ const Popout = ({
             [styles.containerLeft]: topLeft || bottomLeft,
             [styles.containerRight]: topRight || bottomRight || left,
             [styles.containerCenter]: top || bottom,
-            [styles.containerMiddle]: left || right
+            [styles.containerMiddle]: left || right,
+            [containerClassName]: containerClassName
           })}
         >
           <div

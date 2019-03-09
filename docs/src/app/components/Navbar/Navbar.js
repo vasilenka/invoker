@@ -7,6 +7,7 @@ import NavbarSecondary from '../NavbarSecondary/NavbarSecondary';
 import NavbarPrimary from '../NavbarPrimary/NavbarPrimary';
 import NavbarMenu from '../NavbarMenu/NavbarMenu';
 import NavbarAvatar from '../NavbarAvatar/NavbarAvatar';
+import Button from '../../primitives/Button/Button';
 
 const Navbar = ({ children, className, ...restProps }) => {
   return (
@@ -25,6 +26,9 @@ const Navbar = ({ children, className, ...restProps }) => {
         <NavbarMenu to="/dropdown">Dropdown</NavbarMenu>
       </NavbarPrimary>
       <NavbarSecondary>
+        <Button small primary style={{ marginRight: '24px' }}>
+          New mission
+        </Button>
         <NavbarAvatar
           src={
             'https://cdn-images-1.medium.com/max/2600/1*oBDMtanZ-TZl12cuR6CfFg.png'

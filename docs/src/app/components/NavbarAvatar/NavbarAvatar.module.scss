@@ -25,3 +25,7 @@
 .picture {
   border-radius: $radius-xxl;
 }
+
+.popout {
+  transform: translate(16px, -16px);
+}
