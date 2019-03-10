@@ -6,35 +6,33 @@
 
 .normal {
   width: 100%;
+  max-width: 100%;
   margin-right: auto;
   margin-left: auto;
 
   @include screen(phone) {
-    max-width: 100%;
-    padding-right: 24px;
-    padding-left: 24px;
+    padding-right: $gutter-s;
+    padding-left: $gutter-s;
   }
 
   @include screen(tabPortrait) {
-    max-width: 100%;
-    padding-right: 24px !important;
-    padding-left: 24px !important;
+    padding-right: $gutter-s;
+    padding-left: $gutter-s;
   }
 
   @include screen(tabLandscape) {
-    max-width: 100%;
+    padding-right: $gutter-s;
+    padding-left: $gutter-s;
   }
 
   @include screen(desktop) {
-    max-width: 100%;
-    padding-right: 80px !important;
-    padding-left: 80px !important;
+    padding-right: $gutter-m;
+    padding-left: $gutter-m;
   }
 
   @include screen(desktopWide) {
-    max-width: 100%;
-    padding-right: 144px !important;
-    padding-left: 144px !important;
+    padding-right: $gutter-l;
+    padding-left: $gutter-l;
   }
 }
 
@@ -45,22 +43,31 @@
 
   @include screen(phone) {
     max-width: 100%;
-    padding-right: 24px;
-    padding-left: 24px;
+    padding-right: $gutter-s;
+    padding-left: $gutter-s;
   }
 
   @include screen(tabPortrait) {
     max-width: 100%;
-    padding-right: 24px !important;
-    padding-left: 24px !important;
+    padding-right: $gutter-s;
+    padding-left: $gutter-s;
   }
 
   @include screen(tabLandscape) {
     max-width: 100%;
+    padding-right: $gutter-s;
+    padding-left: $gutter-s;
   }
 
   @include screen(desktop) {
-    max-width: 1080px;
+    max-width: $max-narrow;
+    padding-right: $gutter-s;
+    padding-left: $gutter-s;
+  }
+  @include screen(desktopWide) {
+    max-width: 1440px;
+    padding-right: $gutter-s;
+    padding-left: $gutter-s;
   }
 }
 
@@ -71,7 +78,7 @@
 }
 
 .fixLeft {
-  margin-left: 15vw;
+  margin-left: $fix-left-space;
   padding-left: $space-ml;
 }
 
@@ -83,6 +90,12 @@
     margin-right: 0;
   }
   @include screen(tabLandscape) {
-    margin-right: 25vw;
+    margin-right: $fix-right-space;
+  }
+  @include screen(desktop) {
+    margin-right: $fix-right-space;
+  }
+  @include screen(desktopWide) {
+    margin-right: $fix-right-space;
   }
 }
