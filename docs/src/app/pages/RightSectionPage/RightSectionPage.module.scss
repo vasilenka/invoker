@@ -1,0 +1,12 @@
+@import '~invoker-tokens/index.scss';
+
+.root {
+}
+
+.previewTitle {
+  margin: $space-stack-m;
+}
+
+.previewImage:not(:last-child) {
+  margin: $space-stack-l;
+}

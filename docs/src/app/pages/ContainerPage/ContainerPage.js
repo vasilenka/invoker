@@ -19,6 +19,7 @@ import fixLeft from './webp/fixLeft.webp';
 import fixRight from './webp/fixRight.webp';
 import mobile from './webp/mobile.webp';
 import tablet from './webp/tablet.webp';
+import helper from './webp/helper.webp';
 
 let headProps = ['', 'name', 'type', 'default'];
 
@@ -110,6 +111,12 @@ const ContainerPage = props => {
           naturalWidth="960"
           naturalHeight="640"
         />
+        <Image
+          containerClassName={styles.previewImage}
+          src={helper}
+          naturalWidth="960"
+          naturalHeight="72"
+        />
       </Preview>
       <Divider large />
       <Text heading4 component="h3">
@@ -130,6 +137,12 @@ const ContainerPage = props => {
           naturalWidth="960"
           naturalHeight="640"
         />
+        <Image
+          containerClassName={styles.previewImage}
+          src={helper}
+          naturalWidth="960"
+          naturalHeight="72"
+        />
       </Preview>
       <Divider large />
       <Text heading4 component="h3">
@@ -148,6 +161,12 @@ const ContainerPage = props => {
       />
       <Preview>
         <Image src={fixLeft} naturalWidth="960" naturalHeight="640" />
+        <Image
+          containerClassName={styles.previewImage}
+          src={helper}
+          naturalWidth="960"
+          naturalHeight="72"
+        />
       </Preview>
       <Divider large />
       <Subheader

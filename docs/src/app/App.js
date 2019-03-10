@@ -9,6 +9,7 @@ import LeftSection from './layouts/LeftSection/LeftSection';
 import MainContent from './layouts/MainContent/MainContent';
 
 import NavbarAlt from './components/NavbarAlt/NavbarAlt';
+import Navbar from './components/Navbar/Navbar';
 import Text from './primitives/Text/Text';
 
 import TextfieldPage from './pages/TextfieldPage/TextfieldPage';
@@ -29,6 +30,8 @@ import BadgePage from './pages/BadgePage/BadgePage';
 import TooltipsPage from './pages/TooltipsPage/TooltipsPage';
 import PopoutPage from './pages/PopoutPage/PopoutPage';
 import ContainerPage from './pages/ContainerPage/ContainerPage';
+import LeftSectionPage from './pages/LeftSectionPage/LeftSectionPage';
+import RightSectionPage from './pages/RightSectionPage/RightSectionPage';
 
 // const TextfieldPage = lazy(() => import('./pages/TextfieldPage/TextfieldPage'));
 // const TextPage = lazy(() => import('./pages/TextPage/TextPage'));
@@ -79,12 +82,18 @@ class App extends Component {
         </Helmet>
         <Router>
           <React.Fragment>
-            <NavbarAlt />
+            <Navbar />
             <Container fixLeft fixRight className={styles.mainContainer}>
               <MainContent>
                 <Route exact path="/sandbox" component={SandboxPage} />
                 <Route exact path="/airtable" component={AirtablePage} />
                 <Route exact path="/container" component={ContainerPage} />
+                <Route exact path="/left-section" component={LeftSectionPage} />
+                <Route
+                  exact
+                  path="/right-section"
+                  component={RightSectionPage}
+                />
                 <Route exact path="/text" component={TextPage} />
                 <Route exact path="/button" component={ButtonPage} />
                 <Route exact path="/textfield" component={TextfieldPage} />
@@ -119,6 +128,16 @@ class App extends Component {
               <Link to="/container">
                 <Text className={styles.link} link>
                   Container
+                </Text>
+              </Link>
+              <Link to="/left-section">
+                <Text className={styles.link} link>
+                  LeftSection
+                </Text>
+              </Link>
+              <Link to="/right-section">
+                <Text className={styles.link} link>
+                  RightSection
                 </Text>
               </Link>
               <Text heading6 component="h4" style={{ paddingTop: '24px' }}>

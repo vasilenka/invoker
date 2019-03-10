@@ -1,8 +1,9 @@
 @import '~invoker-tokens/index.scss';
 
 .root {
-  width: 15vw;
+  width: $fix-left-space;
   overflow-y: scroll;
+  overflow-x: hidden;
   bottom: 0;
 }
 
