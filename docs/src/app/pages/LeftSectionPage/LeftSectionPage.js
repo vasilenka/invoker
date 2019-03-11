@@ -3,13 +3,10 @@ import React from 'react';
 import cx from 'classnames';
 
 import Header from './../../docs/Header/Header';
-import Subheader from './../../docs/Subheader/Subheader';
 import Preview from './../../docs/Preview/Preview';
-// import Code from './../../docs/Code/Code';
 import Divider from './../../docs/Divider/Divider';
 
 import Table from './../../components/Table/Table';
-import Text from './../../primitives/Text/Text';
 import Image from '../../primitives/Image/Image';
 
 import leftSection from './webp/leftSection.webp';
@@ -41,7 +38,7 @@ let bodyProps = [
 
 const LeftSectionPage = props => {
   return (
-    <div className={styles.root}>
+    <div className={cx(styles.root)}>
       <Header
         title="LeftSection"
         description="Good for a sidebar and secondary navigation."

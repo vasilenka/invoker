@@ -3,12 +3,12 @@ import React from 'react';
 import cx from 'classnames';
 
 import Header from './../../docs/Header/Header';
-import Subheader from './../../docs/Subheader/Subheader';
+// import Subheader from './../../docs/Subheader/Subheader';
 import Preview from './../../docs/Preview/Preview';
 import Divider from './../../docs/Divider/Divider';
 
 import Table from './../../components/Table/Table';
-import Text from './../../primitives/Text/Text';
+// import Text from './../../primitives/Text/Text';
 import Image from '../../primitives/Image/Image';
 
 import rightSection from './webp/rightSection.webp';
@@ -40,7 +40,7 @@ let bodyProps = [
 
 const RightSectionPage = props => {
   return (
-    <div className={styles.root}>
+    <div className={cx(styles.root)}>
       <Header
         title="RightSection"
         description="Good for a additional information and secondary navigation."

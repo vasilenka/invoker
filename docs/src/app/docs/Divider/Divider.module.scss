@@ -2,12 +2,13 @@
 
 .root {
   height: 1px;
-  width: 100%;
+  max-width: 100%;
   display: block;
+  box-sizing: border-box;
 }
 
 .normal {
-  background: $dark-alpha-10;
+  background: $dark-alpha-20;
 }
 
 .transparent {
@@ -15,13 +16,16 @@
 }
 
 .small {
-  margin: $space-vertical-s;
+  margin-top: $space-s;
+  margin-bottom: $space-s;
 }
 
 .medium {
-  margin: $space-vertical-m;
+  margin-top: $space-m;
+  margin-bottom: $space-m;
 }
 
 .large {
-  margin: $space-vertical-ll;
+  margin-top: $space-ll;
+  margin-bottom: $space-ll;
 }

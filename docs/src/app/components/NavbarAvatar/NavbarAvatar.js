@@ -1,16 +1,146 @@
 import styles from './NavbarAvatar.module.scss';
 import React from 'react';
 import cx from 'classnames';
+import { Link } from 'react-router-dom';
 
 import Image from '../../primitives/Image/Image';
 import Popout from './../../primitives/Popout/Popout';
+import Divider from '../../docs/Divider/Divider';
+import Text from '../../primitives/Text/Text';
 
-const content = (
-  <div className={styles.menuContainer}>
-    <li>hello world</li>
-    <li>hello world</li>
-    <li>hello world</li>
-  </div>
+const Content = ({ setVisible, visible }) => (
+  <ul className={styles.menuContainer}>
+    <Link
+      to="/sandbox"
+      className={styles.link}
+      onClick={() => setVisible(!visible)}
+    >
+      <li className={styles.menu}>
+        <Text small className={styles.menuText}>
+          Profile
+        </Text>
+      </li>
+    </Link>
+    <Link
+      to="/sandbox"
+      className={styles.link}
+      onClick={() => setVisible(!visible)}
+    >
+      <li className={styles.menu}>
+        <Text small className={styles.menuText}>
+          Settings
+        </Text>
+      </li>
+    </Link>
+    <Link
+      to="/sandbox"
+      className={styles.link}
+      onClick={() => setVisible(!visible)}
+    >
+      <li className={styles.menu}>
+        <Text small className={styles.menuText}>
+          Transactions history
+        </Text>
+      </li>
+    </Link>
+    <Link
+      to="/sandbox"
+      className={styles.link}
+      onClick={() => setVisible(!visible)}
+    >
+      <li className={styles.menu}>
+        <Text small className={styles.menuText}>
+          Your guidebook
+        </Text>
+      </li>
+    </Link>
+    <div className={styles.link}>
+      <Divider className={styles.divider} small />
+    </div>
+    <Link
+      to="/sandbox"
+      className={styles.link}
+      onClick={() => setVisible(!visible)}
+    >
+      <li className={styles.menu}>
+        <Text small className={styles.menuText}>
+          Community center
+        </Text>
+      </li>
+    </Link>
+    <Link
+      to="/sandbox"
+      className={styles.link}
+      onClick={() => setVisible(!visible)}
+    >
+      <li className={styles.menu}>
+        <Text small className={styles.menuText}>
+          Host assist
+        </Text>
+      </li>
+    </Link>
+    <div className={styles.link}>
+      <Divider className={styles.divider} small />
+    </div>
+    <Link
+      to="/sandbox"
+      className={styles.link}
+      onClick={() => setVisible(!visible)}
+    >
+      <li className={styles.menu}>
+        <Text small className={styles.menuText}>
+          Add new listing
+        </Text>
+      </li>
+    </Link>
+    <Link
+      to="/sandbox"
+      className={styles.link}
+      onClick={() => setVisible(!visible)}
+    >
+      <li className={styles.menu}>
+        <Text small className={styles.menuText}>
+          Refer host
+        </Text>
+      </li>
+    </Link>
+    <Link
+      to="/sandbox"
+      className={styles.link}
+      onClick={() => setVisible(!visible)}
+    >
+      <li className={styles.menu}>
+        <Text small className={styles.menuText}>
+          Host an experience
+        </Text>
+      </li>
+    </Link>
+    <div className={styles.link}>
+      <Divider className={styles.divider} small />
+    </div>
+    <Link
+      to="/sandbox"
+      className={styles.link}
+      onClick={() => setVisible(!visible)}
+    >
+      <li className={styles.menu}>
+        <Text small className={styles.menuText}>
+          Switch to travelling
+        </Text>
+      </li>
+    </Link>
+    <Link
+      to="/sandbox"
+      className={styles.link}
+      onClick={() => setVisible(!visible)}
+    >
+      <li className={styles.menu}>
+        <Text small className={styles.menuText}>
+          Log out
+        </Text>
+      </li>
+    </Link>
+  </ul>
 );
 
 const NavbarAvatar = ({ children, src, className, ...restProps }) => {
@@ -18,8 +148,11 @@ const NavbarAvatar = ({ children, src, className, ...restProps }) => {
     <Popout
       withArrow={false}
       bottomRight
-      content={content}
+      content={(setVisible, visible) => (
+        <Content setVisible={setVisible} visible={visible} />
+      )}
       containerClassName={styles.popout}
+      contentClassName={styles.content}
     >
       {(setVisible, visible) => (
         <div

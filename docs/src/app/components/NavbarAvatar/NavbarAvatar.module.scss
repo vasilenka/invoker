@@ -20,6 +20,7 @@
 
 .menuContainer {
   width: 320px;
+  padding: $space-inset-s;
 }
 
 .picture {
@@ -28,4 +29,36 @@
 
 .popout {
   transform: translate(16px, -16px);
+}
+
+.menu {
+  list-style: none;
+  padding: 11px 0;
+}
+
+.content {
+  box-shadow: $shadow-s;
+}
+
+.link {
+  display: block;
+  padding: $space-horizontal-s;
+}
+
+.menuText {
+  color: $dark-alpha-70;
+  display: block;
+  font-weight: 500;
+  user-select: none;
+  transition: all 0.36s;
+
+  &:hover {
+    color: $dark-alpha-80;
+    transition: all 0.28s;
+  }
+}
+
+.divider {
+  padding-left: $space-s;
+  padding-right: $space-s;
 }

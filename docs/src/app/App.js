@@ -8,7 +8,7 @@ import Container from './layouts/Container/Container';
 import LeftSection from './layouts/LeftSection/LeftSection';
 import MainContent from './layouts/MainContent/MainContent';
 
-import NavbarAlt from './components/NavbarAlt/NavbarAlt';
+// import NavbarAlt from './components/NavbarAlt/NavbarAlt';
 import Navbar from './components/Navbar/Navbar';
 import Text from './primitives/Text/Text';
 
