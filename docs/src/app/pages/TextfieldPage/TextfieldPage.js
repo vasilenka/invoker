@@ -42,6 +42,12 @@ let bodyProps = [
   },
   {
     required: false,
+    name: 'onChange',
+    type: 'fn() => event, value, type',
+    default: '-'
+  },
+  {
+    required: false,
     name: 'required',
     type: 'boolean',
     default: 'false'
