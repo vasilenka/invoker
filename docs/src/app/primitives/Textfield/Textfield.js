@@ -34,9 +34,9 @@ const Textfield = ({
   const [messageHook, setMessageHook] = useState(message || '');
   const [valueHook, setValueHook] = useState(value || '');
 
-  const handleChange = value => {
+  const handleChange = (e, value) => {
     setValueHook(value);
-    onChange(value, type);
+    onChange(e, value, type);
   };
 
   const setMessage = message => setMessageHook(message);
