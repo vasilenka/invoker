@@ -52,7 +52,7 @@ let buttonProps = [
   }
 ];
 
-const popout = (
+const popout = () => (
   <>
     <Text heading3 component="h3" style={{ maxWidth: '200px' }}>
       Consetetur sadipscing elitr, sed diam.
