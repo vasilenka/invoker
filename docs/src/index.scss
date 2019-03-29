@@ -1,5 +1,5 @@
-@import 'invoker-tokens/index.scss';
-@import 'invoker-base/index.scss';
+@import '~invoker-tokens/index.scss';
+@import '~invoker-base/index.scss';
 
 *,
 *::before,
@@ -15,6 +15,7 @@
 
 body {
   position: relative;
+  color: $dark-alpha-70;
 }
 
 :global {
