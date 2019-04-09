@@ -8,7 +8,7 @@ import Container from './layouts/Container/Container';
 import LeftSection from './layouts/LeftSection/LeftSection';
 import MainContent from './layouts/MainContent/MainContent';
 
-// import NavbarAlt from './components/NavbarAlt/NavbarAlt';
+// import NavbarAlt from './components/NavbarAlt/NavbarAlt'
 import Navbar from './components/Navbar/Navbar';
 import Text from './primitives/Text/Text';
 
@@ -33,23 +33,23 @@ import ContainerPage from './pages/ContainerPage/ContainerPage';
 import LeftSectionPage from './pages/LeftSectionPage/LeftSectionPage';
 import RightSectionPage from './pages/RightSectionPage/RightSectionPage';
 
-// const TextfieldPage = lazy(() => import('./pages/TextfieldPage/TextfieldPage'));
-// const TextPage = lazy(() => import('./pages/TextPage/TextPage'));
-// const SandboxPage = lazy(() => import('./pages/Sandbox/Sandbox'));
-// const MaskPage = lazy(() => import('./pages/MaskPage/MaskPage'));
-// const FieldLabelPage = lazy(() => import('./pages/FieldLabelPage/FieldLabelPage'));
-// const FieldInputPage = lazy(() => import('./pages/FieldInputPage/FieldInputPage'));
-// const FieldHintPage = lazy(() => import('./pages/FieldHintPage/FieldHintPage'));
-// const RadioInputPage = lazy(() => import('./pages/RadioInputPage/RadioInputPage'));
-// const CheckboxPage = lazy(() => import('./pages/CheckboxPage/CheckboxPage'));
-// const DropdownPage = lazy(() => import('./pages/DropdownPage/DropdownPage'));
-// const PreloaderPage = lazy(() => import('./pages/PreloaderPage/PreloaderPage'));
-// const ComboboxPage = lazy(() => import('./pages/ComboboxPage/ComboboxPage'));
-// const AirtablePage = lazy(() => import('./pages/AirtablePage/AirtablePage'));
-// const ButtonPage = lazy(() => import('./pages/ButtonPage/ButtonPage'));
-// const BadgePage = lazy(() => import('./pages/BadgePage/BadgePage'));
-// const TooltipsPage = lazy(() => import('./pages/TooltipsPage/TooltipsPage'));
-// const PopoutPage = lazy(() => import('./pages/PopoutPage/PopoutPage'));
+// const TextfieldPage = lazy(() => import('./pages/TextfieldPage/TextfieldPage'))
+// const TextPage = lazy(() => import('./pages/TextPage/TextPage'))
+// const SandboxPage = lazy(() => import('./pages/Sandbox/Sandbox'))
+// const MaskPage = lazy(() => import('./pages/MaskPage/MaskPage'))
+// const FieldLabelPage = lazy(() => import('./pages/FieldLabelPage/FieldLabelPage'))
+// const FieldInputPage = lazy(() => import('./pages/FieldInputPage/FieldInputPage'))
+// const FieldHintPage = lazy(() => import('./pages/FieldHintPage/FieldHintPage'))
+// const RadioInputPage = lazy(() => import('./pages/RadioInputPage/RadioInputPage'))
+// const CheckboxPage = lazy(() => import('./pages/CheckboxPage/CheckboxPage'))
+// const DropdownPage = lazy(() => import('./pages/DropdownPage/DropdownPage'))
+// const PreloaderPage = lazy(() => import('./pages/PreloaderPage/PreloaderPage'))
+// const ComboboxPage = lazy(() => import('./pages/ComboboxPage/ComboboxPage'))
+// const AirtablePage = lazy(() => import('./pages/AirtablePage/AirtablePage'))
+// const ButtonPage = lazy(() => import('./pages/ButtonPage/ButtonPage'))
+// const BadgePage = lazy(() => import('./pages/BadgePage/BadgePage'))
+// const TooltipsPage = lazy(() => import('./pages/TooltipsPage/TooltipsPage'))
+// const PopoutPage = lazy(() => import('./pages/PopoutPage/PopoutPage'))
 
 class App extends Component {
   constructor(props) {

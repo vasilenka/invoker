@@ -21,9 +21,6 @@ const Navbar = ({ children, className, ...restProps }) => {
       <NavbarPrimary>
         <NavbarBrand />
         <NavbarMenu to="/button">Button</NavbarMenu>
-        <NavbarMenu to="/sandbox">Sandbox</NavbarMenu>
-        <NavbarMenu to="/checkbox">Checkbox</NavbarMenu>
-        <NavbarMenu to="/dropdown">Dropdown</NavbarMenu>
       </NavbarPrimary>
       <NavbarSecondary>
         <Button small primary style={{ marginRight: '24px' }}>

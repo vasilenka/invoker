@@ -54,6 +54,10 @@ import LazyTest from './LazyTest';
 import Dialog from '../../primitives/Dialog/Dialog';
 import InputRange from '../../primitives/InputRange/InputRange';
 import InputRangeDouble from '../../primitives/InputRangeDouble/InputRangeDouble';
+import Accordion from '../../components/Accordion/Accordion';
+import AccordionList from '../../components/AccordionList/AccordionList';
+import ActionBar from '../../components/ActionBar/ActionBar';
+import ActionMenu from '../../components/ActionMenu/ActionMenu';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -192,9 +196,70 @@ const Sandbox = ({ className, ...restProps }) => {
     console.log(val);
   };
 
+  const faqs = [
+    {
+      title: 'Accordion here 1',
+      text:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eligendi ipsam quis maxime iure nihil dolore placeat distinctio ea nesciunt.'
+    },
+    {
+      title: 'Accordion here 2',
+      text:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eligendi ipsam quis maxime iure nihil dolore placeat distinctio ea nesciunt.'
+    },
+    {
+      title: 'Accordion here 3',
+      text:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eligendi ipsam quis maxime iure nihil dolore placeat distinctio ea nesciunt.'
+    }
+  ];
+
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+
+      <Preview clean>
+        <Text heading4Alt component="h3">
+          This is a preview for &lt;ActionBar/&gt;, resize your viewport to
+          tablet or mobile to see it in action!
+        </Text>
+        <ActionBar>
+          <ActionMenu active />
+          <ActionMenu />
+          <ActionMenu />
+          <ActionMenu />
+          <ActionMenu />
+        </ActionBar>
+      </Preview>
+
+      <Preview>
+        <AccordionList>
+          {faqs &&
+            faqs.map((faq, index) => (
+              <Accordion
+                hideOnDoubleClick
+                key={index}
+                index={index}
+                style={{ marginBottom: '24px' }}
+              >
+                {(triggerClick, show) => (
+                  <React.Fragment>
+                    <Text
+                      onClick={triggerClick}
+                      heading5Alt
+                      style={{ cursor: 'pointer' }}
+                      component="h2"
+                    >
+                      Show my content!
+                    </Text>
+                    {show && <Text large>{faq.text}</Text>}
+                  </React.Fragment>
+                )}
+              </Accordion>
+            ))}
+        </AccordionList>
+      </Preview>
+      <Divider large />
 
       <Preview clean>
         <InputRangeDouble
