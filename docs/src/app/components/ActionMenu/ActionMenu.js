@@ -1,11 +1,20 @@
 import styles from './ActionMenu.module.scss';
 import React from 'react';
 import cx from 'classnames';
+
 import Text from '../../primitives/Text/Text';
 
-const ActionMenu = ({ children, className, active, ...restProps }) => {
+const ActionMenu = ({
+  icon,
+  to,
+  children,
+  className,
+  active,
+  ...restProps
+}) => {
   return (
-    <div
+    <a
+      href={to}
       className={cx({
         [styles.root]: true,
         [styles.active]: active,
@@ -13,8 +22,9 @@ const ActionMenu = ({ children, className, active, ...restProps }) => {
       })}
       {...restProps}
     >
-      <Text small>Menu</Text>
-    </div>
+      {icon && <div style={{ marginBottom: '4px' }}>{icon}</div>}
+      {children && <Text small>{children}</Text>}
+    </a>
   );
 };
 

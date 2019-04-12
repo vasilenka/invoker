@@ -16,29 +16,29 @@ const ActionBar = ({ children, vertical, className, ...restProps }) => {
     lastScrollTop = st <= 0 ? 0 : st;
   };
 
-  const handlingTap = () => {
-    if (!scrolling) {
-      setScrolling(true);
-    }
-  };
+  // const handlingTap = () => {
+  //   if (!scrolling) {
+  //     setScrolling(true)
+  //   }
+  // }
 
   React.useEffect(() => {
-    window && window.addEventListener('scroll', scrollingThePage, false);
+    window.addEventListener('scroll', scrollingThePage, false);
     document.body.addEventListener('touchmove', scrollingThePage, false);
-    return () => {
-      window && window.removeEventListener('scroll', scrollingThePage, false);
-      document.body.remove('touchmove', scrollingThePage, false);
+    return function cleanup() {
+      window.removeEventListener('scroll', scrollingThePage, false);
+      document.body.removeEventListener('touchmove', scrollingThePage, false);
     };
   }, []);
 
-  React.useEffect(() => {
-    window && window.addEventListener('click', handlingTap, false);
-    document.body.addEventListener('click', handlingTap, false);
-    return () => {
-      window.removeEventListener('click', handlingTap, false);
-      document.body.removeEventListener('click', handlingTap, false);
-    };
-  }, []);
+  // React.useEffect(() => {
+  //   window && window.addEventListener('click', handlingTap, false)
+  //   document.body.addEventListener('click', handlingTap, false)
+  //   return () => {
+  //     window.removeEventListener('click', handlingTap, false)
+  //     document.body.removeEventListener('click', handlingTap, false)
+  //   }
+  // }, [])
 
   return (
     <div

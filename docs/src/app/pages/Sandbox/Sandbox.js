@@ -224,11 +224,10 @@ const Sandbox = ({ className, ...restProps }) => {
           tablet or mobile to see it in action!
         </Text>
         <ActionBar>
-          <ActionMenu active />
-          <ActionMenu />
-          <ActionMenu />
-          <ActionMenu />
-          <ActionMenu />
+          <ActionMenu active>Home</ActionMenu>
+          <ActionMenu>Schedule</ActionMenu>
+          <ActionMenu>Register</ActionMenu>
+          <ActionMenu>Contacts</ActionMenu>
         </ActionBar>
       </Preview>
 
