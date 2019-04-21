@@ -58,6 +58,7 @@ import Accordion from '../../components/Accordion/Accordion';
 import AccordionList from '../../components/AccordionList/AccordionList';
 import ActionBar from '../../components/ActionBar/ActionBar';
 import ActionMenu from '../../components/ActionMenu/ActionMenu';
+import Box from '../../primitives/Box/Box';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -217,6 +218,31 @@ const Sandbox = ({ className, ...restProps }) => {
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+
+      <Preview>
+        <Box column alignCenter justifyCenter>
+          <div
+            style={{
+              width: '40px',
+              height: '40px',
+              backgroundColor: 'rebeccapurple'
+            }}
+          />
+          <div
+            style={{ width: '40px', height: '40px', backgroundColor: 'coral' }}
+          />
+          <div
+            style={{
+              width: '40px',
+              height: '40px',
+              backgroundColor: 'rebeccapurple'
+            }}
+          />
+          <div
+            style={{ width: '40px', height: '40px', backgroundColor: 'coral' }}
+          />
+        </Box>
+      </Preview>
 
       <Preview clean>
         <Text heading4Alt component="h3">
