@@ -1,6 +1,3 @@
-# Tinker
+# Invoker
 
-Build something awesome using React.js
-
----
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sets of customizable React components complete with it's styles, so you can craft your page faster!
