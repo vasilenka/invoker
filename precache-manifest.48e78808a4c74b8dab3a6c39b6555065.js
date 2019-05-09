@@ -1,27 +1,27 @@
 self.__precacheManifest = [
   {
-    "revision": "51e6f39e521d77a76969",
-    "url": "/invoker/static/css/main.ed8cd4a4.chunk.css"
+    "revision": "45a7616136fdc43b7109",
+    "url": "/invoker/static/css/main.edd4195d.chunk.css"
   },
   {
-    "revision": "51e6f39e521d77a76969",
-    "url": "/invoker/static/js/main.51e6f39e.chunk.js"
+    "revision": "45a7616136fdc43b7109",
+    "url": "/invoker/static/js/main.45a76161.chunk.js"
   },
   {
-    "revision": "a4b515fd80735c5469f7",
-    "url": "/invoker/static/js/1.a4b515fd.chunk.js"
+    "revision": "e0d84d5e0bac59139d2f",
+    "url": "/invoker/static/js/1.e0d84d5e.chunk.js"
   },
   {
-    "revision": "8344343d4b5400458d19",
-    "url": "/invoker/static/css/2.a34e5441.chunk.css"
+    "revision": "a1c24f1becd9f751e69e",
+    "url": "/invoker/static/css/2.5bb7fbc9.chunk.css"
   },
   {
-    "revision": "8344343d4b5400458d19",
-    "url": "/invoker/static/js/2.8344343d.chunk.js"
+    "revision": "a1c24f1becd9f751e69e",
+    "url": "/invoker/static/js/2.a1c24f1b.chunk.js"
   },
   {
-    "revision": "12ec3ae2286bc5a378af",
-    "url": "/invoker/static/js/runtime~main.12ec3ae2.js"
+    "revision": "bc45c8cf3e2dea2f978d",
+    "url": "/invoker/static/js/runtime~main.bc45c8cf.js"
   },
   {
     "revision": "813e30500bea1cb77556601bc952b6e2",
@@ -252,8 +252,12 @@ self.__precacheManifest = [
     "url": "/invoker/static/media/RobotoMono-MediumItalic.32b7627c.ttf"
   },
   {
-    "revision": "3e02782e4a0f348ec508bfe4cb8af3b3",
-    "url": "/invoker/static/media/dark.3e02782e.svg"
+    "revision": "9201ddc05f7af3e6289c9c40860e67a2",
+    "url": "/invoker/static/media/mid.9201ddc0.svg"
+  },
+  {
+    "revision": "c334c442cd72b7e2982c1364d9d75264",
+    "url": "/invoker/static/media/github.c334c442.svg"
   },
   {
     "revision": "adf46aa104c4f08a4b37de35d8157769",
@@ -284,7 +288,7 @@ self.__precacheManifest = [
     "url": "/invoker/static/media/google.686f8efa.svg"
   },
   {
-    "revision": "c4f008501cdfd7cdad4a67801d9ac662",
+    "revision": "d1b1b899942eddc59296b575f1f85413",
     "url": "/invoker/index.html"
   }
 ];
