@@ -1,4 +1,4 @@
-@import 'invoker-tokens/index.scss';
+@import 'src/tokens';
 
 .root {
   position: relative;
@@ -73,7 +73,7 @@
   background: $dark-hex-80;
   border-radius: 3px;
   padding: $space-inset-sm;
-  box-shadow: $shadow-l;
+  box-shadow: $elevation-l;
 }
 
 .arrow {

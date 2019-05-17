@@ -1,4 +1,4 @@
-@import 'invoker-tokens/index.scss';
+@import 'src/tokens';
 
 @mixin track() {
   &::-webkit-slider-runnable-track {

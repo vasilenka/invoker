@@ -1,4 +1,4 @@
-@import '~invoker-tokens/index.scss';
+@import 'src/tokens';
 
 .root {
   width: 100%;
@@ -12,18 +12,18 @@
 .positive {
   composes: root;
   color: $dark-alpha-80;
-  background-color: $sys-success-100;
+  background-color: $tone-success-100;
 }
 
 .warning {
   composes: root;
   color: $dark-alpha-80;
-  background-color: $sys-warning-100;
+  background-color: $tone-warning-100;
 }
 
 .critical {
   composes: root;
   color: $light-alpha-100;
-  background-color: $sys-danger-200;
+  background-color: $tone-danger-200;
   font-weight: 500;
 }

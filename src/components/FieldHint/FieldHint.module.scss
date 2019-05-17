@@ -1,4 +1,4 @@
-@import 'invoker-tokens/index.scss';
+@import 'src/tokens';
 
 .root {
   font-weight: 500;
@@ -12,7 +12,7 @@
 }
 
 .critical {
-  color: $sys-danger-100;
+  color: $tone-danger-100;
 }
 
 .positive {

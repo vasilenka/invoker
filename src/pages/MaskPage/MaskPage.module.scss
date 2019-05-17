@@ -1,4 +1,4 @@
-@import '~invoker-tokens/index.scss';
+@import 'src/tokens';
 
 .root {
 }
@@ -6,13 +6,13 @@
 .maskedImage {
   width: 96px;
   height: 96px;
-  background: $sys-warning-200;
+  background: $tone-warning-200;
 }
 
 .washedImage {
   width: 192px;
   height: 192px;
-  // background: $sys-warning-100;
+  // background: $tone-warning-100;
 }
 
 .previewMasked {
