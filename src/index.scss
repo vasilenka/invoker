@@ -6,13 +6,3 @@ body {
   position: relative;
   color: $dark-alpha-70;
 }
-
-:global {
-  .Hide {
-    display: none;
-  }
-
-  .topLayer {
-    z-index: 99999999;
-  }
-}

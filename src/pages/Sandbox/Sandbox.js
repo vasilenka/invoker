@@ -58,7 +58,6 @@ import Accordion from '../../components/Accordion/Accordion';
 import AccordionList from '../../components/AccordionList/AccordionList';
 import ActionBar from '../../components/ActionBar/ActionBar';
 import ActionMenu from '../../components/ActionMenu/ActionMenu';
-import Box from '../../components/Box/Box';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -218,36 +217,10 @@ const Sandbox = ({ className, ...restProps }) => {
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
-
-      <Preview>
-        <Box column alignCenter justifyCenter>
-          <div
-            style={{
-              width: '40px',
-              height: '40px',
-              backgroundColor: 'rebeccapurple'
-            }}
-          />
-          <div
-            style={{ width: '40px', height: '40px', backgroundColor: 'coral' }}
-          />
-          <div
-            style={{
-              width: '40px',
-              height: '40px',
-              backgroundColor: 'rebeccapurple'
-            }}
-          />
-          <div
-            style={{ width: '40px', height: '40px', backgroundColor: 'coral' }}
-          />
-        </Box>
-      </Preview>
-
       <Preview clean>
         <Text heading4Alt component="h3">
-          This is a preview for &lt;ActionBar/&gt;, resize your viewport to
-          tablet or mobile to see it in action!
+          This is a preview for &ltActionBar/&gt, resize your viewport to tablet
+          or mobile to see it in action!
         </Text>
         <ActionBar>
           <ActionMenu active>Home</ActionMenu>

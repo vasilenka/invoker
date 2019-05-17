@@ -1,7 +1,8 @@
 import './TouchPolyfil.js';
 import React from 'react';
 import { hydrate, render } from 'react-dom';
-import './index.scss';
+
+import './sass/invoker-base/index.scss';
 import './sass/invoker-layout/grid.module.scss';
 
 import App from './App';
