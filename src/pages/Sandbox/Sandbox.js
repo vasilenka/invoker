@@ -58,6 +58,7 @@ import Accordion from '../../components/Accordion/Accordion';
 import AccordionList from '../../components/AccordionList/AccordionList';
 import ActionBar from '../../components/ActionBar/ActionBar';
 import ActionMenu from '../../components/ActionMenu/ActionMenu';
+import FieldInputAlt from '../../components/FieldInputAlt/FieldInputAlt';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -214,9 +215,25 @@ const Sandbox = ({ className, ...restProps }) => {
     }
   ];
 
+  let [altValue, setAltValue] = React.useState('');
+  let [altTone, altSetTone] = React.useState('');
+
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+
+      <Preview clean>
+        <FieldInputAlt
+          name="hello"
+          type="email"
+          value={altValue}
+          tone={altTone}
+          setTone={altSetTone}
+          setValue={e => setAltValue(e.target.value)}
+          placeholder="Please enter your text"
+        />
+      </Preview>
+
       <Preview clean>
         <Text heading4Alt component="h3">
           This is a preview for &ltActionBar/&gt, resize your viewport to tablet

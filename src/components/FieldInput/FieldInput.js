@@ -180,7 +180,6 @@ class FieldInput extends Component {
 
     return (
       <input
-        {...restProps}
         disabled={disabled}
         required={required}
         onClick={this.onClick}
@@ -204,6 +203,7 @@ class FieldInput extends Component {
         })}
         placeholder={placeholder}
         value={this.state.value}
+        {...restProps}
       />
     );
   }
