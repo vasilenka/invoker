@@ -50,7 +50,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "playroom:start": "playroom start",
+    "playroom:build": "playroom build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -72,6 +74,7 @@
     "eslint-plugin-react-hooks": "^0.0.0",
     "import-http": "^0.3.0",
     "jest-dom": "^3.0.1",
+    "playroom": "^0.9.1",
     "react-snap": "^1.23.0",
     "react-testing-library": "^5.4.4"
   },
