@@ -231,6 +231,9 @@ const Sandbox = ({ className, ...restProps }) => {
       <Header title="Sandbox" description="Experimental components" />
 
       <Preview clean>
+        <Text heading4Alt component="h3" style={{ marginBottom: '12px' }}>
+          Open console to see the validation message
+        </Text>
         <FieldInputAlt
           name="hello"
           type="email"
@@ -239,7 +242,7 @@ const Sandbox = ({ className, ...restProps }) => {
           setTone={altSetTone}
           setMessage={setMessage}
           setValue={e => setAltValue(e.target.value)}
-          placeholder="Please enter your text"
+          placeholder="Please enter your email"
           required
         />
       </Preview>

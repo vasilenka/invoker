@@ -1,6 +1,7 @@
 import styles from './FieldInputAlt.module.scss';
 import React from 'react';
 import cx from 'classnames';
+import { bool, func, object, string, oneOf, oneOfType } from 'prop-types';
 
 import * as yup from 'yup';
 import { defaultShape } from './helper/fieldInputHelper';
@@ -82,6 +83,32 @@ const FieldInputAlt = ({
       {...restProps}
     />
   );
+};
+
+FieldInputAlt.propTypes = {
+  name: string.isRequired,
+  id: string,
+  className: oneOfType([string, object]),
+  required: bool,
+  disabled: bool,
+  small: bool,
+  type: oneOf(['text', 'email', 'password', 'number']).isRequired,
+  value: string,
+  setValue: func,
+  tone: oneOf(['critical', 'neutral', 'positive', '']),
+  setTone: func,
+  setMessage: func,
+  placeholder: string,
+  yupShape: object
+};
+
+FieldInputAlt.defaultProps = {
+  type: 'text',
+  disabled: false,
+  value: '',
+  tone: '',
+  inline: false,
+  required: false
 };
 
 export default FieldInputAlt;
