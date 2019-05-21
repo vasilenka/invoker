@@ -217,6 +217,14 @@ const Sandbox = ({ className, ...restProps }) => {
 
   let [altValue, setAltValue] = React.useState('');
   let [altTone, altSetTone] = React.useState('');
+  let [message, setMessage] = React.useState('');
+
+  React.useEffect(
+    () => {
+      message && console.log('MESSAGE: ', message);
+    },
+    [message]
+  );
 
   return (
     <React.Fragment>
@@ -229,8 +237,10 @@ const Sandbox = ({ className, ...restProps }) => {
           value={altValue}
           tone={altTone}
           setTone={altSetTone}
+          setMessage={setMessage}
           setValue={e => setAltValue(e.target.value)}
           placeholder="Please enter your text"
+          required
         />
       </Preview>
 

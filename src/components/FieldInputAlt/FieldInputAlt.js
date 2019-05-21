@@ -5,7 +5,7 @@ import cx from 'classnames';
 import * as yup from 'yup';
 import { defaultShape } from './helper/fieldInputHelper';
 
-const FIeldInputAlt = ({
+const FieldInputAlt = ({
   id,
   className,
   type,
@@ -20,6 +20,8 @@ const FIeldInputAlt = ({
   setError,
   tone,
   setTone,
+  message,
+  setMessage,
   onFocus,
   onBlur,
   ...restProps
@@ -41,6 +43,7 @@ const FIeldInputAlt = ({
       .catch(err => {
         if (err) {
           setTone && setTone('critical');
+          setMessage && setMessage(err.errors[0]);
         }
       });
   };
@@ -81,4 +84,4 @@ const FIeldInputAlt = ({
   );
 };
 
-export default FIeldInputAlt;
+export default FieldInputAlt;
