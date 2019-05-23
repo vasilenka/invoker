@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 
 import FieldHint from '../FieldHint/FieldHint';
-import FieldInputAlt from '../FieldInputAlt/FieldInputAlt';
+import FieldInputAlt from '../FieldInput/FieldInput';
 import FieldLabel from '../FieldLabel/FieldLabel';
 
 const TextfieldAlt = ({

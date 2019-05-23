@@ -58,7 +58,7 @@ import Accordion from '../../components/Accordion/Accordion';
 import AccordionList from '../../components/AccordionList/AccordionList';
 import ActionBar from '../../components/ActionBar/ActionBar';
 import ActionMenu from '../../components/ActionMenu/ActionMenu';
-import TextfieldAlt from '../../components/TextfieldAlt/TextfieldAlt';
+import Textfield from '../../components/Textfield/Textfield';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -228,7 +228,7 @@ const Sandbox = ({ className, ...restProps }) => {
       <Header title="Sandbox" description="Experimental components" />
 
       <Preview clean>
-        <TextfieldAlt
+        <Textfield
           label="Email address"
           id="hello"
           name="hello"
@@ -242,7 +242,7 @@ const Sandbox = ({ className, ...restProps }) => {
           placeholder="Please enter your email address"
           required
         />
-        <TextfieldAlt
+        <Textfield
           label="Password"
           id="password"
           name="password"
