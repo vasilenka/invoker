@@ -11,7 +11,7 @@ import Divider from '../../docs/Divider/Divider';
 import Table from '../../components/Table/Table';
 import Text from '../../components/Text/Text';
 import Dropdown from '../../components/Dropdown/Dropdown';
-import Option from '../../components/Option/Option';
+import DropdownOption from '../../components/DropdownOption/DropdownOption';
 
 let options = [
   {
@@ -163,7 +163,7 @@ const DropdownPage = props => {
                     label={option.label}
                   >
                     {option.value.map((opt, index) => (
-                      <Option
+                      <DropdownOption
                         key={`${index}${opt.value}`}
                         value={opt.value}
                         label={opt.label}
@@ -173,7 +173,7 @@ const DropdownPage = props => {
                 );
               }
               return (
-                <Option
+                <DropdownOption
                   isDisabled
                   key={`${index}${option.value}`}
                   value={option.value}

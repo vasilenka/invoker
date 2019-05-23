@@ -61,7 +61,7 @@ const InputRange = ({
       })}
       {...restProps}
     >
-      <RangeThumb withAffordance css={styleThumb} />
+      <RangeThumb withAffordance={affordance} css={styleThumb} />
       <RangeRail bgRail className={styles.progressContainer}>
         <RangeRail css={styleProgress} className={cx(styles.progress)} />
       </RangeRail>

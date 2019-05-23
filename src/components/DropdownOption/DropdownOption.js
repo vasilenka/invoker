@@ -1,9 +1,15 @@
-// import styles from './Option.module.scss';
+// import styles from './DropdownOption.module.scss';
 import React, { useContext } from 'react';
 // import cx from 'classnames';
 import { DropdownContext } from '../context/context';
 
-const Option = ({ value, label, onClick, isDisabled, ...restProps }) => {
+const DropdownOption = ({
+  value,
+  label,
+  onClick,
+  isDisabled,
+  ...restProps
+}) => {
   const dropdownContext = useContext(DropdownContext);
 
   const handleClick = e => {
@@ -22,4 +28,4 @@ const Option = ({ value, label, onClick, isDisabled, ...restProps }) => {
   );
 };
 
-export default Option;
+export default DropdownOption;
