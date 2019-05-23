@@ -58,7 +58,7 @@ import Accordion from '../../components/Accordion/Accordion';
 import AccordionList from '../../components/AccordionList/AccordionList';
 import ActionBar from '../../components/ActionBar/ActionBar';
 import ActionMenu from '../../components/ActionMenu/ActionMenu';
-import FieldInputAlt from '../../components/FieldInputAlt/FieldInputAlt';
+import TextfieldAlt from '../../components/TextfieldAlt/TextfieldAlt';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -215,34 +215,45 @@ const Sandbox = ({ className, ...restProps }) => {
     }
   ];
 
-  let [altValue, setAltValue] = React.useState('');
-  let [altTone, altSetTone] = React.useState('');
-  let [message, setMessage] = React.useState('');
+  let [altValue, setAltValue] = useState('');
+  let [altTone, altSetTone] = useState('');
+  let [message, setMessage] = useState('');
 
-  React.useEffect(
-    () => {
-      message && console.log('MESSAGE: ', message);
-    },
-    [message]
-  );
+  // let [passwordMessage, setPasswordMessage] = useState('')
+  // let [passwordTone, setPasswordTone] = useState('')
+  // let [passwordField, setPasswordField] = useState('')
 
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
 
       <Preview clean>
-        <Text heading4Alt component="h3" style={{ marginBottom: '12px' }}>
-          Open console to see the validation message
-        </Text>
-        <FieldInputAlt
+        <TextfieldAlt
+          label="Email address"
+          id="hello"
           name="hello"
           type="email"
           value={altValue}
           tone={altTone}
           setTone={altSetTone}
-          setMessage={setMessage}
+          message={message}
+          setMessage={msg => setMessage(msg)}
           setValue={e => setAltValue(e.target.value)}
-          placeholder="Please enter your email"
+          placeholder="Please enter your email address"
+          required
+        />
+        <TextfieldAlt
+          label="Password"
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Enter a strong password"
+          // value={passwordField}
+          // setValue={e => setPasswordField(e.target.value)}
+          // tone={passwordTone}
+          // setTone={setPasswordTone}
+          // message={passwordMessage}
+          // setMessage={msg => setPasswordMessage(msg)}
           required
         />
       </Preview>

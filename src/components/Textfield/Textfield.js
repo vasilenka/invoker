@@ -50,14 +50,16 @@ const Textfield = ({
         [className]: className
       })}
     >
-      <FieldLabel
-        id={id}
-        label={label}
-        small={small}
-        inline={inline}
-        secondaryLabel={secondaryLabel}
-        tertiaryLabel={tertiaryLabel}
-      />
+      {label && (
+        <FieldLabel
+          id={id}
+          label={label}
+          small={small}
+          inline={inline}
+          secondaryLabel={secondaryLabel}
+          tertiaryLabel={tertiaryLabel}
+        />
+      )}
       <FieldInput
         id={id}
         type={type}

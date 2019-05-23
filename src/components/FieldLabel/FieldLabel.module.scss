@@ -18,6 +18,10 @@
   display: block;
 }
 
-// .inline {
-//   display: inline;
-// }
+.inline {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: fit-content;
+  margin: $space-inline-sm;
+}

@@ -8,6 +8,7 @@ import { defaultShape } from './helper/fieldInputHelper';
 
 const FieldInputAlt = ({
   id,
+  name,
   className,
   type,
   required,
@@ -39,6 +40,7 @@ const FieldInputAlt = ({
       .then(valid => {
         if (valid) {
           setTone && setTone('');
+          setMessage && setMessage(null);
         }
       })
       .catch(err => {
@@ -63,7 +65,7 @@ const FieldInputAlt = ({
     <input
       type={type}
       id={id}
-      name={id}
+      name={name}
       value={value}
       onChange={setValue}
       onFocus={handleFocus}
