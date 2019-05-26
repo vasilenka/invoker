@@ -4,7 +4,6 @@ module.exports = {
 
   // Optional:
   title: 'Invoker',
-  // themes: './src/themes',
   frameComponent: './src/components/StyleguideProvider/StyleguideProvider.js',
   widths: [320, 375, 768, 1366],
   port: 9000,

@@ -43,12 +43,12 @@ StyleGuideProvider.propTypes = {
   title: PropTypes.string,
   meta: PropTypes.array,
   link: PropTypes.array,
-  locale: PropTypes.oneOf(['AU', 'NZ']),
+  locale: PropTypes.oneOf(['INA', 'ENG']),
 };
 
 StyleGuideProvider.defaultProps = {
   fullScreen: false,
   meta: [],
   link: [],
-  locale: 'AU',
+  locale: 'INA',
 };
