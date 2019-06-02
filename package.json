@@ -48,9 +48,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "playroom:start": "playroom start",
-    "playroom:build": "playroom build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -69,16 +67,13 @@
   "devDependencies": {
     "@babel/core": "^7.1.5",
     "babel-loader": "^8.0.4",
-    "browserslist-config-seek": "^2.0.0",
     "css-loader": "^2.1.1",
     "eslint-plugin-react-hooks": "^0.0.0",
     "file-loader": "^3.0.1",
     "import-http": "^0.3.0",
     "jest-dom": "^3.0.1",
-    "playroom": "^0.9.1",
     "react-snap": "^1.23.0",
     "react-testing-library": "^5.4.4",
-    "sku": "^8.5.3",
     "style-loader": "^0.23.1",
     "treat": "^0.1.1",
     "url-loader": "^1.1.2"
