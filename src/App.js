@@ -1,45 +1,45 @@
-import React, { Component } from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import styles from './App.module.scss';
-import classnames from 'classnames';
-import { Helmet } from 'react-helmet';
+import React, { Component } from 'react'
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import styles from './App.module.scss'
+import classnames from 'classnames'
+import { Helmet } from 'react-helmet'
 
-import Container from './layouts/Container/Container';
-import LeftSection from './layouts/LeftSection/LeftSection';
-import MainContent from './layouts/MainContent/MainContent';
+import Container from './layouts/Container/Container'
+import LeftSection from './layouts/LeftSection/LeftSection'
+import MainContent from './layouts/MainContent/MainContent'
 
-import NavbarAlt from './components/NavbarAlt/NavbarAlt';
+import NavbarAlt from './components/NavbarAlt/NavbarAlt'
 // import Navbar from './components/Navbar/Navbar'
-import Text from './components/Text/Text';
+import Text from './components/Text/Text'
 
-import TextfieldPage from './pages/TextfieldPage/TextfieldPage';
-import TextPage from './pages/TextPage/TextPage';
-import SandboxPage from './pages/Sandbox/Sandbox';
-import MaskPage from './pages/MaskPage/MaskPage';
-import FieldLabelPage from './pages/FieldLabelPage/FieldLabelPage';
-import FieldInputPage from './pages/FieldInputPage/FieldInputPage';
-import FieldHintPage from './pages/FieldHintPage/FieldHintPage';
-import RadioInputPage from './pages/RadioInputPage/RadioInputPage';
-import CheckboxPage from './pages/CheckboxPage/CheckboxPage';
-import DropdownPage from './pages/DropdownPage/DropdownPage';
-import PreloaderPage from './pages/PreloaderPage/PreloaderPage';
-import ComboboxPage from './pages/ComboboxPage/ComboboxPage';
-import AirtablePage from './pages/AirtablePage/AirtablePage';
-import ButtonPage from './pages/ButtonPage/ButtonPage';
-import BadgePage from './pages/BadgePage/BadgePage';
-import TooltipsPage from './pages/TooltipsPage/TooltipsPage';
-import PopoutPage from './pages/PopoutPage/PopoutPage';
-import ContainerPage from './pages/ContainerPage/ContainerPage';
-import LeftSectionPage from './pages/LeftSectionPage/LeftSectionPage';
-import RightSectionPage from './pages/RightSectionPage/RightSectionPage';
+import TextfieldPage from './pages/TextfieldPage/TextfieldPage'
+import TextPage from './pages/TextPage/TextPage'
+import SandboxPage from './pages/Sandbox/Sandbox'
+import MaskPage from './pages/MaskPage/MaskPage'
+import FieldLabelPage from './pages/FieldLabelPage/FieldLabelPage'
+import FieldInputPage from './pages/FieldInputPage/FieldInputPage'
+import FieldHintPage from './pages/FieldHintPage/FieldHintPage'
+import RadioInputPage from './pages/RadioInputPage/RadioInputPage'
+import CheckboxPage from './pages/CheckboxPage/CheckboxPage'
+import DropdownPage from './pages/DropdownPage/DropdownPage'
+import PreloaderPage from './pages/PreloaderPage/PreloaderPage'
+import ComboboxPage from './pages/ComboboxPage/ComboboxPage'
+import AirtablePage from './pages/AirtablePage/AirtablePage'
+import ButtonPage from './pages/ButtonPage/ButtonPage'
+import BadgePage from './pages/BadgePage/BadgePage'
+import TooltipsPage from './pages/TooltipsPage/TooltipsPage'
+import PopoutPage from './pages/PopoutPage/PopoutPage'
+import ContainerPage from './pages/ContainerPage/ContainerPage'
+import LeftSectionPage from './pages/LeftSectionPage/LeftSectionPage'
+import RightSectionPage from './pages/RightSectionPage/RightSectionPage'
 
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       users: [],
       options: ['Primary options', 'Secondary options']
-    };
+    }
   }
 
   componentDidMount = () => {
@@ -49,8 +49,8 @@ class App extends Component {
         this.setState({
           users: json
         })
-      );
-  };
+      )
+  }
 
   render() {
     return (
@@ -208,8 +208,8 @@ class App extends Component {
           </React.Fragment>
         </Router>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
