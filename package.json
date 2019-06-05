@@ -5,6 +5,8 @@
   "dependencies": {
     "@emarketeross/simple-react-intersection-observer": "^0.1.11",
     "@emotion/core": "^10.0.7",
+    "@reach/rect": "^0.2.1",
+    "@reach/window-size": "^0.1.4",
     "airtable": "^0.5.8",
     "autobind-decorator": "^2.4.0",
     "axios": "^0.18.0",
