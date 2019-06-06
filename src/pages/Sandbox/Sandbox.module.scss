@@ -366,3 +366,16 @@
     color: $dark-alpha-80;
   }
 }
+
+.portalBox {
+  position: absolute;
+  border-radius: $radius-l;
+  top: 100px;
+  right: 50%;
+  width: 200px;
+  border: 1px solid $dark-alpha-60;
+  box-shadow: 0px 2px 8px $dark-alpha-30;
+  padding: $space-sm;
+  background: $light-alpha-100;
+  text-align: center;
+}

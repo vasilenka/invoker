@@ -1,6 +1,7 @@
 import styles from './Sandbox.module.scss';
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
+import 'rc-slider/assets/index.css';
 
 import kda from './data';
 
@@ -60,6 +61,11 @@ import ActionBar from '../../components/ActionBar/ActionBar';
 import ActionMenu from '../../components/ActionMenu/ActionMenu';
 import Textfield from '../../components/Textfield/Textfield';
 
+import WindowSize from '@reach/window-size';
+import Portal from '@reach/portal';
+
+import SliderAlt from '../../components/SliderAlt';
+
 const images = [img6, img2, img3, img4, img5, img1];
 
 const DataTab = props => {
@@ -104,6 +110,15 @@ const DataTab = props => {
   );
 };
 
+// const createSliderWithTooltip = SliderAlt.createSliderWithTooltip;
+// const Range = createSliderWithTooltip(SliderAlt.Range);
+const Handle = SliderAlt.Handle;
+
+const handle = props => {
+  const { value, dragging, index, ...restProps } = props;
+  return <Handle value={value} {...restProps} />;
+};
+
 const Sandbox = ({ className, ...restProps }) => {
   let [banner, setBanner] = useState(false);
   let [toast, setToast] = useState(false);
@@ -126,30 +141,27 @@ const Sandbox = ({ className, ...restProps }) => {
     setOriginalImage(hello);
   }, []);
 
-  useEffect(
-    () => {
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setFromLeft(false);
-        setFromRight(false);
-      }, 800);
-      let body = document.querySelector('body');
-      let html = document.querySelector('html');
-      let root = document.querySelector('#root');
-      if (dialog) {
-        body.style.overflow = 'hidden';
-        html.style.overflow = 'hidden';
-        root.style.height = '100vh';
-        body.style.height = '100vh';
-      } else {
-        body.style.overflow = 'unset';
-        html.style.overflow = 'unset';
-        root.style.height = '';
-        body.style.height = '';
-      }
-    },
-    [activeIndex, dialog]
-  );
+  useEffect(() => {
+    setTimeout(() => {
+      setIsTransitioning(false);
+      setFromLeft(false);
+      setFromRight(false);
+    }, 800);
+    let body = document.querySelector('body');
+    let html = document.querySelector('html');
+    let root = document.querySelector('#root');
+    if (dialog) {
+      body.style.overflow = 'hidden';
+      html.style.overflow = 'hidden';
+      root.style.height = '100vh';
+      body.style.height = '100vh';
+    } else {
+      body.style.overflow = 'unset';
+      html.style.overflow = 'unset';
+      root.style.height = '';
+      body.style.height = '';
+    }
+  }, [activeIndex, dialog]);
 
   const nextImage = max => {
     setFromRight(true);
@@ -201,18 +213,18 @@ const Sandbox = ({ className, ...restProps }) => {
     {
       title: 'Accordion here 1',
       text:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eligendi ipsam quis maxime iure nihil dolore placeat distinctio ea nesciunt.'
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eligendi ipsam quis maxime iure nihil dolore placeat distinctio ea nesciunt.',
     },
     {
       title: 'Accordion here 2',
       text:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eligendi ipsam quis maxime iure nihil dolore placeat distinctio ea nesciunt.'
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eligendi ipsam quis maxime iure nihil dolore placeat distinctio ea nesciunt.',
     },
     {
       title: 'Accordion here 3',
       text:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eligendi ipsam quis maxime iure nihil dolore placeat distinctio ea nesciunt.'
-    }
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eligendi ipsam quis maxime iure nihil dolore placeat distinctio ea nesciunt.',
+    },
   ];
 
   let [altValue, setAltValue] = useState('');
@@ -226,6 +238,27 @@ const Sandbox = ({ className, ...restProps }) => {
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+
+      <Preview>
+        <div>
+          <SliderAlt min={0} max={20} defaultValue={3} handle={handle} />
+        </div>
+      </Preview>
+
+      <Preview clean>
+        <Text component="h2" heading5>
+          This thing is on the flow, while the Portal isn't.
+        </Text>
+        <Portal>
+          <div className={styles.portalBox}>This is in the portal</div>
+        </Portal>
+      </Preview>
+
+      <Preview clean>
+        <WindowSize>
+          {size => <pre>{JSON.stringify(size, null, 2)}</pre>}
+        </WindowSize>
+      </Preview>
 
       <Preview clean>
         <Textfield
@@ -432,7 +465,7 @@ const Sandbox = ({ className, ...restProps }) => {
                   <div
                     style={{
                       height: '360px',
-                      marginBottom: '12px'
+                      marginBottom: '12px',
                     }}
                   >
                     <Image
@@ -596,7 +629,7 @@ const Sandbox = ({ className, ...restProps }) => {
             overflow: 'hidden',
             position: 'relative',
             padding: 0,
-            height: '400px'
+            height: '400px',
           }}
         >
           <div
@@ -604,7 +637,7 @@ const Sandbox = ({ className, ...restProps }) => {
               display: 'flex',
               width: '100%',
               position: 'absolute',
-              transform: `translateX(-${activeIndex * 100}%)`
+              transform: `translateX(-${activeIndex * 100}%)`,
             }}
           >
             {albums &&
@@ -615,7 +648,7 @@ const Sandbox = ({ className, ...restProps }) => {
                     flex: 1,
                     listStyle: 'none',
                     width: '100%',
-                    minWidth: '100%'
+                    minWidth: '100%',
                   }}
                 >
                   <div
@@ -623,7 +656,7 @@ const Sandbox = ({ className, ...restProps }) => {
                     style={{
                       width: '100%',
                       height: '320px',
-                      marginBottom: '24px'
+                      marginBottom: '24px',
                     }}
                   >
                     <Image fit="cover" src={album.url} alt={album.title} />
@@ -643,7 +676,7 @@ const Sandbox = ({ className, ...restProps }) => {
               className={classnames({
                 [styles.imageSlider]: true,
                 [styles.fromRight]: fromRight,
-                [styles.fromLeft]: fromLeft
+                [styles.fromLeft]: fromLeft,
               })}
             />
           )}
@@ -714,7 +747,7 @@ const Sandbox = ({ className, ...restProps }) => {
                           onClick={() => state.deleteImage(index)}
                           className={classnames(
                             'col-sm-4',
-                            styles.imagePreview
+                            styles.imagePreview,
                           )}
                         >
                           <SinglePreview src={file.url} alt={file.file.name} />
@@ -777,7 +810,7 @@ const Sandbox = ({ className, ...restProps }) => {
               width: '120px',
               height: '2px',
               maxWidth: '120px',
-              marginBottom: '12px'
+              marginBottom: '12px',
             }}
           >
             <LoadingBar />
@@ -788,7 +821,7 @@ const Sandbox = ({ className, ...restProps }) => {
               width: '120px',
               height: '2px',
               maxWidth: '120px',
-              marginBottom: '12px'
+              marginBottom: '12px',
             }}
           >
             <LoadingBar />
@@ -799,7 +832,7 @@ const Sandbox = ({ className, ...restProps }) => {
               width: '120px',
               height: '2px',
               maxWidth: '120px',
-              marginBottom: '12px'
+              marginBottom: '12px',
             }}
           >
             <LoadingBar />
@@ -810,7 +843,7 @@ const Sandbox = ({ className, ...restProps }) => {
               width: '120px',
               height: '2px',
               maxWidth: '120px',
-              marginBottom: '12px'
+              marginBottom: '12px',
             }}
           >
             <LoadingBar />
