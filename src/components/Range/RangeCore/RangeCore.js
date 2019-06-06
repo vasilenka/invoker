@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-export default class RangeCore extends React.Component {
+export default class RangeCore extends Component {
   static propTypes = {
     yAxis: PropTypes.bool, // default is x
     percent: PropTypes.bool, // if value should be x width or y height
@@ -22,7 +22,7 @@ export default class RangeCore extends React.Component {
     onDoubleClick: PropTypes.func,
     doubleClickTimeout: PropTypes.number,
     disablePercentClamp: PropTypes.bool,
-    disableReset: PropTypes.bool
+    disableReset: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -40,7 +40,7 @@ export default class RangeCore extends React.Component {
     onMouseUp: () => {},
     onMouseDown: () => {},
     onDoubleClick: () => {},
-    doubleClickTimeout: 500 // 0 for percent
+    doubleClickTimeout: 500, // 0 for percent
   };
 
   getInitialState = () =>
@@ -48,8 +48,8 @@ export default class RangeCore extends React.Component {
       {},
       {
         mouseStart: { x: 0, y: 0 },
-        base: this.props.default
-      }
+        base: this.props.default,
+      },
     );
 
   state = this.getInitialState();
@@ -60,7 +60,7 @@ export default class RangeCore extends React.Component {
       isDragging: true,
       startIsDraggingOnMove: false,
       mouseStart: { x: e.clientX, y: e.clientY },
-      base: this.props.value
+      base: this.props.value,
     });
     this.props.onDragStart(e);
   };
@@ -131,13 +131,13 @@ export default class RangeCore extends React.Component {
       width,
       height,
       left: boundRect.left,
-      top: boundRect.top
+      top: boundRect.top,
     };
 
     if (width && height) {
       return {
         target,
-        rect
+        rect,
       };
     } else if (target.children) return this.getTargetInfo(target.children[0]);
     return null;
@@ -191,7 +191,7 @@ export default class RangeCore extends React.Component {
         value: newValue,
         prevValue: this.prevValue,
         event: e,
-        prevEvent: this.prevEvent
+        prevEvent: this.prevEvent,
       };
       this.props.onDelta(delta, deltaInfo);
 
@@ -278,7 +278,7 @@ export default class RangeCore extends React.Component {
       false,
       false,
       0,
-      null
+      null,
     );
 
     first.target.dispatchEvent(simulatedEvent);
@@ -294,26 +294,26 @@ export default class RangeCore extends React.Component {
     this.handleSetTarget();
     this.container.parentNode.parentNode.addEventListener(
       'mousemove',
-      this.handleMouseMove
+      this.handleMouseMove,
     );
     this.container.parentNode.parentNode.addEventListener(
       'mouseup',
-      this.handleMouseUp
+      this.handleMouseUp,
     );
   };
 
   componentWillUnmount = () => {
     this.container.parentNode.parentNode.removeEventListener(
       'mousemove',
-      this.handleMouseMove
+      this.handleMouseMove,
     );
     this.container.parentNode.parentNode.removeEventListener(
       'mouseup',
-      this.handleMouseUp
+      this.handleMouseUp,
     );
     this.container.parentNode.parentNode.removeEventListener(
       'mouseout',
-      this.handleMouseUp
+      this.handleMouseUp,
     );
 
     this.container.removeEventListener('touchstart', this.touchHandler, false);

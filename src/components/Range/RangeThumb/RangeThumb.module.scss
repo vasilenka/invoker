@@ -1,6 +1,7 @@
 @import 'src/tokens';
 
 .root {
+  user-select: none;
   position: absolute;
   z-index: 999;
   cursor: pointer;

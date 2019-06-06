@@ -101,7 +101,9 @@ export default class Handle extends React.Component {
         tabIndex={_tabIndex}
         {...restProps}
         className={className}
-        style={elStyle}
+        style={{
+          ...elStyle,
+        }}
         onBlur={this.handleBlur}
         onKeyDown={this.handleKeyDown}
         onMouseDown={this.handleMouseDown}

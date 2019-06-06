@@ -116,7 +116,7 @@ const Handle = SliderAlt.Handle;
 
 const handle = props => {
   const { value, dragging, index, ...restProps } = props;
-  return <Handle value={value} {...restProps} />;
+  return <Handle className={styles.handleGrip} value={value} {...restProps} />;
 };
 
 const Sandbox = ({ className, ...restProps }) => {
