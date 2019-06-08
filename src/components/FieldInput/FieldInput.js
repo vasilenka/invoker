@@ -7,6 +7,7 @@ import * as yup from 'yup';
 import { defaultShape } from './helper/fieldInputHelper';
 
 const FieldInputAlt = ({
+  dark,
   id,
   name,
   className,
@@ -35,7 +36,7 @@ const FieldInputAlt = ({
   const validateField = () => {
     validationSchema
       .validate({
-        [type || 'text']: value
+        [type || 'text']: value,
       })
       .then(valid => {
         if (valid) {
@@ -71,14 +72,15 @@ const FieldInputAlt = ({
       onFocus={handleFocus}
       onBlur={handleBlur}
       className={cx({
-        [styles.root]: true,
+        [styles.light]: !dark,
+        [styles.dark]: dark,
         [styles.normal]: !small,
         [styles.small]: small,
         [styles.stack]: !inline,
         [styles.inline]: inline,
         [styles[tone]]: tone,
         [styles.disabled]: disabled,
-        [className]: className
+        [className]: className,
       })}
       disabled={disabled}
       required={required}
@@ -101,7 +103,7 @@ FieldInputAlt.propTypes = {
   setTone: func,
   setMessage: func,
   placeholder: string,
-  yupShape: object
+  yupShape: object,
 };
 
 FieldInputAlt.defaultProps = {
@@ -110,7 +112,7 @@ FieldInputAlt.defaultProps = {
   value: '',
   tone: '',
   inline: false,
-  required: false
+  required: false,
 };
 
 export default FieldInputAlt;
