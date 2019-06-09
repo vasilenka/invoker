@@ -6,7 +6,7 @@ import FieldHint from '../FieldHint/FieldHint';
 import FieldInputAlt from '../FieldInput/FieldInput';
 import FieldLabel from '../FieldLabel/FieldLabel';
 
-const TextfieldAlt = ({
+const Textfield = ({
   id,
   name,
   type,
@@ -50,7 +50,7 @@ const TextfieldAlt = ({
       className={cx({
         [styles.root]: true,
         [styles.inline]: inline,
-        [className]: className
+        [className]: className,
       })}
       {...restProps}
     >
@@ -90,4 +90,4 @@ const TextfieldAlt = ({
   );
 };
 
-export default TextfieldAlt;
+export default Textfield;

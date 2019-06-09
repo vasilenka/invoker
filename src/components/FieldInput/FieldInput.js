@@ -6,7 +6,7 @@ import { bool, func, object, string, oneOf, oneOfType } from 'prop-types';
 import * as yup from 'yup';
 import { defaultShape } from './helper/fieldInputHelper';
 
-const FieldInputAlt = ({
+const FieldInput = ({
   dark,
   id,
   name,
@@ -53,7 +53,7 @@ const FieldInputAlt = ({
   };
 
   const handleFocus = e => {
-    setTone('');
+    setTone && setTone('');
     onFocus && onFocus(e);
   };
 
@@ -89,7 +89,7 @@ const FieldInputAlt = ({
   );
 };
 
-FieldInputAlt.propTypes = {
+FieldInput.propTypes = {
   name: string.isRequired,
   id: string,
   className: oneOfType([string, object]),
@@ -106,7 +106,7 @@ FieldInputAlt.propTypes = {
   yupShape: object,
 };
 
-FieldInputAlt.defaultProps = {
+FieldInput.defaultProps = {
   type: 'text',
   disabled: false,
   value: '',
@@ -115,4 +115,4 @@ FieldInputAlt.defaultProps = {
   required: false,
 };
 
-export default FieldInputAlt;
+export default FieldInput;

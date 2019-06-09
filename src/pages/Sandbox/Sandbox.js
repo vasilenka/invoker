@@ -65,6 +65,7 @@ import WindowSize from '@reach/window-size';
 import Portal from '@reach/portal';
 
 import SliderAlt from '../../components/SliderAlt';
+import FieldInput from '../../components/FieldInput/FieldInput';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -238,6 +239,16 @@ const Sandbox = ({ className, ...restProps }) => {
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+
+      <Preview style={{ background: '#101010' }}>
+        <FieldInput
+          setTone={() => console.log('Hello')}
+          dark
+          placeholder="Hello there, General Kenobi!"
+          name="tobiwan"
+          id="tobiwan"
+        />
+      </Preview>
 
       <Preview>
         <div>
