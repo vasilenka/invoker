@@ -5,6 +5,7 @@
   "dependencies": {
     "@emarketeross/simple-react-intersection-observer": "^0.1.11",
     "@emotion/core": "^10.0.7",
+    "@reach/menu-button": "^0.1.18",
     "@reach/portal": "^0.2.1",
     "@reach/rect": "^0.2.1",
     "@reach/window-size": "^0.1.4",
