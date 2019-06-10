@@ -49,8 +49,8 @@ const FieldArea = ({
         [styles.small]: small,
         [styles.stack]: !inline,
         [styles.inline]: inline,
-        [styles[tone]]: tone,
         [styles.disabled]: disabled,
+        [styles[tone]]: tone,
         [styles[fixed]]: fixed,
         [className]: className,
       })}
