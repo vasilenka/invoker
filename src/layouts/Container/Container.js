@@ -3,6 +3,7 @@ import React from 'react';
 import classnames from 'classnames';
 
 const Container = ({
+  component,
   children,
   className,
   narrow,
@@ -11,9 +12,10 @@ const Container = ({
   fixRight,
   ...restProps
 }) => {
+  let Component = component || 'div';
   let defaultStyle = !narrow && !bleed && !fixLeft && !fixRight;
   return (
-    <div
+    <Component
       {...restProps}
       className={classnames({
         [styles.root]: true,
@@ -22,11 +24,11 @@ const Container = ({
         [styles.bleed]: bleed,
         [styles.fixLeft]: fixLeft,
         [styles.fixRight]: fixRight,
-        [className]: className
+        [className]: className,
       })}
     >
       {children}
-    </div>
+    </Component>
   );
 };
 
