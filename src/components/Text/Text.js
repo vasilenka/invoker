@@ -13,7 +13,7 @@ import stylesStrong from '../Strong/Strong.module.scss';
 import stylesRegular from '../Regular/Regular.module.scss';
 import stylesLight from '../Light/Light.module.scss';
 
-import withTextProps from '../private/withTextProps';
+import withTextProps from '../__private/withTextProps';
 
 import { ReactComponent as ChevronRight } from './chevron-right.svg';
 
@@ -59,7 +59,7 @@ const Text = ({
         [styles.center]: center,
         [styles.truncate]: truncate,
         [styles.breakWord]: breakWord,
-        [className]: className
+        [className]: className,
       })}
     >
       <span
@@ -71,7 +71,7 @@ const Text = ({
           [stylesInfo.root]: info,
           [stylesStrong.root]: strong,
           [stylesRegular.root]: regular,
-          [stylesLight.root]: light
+          [stylesLight.root]: light,
         })}
       >
         {children}
@@ -86,7 +86,7 @@ Text.displayName = 'Text';
 Text.defaultProps = {
   baseline: true,
   bullet: false,
-  size: 'medium'
+  size: 'medium',
 };
 
 export default withTextProps(Text);

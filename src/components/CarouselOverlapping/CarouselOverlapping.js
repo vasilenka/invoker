@@ -1,7 +1,7 @@
 import styles from './CarouselOverlapping.module.scss';
 import React, { useContext } from 'react';
 import cx from 'classnames';
-import { OverlappingContext } from '../context/context';
+import { OverlappingContext } from '../__context';
 
 const CarouselOverlapping = ({ children, className, ...restProps }) => {
   let { data } = useContext(OverlappingContext);
@@ -10,7 +10,7 @@ const CarouselOverlapping = ({ children, className, ...restProps }) => {
     <div
       className={cx({
         [styles.root]: true,
-        [className]: className
+        [className]: className,
       })}
       {...restProps}
     >

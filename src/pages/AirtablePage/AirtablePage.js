@@ -6,12 +6,12 @@ import Header from './../../docs/Header/Header';
 import Divider from './../../docs/Divider/Divider';
 
 import Lab from '../../components/Lab/Lab';
-import Spinner from '../../components/preloader/Spinner/Spinner';
+import Spinner from '../../components/__preloader/Spinner/Spinner';
 import Airtable from 'airtable';
 
 Airtable.configure({
   endpointUrl: 'https://api.airtable.com',
-  apiKey: 'keyqSgVh2vcDvTDfW'
+  apiKey: 'keyqSgVh2vcDvTDfW',
 });
 const base = Airtable.base('app9tJz1QiQ6cWnSQ');
 
@@ -19,7 +19,7 @@ class AirtablePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      post: []
+      post: [],
     };
   }
 
@@ -27,15 +27,15 @@ class AirtablePage extends Component {
     base('post')
       .select({
         maxRecords: 10,
-        view: 'Grid view'
+        view: 'Grid view',
       })
       .eachPage(
         (records, fetchNextPage) => {
           records.map((record, index) =>
             this.setState({
               ...this.state,
-              post: this.state.post.concat(record)
-            })
+              post: this.state.post.concat(record),
+            }),
           );
           fetchNextPage();
         },
@@ -44,7 +44,7 @@ class AirtablePage extends Component {
             console.error(err);
             return;
           }
-        }
+        },
       );
   };
 

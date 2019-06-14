@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 
 import { ReactComponent as ExpandMore } from './icons/expand-more.svg';
-import { DropdownContext } from '../context/context';
+import { DropdownContext } from '../__context';
 
 const Dropdown = ({
   children,
@@ -20,16 +20,13 @@ const Dropdown = ({
   const [arrow, setArrow] = useState(withArrow);
   let inputEl = useRef(null);
 
-  useEffect(
-    () => {
-      if (withArrow !== undefined) {
-        setArrow(withArrow);
-      } else {
-        setArrow(true);
-      }
-    },
-    [arrow]
-  );
+  useEffect(() => {
+    if (withArrow !== undefined) {
+      setArrow(withArrow);
+    } else {
+      setArrow(true);
+    }
+  }, [arrow]);
 
   const handleChange = e => {
     setSelected(e.target.value);
@@ -47,7 +44,7 @@ const Dropdown = ({
         setValue(selected);
       }
     },
-    [selected]
+    [selected],
   );
 
   return (
@@ -55,7 +52,7 @@ const Dropdown = ({
       <div
         className={classnames({
           [styles.root]: true,
-          [className]: className
+          [className]: className,
         })}
       >
         <select
@@ -63,7 +60,7 @@ const Dropdown = ({
           name={name}
           className={classnames({
             [styles.normal]: !small,
-            [styles.small]: small
+            [styles.small]: small,
           })}
           value={selected}
           onChange={handleChange}

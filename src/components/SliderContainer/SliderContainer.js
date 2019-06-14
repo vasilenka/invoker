@@ -1,27 +1,27 @@
 import styles from './SliderContainer.module.scss';
 import React, { useContext } from 'react';
 import cx from 'classnames';
-import { SliderContext } from '../context/context';
+import { SliderContext } from '../__context';
 
 const SliderContainer = ({ children, className, ...restProps }) => {
   let context = useContext(SliderContext);
   let translateStyle = {
-    transform: `translateX(-${context.activeIndex * context.width}px)`
+    transform: `translateX(-${context.activeIndex * context.width}px)`,
   };
 
   return (
     <div
       className={cx({
-        [styles.root]: true
+        [styles.root]: true,
       })}
     >
       <div
         className={cx({
           [styles.wrapper]: true,
-          [className]: className
+          [className]: className,
         })}
         style={{
-          ...translateStyle
+          ...translateStyle,
         }}
         {...restProps}
       >

@@ -1,7 +1,7 @@
 import styles from './Accordion.module.scss';
 import React, { useContext } from 'react';
 import cx from 'classnames';
-import { AccordionContext } from '../context/context';
+import { AccordionContext } from '../__context';
 
 const Accordion = ({
   children,
@@ -23,7 +23,7 @@ const Accordion = ({
     <div
       className={cx({
         [styles.root]: true,
-        [className]: className
+        [className]: className,
       })}
       {...restProps}
     >

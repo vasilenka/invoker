@@ -12,7 +12,7 @@ const Spinner = ({ small, medium, className, ...restProps }) => {
         className={classnames({
           [styles.loader]: true,
           [styles.small]: small,
-          [styles.medium]: !small || medium
+          [styles.medium]: !small || medium,
         })}
       />
     </div>

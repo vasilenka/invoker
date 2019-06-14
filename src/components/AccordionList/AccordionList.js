@@ -1,20 +1,20 @@
 import styles from './AccordionList.module.scss';
 import React, { Component } from 'react';
 import cx from 'classnames';
-import { AccordionContext } from '../context/context';
+import { AccordionContext } from '../__context';
 
 class AccordionList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visibleIndex: null
+      visibleIndex: null,
     };
   }
 
   setVisibleIndex = index => {
     this.setState({
       ...this.state,
-      visibleIndex: index
+      visibleIndex: index,
     });
   };
 
@@ -24,13 +24,13 @@ class AccordionList extends Component {
       <AccordionContext.Provider
         value={{
           visibleIndex: this.state.visibleIndex,
-          setVisibleIndex: this.setVisibleIndex
+          setVisibleIndex: this.setVisibleIndex,
         }}
       >
         <div
           className={cx({
             [styles.root]: true,
-            [className]: className
+            [className]: className,
           })}
           {...restProps}
         >

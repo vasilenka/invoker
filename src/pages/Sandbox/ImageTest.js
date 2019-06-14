@@ -2,7 +2,7 @@ import React from 'react';
 
 import LazyImage from '../../components/LazyImage/LazyImage';
 import Image from '../../components/Image/Image';
-import Spinner from '../../components/preloader/Spinner/Spinner';
+import Spinner from '../../components/__preloader/Spinner/Spinner';
 
 const ImageTest = () => {
   return (
@@ -22,7 +22,7 @@ const ImageTest = () => {
               style={{
                 width: '100%',
                 paddingBottom: `${(727 / 1090) * 100}%`,
-                position: 'relative'
+                position: 'relative',
               }}
             >
               <Spinner style={{ backgroundColor: '#ff5a5b' }} />
@@ -49,7 +49,7 @@ const ImageTest = () => {
               style={{
                 width: '100%',
                 paddingBottom: `${(727 / 484) * 100}%`,
-                position: 'relative'
+                position: 'relative',
               }}
             >
               <Spinner style={{ backgroundColor: '#0084845' }} />

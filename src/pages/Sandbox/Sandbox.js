@@ -29,7 +29,7 @@ import Overlapping from '../../components/Overlapping/Overlapping';
 import CarouselControl from '../../components/CarouselControl/CarouselControl';
 import CarouselOverlapping from '../../components/CarouselOverlapping/CarouselOverlapping';
 import OverlappingItem from '../../components/OverlappingItem/OverlappingItem';
-import Spinner from '../../components/preloader/Spinner/Spinner';
+import Spinner from '../../components/__preloader/Spinner/Spinner';
 
 import Slider from '../../components/Slider/Slider';
 import SliderControl from '../../components/SliderControl/SliderControl';
@@ -243,6 +243,7 @@ const Sandbox = ({ className, ...restProps }) => {
       <Preview style={{ background: '#101010' }}>
         <FieldInput
           setTone={() => console.log('Hello')}
+          setValue={e => console.log(e.target.value)}
           dark
           placeholder="Hello there, General Kenobi!"
           name="tobiwan"

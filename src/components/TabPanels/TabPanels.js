@@ -2,7 +2,7 @@ import styles from './TabPanels.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import { TabContext } from '../context/context';
+import { TabContext } from '../__context';
 
 class TabPanels extends Component {
   render() {
@@ -13,7 +13,7 @@ class TabPanels extends Component {
           <div
             className={classnames({
               [styles.root]: true,
-              [className]: className
+              [className]: className,
             })}
             {...restProps}
           >

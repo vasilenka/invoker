@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const ObserverWrapper = ({
@@ -9,7 +9,6 @@ const ObserverWrapper = ({
   ...restProps
 }) => {
   const Component = component || 'div';
-  const ref = useRef();
 
   const useObserver =
     global.__SERVER__ ||
@@ -18,12 +17,12 @@ const ObserverWrapper = ({
       'intersectionRatio' in window.IntersectionObserverEntry.prototype &&
       'isIntersecting' in window.IntersectionObserverEntry.prototype);
 
-  let inView = useInView(ref, options);
+  const [ref, inView] = useInView(options);
 
   return !useObserver ? (
-    <div className={className} {...restProps}>
+    <Component className={className} {...restProps}>
       {children}
-    </div>
+    </Component>
   ) : (
     <Component ref={ref} className={className} {...restProps}>
       {inView ? children : null}

@@ -2,7 +2,7 @@ import styles from './TabList.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import { TabContext } from '../context/context';
+import { TabContext } from '../__context';
 
 class TabList extends Component {
   render() {
@@ -13,15 +13,15 @@ class TabList extends Component {
           <div
             className={classnames({
               [styles.root]: true,
-              [className]: className
+              [className]: className,
             })}
             {...restProps}
           >
             {React.Children.map(children, (child, index) =>
               React.cloneElement(child, {
                 isActive: context.activeIndex === index,
-                onSelect: () => context.onSelect(index)
-              })
+                onSelect: () => context.onSelect(index),
+              }),
             )}
           </div>
         )}

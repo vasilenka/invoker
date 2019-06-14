@@ -2,14 +2,14 @@ import styles from './Tabs.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import { TabContext } from '../context/context';
+import { TabContext } from '../__context';
 
 class Tabs extends Component {
   constructor(props) {
     super(props);
     this.state = {
       activeIndex: 0,
-      onSelect: this.onSelect
+      onSelect: this.onSelect,
     };
   }
 
@@ -17,7 +17,7 @@ class Tabs extends Component {
     const prevState = { ...this.state };
     prevState.activeIndex = index;
     this.setState({
-      activeIndex: prevState.activeIndex
+      activeIndex: prevState.activeIndex,
     });
   };
 
@@ -28,7 +28,7 @@ class Tabs extends Component {
         <div
           className={classnames({
             [styles.root]: true,
-            [className]: className
+            [className]: className,
           })}
         >
           {this.props.children}

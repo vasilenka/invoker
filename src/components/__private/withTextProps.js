@@ -31,7 +31,7 @@ export const sizes = [
   'heading5',
   'heading5Alt',
   'heading6',
-  'heading6Alt'
+  'heading6Alt',
 ];
 
 const getBooleanSizePropTypes = () => {
@@ -49,7 +49,7 @@ export const SizePropTypes = {
     // eslint-disable-line consistent-return
     if (props.size && !includes(sizes, props.size)) {
       return new Error(
-        `Invalid prop size='${props.size}' supplied to ${componentName}`
+        `Invalid prop size='${props.size}' supplied to ${componentName}`,
       );
     }
 
@@ -57,11 +57,11 @@ export const SizePropTypes = {
       return new Error(
         `Seems that you've accidentially supplied boolean size along with size='${
           props.size
-        }' to ${componentName}, please remove one of them. Otherwise boolean prop will overwrite the 'size' prop.`
+        }' to ${componentName}, please remove one of them. Otherwise boolean prop will overwrite the 'size' prop.`,
       );
     }
   },
-  ...getBooleanSizePropTypes()
+  ...getBooleanSizePropTypes(),
 };
 
 const parseBooleanSize = props => {
@@ -82,7 +82,7 @@ const withTextProps = OriginalComponent => {
 
     const newProps = {
       ...omit(props, sizes),
-      ...sizeProp
+      ...sizeProp,
     };
 
     return <OriginalComponent {...newProps} />;

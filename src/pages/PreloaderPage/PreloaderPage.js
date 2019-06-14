@@ -5,8 +5,8 @@ import Subheader from './../../docs/Subheader/Subheader';
 import Preview from './../../docs/Preview/Preview';
 import Divider from './../../docs/Divider/Divider';
 
-import Bouncer from '../../components/preloader/Bouncer/Bouncer';
-import Spinner from '../../components/preloader/Spinner/Spinner';
+import { Bouncer } from '../../components/__preloader';
+import { Spinner } from '../../components/__preloader';
 
 const PreloaderPage = ({ className, ...restProps }) => {
   return (

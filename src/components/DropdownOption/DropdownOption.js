@@ -1,7 +1,7 @@
 // import styles from './DropdownOption.module.scss';
 import React, { useContext } from 'react';
 // import cx from 'classnames';
-import { DropdownContext } from '../context/context';
+import { DropdownContext } from '../__context';
 
 const DropdownOption = ({
   value,

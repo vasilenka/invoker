@@ -1,7 +1,7 @@
 import styles from './Overlapping.module.scss';
 import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
-import { OverlappingContext } from '../context/context';
+import { OverlappingContext } from '../__context';
 
 const Overlapping = ({ data, children, className, ...restProps }) => {
   let [activeIndex, setActiveIndex] = useState(0);
@@ -12,30 +12,27 @@ const Overlapping = ({ data, children, className, ...restProps }) => {
   let [isTransitioning, setIsTransitioning] = useState(false);
   let [isPlaying, setIsPlaying] = useState(false);
 
-  useEffect(
-    () => {
-      if (isPlaying) {
-        let timeout = setTimeout(() => {
-          setIsTransitioning(true);
-          setFromLeft(true);
-          setClippingIndex(activeIndex);
-          setActiveIndex((activeIndex + 1) % data.length);
-          let secondTiemout = setTimeout(() => {
-            if (activeIndex < data.length - 1) {
-              setTranslateIndex(activeIndex + 1);
-            } else {
-              setTranslateIndex(0);
-            }
-            setFromLeft(false);
-            setIsTransitioning(false);
-          }, 800);
-          return () => clearTimeout(secondTiemout);
-        }, 1500);
-        return () => clearTimeout(timeout);
-      }
-    },
-    [activeIndex, isPlaying]
-  );
+  useEffect(() => {
+    if (isPlaying) {
+      let timeout = setTimeout(() => {
+        setIsTransitioning(true);
+        setFromLeft(true);
+        setClippingIndex(activeIndex);
+        setActiveIndex((activeIndex + 1) % data.length);
+        let secondTiemout = setTimeout(() => {
+          if (activeIndex < data.length - 1) {
+            setTranslateIndex(activeIndex + 1);
+          } else {
+            setTranslateIndex(0);
+          }
+          setFromLeft(false);
+          setIsTransitioning(false);
+        }, 800);
+        return () => clearTimeout(secondTiemout);
+      }, 1500);
+      return () => clearTimeout(timeout);
+    }
+  }, [activeIndex, isPlaying]);
 
   const next = max => {
     setIsTransitioning(true);
@@ -90,13 +87,13 @@ const Overlapping = ({ data, children, className, ...restProps }) => {
         clippingIndex,
         isTransitioning,
         isPlaying,
-        setIsPlaying
+        setIsPlaying,
       }}
     >
       <div
         className={cx({
           [styles.root]: true,
-          [className]: className
+          [className]: className,
         })}
         {...restProps}
       >

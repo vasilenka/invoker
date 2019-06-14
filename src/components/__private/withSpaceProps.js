@@ -23,7 +23,7 @@ export const SpacePropTypes = {
   space: (props, propName, componentName) => {
     if (props.space && !includes(spaces, props.space)) {
       return new Error(
-        `Invalid prop space='${props.space}' supplied to ${componentName}`
+        `Invalid prop space='${props.space}' supplied to ${componentName}`,
       );
     }
 
@@ -31,11 +31,11 @@ export const SpacePropTypes = {
       return new Error(
         `Seems that you've accidentially supplied boolean space along with space='${
           props.space
-        }' to ${componentName}, please remove one of them. Otherwise boolean prop will overwrite the 'space' prop.`
+        }' to ${componentName}, please remove one of them. Otherwise boolean prop will overwrite the 'space' prop.`,
       );
     }
   },
-  ...getBooleanSpacePropTypes()
+  ...getBooleanSpacePropTypes(),
 };
 
 const parseBooleanSpace = props => {
@@ -56,7 +56,7 @@ const withSpacesProps = OriginalComponent => {
 
     const newProps = {
       ...omit(props, spaces),
-      ...spaceProp
+      ...spaceProp,
     };
 
     return <OriginalComponent {...newProps} />;

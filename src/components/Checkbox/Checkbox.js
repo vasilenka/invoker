@@ -1,7 +1,7 @@
 import styles from './Checkbox.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { CheckboxContext } from '../context/context';
+import { CheckboxContext } from '../__context';
 
 class Checkbox extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class Checkbox extends Component {
       id: this.props.id || '',
       onChange: this.onChange,
       onHover: this.onHover,
-      onLeave: this.onLeave
+      onLeave: this.onLeave,
     };
   }
 
@@ -29,14 +29,14 @@ class Checkbox extends Component {
   onHover = e => {
     this.setState({
       ...this.state,
-      hover: true
+      hover: true,
     });
   };
 
   onLeave = e => {
     this.setState({
       ...this.state,
-      hover: false
+      hover: false,
     });
   };
 
@@ -45,13 +45,13 @@ class Checkbox extends Component {
     this.setState(
       {
         ...this.state,
-        isChecked
+        isChecked,
       },
       () => {
         if (setValue) {
           setValue(this.state);
         }
-      }
+      },
     );
   };
 
@@ -74,7 +74,7 @@ class Checkbox extends Component {
           {...restProps}
           className={classnames({
             [styles.root]: true,
-            [className]: className
+            [className]: className,
           })}
         >
           {children}

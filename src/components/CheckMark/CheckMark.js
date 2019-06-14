@@ -1,7 +1,7 @@
 import styles from './CheckMark.module.scss';
 import React, { useEffect, useContext, useState } from 'react';
 import classnames from 'classnames';
-import { CheckboxContext } from '../context/context';
+import { CheckboxContext } from '../__context';
 
 const Checkmark = ({
   large,
@@ -27,14 +27,11 @@ const Checkmark = ({
     }
   };
 
-  useEffect(
-    () => {
-      setDisable(checkContext.isDisabled);
-      setChecked(checkContext.isChecked);
-      setValue(checkContext.value);
-    },
-    [disabled, checked, value]
-  );
+  useEffect(() => {
+    setDisable(checkContext.isDisabled);
+    setChecked(checkContext.isChecked);
+    setValue(checkContext.value);
+  }, [disabled, checked, value]);
 
   return (
     <Component
@@ -42,7 +39,7 @@ const Checkmark = ({
         [styles.root]: true,
         [className]: className,
         [styles.normal]: !large,
-        [styles.large]: large
+        [styles.large]: large,
       })}
       {...restProps}
     >
@@ -53,7 +50,7 @@ const Checkmark = ({
         className={classnames({
           [styles.box]: true,
           [styles.normal]: !large,
-          [styles.large]: large
+          [styles.large]: large,
         })}
         checked={checked || false}
         disabled={disabled}
@@ -67,7 +64,7 @@ const Checkmark = ({
           [styles.hoverCheckmark]: checkContext.hover,
           [styles.normal]: !large,
           [styles.large]: large,
-          [styles.disabled]: disabled
+          [styles.disabled]: disabled,
         })}
         onMouseOver={checkContext.onHover}
         onMouseLeave={checkContext.onLeave}

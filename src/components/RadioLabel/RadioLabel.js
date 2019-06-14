@@ -1,7 +1,7 @@
 import styles from './RadioLabel.module.scss';
 import React, { useContext } from 'react';
 import classnames from 'classnames';
-import { RadioContext, RadioButtonContext } from '../context/context';
+import { RadioContext, RadioButtonContext } from '../__context';
 
 import Text from '../Text/Text';
 
@@ -28,7 +28,7 @@ const RadioLabel = ({
       className={classnames({
         [styles.root]: true,
         [className]: className,
-        [styles.disabled]: isDisabled || buttonContext.disabled
+        [styles.disabled]: isDisabled || buttonContext.disabled,
       })}
       onClick={handleClick}
       heading5

@@ -24,7 +24,7 @@ export const TypePropTypes = {
     // eslint-disable-line consistent-return
     if (props.type && !includes(types, props.type)) {
       return new Error(
-        `Invalid prop type='${props.type}' supplied to ${componentName}`
+        `Invalid prop type='${props.type}' supplied to ${componentName}`,
       );
     }
 
@@ -32,11 +32,11 @@ export const TypePropTypes = {
       return new Error(
         `Seems that you've accidentially supplied boolean type along with type='${
           props.type
-        }' to ${componentName}, please remove one of them. Otherwise boolean prop will overwrite the 'type' prop.`
+        }' to ${componentName}, please remove one of them. Otherwise boolean prop will overwrite the 'type' prop.`,
       );
     }
   },
-  ...getBooleanTypePropTypes()
+  ...getBooleanTypePropTypes(),
 };
 
 const parseBooleanType = props => {
@@ -57,7 +57,7 @@ const withTypeProps = OriginalComponent => {
 
     const newProps = {
       ...omit(props, types),
-      ...typeProp
+      ...typeProp,
     };
 
     return <OriginalComponent {...newProps} />;

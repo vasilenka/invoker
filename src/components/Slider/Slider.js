@@ -1,7 +1,7 @@
 import styles from './Slider.module.scss';
 import React, { Component } from 'react';
 import cx from 'classnames';
-import { SliderContext } from '../context/context';
+import { SliderContext } from '../__context';
 
 class Slider extends Component {
   constructor(props) {
@@ -17,14 +17,14 @@ class Slider extends Component {
       maxIndex: this.props.items.length - this.props.column,
       minIndex: this.props.column - 1,
       width: 0,
-      ref: this.colRef
+      ref: this.colRef,
     };
   }
 
   componentDidMount = () => {
     if (this.state.ref) {
       this.setState({
-        width: this.state.ref.current.clientWidth
+        width: this.state.ref.current.clientWidth,
       });
     }
   };
@@ -37,11 +37,11 @@ class Slider extends Component {
       this.setState(
         {
           ...this.state,
-          activeIndex: this.state.activeIndex + 1
+          activeIndex: this.state.activeIndex + 1,
         },
         () => {
           console.log(this.state.activeIndex);
-        }
+        },
       );
     }
   };
@@ -50,7 +50,7 @@ class Slider extends Component {
     if (this.state.activeIndex > 0) {
       this.setState({
         ...this.state,
-        activeIndex: this.state.activeIndex - 1
+        activeIndex: this.state.activeIndex - 1,
       });
     }
   };
@@ -63,7 +63,7 @@ class Slider extends Component {
         <div
           className={cx({
             [styles.root]: true,
-            [className]: className
+            [className]: className,
           })}
           {...restProps}
         >
