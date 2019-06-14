@@ -8,7 +8,7 @@
   right: 0;
   padding: $space-vertical-sm;
   composes: container-bleed from global;
-  z-index: 99999;
+  z-index: $layer-top;
 }
 
 .container {

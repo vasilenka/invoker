@@ -9,5 +9,5 @@
   position: sticky;
   top: 0;
   box-shadow: inset 0px -1px 0px 0px $dark-alpha-20;
-  z-index: 99999;
+  z-index: $layer-top;
 }
