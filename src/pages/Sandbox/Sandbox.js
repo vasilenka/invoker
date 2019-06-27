@@ -66,6 +66,7 @@ import Portal from '@reach/portal';
 
 import SliderAlt from '../../components/SliderAlt';
 import FieldInput from '../../components/FieldInput/FieldInput';
+import Box from '../../components/Box/Box';
 
 const images = [img6, img2, img3, img4, img5, img1];
 
@@ -239,6 +240,37 @@ const Sandbox = ({ className, ...restProps }) => {
   return (
     <React.Fragment>
       <Header title="Sandbox" description="Experimental components" />
+
+      <Preview>
+        <Box className={styles.containerBox}>
+          <Box columnReverse justifyBetween className={styles.wrapperBox}>
+            <div className={styles.box}>
+              {' '}
+              <div className={styles.inside}>1</div>
+            </div>
+            <div className={styles.box}>
+              {' '}
+              <div className={styles.inside}>2</div>
+            </div>
+            <div className={styles.box}>
+              {' '}
+              <div className={styles.inside}>3</div>
+            </div>
+            <div className={styles.box}>
+              {' '}
+              <div className={styles.inside}>4</div>
+            </div>
+            <div className={styles.box}>
+              {' '}
+              <div className={styles.inside}>5</div>
+            </div>
+            <div className={styles.box}>
+              {' '}
+              <div className={styles.inside}>6</div>
+            </div>
+          </Box>
+        </Box>
+      </Preview>
 
       <Preview style={{ background: '#101010' }}>
         <FieldInput

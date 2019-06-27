@@ -2,6 +2,10 @@ import styles from './Box.module.scss';
 import React from 'react';
 import classnames from 'classnames';
 
+import withDirectionProps from './../__private/withDirectionProps';
+import withJustifyProps from './../__private/withJustifyProps';
+import withAlignProps from './../__private/withAlignProps';
+
 const Box = ({
   children,
   component,
@@ -9,22 +13,9 @@ const Box = ({
 
   inline,
 
-  row,
-  rowReverse,
-  column,
-  columnReverse,
-
-  alignStart,
-  alignCenter,
-  alignEnd,
-  alignBaseline,
-  alignStretch,
-
-  justifyStart,
-  justifyCenter,
-  justifyEnd,
-  justifyAround,
-  justifyBetween,
+  direction,
+  justify,
+  align,
 
   ...restProps
 }) => {
@@ -36,24 +27,11 @@ const Box = ({
         [styles.root]: !inline,
         [styles.inline]: inline,
 
-        [styles.directionRow]: row,
-        [styles.rowReverse]: rowReverse,
-        [styles.directionColumn]: column,
-        [styles.columnReverse]: columnReverse,
+        [styles[direction]]: direction,
+        [styles[justify]]: justify,
+        [styles[align]]: align,
 
-        [styles.alignStart]: alignStart,
-        [styles.alignCenter]: alignCenter,
-        [styles.alignEnd]: alignEnd,
-        [styles.alignBaseline]: alignBaseline,
-        [styles.alignStretch]: alignStretch,
-
-        [styles.justifyStart]: justifyStart,
-        [styles.justifyCenter]: justifyCenter,
-        [styles.justifyEnd]: justifyEnd,
-        [styles.justifyAround]: justifyAround,
-        [styles.justifyBetween]: justifyBetween,
-
-        [className]: className
+        [className]: className,
       })}
       {...restProps}
     >
@@ -62,4 +40,12 @@ const Box = ({
   );
 };
 
-export default Box;
+Box.displayName = 'Box';
+
+Box.defaultProps = {
+  direction: 'boxRow',
+  justify: 'justifyStart',
+  align: 'alignCenter',
+};
+
+export default withDirectionProps(withJustifyProps(withAlignProps(Box)));

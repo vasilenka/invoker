@@ -3,63 +3,54 @@
 .root {
   display: flex;
 }
-
 .inline {
   display: inline-flex;
 }
 
-.directionRow {
-  flex-direction: row;
+.row {
+  @include boxRow;
 }
-
 .rowReverse {
-  flex-direction: row-reverse;
+  @include boxRowReverse;
 }
-
-.directionColumn {
-  flex-direction: column;
+.column {
+  @include boxColumn;
 }
-
 .columnReverse {
-  flex-direction: column-reverse;
+  @include boxColumnReverse;
 }
 
 .alignStart {
-  align-items: flex-start;
+  @include alignStart;
 }
-
 .alignCenter {
-  align-items: center;
+  @include alignCenter;
 }
-
 .alignEnd {
-  align-items: flex-end;
+  @include alignEnd;
 }
-
 .alignBaseline {
-  align-items: baseline;
+  @include alignBaseline;
 }
-
 .alignStretch {
-  align-items: stretch;
+  @include alignStretch;
 }
 
 .justifyStart {
-  justify-content: flex-start;
+  @include justifyStart;
 }
-
 .justifyCenter {
-  justify-content: center;
+  @include justifyCenter;
 }
-
 .justifyEnd {
-  justify-content: flex-end;
+  @include justifyEnd;
 }
-
 .justifyAround {
-  justify-content: space-around;
+  @include justifyAround;
 }
-
 .justifyBetween {
-  justify-content: space-between;
+  @include justifyBetween;
+}
+.justifyEvenly {
+  @include justifyEvenly;
 }
