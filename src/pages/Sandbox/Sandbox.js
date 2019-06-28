@@ -66,7 +66,7 @@ import Portal from '@reach/portal';
 
 import SliderAlt from '../../components/SliderAlt';
 import FieldInput from '../../components/FieldInput/FieldInput';
-import Box from '../../components/Box/Box';
+import Box from '../../layouts/Box/Box';
 
 const images = [img6, img2, img3, img4, img5, img1];
 

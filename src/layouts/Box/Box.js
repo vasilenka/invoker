@@ -1,10 +1,11 @@
 import styles from './Box.module.scss';
 import React from 'react';
 import classnames from 'classnames';
+import { oneOf } from 'prop-types';
 
-import withDirectionProps from './../__private/withDirectionProps';
-import withJustifyProps from './../__private/withJustifyProps';
-import withAlignProps from './../__private/withAlignProps';
+import withDirectionProps from '../../components/__private/withDirectionProps';
+import withJustifyProps from '../../components/__private/withJustifyProps';
+import withAlignProps from '../../components/__private/withAlignProps';
 
 const Box = ({
   children,
@@ -43,9 +44,28 @@ const Box = ({
 Box.displayName = 'Box';
 
 Box.defaultProps = {
-  direction: 'boxRow',
+  direction: 'row',
   justify: 'justifyStart',
   align: 'alignCenter',
+};
+
+Box.propTypes = {
+  direction: oneOf(['row', 'rowReverse', 'column', 'columnReverse']),
+  justify: oneOf([
+    'justifyStart',
+    'justifyEnd',
+    'justifyCenter',
+    'justifyAround',
+    'justifyBetween',
+    'justifyEvenly',
+  ]),
+  align: oneOf([
+    'alignStart',
+    'alignEnd',
+    'alignCenter',
+    'alignStretch',
+    'alignBaseline',
+  ]),
 };
 
 export default withDirectionProps(withJustifyProps(withAlignProps(Box)));
