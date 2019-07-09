@@ -8,7 +8,7 @@ import Preview from '../../docs/Preview/Preview';
 import Code from '../../docs/Code/Code';
 import Divider from '../../docs/Divider/Divider';
 
-import Table from '../../components/Table/Table';
+import { Table } from '../../components/Table';
 
 import RadioGroup from '../../components/RadioGroup/RadioGroup';
 import { RadioButton, RadioMark, RadioLabel } from '../../components/Radio';
@@ -207,7 +207,7 @@ const RadioButtonPage = props => {
     <div className={styles.root}>
       <Subheader
         title="Radio"
-        description="Set of primtives to make a complete radio input. Use radio input when you have a few options that a user can choose from. Don't use radio input if the user can select more than one option from a list, or if there's only one option to select from. That's what Checkbox are for."
+        description="Set of primtives to make a complete radio input, broke down into parts for flexibility. Use radio input when you have a few options that a user can choose from. Don't use radio input if the user can select more than one option from a list, or if there's only one option to select from. That's what <Checkbox/> is for."
       />
       <Divider large />
 

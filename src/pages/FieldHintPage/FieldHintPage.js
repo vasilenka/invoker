@@ -7,7 +7,7 @@ import Preview from './../../docs/Preview/Preview';
 import Code from './../../docs/Code/Code';
 import Divider from './../../docs/Divider/Divider';
 
-import Table from './../../components/Table/Table';
+import { Table } from './../../components/Table';
 import FieldHint from '../../components/FieldHint/FieldHint';
 
 let headProps = ['', 'name', 'type', 'default'];
@@ -17,20 +17,20 @@ let bodyProps = [
     required: false,
     name: 'children',
     type: 'React.Node',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'tone',
     type: '"positive" | "critical" | "neutral"',
-    default: '"neutral"'
-  }
+    default: '"neutral"',
+  },
 ];
 
 const FieldHintPage = props => {

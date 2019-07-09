@@ -9,7 +9,7 @@ import Preview from './../../docs/Preview/Preview';
 import Divider from './../../docs/Divider/Divider';
 
 import Button from '../../components/Button/Button';
-import Table from '../../components/Table/Table';
+import { Table } from '../../components/Table';
 import Code from '../../docs/Code/Code';
 
 import { ReactComponent as Google } from './google.svg';
@@ -21,19 +21,19 @@ let buttonProps = [
     name: 'children',
     type: 'React.Node',
     help: 'You can pass anything as the children of the button.',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'type',
     type: 'string',
-    default: 'button'
+    default: 'button',
   },
   {
     required: true,
@@ -41,36 +41,36 @@ let buttonProps = [
     type:
       '"primary" | "primaryBold" | "primaryAlt" | "primaryAltBold" | "secondary" | "secondaryAlt"',
     help: 'Use the value directly as the props',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'size',
     type: '"small" | "medium"',
     help: 'Use the value directly as the props',
-    default: 'medium'
+    default: 'medium',
   },
   {
     required: false,
     name: 'stretch',
     type: 'boolean',
     help: '',
-    default: 'false'
+    default: 'false',
   },
   {
     required: false,
     name: 'disabled',
     type: 'boolean',
     help: '',
-    default: 'false'
+    default: 'false',
   },
   {
     required: false,
     name: 'onClick',
     type: 'fn() => Event',
     help: 'Pass your own event handler for the Button.',
-    default: '-'
-  }
+    default: '-',
+  },
 ];
 
 const ButtonPage = ({ className, ...restProps }) => {

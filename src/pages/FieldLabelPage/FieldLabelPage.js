@@ -7,7 +7,7 @@ import Preview from './../../docs/Preview/Preview';
 import Code from './../../docs/Code/Code';
 import Divider from './../../docs/Divider/Divider';
 
-import Table from './../../components/Table/Table';
+import { Table } from './../../components/Table';
 import Text from '../../components/Text/Text';
 import FieldLabel from '../../components/FieldLabel/FieldLabel';
 
@@ -19,25 +19,25 @@ let bodyProps = [
     name: 'id',
     type: 'string',
     help: 'Provide an id of the complementary FieldInput',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: true,
     name: 'label',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'secondaryLabel',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
@@ -45,7 +45,7 @@ let bodyProps = [
     type: 'React.Node',
     help:
       'Basically you can put anything here. For best user experience, only use this for a helper of the input field. e.g. a tooltips that provide detailed explanation about the current input field.',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
@@ -53,8 +53,8 @@ let bodyProps = [
     type: 'boolean',
     default: 'false',
     help:
-      'Add this props if you want to use small FieldLabel. By default, FieldLabel is using medium size.'
-  }
+      'Add this props if you want to use small FieldLabel. By default, FieldLabel is using medium size.',
+  },
 ];
 
 const FieldInputPage = props => {

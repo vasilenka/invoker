@@ -3,7 +3,7 @@ import React from 'react';
 // import classnames from 'classnames';
 
 import Text from '../../components/Text/Text';
-import Table from './../../components/Table/Table';
+import { Table } from './../../components/Table';
 import Mask from '../../components/Mask/Mask';
 import Image from '../../components/Image/Image';
 
@@ -22,24 +22,24 @@ let bodyProps = [
   {
     name: 'children',
     type: 'React.Node',
-    default: '-'
+    default: '-',
   },
   {
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     name: 'shape',
     type: '"circle" | "rounded" | "square"',
     help: 'Use the value directly as a props in Text component',
-    default: '"square"'
+    default: '"square"',
   },
   {
     name: 'wash',
     type: 'boolean',
-    default: 'false'
-  }
+    default: 'false',
+  },
 ];
 
 const MaskPage = ({ className, ...restProps }) => {

@@ -2,7 +2,7 @@ import styles from './TextPage.module.scss';
 import React from 'react';
 import classnames from 'classnames';
 
-import Table from './../../components/Table/Table';
+import { Table } from './../../components/Table';
 
 import Text from '../../components/Text/Text';
 
@@ -18,49 +18,49 @@ let bodyProps = [
   {
     name: 'children',
     type: 'React.Node',
-    default: '-'
+    default: '-',
   },
   {
     name: 'type',
     type:
       '"display1" | "display2" | "display3" | "heading1" | "heading2" | "heading3" | "heading4" | "heading5" | "heading6" | "small" | "medium" | "large"',
     help: 'Use the value directly as a props in Text component',
-    default: '"medium"'
+    default: '"medium"',
   },
   {
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     name: 'component',
     type: 'string',
-    default: '<span>'
+    default: '<span>',
   },
   {
     name: 'link',
     type: 'boolean',
     help: 'Apply link styles to the text.',
-    default: 'false'
+    default: 'false',
   },
   {
     name: 'align',
     type: '"left" | "center" | "right"',
-    default: '"left"'
+    default: '"left"',
   },
   {
     name: 'overflow',
     type: '"truncate" | "breakWord"',
     help: 'Use the value directly as a props in Text component',
-    default: '-'
+    default: '-',
   },
   {
     name: 'withChevron',
     type: 'boolean',
     help:
       'Add a Chevron component at the end of the Text. The Chevron color will follow the Text color. Best used for link component.',
-    default: 'false'
-  }
+    default: 'false',
+  },
 ];
 
 const TextPage = ({ className, ...restProps }) => {

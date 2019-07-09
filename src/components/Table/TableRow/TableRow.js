@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import requiredIcon from './img/required.svg';
 
-import Text from '../Text/Text';
+import Text from '../../Text/Text';
 
 const TableRow = ({ className, children, ...restProps }) => {
   return (
@@ -12,7 +12,7 @@ const TableRow = ({ className, children, ...restProps }) => {
       {...restProps}
       className={classnames({
         [styles.root]: true,
-        [className]: className
+        [className]: className,
       })}
     >
       {children.required && (

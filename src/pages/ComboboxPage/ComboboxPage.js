@@ -9,7 +9,7 @@ import Preview from '../../docs/Preview/Preview';
 import Code from '../../docs/Code/Code';
 import Divider from '../../docs/Divider/Divider';
 
-import Table from '../../components/Table/Table';
+import { Table } from '../../components/Table';
 import Text from '../../components/Text/Text';
 import FieldLabel from '../../components/FieldLabel/FieldLabel';
 import ComboboxItem from '../../components/ComboboxItem/ComboboxItem';
@@ -27,7 +27,7 @@ const fruits = [
         </span>
       </Text>
     ),
-    value: 'apple'
+    value: 'apple',
   },
   {
     label: (
@@ -38,20 +38,20 @@ const fruits = [
         </span>
       </Text>
     ),
-    value: 'pear'
+    value: 'pear',
   },
   {
     label: 'Orange 🍊',
-    value: 'orange'
+    value: 'orange',
   },
   {
     label: 'Grape 🍇',
-    value: 'grape'
+    value: 'grape',
   },
   {
     label: 'Banana 🍌',
-    value: 'banana'
-  }
+    value: 'banana',
+  },
 ];
 
 let headProps = ['', 'name', 'type', 'default'];
@@ -61,7 +61,7 @@ let containerProps = [
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: true,
@@ -69,22 +69,22 @@ let containerProps = [
     default: '-',
     type: 'innerRef',
     help:
-      "Make sure to pass 'innerRef' to this props. This is needed for the Downshift."
+      "Make sure to pass 'innerRef' to this props. This is needed for the Downshift.",
   },
   {
     required: false,
     name: 'component',
     type: 'HTML.element',
     default: 'ul',
-    help: ''
+    help: '',
   },
   {
     required: false,
     name: 'children',
     type: 'React.Node',
     default: '-',
-    help: ''
-  }
+    help: '',
+  },
 ];
 
 let optionsProps = [
@@ -93,7 +93,7 @@ let optionsProps = [
     name: 'component',
     type: 'HTML.element',
     default: 'ul',
-    help: ''
+    help: '',
   },
   {
     required: false,
@@ -101,28 +101,28 @@ let optionsProps = [
     type: 'any',
     default: '-',
     help:
-      'Optional by Downshift. This is how downshift keeps track of your item when updating the highlightedIndex as the user keys around.'
+      'Optional by Downshift. This is how downshift keeps track of your item when updating the highlightedIndex as the user keys around.',
   },
   {
     required: true,
     name: 'label',
     type: 'React.node',
     default: '-',
-    help: ''
+    help: '',
   },
   {
     required: false,
     name: 'isSelected',
     type: 'boolean',
     default: 'false',
-    help: ''
+    help: '',
   },
   {
     required: false,
     name: 'isHighlighted',
     type: 'boolean',
     default: 'false',
-    help: ''
+    help: '',
   },
   {
     required: false,
@@ -130,7 +130,7 @@ let optionsProps = [
     type: 'boolean',
     default: 'false',
     help:
-      'Optional by Downshift. If this is set to true, then all of the downshift item event handlers will be omitted. Items will not be highlighted when hovered, and items will not be selected when clicked. And the styling for the disabled item will be applied.'
+      'Optional by Downshift. If this is set to true, then all of the downshift item event handlers will be omitted. Items will not be highlighted when hovered, and items will not be selected when clicked. And the styling for the disabled item will be applied.',
   },
   {
     required: true,
@@ -138,47 +138,44 @@ let optionsProps = [
     type: 'Combobox.option',
     default: '-',
     help:
-      'Required by Downshift. This is the item data that will be selected when the user selects a particular item.'
+      'Required by Downshift. This is the item data that will be selected when the user selects a particular item.',
   },
   {
     required: false,
     name: 'defaultClass',
     type: 'string of className',
     default: '-',
-    help: 'Styling for the individual option.'
+    help: 'Styling for the individual option.',
   },
   {
     required: false,
     name: 'highlightedClass',
     type: 'string of className',
     default: '-',
-    help: 'Styling for the highlighted option.'
+    help: 'Styling for the highlighted option.',
   },
   {
     required: false,
     name: 'selectedClass',
     type: 'string of className',
     default: '-',
-    help: 'Styling for the selected option.'
+    help: 'Styling for the selected option.',
   },
   {
     required: false,
     name: 'disabledClass',
     type: 'string of className',
     default: '-',
-    help: 'Styling for the disabled option.'
-  }
+    help: 'Styling for the disabled option.',
+  },
 ];
 
 const ComboboxPage = props => {
   let [selected, setSelected] = useState('');
 
-  useEffect(
-    () => {
-      console.log(selected);
-    },
-    [selected]
-  );
+  useEffect(() => {
+    console.log(selected);
+  }, [selected]);
 
   return (
     <div className={styles.root}>
@@ -249,32 +246,33 @@ const ComboboxPage = props => {
             isOpen,
             inputValue,
             highlightedIndex,
-            selectedItem
+            selectedItem,
           }) => (
             <Combobox
               {...getRootProps({
                 refKey: 'innerRef',
-                className: classnames(styles.combobox)
+                className: classnames(styles.combobox),
               })}
             >
               <FieldLabel
                 {...getLabelProps({
                   id: 'somethingawesome',
                   label: 'Dork souls',
-                  secondaryLabel: '(git gud)'
+                  secondaryLabel: '(git gud)',
                 })}
               />
               <ComboboxInput
                 {...getInputProps({
                   id: 'somethingawesome',
-                  placeholder: 'Dork souls 3, git gud!'
+                  placeholder: 'Dork souls 3, git gud!',
                 })}
               />
               <ComboboxContainer {...getMenuProps({ refKey: 'innerRef' })}>
                 {isOpen
                   ? fruits
                       .filter(
-                        fruit => !inputValue || fruit.value.includes(inputValue)
+                        fruit =>
+                          !inputValue || fruit.value.includes(inputValue),
                       )
                       .map((fruit, index) => (
                         <ComboboxItem
@@ -286,7 +284,7 @@ const ComboboxPage = props => {
                             // defaultClass: styles.defaultItem,
                             isHighlighted: highlightedIndex === index,
                             // highlightedClass:styles.highlighted,
-                            isSelected: selectedItem === fruit
+                            isSelected: selectedItem === fruit,
                             // selectedClass: styles.selected,
                           })}
                         />

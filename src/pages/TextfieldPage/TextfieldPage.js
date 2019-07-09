@@ -6,7 +6,7 @@ import Subheader from './../../docs/Subheader/Subheader';
 import Preview from './../../docs/Preview/Preview';
 import Code from './../../docs/Code/Code';
 
-import Table from './../../components/Table/Table';
+import { Table } from './../../components/Table';
 
 import Textfield from '../../components/Textfield/Textfield';
 import Text from '../../components/Text/Text';
@@ -18,19 +18,19 @@ let bodyProps = [
     required: true,
     name: 'id',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'placeholder',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
@@ -38,70 +38,70 @@ let bodyProps = [
     type: 'boolean',
     default: 'false',
     help:
-      'Add this props if you want to use small Textfield. By default, Textfield is using medium size.'
+      'Add this props if you want to use small Textfield. By default, Textfield is using medium size.',
   },
   {
     required: false,
     name: 'onChange',
     type: 'fn() => event, value, type',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'required',
     type: 'boolean',
-    default: 'false'
+    default: 'false',
   },
   {
     required: false,
     name: 'disabled',
     type: 'boolean',
-    default: 'false'
+    default: 'false',
   },
   {
     required: false,
     name: 'label',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'secondaryLabel',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'tertiaryLabel',
     type: 'any',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'type',
     type: '"text" | "email" | "password" | "number" | "url"',
     help: 'Textfield will provide validation by default based on the type.',
-    default: 'text'
+    default: 'text',
   },
   {
     required: false,
     name: 'tone',
     type: '"neutral" | "critical" | "positive"',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'message',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'yupShape',
     type: 'Yup shape object',
     help: `This is for field validation purpose. You can provide your own validation schema to this props if you want to override the default validation schema. Go to yup to see more details.`,
-    default: '-'
-  }
+    default: '-',
+  },
 ];
 
 class TextfieldPage extends Component {
@@ -109,13 +109,13 @@ class TextfieldPage extends Component {
     super(props);
     this.state = {
       email: 'usern@me',
-      password: 'P@ssw0rd'
+      password: 'P@ssw0rd',
     };
   }
 
   handleChange = (value, type) => {
     this.setState({
-      [type]: value
+      [type]: value,
     });
   };
 

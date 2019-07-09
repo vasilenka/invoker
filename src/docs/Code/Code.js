@@ -8,10 +8,10 @@ import './glamor';
 import Text from '../../components/Text/Text';
 
 const Code = ({ children, className, ...restProps }) => {
-  useEffect(() => Prism.highlightAll());
+  useEffect(() => Prism.highlightAll(), []);
 
   return (
-    <div>
+    <div {...restProps}>
       <Text
         style={{ marginBottom: '12px', color: '#484848' }}
         heading5

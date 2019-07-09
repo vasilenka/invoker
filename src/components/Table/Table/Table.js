@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import TableRow from '../TableRow/TableRow';
 import TableHeader from '../TableHeader/TableHeader';
 
-import Text from '../Text/Text';
+import Text from '../../Text/Text';
 
 class Table extends Component {
   render() {
@@ -16,7 +16,7 @@ class Table extends Component {
           {...restProps}
           className={classnames({
             [styles.table]: true,
-            [className]: className
+            [className]: className,
           })}
         >
           <thead>

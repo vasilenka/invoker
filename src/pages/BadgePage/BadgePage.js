@@ -2,7 +2,7 @@ import styles from './BadgePage.module.scss';
 import React from 'react';
 // import classnames from 'classnames';
 
-import Table from './../../components/Table/Table';
+import { Table } from './../../components/Table';
 import Badge from '../../components/Badge/Badge';
 
 import Header from './../../docs/Header/Header';
@@ -17,38 +17,38 @@ let bodyProps = [
   {
     name: 'children',
     type: 'React.Node',
-    default: '-'
+    default: '-',
   },
   {
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     name: 'size',
     type: '"small" | "large"',
     help: 'Use the value directly as a props in Text component',
-    default: '"small"'
+    default: '"small"',
   },
   {
     name: 'type',
     type: '"primary" | "secondary"',
     help: 'Use the value directly as a props in Text component',
-    default: '"primary"'
+    default: '"primary"',
   },
   {
     name: 'circle',
     type: 'boolean',
     help: 'Set the Badge shape to full-rounded.',
-    default: '"false"'
+    default: '"false"',
   },
   {
     name: 'component',
     type: 'string',
     help:
       'Add this props if you want to render a different element for the Badge wrapper. Different type of HTML.element has different display value, e.g. block or inline.',
-    default: '"span"'
-  }
+    default: '"span"',
+  },
 ];
 
 const BadgePage = ({ className, ...restProps }) => {

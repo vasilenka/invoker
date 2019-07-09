@@ -8,7 +8,7 @@ const TableHeader = ({ children, className, ...restProps }) => {
       {...restProps}
       className={classnames({
         [styles.root]: true,
-        [className]: className
+        [className]: className,
       })}
     >
       {children &&

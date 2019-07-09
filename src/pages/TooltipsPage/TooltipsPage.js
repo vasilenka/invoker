@@ -9,7 +9,7 @@ import Divider from './../../docs/Divider/Divider';
 import Code from '../../docs/Code/Code';
 
 import Button from '../../components/Button/Button';
-import Table from '../../components/Table/Table';
+import Table from '../../components/Table';
 import Tooltips from '../../components/Tooltips/Tooltips';
 import Text from '../../components/Text/Text';
 
@@ -21,26 +21,26 @@ let buttonProps = [
     type: 'React.Node',
     help:
       'You can pass anything as the children. This component will be used as the trigger event of the Tooltips.',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: true,
     name: 'content',
     type: 'any',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'withArrow',
     type: 'boolean',
     help: '',
-    default: 'true'
+    default: 'true',
   },
   {
     required: true,
@@ -48,8 +48,8 @@ let buttonProps = [
     type:
       '"rightTop" | "right" | "rightBottom" | "bottomRight" | "bottom" | "bottomLeft" | "leftBottom" | "left" | "leftTop" | "topLeft" | "top" | "topRight"',
     help: 'Use the value directly as the props.',
-    default: '-'
-  }
+    default: '-',
+  },
   // {
   //   required: false,
   //   name: 'onHover',

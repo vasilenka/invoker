@@ -8,7 +8,7 @@ import Preview from './../../docs/Preview/Preview';
 // import Code from './../../docs/Code/Code';
 import Divider from './../../docs/Divider/Divider';
 
-import Table from './../../components/Table/Table';
+import { Table } from './../../components/Table';
 import Text from '../../components/Text/Text';
 import Image from '../../components/Image/Image';
 
@@ -28,33 +28,33 @@ let bodyProps = [
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'type',
     type: '"normal" | "narrow" | "bleed"',
     help: 'Use the value directly as a props.',
-    default: 'normal'
+    default: 'normal',
   },
   {
     required: false,
     name: 'fixLeft',
     type: 'boolean',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'fixRight',
     type: 'boolean',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'children',
     type: 'React.Node',
-    default: '-'
-  }
+    default: '-',
+  },
 ];
 
 const ContainerPage = props => {

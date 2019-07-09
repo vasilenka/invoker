@@ -8,7 +8,7 @@ import Preview from '../../docs/Preview/Preview';
 import Code from '../../docs/Code/Code';
 import Divider from '../../docs/Divider/Divider';
 
-import Table from '../../components/Table/Table';
+import { Table } from '../../components/Table';
 import Text from '../../components/Text/Text';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import DropdownOption from '../../components/DropdownOption/DropdownOption';
@@ -16,25 +16,25 @@ import DropdownOption from '../../components/DropdownOption/DropdownOption';
 let options = [
   {
     label: 'Nurul Reza',
-    value: 'eza@gmail.com'
+    value: 'eza@gmail.com',
   },
   {
     label: 'Madams team',
     value: [
       {
         label: 'Ongki Herlambang',
-        value: 'ongkiherlambang@gmail.com'
+        value: 'ongkiherlambang@gmail.com',
       },
       {
         label: 'Khairani Ummah',
-        value: 'khairani.u@gmail.com'
+        value: 'khairani.u@gmail.com',
       },
       {
         label: 'Hanifan Mohamad',
-        value: 'hanifan@gmail.com'
-      }
-    ]
-  }
+        value: 'hanifan@gmail.com',
+      },
+    ],
+  },
 ];
 
 let headProps = ['', 'name', 'type', 'default'];
@@ -44,40 +44,40 @@ let selectProps = [
     required: true,
     name: 'name',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'children',
     type: 'React.Node',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'withArrow',
     type: 'boolean',
     default: 'true',
-    help: 'Showing an arrow at the right side of the Dropdown component.'
+    help: 'Showing an arrow at the right side of the Dropdown component.',
   },
   {
     required: false,
     name: 'size',
     type: '"small" | "normal"',
     default: '"normal"',
-    help: 'Use the value directly as props.'
+    help: 'Use the value directly as props.',
   },
   {
     required: false,
     name: 'value',
     type: 'Dropdown.value',
     default: '-',
-    help: 'Assign an initial selected value to the Dropdown'
+    help: 'Assign an initial selected value to the Dropdown',
   },
   {
     required: false,
@@ -85,8 +85,8 @@ let selectProps = [
     type: 'fn() => Radio.value',
     default: '-',
     help:
-      'Get the selected values of the Dropdown. Triggered on onChange event.'
-  }
+      'Get the selected values of the Dropdown. Triggered on onChange event.',
+  },
 ];
 
 const optionProps = [
@@ -94,19 +94,19 @@ const optionProps = [
     required: true,
     name: 'label',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: true,
     name: 'value',
     type: 'any',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'isDisabled',
     type: 'boolean',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
@@ -114,8 +114,8 @@ const optionProps = [
     type: 'fn() => Event',
     default: '-',
     help:
-      'Pass your own function if you want to add additional handler on onClick event.'
-  }
+      'Pass your own function if you want to add additional handler on onClick event.',
+  },
 ];
 
 const DropdownPage = props => {

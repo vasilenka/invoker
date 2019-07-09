@@ -6,7 +6,7 @@ import Header from './../../docs/Header/Header';
 import Preview from './../../docs/Preview/Preview';
 import Divider from './../../docs/Divider/Divider';
 
-import Table from './../../components/Table/Table';
+import { Table } from './../../components/Table';
 import Image from '../../components/Image/Image';
 
 import leftSection from './webp/leftSection.webp';
@@ -19,21 +19,21 @@ let bodyProps = [
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'fixed',
     type: 'boolean',
     help: 'Set the position property to fixed.',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'children',
     type: 'React.Node',
-    default: '-'
-  }
+    default: '-',
+  },
 ];
 
 const LeftSectionPage = props => {

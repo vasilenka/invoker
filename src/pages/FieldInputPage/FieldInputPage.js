@@ -9,7 +9,7 @@ import Preview from './../../docs/Preview/Preview';
 import Code from './../../docs/Code/Code';
 import Divider from './../../docs/Divider/Divider';
 
-import Table from './../../components/Table/Table';
+import { Table } from './../../components/Table';
 import Text from '../../components/Text/Text';
 import FieldInput from '../../components/FieldInput/FieldInput';
 import FieldLabel from '../../components/FieldLabel/FieldLabel';
@@ -21,19 +21,19 @@ let bodyProps = [
     required: true,
     name: 'id',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'placeholder',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
@@ -41,45 +41,45 @@ let bodyProps = [
     type: 'boolean',
     default: 'false',
     help:
-      'Add this props if you want to use small FieldInput. By default, FieldInput is using medium size.'
+      'Add this props if you want to use small FieldInput. By default, FieldInput is using medium size.',
   },
   {
     required: false,
     name: 'required',
     type: 'boolean',
-    default: 'false'
+    default: 'false',
   },
   {
     required: false,
     name: 'disabled',
     type: 'boolean',
-    default: 'false'
+    default: 'false',
   },
   {
     required: false,
     name: 'type',
     type: '"text" | "email" | "password" | "number" | "url"',
     help: 'Textfield will provide validation by default based on the type.',
-    default: 'text'
+    default: 'text',
   },
   {
     required: false,
     name: 'value',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'setValue',
     type: 'fn() => value',
     help: 'return the value of the FieldInput. Executed on onChange event.',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'tone',
     type: '"neutral" | "critical" | "positive"',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
@@ -87,7 +87,7 @@ let bodyProps = [
     type: 'fn() => tone',
     help:
       'return the tone from FieldInput validation result. Executed on onBlur event.',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
@@ -95,15 +95,15 @@ let bodyProps = [
     type: 'fn() => message',
     help:
       'return the message from FieldInput validation result. Executed on onBlur event.',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'yupShape',
     type: 'Yup shape object',
     help: `This is for field validation purpose. You can provide your own validation schema to this props if you want to override the default validation schema. Go to yup to see more details.`,
-    default: '-'
-  }
+    default: '-',
+  },
 ];
 
 const FieldInputPage = props => {
@@ -118,7 +118,7 @@ const FieldInputPage = props => {
     text: yup
       .string()
       .required('Story is required')
-      .min(20, 'Your story must be at least 20 character')
+      .min(20, 'Your story must be at least 20 character'),
   };
 
   return (
