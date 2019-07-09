@@ -1,23 +1,27 @@
 self.__precacheManifest = [
   {
-    "revision": "dcd9a8eac783025a0457",
-    "url": "/invoker/static/css/main.15d1f386.chunk.css"
+    "revision": "2c85ad7c536dfa1244b2",
+    "url": "/invoker/static/css/main.54ec51d0.chunk.css"
   },
   {
-    "revision": "dcd9a8eac783025a0457",
-    "url": "/invoker/static/js/main.dcd9a8ea.chunk.js"
+    "revision": "2c85ad7c536dfa1244b2",
+    "url": "/invoker/static/js/main.2c85ad7c.chunk.js"
   },
   {
-    "revision": "79a902d2486d46774526",
-    "url": "/invoker/static/js/1.79a902d2.chunk.js"
+    "revision": "36406f8521161e0a2e44",
+    "url": "/invoker/static/js/1.36406f85.chunk.js"
   },
   {
-    "revision": "3cfab18e2c8d9d7ea12f",
-    "url": "/invoker/static/js/2.3cfab18e.chunk.js"
+    "revision": "577a67162524a4e5c16e",
+    "url": "/invoker/static/css/2.5cb26a6a.chunk.css"
   },
   {
-    "revision": "81024804782910f7b351",
-    "url": "/invoker/static/js/runtime~main.81024804.js"
+    "revision": "577a67162524a4e5c16e",
+    "url": "/invoker/static/js/2.577a6716.chunk.js"
+  },
+  {
+    "revision": "0c87948387b5359a46a7",
+    "url": "/invoker/static/js/runtime~main.0c879483.js"
   },
   {
     "revision": "813e30500bea1cb77556601bc952b6e2",
@@ -98,42 +102,6 @@ self.__precacheManifest = [
   {
     "revision": "8e7648d762bcb56089f2aa9c8f646b97",
     "url": "/invoker/static/media/rightSection.8e7648d7.webp"
-  },
-  {
-    "revision": "4ce5d30387ca7ea6ad55ac1dc6c9a965",
-    "url": "/invoker/static/media/Geomanist-Thin.4ce5d303.otf"
-  },
-  {
-    "revision": "9aef73f78bc55e304ab5dd510dd8b40c",
-    "url": "/invoker/static/media/Geomanist-ExtraLight.9aef73f7.otf"
-  },
-  {
-    "revision": "7aa547699c1e2d98b20d85116cb9e57e",
-    "url": "/invoker/static/media/Geomanist-Light.7aa54769.otf"
-  },
-  {
-    "revision": "de66f0a113d94f90d5b3958bb5744837",
-    "url": "/invoker/static/media/Geomanist-Regular.de66f0a1.otf"
-  },
-  {
-    "revision": "c4ef7adafb423b6dc8b4009be00bc105",
-    "url": "/invoker/static/media/Geomanist-Book.c4ef7ada.otf"
-  },
-  {
-    "revision": "996e792755ef32ddb65da996d2bbdb7a",
-    "url": "/invoker/static/media/Geomanist-Medium.996e7927.otf"
-  },
-  {
-    "revision": "748e4c83bd1adccc610a6d00af37fa0b",
-    "url": "/invoker/static/media/Geomanist-Bold.748e4c83.otf"
-  },
-  {
-    "revision": "0c056df65bb1719974106a9c5a290b66",
-    "url": "/invoker/static/media/Geomanist-Black.0c056df6.otf"
-  },
-  {
-    "revision": "4125e36d2ba4977379c563d9bcc9e233",
-    "url": "/invoker/static/media/Geomanist-Ultra.4125e36d.otf"
   },
   {
     "revision": "a1d65c5b1d1547a34e3e54f964d8f4cd",
@@ -284,7 +252,7 @@ self.__precacheManifest = [
     "url": "/invoker/static/media/google.686f8efa.svg"
   },
   {
-    "revision": "679c5249f3f39fbcfa69c3bacc635f35",
+    "revision": "ce49af7464c64e4d03061384459a733d",
     "url": "/invoker/index.html"
   }
 ];
