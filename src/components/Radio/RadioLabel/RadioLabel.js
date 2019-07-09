@@ -1,9 +1,9 @@
 import styles from './RadioLabel.module.scss';
 import React, { useContext } from 'react';
 import classnames from 'classnames';
-import { RadioContext, RadioButtonContext } from '../__context';
+import { RadioContext, RadioButtonContext } from '../../__context';
 
-import Text from '../Text/Text';
+import Text from '../../Text/Text';
 
 const RadioLabel = ({
   id,

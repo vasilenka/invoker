@@ -10,10 +10,8 @@ import Divider from '../../docs/Divider/Divider';
 
 import Table from '../../components/Table/Table';
 
-import RadioList from '../../components/RadioList/RadioList';
-import RadioButton from '../../components/RadioButton/RadioButton';
-import RadioMark from '../../components/RadioMark/RadioMark';
-import RadioLabel from '../../components/RadioLabel/RadioLabel';
+import RadioGroup from '../../components/RadioGroup/RadioGroup';
+import { RadioButton, RadioMark, RadioLabel } from '../../components/Radio';
 import Text from '../../components/Text/Text';
 
 let headProps = ['', 'name', 'type', 'default'];
@@ -25,34 +23,34 @@ let bodyProps = [
     type: 'string',
     default: '-',
     help:
-      'The name props will be assign to all radio buttons in a single group. And combined with index, it will be used to generate specific id for each RadioButton in the list.'
+      'The name props will be assign to all radio buttons in a single group. And combined with index, it will be used to generate specific id for each RadioButton in the list.',
   },
   {
     required: false,
     name: 'children',
     type: 'React.Node',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'onChange',
     type: 'fn() => Radio.value',
     default: '-',
-    help: 'Get the selected values of the RadioList'
+    help: 'Get the selected values of the RadioGroup',
   },
   {
     required: false,
     name: 'selected',
     type: 'Radio.value',
     default: '-',
-    help: 'Assign a selected value to the RadioList'
-  }
+    help: 'Assign a selected value to the RadioGroup',
+  },
 ];
 
 const options = [
@@ -65,16 +63,16 @@ const options = [
         </span>
       </Text>
     ),
-    value: 'ongki'
+    value: 'ongki',
   },
   {
     label: 'Khairani Ummah',
-    value: 'khairani'
+    value: 'khairani',
   },
   {
     label: 'Hanifan Mohamad',
-    value: 'hanifan'
-  }
+    value: 'hanifan',
+  },
 ];
 
 const buttonProps = [
@@ -82,13 +80,13 @@ const buttonProps = [
     required: true,
     name: 'children',
     type: 'React.node',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: true,
@@ -96,14 +94,14 @@ const buttonProps = [
     type: 'string',
     default: '-',
     help:
-      'The id generated for each RadioButton will be unique, you just need to pass a value here'
+      'The id generated for each RadioButton will be unique, you just need to pass a value here',
   },
   {
     required: false,
     name: 'isDisabled',
     type: 'boolean',
-    default: '-'
-  }
+    default: '-',
+  },
 ];
 
 const markProps = [
@@ -111,57 +109,57 @@ const markProps = [
     required: false,
     name: 'id*',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'name*',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'isDisabled*',
     type: 'boolean',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'checked*',
     type: 'boolean',
-    default: 'false'
+    default: 'false',
   },
   {
     required: true,
     name: 'value',
     type: 'Radio.value',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'size',
     type: '"small" | "large"',
     default: 'small',
-    help: 'Use the value directly as a props in Text component'
+    help: 'Use the value directly as a props in Text component',
   },
   {
     required: false,
     name: 'onClick',
     type: 'fn() => Event',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'onChange',
     type: 'fn() => Event',
-    default: '-'
-  }
+    default: '-',
+  },
 ];
 
 const labelProps = [
@@ -170,26 +168,26 @@ const labelProps = [
     name: 'id',
     type: 'string',
     default: '-',
-    help: 'Provided by RadioButton by default'
+    help: 'Provided by RadioButton by default',
   },
   {
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: true,
     name: 'label',
     type: 'React.node',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'isDisabled*',
     type: 'boolean',
     default: '-',
-    help: 'Provided by RadioButton by default'
+    help: 'Provided by RadioButton by default',
   },
   {
     required: false,
@@ -197,8 +195,8 @@ const labelProps = [
     type: 'fn() => Event',
     default: '-',
     help:
-      'Pass your own handler here if you want to add some additional handler for the onClick event. By the default the function will return an event value.'
-  }
+      'Pass your own handler here if you want to add some additional handler for the onClick event. By the default the function will return an event value.',
+  },
 ];
 
 const RadioButtonPage = props => {
@@ -214,7 +212,7 @@ const RadioButtonPage = props => {
       <Divider large />
 
       <Header
-        title="RadioList"
+        title="RadioGroup"
         description="A wrapper component for set of RadioButton."
       />
       <Table className={styles.tableProps} head={headProps} body={bodyProps} />
@@ -237,7 +235,7 @@ const RadioButtonPage = props => {
         className={styles.tableProps}
         head={headProps}
         body={markProps}
-        message={'(*) Provided by RadioButton and RadioList by default'}
+        message={'(*) Provided by RadioButton and RadioGroup by default'}
       />
 
       <Header
@@ -252,7 +250,7 @@ const RadioButtonPage = props => {
       />
 
       <Preview>
-        <RadioList
+        <RadioGroup
           name="hello"
           className={styles.radioClass}
           onChange={selected => setRadio(selected)}
@@ -272,7 +270,7 @@ const RadioButtonPage = props => {
               <RadioLabel className={styles.labelClass} label={item.label} />
             </RadioButton>
           ))}
-        </RadioList>
+        </RadioGroup>
         <Text component="p" medium>
           This is the selected radio:{' '}
           <Text heading5 style={{ fontWeight: '600' }}>
@@ -303,7 +301,7 @@ const options = [
 let [radio, setRadio] = useState('khairani')
 let [disabled, setDisabled] = useState([2])
 
-<RadioList
+<RadioGroup
   name="hello"
   className={styles.radioClass}
   onChange={selected => setRadio(selected)}
@@ -323,7 +321,7 @@ let [disabled, setDisabled] = useState([2])
       <RadioLabel className={styles.labelClass} label={item.label} />
     </RadioButton>
   ))}
-</RadioList>
+</RadioGroup>
         `}
       </Code>
       <Divider large />

@@ -1,7 +1,7 @@
 import styles from './RadioMark.module.scss';
 import React, { useContext } from 'react';
 import classnames from 'classnames';
-import { RadioContext, RadioButtonContext } from '../__context';
+import { RadioContext, RadioButtonContext } from '../../__context';
 
 const RadioMark = ({
   className,

@@ -1,7 +1,7 @@
 import styles from './CheckMark.module.scss';
 import React, { useEffect, useContext, useState } from 'react';
 import classnames from 'classnames';
-import { CheckboxContext } from '../__context';
+import { CheckboxContext } from '../../__context';
 
 const Checkmark = ({
   large,
@@ -14,6 +14,7 @@ const Checkmark = ({
   let Component = component ? component : 'span';
 
   const checkContext = useContext(CheckboxContext);
+
   let [disabled, setDisable] = useState(null);
   let [checked, setChecked] = useState();
   let [value, setValue] = useState();

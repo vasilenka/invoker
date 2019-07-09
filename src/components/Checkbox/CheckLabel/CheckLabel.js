@@ -2,8 +2,8 @@ import styles from './CheckLabel.module.scss';
 import React, { useContext } from 'react';
 import cx from 'classnames';
 
-import Text from '../Text/Text';
-import { CheckboxContext } from '../__context';
+import Text from '../../Text/Text';
+import { CheckboxContext } from '../../__context';
 
 const CheckLabel = ({ label, className, onClick, ...restProps }) => {
   const checkContext = useContext(CheckboxContext);

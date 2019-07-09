@@ -1,7 +1,7 @@
 import styles from './RadioButton.module.scss';
 import React, { useEffect, useState } from 'react';
 import classnames from 'classnames';
-import { RadioButtonContext } from '../__context';
+import { RadioButtonContext } from '../../__context';
 
 const RadioButton = ({ children, isDisabled, id, className, ...restProps }) => {
   const [disabled, setDisabled] = useState();

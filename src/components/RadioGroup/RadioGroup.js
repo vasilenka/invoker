@@ -1,10 +1,10 @@
-import styles from './RadioList.module.scss';
+import styles from './RadioGroup.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
 import { RadioContext } from '../__context';
 
-class RadioList extends Component {
+class RadioGroup extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -49,4 +49,4 @@ class RadioList extends Component {
   }
 }
 
-export default RadioList;
+export default RadioGroup;

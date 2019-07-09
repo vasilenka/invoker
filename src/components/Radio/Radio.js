@@ -2,28 +2,28 @@ import styles from './Radio.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import Text from './../Text/Text';
+import Text from '../../Text/Text';
 
 class Radio extends Component {
   constructor(props) {
     super(props);
     this.state = {
       focus: this.props.focus,
-      value: this.props.value
+      value: this.props.value,
     };
   }
 
   onBlur = () => {
     this.setState({
       ...this.state,
-      focus: false
+      focus: false,
     });
   };
 
   onChange = e => {
     this.setState({
       ...this.state,
-      value: e.target.value
+      value: e.target.value,
     });
   };
 
@@ -44,7 +44,7 @@ class Radio extends Component {
         <input
           className={classnames({
             [styles.input]: true,
-            [styles.focus]: this.state.focus
+            [styles.focus]: this.state.focus,
           })}
           id={id}
           name={name}
@@ -54,7 +54,7 @@ class Radio extends Component {
         />
         <label
           className={classnames({
-            [styles.label]: true
+            [styles.label]: true,
           })}
           onClick={() => console.log(this.state.value)}
           onFocus={onFocus}

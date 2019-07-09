@@ -10,10 +10,8 @@ import Divider from '../../docs/Divider/Divider';
 
 import Table from '../../components/Table/Table';
 
-import Checkbox from '../../components/Checkbox/Checkbox';
-import CheckLabel from '../../components/CheckLabel/CheckLabel';
+import { Checkbox, CheckLabel, CheckMark } from '../../components/Checkbox';
 import Text from '../../components/Text/Text';
-import CheckMark from '../../components/CheckMark/CheckMark';
 
 let headProps = ['', 'name', 'type', 'default'];
 
@@ -22,43 +20,43 @@ let checkboxProps = [
     required: true,
     name: 'children',
     type: 'React.Node',
-    default: '-'
+    default: '-',
   },
   {
     required: true,
     name: 'id',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: true,
     name: 'name',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: true,
     name: 'value',
     type: 'any',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'isDisabled',
     type: 'boolean',
-    default: 'false'
+    default: 'false',
   },
   {
     required: false,
     name: 'isChecked',
     type: 'boolean',
-    default: 'false'
+    default: 'false',
   },
   {
     required: false,
@@ -66,8 +64,8 @@ let checkboxProps = [
     type: 'fn() => value',
     default: '-',
     help:
-      'Get the value of the checkbox. Automatically triggered on onClick event.'
-  }
+      'Get the value of the checkbox. Automatically triggered on onClick event.',
+  },
 ];
 
 const markProps = [
@@ -75,27 +73,27 @@ const markProps = [
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'component',
     type: 'string of HTML.element',
-    default: '<span>'
+    default: '<span>',
   },
   {
     required: false,
     name: 'large',
     type: 'boolean',
-    default: 'small'
+    default: 'small',
   },
   {
     required: false,
     name: 'size',
     type: '"normal" | "large"',
     default: 'normal',
-    help: 'Use the value directly as a props in Text component.'
-  }
+    help: 'Use the value directly as a props in Text component.',
+  },
 ];
 
 const labelProps = [
@@ -103,13 +101,13 @@ const labelProps = [
     required: true,
     name: 'label',
     type: 'React.node',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
     name: 'className',
     type: 'string',
-    default: '-'
+    default: '-',
   },
   {
     required: false,
@@ -117,8 +115,8 @@ const labelProps = [
     type: 'fn() => Event',
     default: '-',
     help:
-      'Pass your own handler here if you want to add some additional handler for the onClick event. By the default the function will return an event value.'
-  }
+      'Pass your own handler here if you want to add some additional handler for the onClick event. By the default the function will return an event value.',
+  },
 ];
 
 const CheckboxPage = props => {

@@ -1,7 +1,7 @@
 import styles from './Checkbox.module.scss';
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { CheckboxContext } from '../__context';
+import { CheckboxContext } from '../../__context';
 
 class Checkbox extends Component {
   constructor(props) {
